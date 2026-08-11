@@ -1,0 +1,31 @@
+{
+  "format": "ai-supply-hbm-manufacturing-link.v1",
+  "scenario": {
+    "id": "blackwell-manufacturing-with-supplier-hbm-illustrative-2026q3",
+    "name": "Blackwell manufacturing with supplier-resolved HBM",
+    "quarter": "2026-Q3",
+    "as_of_date": "2026-07-19",
+    "recorded_at": "2026-07-20T03:20:00Z",
+    "samples": 20000,
+    "seed": 20260720,
+    "notes": "Illustrative integration that replaces the aggregate HBM wafer branch once. Logic, packaging, supplier capacity, yield, qualification, allocation, and demand inputs remain synthetic."
+  },
+  "manufacturing_scenario": {
+    "sha256": "1826b8dd8dc7d13ea51cb4c3a0827395e402d78d34af7bd1018c0be76a3f12ec",
+    "expected_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+    "replace_hbm_wafer_flow_id": "hbm3e-memory-wafer",
+    "scope": "The frozen Blackwell logic and advanced-package scenario, with its aggregate HBM wafer flow removed before reconciliation."
+  },
+  "hbm_supplier_result": {
+    "sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+    "expected_scenario_id": "blackwell-hbm-supplier-portfolio-illustrative-2026q3",
+    "capacity_metric": "customer_allocated_stacks",
+    "scope": "The frozen supplier portfolio's Blackwell-qualified and customer-allocated HBM3E stacks across three non-overlapping declared capacity scopes."
+  },
+  "mapping": {
+    "distribution_mapping": "source_p10_p50_p90_to_triangular_low_mode_high",
+    "confirming_evidence": "Draw-level supplier output or a common simulation state reproduces the imported allocated-stack distribution and its dependence with other manufacturing branches.",
+    "falsifying_evidence": "A source correction changes supplier scope, topology, qualification, allocation, or the customer-allocated stack distribution.",
+    "notes": "The summary mapping is intentionally lossy: it truncates source tails and does not preserve supplier-level or cross-branch dependence."
+  }
+}

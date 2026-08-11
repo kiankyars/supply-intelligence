@@ -1,0 +1,138 @@
+{
+  "blocking_inputs": [
+    "current critical IT load",
+    "contracted and reserved capacity",
+    "platform-specific allocation",
+    "rack-compatible cooling and power-density headroom"
+  ],
+  "estimate": {
+    "base": 421.0,
+    "confidence": 0.8,
+    "confirming_evidence": "Metered critical IT load, energized capacity records, and tenant reservations support the campus range and identify unused headroom.",
+    "correlation_group": "abilene-site-power",
+    "evidence_ids": [
+      "datacenter:eb6b58f32ca7:b760a63b-bde3-559b-96fb-6bf562a29a08"
+    ],
+    "falsifying_evidence": "The campus estimate is gross facility power, duplicates another site, or current load and reservations leave no compatible headroom.",
+    "high": 589.4,
+    "last_updated": "2026-07-17",
+    "low": 300.7142857142857,
+    "methodology": "Summed critical_it_mw across 1 explicitly selected Data Center Atlas site(s) for OpenAI Stargate Abilene site envelope. This is a gross site critical IT power envelope, not vacant or platform-allocated MW. Existing load, reservations, and rack-compatible headroom must be removed before use as an incremental power pool. Aggregation: single_site. Rationale: The selection contains one resolved campus and therefore cannot double count another campus row.",
+    "posture": "modeled",
+    "unit": "MW"
+  },
+  "evidence": [
+    {
+      "content_hash": "279ace3f8e2ae875e2a6bb21beb122554ed3378bb90755dab7284571d1a8c795",
+      "excerpt": "Attribution: Epoch AI, \"AI Data Centers\" (2026)",
+      "id": "datacenter:eb6b58f32ca7:b760a63b-bde3-559b-96fb-6bf562a29a08",
+      "kind": "third_party_research",
+      "license": "CC-BY-4.0",
+      "published_at": null,
+      "publisher": "Epoch AI",
+      "retrieved_at": "2026-07-18T00:59:24Z",
+      "source_family": "epoch_ai_data_centers",
+      "source_url": "https://epoch.ai/data/ai-data-centers",
+      "title": "Epoch AI data center record: OpenAI Stargate Abilene"
+    }
+  ],
+  "format": "ai-supply-datacenter-power-import.v1",
+  "lineage": {
+    "availability_status": "not_net_incremental_capacity",
+    "capacity_semantics": "gross_site_critical_it_envelope",
+    "datacenter_release": {
+      "as_of": "2026-07-17",
+      "format": "datacenter-atlas-release-v1",
+      "manifest_sha256": "eb6b58f32ca70374c2a3329a787312ed6c41b2721d8027e3c41cc6bc18d36570",
+      "recorded_at": "2026-07-18T02:00:00Z"
+    },
+    "selected_capacity_rows": [
+      {
+        "as_of_date": "2026-05-23",
+        "base": 421.0,
+        "confidence": "0.8",
+        "entity_id": "2dd31763-2dd4-5cb5-927d-0d000dadf767",
+        "entity_kind": "campus",
+        "evidence_id": "b760a63b-bde3-559b-96fb-6bf562a29a08",
+        "high": 589.4,
+        "low": 300.7142857142857,
+        "method": "modeled",
+        "metric": "critical_it_mw",
+        "name": "OpenAI Stargate Abilene",
+        "notes": "Epoch AI modeled current capacity; 80% interval is base divided/multiplied by 1.4.",
+        "source_license": "CC-BY-4.0",
+        "source_publisher": "Epoch AI",
+        "source_retrieved_at": "2026-07-18T00:59:24Z",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "stage": "operational",
+        "target_date": "",
+        "unit": "MW"
+      }
+    ],
+    "selection": {
+      "aggregation_policy": "single_site",
+      "aggregation_rationale": "The selection contains one resolved campus and therefore cannot double count another campus row.",
+      "availability_status": "not_net_incremental_capacity",
+      "capacity_semantics": "gross_site_critical_it_envelope",
+      "confirming_evidence": "Metered critical IT load, energized capacity records, and tenant reservations support the campus range and identify unused headroom.",
+      "correlation_group": "abilene-site-power",
+      "entity_ids": [
+        "2dd31763-2dd4-5cb5-927d-0d000dadf767"
+      ],
+      "expected_release_as_of": "2026-07-17",
+      "expected_release_recorded_at": "2026-07-18T02:00:00Z",
+      "falsifying_evidence": "The campus estimate is gross facility power, duplicates another site, or current load and reservations leave no compatible headroom.",
+      "format": "ai-supply-datacenter-selection.v1",
+      "metric": "critical_it_mw",
+      "minimum_capacity_as_of": "2026-01-01",
+      "required_countries": [
+        "United States"
+      ],
+      "required_user_labels": [
+        "OpenAI #confident"
+      ],
+      "scope_description": "A checked bridge demonstration for one campus tagged OpenAI confident in the pinned atlas release. It is not a claim that all campus power is vacant or assigned to NVIDIA platforms.",
+      "scope_name": "OpenAI Stargate Abilene site envelope",
+      "stage": "operational",
+      "target_quarter": "2026-Q3",
+      "unit": "MW"
+    }
+  },
+  "sites": [
+    {
+      "capacity": {
+        "as_of_date": "2026-05-23",
+        "base": 421.0,
+        "confidence": "0.8",
+        "entity_id": "2dd31763-2dd4-5cb5-927d-0d000dadf767",
+        "entity_kind": "campus",
+        "evidence_id": "b760a63b-bde3-559b-96fb-6bf562a29a08",
+        "high": 589.4,
+        "low": 300.7142857142857,
+        "method": "modeled",
+        "metric": "critical_it_mw",
+        "name": "OpenAI Stargate Abilene",
+        "notes": "Epoch AI modeled current capacity; 80% interval is base divided/multiplied by 1.4.",
+        "source_license": "CC-BY-4.0",
+        "source_publisher": "Epoch AI",
+        "source_retrieved_at": "2026-07-18T00:59:24Z",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "stage": "operational",
+        "target_date": "",
+        "unit": "MW"
+      },
+      "country": "United States",
+      "entity_id": "2dd31763-2dd4-5cb5-927d-0d000dadf767",
+      "name": "OpenAI Stargate Abilene",
+      "operator": "",
+      "owner": "Oracle #confident",
+      "status": "expansion",
+      "status_as_of": "2026-07-17",
+      "status_confidence": "0.7",
+      "status_evidence_id": "b760a63b-bde3-559b-96fb-6bf562a29a08",
+      "status_method": "epoch_positive_power_with_future_growth",
+      "users": "OpenAI #confident"
+    }
+  ],
+  "usable_as_incremental_power_pool": false
+}

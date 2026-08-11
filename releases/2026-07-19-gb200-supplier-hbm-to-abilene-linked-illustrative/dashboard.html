@@ -1,0 +1,1146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NVIDIA GB200 NVL72 supply reconciliation</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f3f0e9;
+      --paper: #fbfaf6;
+      --ink: #171a18;
+      --muted: #626760;
+      --line: #d8d4ca;
+      --accent: #006b5c;
+      --accent-soft: #cfe5df;
+      --secondary: #b45b31;
+      --warning: #8a4c12;
+      --warning-bg: #fff0d8;
+      --warning-border: #e6c38f;
+      --live-border: #9fc8bd;
+      --track: #e5e1d8;
+      --audit-bg: rgba(255,255,255,.38);
+      --positive: #08755e;
+      --negative: #a33e32;
+      --shadow: 0 12px 40px rgba(33, 40, 35, .08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #151916;
+        --paper: #202622;
+        --ink: #f0f2ed;
+        --muted: #aab2ab;
+        --line: #3b453e;
+        --accent: #68c8b5;
+        --accent-soft: #294b43;
+        --secondary: #e39a71;
+        --warning: #ffd29a;
+        --warning-bg: #3a2c1d;
+        --warning-border: #6c5131;
+        --live-border: #3f7167;
+        --track: #303832;
+        --audit-bg: rgba(255,255,255,.025);
+        --positive: #70d2bc;
+        --negative: #f39a8e;
+        --shadow: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: var(--accent); }
+    header, main { width: min(1440px, calc(100% - 40px)); margin-inline: auto; }
+    header { padding: 34px 0 22px; display: flex; justify-content: space-between; gap: 24px; align-items: end; border-bottom: 1px solid var(--line); }
+    .eyebrow, .section-label { color: var(--accent); font: 700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; text-transform: uppercase; }
+    h1 { max-width: 850px; margin: 8px 0 5px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(32px, 5vw, 62px); line-height: .98; letter-spacing: -.035em; font-weight: 500; }
+    header p { color: var(--muted); margin: 0; }
+    .stamp { text-align: right; min-width: 170px; }
+    .stamp strong, .stamp span { display: block; }
+    .stamp strong { font-size: 20px; }
+    .stamp span { color: var(--muted); }
+    main { padding: 24px 0 72px; }
+    .notice { background: var(--warning-bg); border: 1px solid var(--warning-border); padding: 14px 16px; display: grid; grid-template-columns: minmax(130px, .22fr) 1fr; gap: 20px; margin-bottom: 22px; }
+    .notice.live { background: var(--accent-soft); border-color: var(--live-border); }
+    .notice strong { color: var(--warning); }
+    .notice.live strong { color: var(--accent); }
+    .notice ul { margin: 0; padding-left: 18px; }
+    .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 28px; }
+    .metric { background: var(--paper); border: 1px solid var(--line); padding: 18px; box-shadow: var(--shadow); }
+    .metric p, .metric span { color: var(--muted); margin: 0; }
+    .metric strong { display: block; margin: 6px 0 2px; font: 500 clamp(30px, 5vw, 48px)/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -.05em; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(330px, .65fr); gap: 22px; margin-bottom: 34px; }
+    section { min-width: 0; }
+    .panel { background: var(--paper); border: 1px solid var(--line); padding: 20px; }
+    .panel h2, .section-head h2 { font: 500 24px/1.1 Georgia, "Times New Roman", serif; margin: 5px 0 4px; }
+    .panel > p, .section-head p { margin: 0 0 18px; color: var(--muted); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin: 34px 0 12px; }
+    .stage-row { display: grid; grid-template-columns: 125px minmax(140px, 1fr) 120px; gap: 12px; align-items: center; margin: 15px 0; }
+    .stage-label { display: flex; justify-content: space-between; gap: 8px; }
+    .stage-label strong, .numeric, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric: tabular-nums; }
+    .track { position: relative; height: 13px; background: var(--track); overflow: hidden; }
+    .bar, .uncertainty { position: absolute; inset-block: 0; left: 0; }
+    .bar { background: var(--accent); z-index: 2; }
+    .bar.secondary { background: var(--secondary); }
+    .uncertainty { background: var(--accent-soft); z-index: 1; }
+    .range { color: var(--muted); text-align: right; font-size: 12px; }
+    label { display: block; color: var(--muted); margin-bottom: 6px; }
+    select { width: 100%; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 9px 10px; font: inherit; }
+    #bottleneck-chart { margin-top: 18px; }
+    .bottleneck-row { display: grid; grid-template-columns: minmax(130px, 1fr) 2fr 56px; gap: 10px; align-items: center; margin: 12px 0; }
+    .bottleneck-row .label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .allocation-row { display: grid; grid-template-columns: minmax(170px, .7fr) 1fr 90px; gap: 12px; align-items: center; margin: 13px 0; }
+    .allocation-row div:first-child span, td span, summary span, .estimate-audit span { display: block; color: var(--muted); font-size: 12px; }
+    .numeric { text-align: right; }
+    .numeric span { display: block; color: var(--muted); font: 12px/1.2 ui-sans-serif, system-ui, sans-serif; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--paper); }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th { text-align: left; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    tbody tr:last-child td { border-bottom: 0; }
+    .positive { color: var(--positive); }
+    .negative { color: var(--negative); }
+    .empty { color: var(--muted); padding: 20px; }
+    .candidate-card { margin-top: 14px; background: var(--paper); border: 1px solid var(--line); padding: 20px; }
+    .candidate-head { display: flex; justify-content: space-between; gap: 20px; align-items: start; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+    .candidate-head h3 { font: 500 23px/1.1 Georgia, "Times New Roman", serif; margin: 5px 0 0; }
+    .candidate-revision { text-align: right; }
+    .candidate-revision strong, .candidate-revision span { display: block; }
+    .candidate-revision strong { font: 500 26px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .candidate-revision span { color: var(--muted); font-size: 12px; }
+    .candidate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; padding-top: 16px; }
+    .candidate-grid strong { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    .candidate-grid p { margin: 3px 0 0; color: var(--muted); }
+    details { border-top: 1px solid var(--line); background: var(--paper); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; padding: 15px 4px; display: flex; justify-content: space-between; gap: 14px; }
+    .audit-grid { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 0 0 16px; }
+    .estimate-audit { min-width: 0; overflow-wrap: anywhere; border-left: 3px solid var(--accent-soft); padding: 10px 12px; background: var(--audit-bg); }
+    .estimate-audit > div:first-child { min-width: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; }
+    .estimate-audit p { margin: 7px 0 0; color: var(--muted); font-size: 12px; }
+    .estimate-audit b { color: var(--ink); }
+    .source-ref { display: inline-block; max-width: 100%; margin-right: 5px; overflow-wrap: anywhere; }
+    footer { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .audit-grid { grid-template-columns: 1fr; }
+      .candidate-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      header, main { width: min(100% - 24px, 1440px); }
+      header, .section-head { display: block; }
+      .stamp { text-align: left; margin-top: 16px; }
+      .metrics { grid-template-columns: 1fr; }
+      .notice { grid-template-columns: 1fr; gap: 6px; }
+      .stage-row { grid-template-columns: 100px 1fr; }
+      .stage-row .range { grid-column: 2; text-align: left; }
+      .allocation-row { grid-template-columns: 1fr 70px; }
+      .allocation-row .track { grid-column: 1 / -1; grid-row: 2; }
+      .bottleneck-row { grid-template-columns: minmax(100px, 1fr) 1.4fr 50px; }
+      .candidate-head { display: block; }
+      .candidate-revision { text-align: left; margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="eyebrow">AI supply intelligence · 2026-Q3</div>
+      <h1>NVIDIA GB200 NVL72</h1>
+      <p>Complete-system output reconciled to the minimum feasible supply-chain constraint.</p>
+    </div>
+    <div class="stamp"><span>As of</span><strong>2026-07-19</strong><span>20,000 draws · seed 20260721</span></div>
+  </header>
+  <main>
+    <aside class="notice synthetic">
+      <strong>Illustrative scenario</strong>
+      <ul><li>Capacity, yield, allocation, economics, and consensus inputs marked synthetic are demonstration data, not market estimates.</li><li>Accelerator-package through rack-integration outputs represent the selected illustrative Blackwell supply flow after supplier-qualified and customer-allocated HBM replaces the aggregate HBM branch. A shipped-stage synthetic allocation narrows shipped, installed, and operational outputs to the Abilene-target subset. Supplier economics, consensus, opportunity ranking, and customer allocation are intentionally removed.</li><li>No customer allocation rules are present.</li><li>No sell-side consensus inputs are present; discrepancy ranking is unavailable.</li></ul>
+    </aside>
+
+    <div class="metrics">
+      
+      <article class="metric">
+        <p>Accelerator packages produced</p>
+        <strong>27,950</strong>
+        <span>P10–P90 23,697–32,358 packages</span>
+      </article>
+    
+      
+      <article class="metric">
+        <p>Complete systems shipped</p>
+        <strong>225</strong>
+        <span>P10–P90 182–267 rack-scale system</span>
+      </article>
+    
+      
+      <article class="metric">
+        <p>Systems operational</p>
+        <strong>219</strong>
+        <span>P10–P90 172–263 rack-scale system</span>
+      </article>
+    
+    </div>
+
+    <div class="layout">
+      <section class="panel">
+        <div class="section-label">Stage attrition</div>
+        <h2>From packages to commissioned systems</h2>
+        <p>Bars show median system-equivalent output; the pale interval is P10–P90.</p>
+        
+            <div class="stage-row">
+              <div class="stage-label">
+                <span>Packages</span>
+                <strong>388</strong>
+              </div>
+              <div class="track" aria-label="Packages: 329.1 / 388.2 / 449.4 rack-scale system">
+                <span class="uncertainty" style="left:73.233%;width:26.767%"></span>
+                <span class="bar" style="width:86.377%"></span>
+              </div>
+              <span class="range">P10–P90 329–449</span>
+            </div>
+            
+            <div class="stage-row">
+              <div class="stage-label">
+                <span>Servers</span>
+                <strong>374</strong>
+              </div>
+              <div class="track" aria-label="Servers: 327.8 / 373.7 / 417.5 rack-scale system">
+                <span class="uncertainty" style="left:72.950%;width:19.938%"></span>
+                <span class="bar" style="width:83.144%"></span>
+              </div>
+              <span class="range">P10–P90 328–417</span>
+            </div>
+            
+            <div class="stage-row">
+              <div class="stage-label">
+                <span>Racks</span>
+                <strong>369</strong>
+              </div>
+              <div class="track" aria-label="Racks: 327.8 / 369.0 / 407.7 rack-scale system">
+                <span class="uncertainty" style="left:72.948%;width:17.768%"></span>
+                <span class="bar" style="width:82.115%"></span>
+              </div>
+              <span class="range">P10–P90 328–408</span>
+            </div>
+            
+            <div class="stage-row">
+              <div class="stage-label">
+                <span>Shipped</span>
+                <strong>225</strong>
+              </div>
+              <div class="track" aria-label="Shipped: 182.5 / 224.7 / 267.1 rack-scale system">
+                <span class="uncertainty" style="left:40.602%;width:18.821%"></span>
+                <span class="bar" style="width:50.001%"></span>
+              </div>
+              <span class="range">P10–P90 182–267</span>
+            </div>
+            
+            <div class="stage-row">
+              <div class="stage-label">
+                <span>Installed</span>
+                <strong>225</strong>
+              </div>
+              <div class="track" aria-label="Installed: 182.5 / 224.7 / 267.1 rack-scale system">
+                <span class="uncertainty" style="left:40.602%;width:18.821%"></span>
+                <span class="bar" style="width:50.001%"></span>
+              </div>
+              <span class="range">P10–P90 182–267</span>
+            </div>
+            
+            <div class="stage-row">
+              <div class="stage-label">
+                <span>Operational</span>
+                <strong>219</strong>
+              </div>
+              <div class="track" aria-label="Operational: 171.5 / 219.1 / 263.1 rack-scale system">
+                <span class="uncertainty" style="left:38.164%;width:20.379%"></span>
+                <span class="bar" style="width:48.753%"></span>
+              </div>
+              <span class="range">P10–P90 172–263</span>
+            </div>
+            
+      </section>
+      <section class="panel">
+        <div class="section-label">Constraint risk</div>
+        <h2>Bottleneck probability</h2>
+        <p>Probability that each resource is the binding constraint in a Monte Carlo draw.</p>
+        <label for="bottleneck-stage">Production stage</label>
+        <select id="bottleneck-stage"><option value="accelerator_package" >Packages</option><option value="server_assembly" >Servers</option><option value="rack_integration" >Racks</option><option value="shipped" >Shipped</option><option value="installed" >Installed</option><option value="operational" selected>Operational</option></select>
+        <div id="bottleneck-chart" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Customer allocation</div><h2>Who receives shipped systems</h2></div><p>Sampled share with demand caps and proportional redistribution.</p></div>
+      <div class="panel"><p class="empty">No customer allocation rules in this scenario.</p></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Chain audit</div><h2>Constraint capacity, utilization, and risk</h2></div><p>Capacity values are P10 / P50 / P90 system equivalents.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Resource</th><th>First required</th><th>System capacity</th><th>Median utilization</th><th>Operational bottleneck</th></tr></thead><tbody>
+            <tr>
+              <td><strong>Synthetic Abilene-target shipment allocation</strong><span>logistics</span></td>
+              <td>Shipped</td>
+              <td class="mono">182.5 / 224.7 / 267.1</td>
+              <td class="mono">100.0%</td>
+              <td class="mono">86.9%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Frozen Abilene operational rack capacity</strong><span>datacenter_commissioning</span></td>
+              <td>Operational</td>
+              <td class="mono">206.7 / 379.4 / 507.2</td>
+              <td class="mono">59.7%</td>
+              <td class="mono">13.1%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Silicon interposer equivalents</strong><span>silicon_interposer</span></td>
+              <td>Packages</td>
+              <td class="mono">329.1 / 388.8 / 454.1</td>
+              <td class="mono">100.0%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>ABF substrate equivalents</strong><span>abf_substrate</span></td>
+              <td>Packages</td>
+              <td class="mono">427.4 / 493.1 / 566.2</td>
+              <td class="mono">78.8%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>BlueField-3 DPUs</strong><span>network_switch</span></td>
+              <td>Servers</td>
+              <td class="mono">407.0 / 461.7 / 520.0</td>
+              <td class="mono">81.0%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>ConnectX-7 400G NICs</strong><span>retimer</span></td>
+              <td>Servers</td>
+              <td class="mono">394.7 / 448.3 / 506.4</td>
+              <td class="mono">83.4%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Customer-site installation slots</strong><span>rack_integration</span></td>
+              <td>Installed</td>
+              <td class="mono">344.0 / 394.7 / 449.7</td>
+              <td class="mono">56.8%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Factory qualification slots</strong><span>qualification</span></td>
+              <td>Shipped</td>
+              <td class="mono">356.0 / 408.9 / 464.1</td>
+              <td class="mono">54.8%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Frozen supplier-HBM Blackwell manufacturing system equivalents</strong><span>accelerator_package</span></td>
+              <td>Packages</td>
+              <td class="mono">3,577.8 / 3,737.6 / 3,903.1</td>
+              <td class="mono">10.4%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>GB200 compute-tray assembly</strong><span>server_assembly</span></td>
+              <td>Servers</td>
+              <td class="mono">359.1 / 408.5 / 461.9</td>
+              <td class="mono">93.9%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Liquid-cooling rack integration</strong><span>cooling</span></td>
+              <td>Racks</td>
+              <td class="mono">378.8 / 436.8 / 497.6</td>
+              <td class="mono">84.9%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Management top-of-rack switches</strong><span>network_switch</span></td>
+              <td>Racks</td>
+              <td class="mono">452.1 / 519.2 / 587.1</td>
+              <td class="mono">71.4%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>NVLink switch trays</strong><span>network_switch</span></td>
+              <td>Racks</td>
+              <td class="mono">380.1 / 431.5 / 483.3</td>
+              <td class="mono">86.0%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Qualified rack logistics slots</strong><span>logistics</span></td>
+              <td>Shipped</td>
+              <td class="mono">391.8 / 442.7 / 495.1</td>
+              <td class="mono">50.7%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Rack power shelves</strong><span>power_delivery</span></td>
+              <td>Racks</td>
+              <td class="mono">422.7 / 474.8 / 529.8</td>
+              <td class="mono">77.6%</td>
+              <td class="mono">0.0%</td>
+            </tr>
+            </tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Supplier read-through</div><h2>Bottom-up economics versus consensus</h2></div><p>Illustrative unless the underlying inputs are explicitly non-synthetic.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Supplier</th><th>Bottom-up revenue</th><th>Gross profit</th><th>Consensus revenue</th><th>Revision</th></tr></thead><tbody><tr><td colspan="5" class="empty">No supplier economics in this scenario.</td></tr></tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Research queue</div><h2>Consensus-discrepancy candidates</h2></div><p>Research prioritization. This table does not recommend or approve a position.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Rank</th><th>Security</th><th>Direction</th><th>Revision</th><th>Score</th><th>Catalyst</th><th>First rejection</th></tr></thead><tbody><tr><td colspan="7" class="empty">No consensus-linked research candidates in this scenario.</td></tr></tbody></table></div>
+      
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Input ledger</div><h2>Methods, ranges, provenance, and falsifiers</h2></div><p>Open a resource to inspect every numeric input used in reconciliation.</p></div>
+      
+            <details>
+              <summary><strong>Frozen supplier-HBM Blackwell manufacturing system equivalents</strong><span>Packages · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 30%</span></div>
+        <div class="mono">3,445.94 / 3,736.91 / 4,034.66 system</div>
+        <p><b>Method:</b> Import manufacturing complete_system_equivalents from frozen result ea06b4697a3af1a1d6fa32d1d6e0ff6a5ae80ee4ed2b0d75150694ccdca06077. The source P10, P50, and P90 are used as triangular low, mode, and high parameters in the linked engine. This preserves the central range but does not preserve source tails, point masses, or joint dependence.</p>
+        <p><b>Updated:</b> 2026-07-19 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-manufacturing-ea06b4697a3a">linked-result:manufacturing:ea06b4697a3a</a></p>
+        <p><b>Confirms:</b> A frozen manufacturing release with the same platform topology and quarter supports the complete-system range.</p>
+        <p><b>Falsifies:</b> The source topology differs from GB200 NVL72, the source result is revised, or observed package output falls outside the linked range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>derived · confidence 30%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> The frozen source output is already post-yield.</p>
+        <p><b>Updated:</b> 2026-07-19 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-manufacturing-ea06b4697a3a">linked-result:manufacturing:ea06b4697a3a</a></p>
+        <p><b>Confirms:</b> The frozen source metric remains on the stated post-conversion basis.</p>
+        <p><b>Falsifies:</b> The source metric is redefined to require another yield or allocation conversion.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>derived · confidence 30%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> The frozen source output is already scoped to this linked constraint.</p>
+        <p><b>Updated:</b> 2026-07-19 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-manufacturing-ea06b4697a3a">linked-result:manufacturing:ea06b4697a3a</a></p>
+        <p><b>Confirms:</b> The frozen source metric remains on the stated post-conversion basis.</p>
+        <p><b>Falsifies:</b> The source metric is redefined to require another yield or allocation conversion.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>derived · confidence 30%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 system</div>
+        <p><b>Method:</b> Convert the frozen source metric into scenario-system equivalents using 1 system per system.</p>
+        <p><b>Updated:</b> 2026-07-19 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-manufacturing-ea06b4697a3a">linked-result:manufacturing:ea06b4697a3a</a></p>
+        <p><b>Confirms:</b> The frozen source metric remains on the stated post-conversion basis.</p>
+        <p><b>Falsifies:</b> The source metric is redefined to require another yield or allocation conversion.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Silicon interposer equivalents</strong><span>Packages · known_good_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">30,000.00 / 38,000.00 / 47,000.00 interposer</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.90 / 0.94 / 0.97 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.70 / 0.78 / 0.86 ratio</div>
+        <p><b>Method:</b> Illustrative share of the resource available to this platform after competing products and customers.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Reserved-capacity contracts, prepayments, or observed shipment mix support the platform share.</p>
+        <p><b>Falsifies:</b> Allocation disclosures or shipment routing show a materially different platform share.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">64.00 / 72.00 / 80.00 interposer</div>
+        <p><b>Method:</b> Illustrative one-interposer-per-GPU-package abstraction; not a disclosed manufacturing BOM.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Package cross-sections or supplier BOM evidence support the count.</p>
+        <p><b>Falsifies:</b> A manufacturing BOM shows a materially different interposer topology.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>ABF substrate equivalents</strong><span>Packages · known_good_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">39,000.00 / 47,000.00 / 56,000.00 substrate</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.92 / 0.96 / 0.98 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.70 / 0.79 / 0.87 ratio</div>
+        <p><b>Method:</b> Illustrative share of the resource available to this platform after competing products and customers.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Reserved-capacity contracts, prepayments, or observed shipment mix support the platform share.</p>
+        <p><b>Falsifies:</b> Allocation disclosures or shipment routing show a materially different platform share.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">64.00 / 72.00 / 80.00 substrate</div>
+        <p><b>Method:</b> Illustrative package-substrate requirement; not a disclosed manufacturing BOM.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier BOM evidence supports the count and substrate class.</p>
+        <p><b>Falsifies:</b> Package construction uses a materially different substrate count or technology.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>GB200 compute-tray assembly</strong><span>Servers · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">7,200.00 / 8,600.00 / 10,200.00 tray</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.88 / 0.93 / 0.97 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.86 / 0.92 / 0.97 ratio</div>
+        <p><b>Method:</b> Illustrative share of the resource available to this platform after competing products and customers.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Reserved-capacity contracts, prepayments, or observed shipment mix support the platform share.</p>
+        <p><b>Falsifies:</b> Allocation disclosures or shipment routing show a materially different platform share.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>reported · confidence 98%</span></div>
+        <div class="mono">18.00 / 18.00 / 18.00 tray</div>
+        <p><b>Method:</b> NVIDIA reports 18 1RU compute trays per NVL72 rack.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-nvidia-dgx-gb-hardware">nvidia:dgx-gb-hardware</a></p>
+        <p><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</p>
+        <p><b>Falsifies:</b> A current rack BOM reports a different compute-tray count.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>ConnectX-7 400G NICs</strong><span>Servers · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">30,000.00 / 37,000.00 / 45,000.00 NIC</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.96 / 0.98 / 0.99 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.82 / 0.89 / 0.95 ratio</div>
+        <p><b>Method:</b> Illustrative share of the resource available to this platform after competing products and customers.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Reserved-capacity contracts, prepayments, or observed shipment mix support the platform share.</p>
+        <p><b>Falsifies:</b> Allocation disclosures or shipment routing show a materially different platform share.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>derived · confidence 85%</span></div>
+        <div class="mono">72.00 / 72.00 / 72.00 NIC</div>
+        <p><b>Method:</b> 18 trays multiplied by four disclosed ConnectX-7 NICs per tray.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-nvidia-dgx-gb-hardware">nvidia:dgx-gb-hardware</a></p>
+        <p><b>Confirms:</b> A manufacturing BOM or current NVIDIA system specification supports the conversion.</p>
+        <p><b>Falsifies:</b> A current tray BOM reports a different NIC count.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>BlueField-3 DPUs</strong><span>Servers · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">15,500.00 / 19,000.00 / 23,000.00 DPU</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.96 / 0.98 / 1.00 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.82 / 0.89 / 0.95 ratio</div>
+        <p><b>Method:</b> Illustrative share of the resource available to this platform after competing products and customers.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Reserved-capacity contracts, prepayments, or observed shipment mix support the platform share.</p>
+        <p><b>Falsifies:</b> Allocation disclosures or shipment routing show a materially different platform share.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>derived · confidence 85%</span></div>
+        <div class="mono">36.00 / 36.00 / 36.00 DPU</div>
+        <p><b>Method:</b> 18 trays multiplied by two disclosed BlueField-3 DPUs per tray.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-nvidia-dgx-gb-hardware">nvidia:dgx-gb-hardware</a></p>
+        <p><b>Confirms:</b> A manufacturing BOM or current NVIDIA system specification supports the conversion.</p>
+        <p><b>Falsifies:</b> A current tray BOM reports a different DPU count.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>NVLink switch trays</strong><span>Racks · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">3,600.00 / 4,400.00 / 5,200.00 switch_tray</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.93 / 0.97 / 0.99 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.86 / 0.92 / 0.97 ratio</div>
+        <p><b>Method:</b> Illustrative share of the resource available to this platform after competing products and customers.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Reserved-capacity contracts, prepayments, or observed shipment mix support the platform share.</p>
+        <p><b>Falsifies:</b> Allocation disclosures or shipment routing show a materially different platform share.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>reported · confidence 98%</span></div>
+        <div class="mono">9.00 / 9.00 / 9.00 switch_tray</div>
+        <p><b>Method:</b> NVIDIA reports nine NVLink switch trays per NVL72 rack.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-nvidia-dgx-gb-hardware">nvidia:dgx-gb-hardware</a></p>
+        <p><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</p>
+        <p><b>Falsifies:</b> A current rack BOM reports a different switch-tray count.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Management top-of-rack switches</strong><span>Racks · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">900.00 / 1,150.00 / 1,400.00 switch</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.97 / 0.99 / 1.00 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.86 / 0.92 / 0.97 ratio</div>
+        <p><b>Method:</b> Illustrative share of the resource available to this platform after competing products and customers.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Reserved-capacity contracts, prepayments, or observed shipment mix support the platform share.</p>
+        <p><b>Falsifies:</b> Allocation disclosures or shipment routing show a materially different platform share.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>reported · confidence 98%</span></div>
+        <div class="mono">2.00 / 2.00 / 2.00 switch</div>
+        <p><b>Method:</b> NVIDIA reports two management TOR switches per NVL72 rack.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-nvidia-dgx-gb-hardware">nvidia:dgx-gb-hardware</a></p>
+        <p><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</p>
+        <p><b>Falsifies:</b> A current rack BOM reports a different TOR-switch count.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Rack power shelves</strong><span>Racks · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">3,500.00 / 4,200.00 / 5,000.00 power_shelf</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.96 / 0.98 / 1.00 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.86 / 0.92 / 0.97 ratio</div>
+        <p><b>Method:</b> Illustrative share of the resource available to this platform after competing products and customers.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Reserved-capacity contracts, prepayments, or observed shipment mix support the platform share.</p>
+        <p><b>Falsifies:</b> Allocation disclosures or shipment routing show a materially different platform share.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>reported · confidence 98%</span></div>
+        <div class="mono">8.00 / 8.00 / 8.00 power_shelf</div>
+        <p><b>Method:</b> NVIDIA reports eight power shelves per DGX GB200 NVL72 rack.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-nvidia-dgx-gb-hardware">nvidia:dgx-gb-hardware</a></p>
+        <p><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</p>
+        <p><b>Falsifies:</b> A current rack BOM reports a different power-shelf count.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Liquid-cooling rack integration</strong><span>Racks · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">380.00 / 465.00 / 560.00 rack_cooling_set</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.88 / 0.94 / 0.98 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>derived · confidence 100%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> Capacity is already defined as GB200-compatible cooling sets.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> The capacity definition remains on the stated post-adjustment basis.</p>
+        <p><b>Falsifies:</b> The capacity input is redefined to a pre-yield or pre-allocation basis.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>derived · confidence 85%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 rack_cooling_set</div>
+        <p><b>Method:</b> One complete liquid-cooling integration set per liquid-cooled rack-scale system.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-nvidia-gb200-product">nvidia:gb200-product</a></p>
+        <p><b>Confirms:</b> A manufacturing BOM or current NVIDIA system specification supports the conversion.</p>
+        <p><b>Falsifies:</b> The rack design is changed to require a different integration-set count.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Factory qualification slots</strong><span>Shipped · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">350.00 / 430.00 / 520.00 qualification_slot</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.90 / 0.95 / 0.98 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>derived · confidence 100%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> Qualification capacity is already scoped to the platform.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> The capacity definition remains on the stated post-adjustment basis.</p>
+        <p><b>Falsifies:</b> The capacity input is redefined to a pre-yield or pre-allocation basis.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 qualification_slot</div>
+        <p><b>Method:</b> One end-to-end factory qualification slot per shipped system.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> ODM test flow confirms one slot per rack.</p>
+        <p><b>Falsifies:</b> Qualification requires materially different repeated or parallel slots.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Qualified rack logistics slots</strong><span>Shipped · sellable_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">365.00 / 450.00 / 540.00 shipment_slot</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.96 / 0.98 / 1.00 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>derived · confidence 100%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> Shipment capacity is already scoped to qualified rack systems.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> The capacity definition remains on the stated post-adjustment basis.</p>
+        <p><b>Falsifies:</b> The capacity input is redefined to a pre-yield or pre-allocation basis.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 shipment_slot</div>
+        <p><b>Method:</b> One specialized shipment slot per rack-scale system.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Freight bookings and delivery records support one slot per system.</p>
+        <p><b>Falsifies:</b> Observed shipment topology requires materially different logistics units.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Customer-site installation slots</strong><span>Installed · installed_resource</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">330.00 / 410.00 / 500.00 installation_slot</div>
+        <p><b>Method:</b> Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.</p>
+        <p><b>Falsifies:</b> Verified quarterly output or installed throughput falls outside this range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">0.92 / 0.96 / 0.99 ratio</div>
+        <p><b>Method:</b> Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Known-good-output and scrap data support the modeled conversion rate.</p>
+        <p><b>Falsifies:</b> Supplier or customer qualification data show a materially different effective yield.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>derived · confidence 100%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> Installation slots are already scoped to the modeled system.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> The capacity definition remains on the stated post-adjustment basis.</p>
+        <p><b>Falsifies:</b> The capacity input is redefined to a pre-yield or pre-allocation basis.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>synthetic · confidence 35%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 installation_slot</div>
+        <p><b>Method:</b> One physical installation and facility-integration slot per rack-scale system.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-capacity">synthetic:capacity</a></p>
+        <p><b>Confirms:</b> Site commissioning records support one slot per system.</p>
+        <p><b>Falsifies:</b> Observed installation flow requires materially different units.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Frozen Abilene operational rack capacity</strong><span>Operational · energized_resource</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 10%</span></div>
+        <div class="mono">68.23 / 433.44 / 602.88 rack</div>
+        <p><b>Method:</b> Import datacenter_operational operational_racks from frozen result 000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e. The source P10, P50, and P90 are used as triangular low, mode, and high parameters in the linked engine. This preserves the central range but does not preserve source tails, point masses, or joint dependence.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-datacenter_operational-000a0804e1b8">linked-result:datacenter_operational:000a0804e1b8</a></p>
+        <p><b>Confirms:</b> A frozen site-operational release for the same site, platform class, and quarter supports the operational-rack range.</p>
+        <p><b>Falsifies:</b> The site scope or rack class differs, the source result is revised, or rack-level acceptance records fall outside the range.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>derived · confidence 10%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> The frozen source output is already post-yield.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-datacenter_operational-000a0804e1b8">linked-result:datacenter_operational:000a0804e1b8</a></p>
+        <p><b>Confirms:</b> The frozen source metric remains on the stated post-conversion basis.</p>
+        <p><b>Falsifies:</b> The source metric is redefined to require another yield or allocation conversion.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>derived · confidence 10%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> The frozen source output is already scoped to this linked constraint.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-datacenter_operational-000a0804e1b8">linked-result:datacenter_operational:000a0804e1b8</a></p>
+        <p><b>Confirms:</b> The frozen source metric remains on the stated post-conversion basis.</p>
+        <p><b>Falsifies:</b> The source metric is redefined to require another yield or allocation conversion.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>derived · confidence 10%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 rack</div>
+        <p><b>Method:</b> Convert the frozen source metric into scenario-system equivalents using 1 rack per system.</p>
+        <p><b>Updated:</b> 2026-07-17 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-datacenter_operational-000a0804e1b8">linked-result:datacenter_operational:000a0804e1b8</a></p>
+        <p><b>Confirms:</b> The frozen source metric remains on the stated post-conversion basis.</p>
+        <p><b>Falsifies:</b> The source metric is redefined to require another yield or allocation conversion.</p>
+      </div>
+    </div>
+            </details>
+            
+            <details>
+              <summary><strong>Synthetic Abilene-target shipment allocation</strong><span>Shipped · allocated_output</span></summary>
+              <div class="audit-grid">
+      <div class="estimate-audit">
+        <div><strong>Nominal capacity</strong><span>synthetic · confidence 30%</span></div>
+        <div class="mono">3,445.94 / 3,736.91 / 4,034.66 system</div>
+        <p><b>Method:</b> Import manufacturing complete_system_equivalents from frozen result ea06b4697a3af1a1d6fa32d1d6e0ff6a5ae80ee4ed2b0d75150694ccdca06077. The source P10, P50, and P90 are used as triangular low, mode, and high parameters in the linked engine. This preserves the central range but does not preserve source tails, point masses, or joint dependence.</p>
+        <p><b>Updated:</b> 2026-07-19 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-manufacturing-ea06b4697a3a">linked-result:manufacturing:ea06b4697a3a</a></p>
+        <p><b>Confirms:</b> Customer allocation, purchase-order, logistics, or receiving records support this share of the frozen manufacturing flow moving to the selected site.</p>
+        <p><b>Falsifies:</b> Allocation or receiving records show a materially different site share or that the manufacturing source covers a different supply scope.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Effective yield</strong><span>derived · confidence 30%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 ratio</div>
+        <p><b>Method:</b> The frozen source output is already post-yield.</p>
+        <p><b>Updated:</b> 2026-07-19 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-manufacturing-ea06b4697a3a">linked-result:manufacturing:ea06b4697a3a</a></p>
+        <p><b>Confirms:</b> The frozen source metric remains on the stated post-conversion basis.</p>
+        <p><b>Falsifies:</b> The source metric is redefined to require another yield or allocation conversion.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>Platform allocation</strong><span>synthetic · confidence 10%</span></div>
+        <div class="mono">0.04 / 0.06 / 0.08 ratio</div>
+        <p><b>Method:</b> Synthetic share chosen only to exercise a customer-and-site allocation boundary between manufacturing and deployment.</p>
+        <p><b>Updated:</b> 2026-07-19 · <b>Sources:</b> <a class="source-ref" href="#source-synthetic-abilene-site-allocation">synthetic:abilene-site-allocation</a></p>
+        <p><b>Confirms:</b> Dated customer allocation and site receiving records support a six-percent central share for the same supply population.</p>
+        <p><b>Falsifies:</b> Shipment destinations, purchase orders, or receiving logs put the selected site&#x27;s share outside four to eight percent.</p>
+      </div>
+    
+      <div class="estimate-audit">
+        <div><strong>BOM requirement</strong><span>derived · confidence 30%</span></div>
+        <div class="mono">1.00 / 1.00 / 1.00 system</div>
+        <p><b>Method:</b> Convert the frozen source metric into scenario-system equivalents using 1 system per system.</p>
+        <p><b>Updated:</b> 2026-07-19 · <b>Sources:</b> <a class="source-ref" href="#source-linked-result-manufacturing-ea06b4697a3a">linked-result:manufacturing:ea06b4697a3a</a></p>
+        <p><b>Confirms:</b> The frozen source metric remains on the stated post-conversion basis.</p>
+        <p><b>Falsifies:</b> The source metric is redefined to require another yield or allocation conversion.</p>
+      </div>
+    </div>
+            </details>
+            
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Source ledger</div><h2>Evidence used by this run</h2></div><p>Direct links, publication posture, and retrieval timestamps.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Evidence ID</th><th>Source</th><th>Kind</th><th>Published</th><th>Retrieved</th></tr></thead><tbody>
+            <tr id="source-nvidia-gb200-product">
+              <td class="mono">nvidia:gb200-product</td>
+              <td><a href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/" target="_blank" rel="noreferrer">NVIDIA GB200 NVL72 product specifications</a><span>NVIDIA</span></td>
+              <td>company_technical_document</td>
+              <td class="mono">Not supplied</td>
+              <td class="mono">2026-07-18T01:49:33Z</td>
+            </tr>
+            
+            <tr id="source-nvidia-dgx-gb-hardware">
+              <td class="mono">nvidia:dgx-gb-hardware</td>
+              <td><a href="https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html" target="_blank" rel="noreferrer">NVIDIA DGX GB Rack Scale Systems — Hardware</a><span>NVIDIA</span></td>
+              <td>company_technical_document</td>
+              <td class="mono">Not supplied</td>
+              <td class="mono">2026-07-18T01:49:33Z</td>
+            </tr>
+            
+            <tr id="source-nvidia-blackwell-tuning">
+              <td class="mono">nvidia:blackwell-tuning</td>
+              <td><a href="https://docs.nvidia.com/multi-node-nvlink-systems/multi-node-tuning-guide/overview.html" target="_blank" rel="noreferrer">NVIDIA GB200 NVL Multi-Node Tuning Guide — Grace Blackwell Superchip</a><span>NVIDIA</span></td>
+              <td>company_technical_document</td>
+              <td class="mono">2025-04-21</td>
+              <td class="mono">2026-07-18T01:49:33Z</td>
+            </tr>
+            
+            <tr id="source-synthetic-capacity">
+              <td class="mono">synthetic:capacity</td>
+              <td><a href="urn:synthetic:gb200-capacity-demo" target="_blank" rel="noreferrer">Illustrative capacity and yield assumptions</a><span>AI Supply Intelligence demo</span></td>
+              <td>synthetic</td>
+              <td class="mono">2026-07-17</td>
+              <td class="mono">2026-07-18T01:49:33Z</td>
+            </tr>
+            
+            <tr id="source-synthetic-allocation">
+              <td class="mono">synthetic:allocation</td>
+              <td><a href="urn:synthetic:gb200-allocation-demo" target="_blank" rel="noreferrer">Illustrative customer allocation assumptions</a><span>AI Supply Intelligence demo</span></td>
+              <td>synthetic</td>
+              <td class="mono">2026-07-17</td>
+              <td class="mono">2026-07-18T01:49:33Z</td>
+            </tr>
+            
+            <tr id="source-synthetic-economics">
+              <td class="mono">synthetic:economics</td>
+              <td><a href="urn:synthetic:gb200-economics-demo" target="_blank" rel="noreferrer">Illustrative supplier economics assumptions</a><span>AI Supply Intelligence demo</span></td>
+              <td>synthetic</td>
+              <td class="mono">2026-07-17</td>
+              <td class="mono">2026-07-18T01:49:33Z</td>
+            </tr>
+            
+            <tr id="source-synthetic-consensus">
+              <td class="mono">synthetic:consensus</td>
+              <td><a href="urn:synthetic:gb200-consensus-demo" target="_blank" rel="noreferrer">Illustrative consensus comparator and opportunity factors</a><span>AI Supply Intelligence demo</span></td>
+              <td>synthetic</td>
+              <td class="mono">2026-07-17</td>
+              <td class="mono">2026-07-18T01:49:33Z</td>
+            </tr>
+            
+            <tr id="source-synthetic-abilene-site-allocation">
+              <td class="mono">synthetic:abilene-site-allocation</td>
+              <td><a href="urn:synthetic:abilene-site-allocation" target="_blank" rel="noreferrer">Synthetic Abilene-target shipment allocation</a><span>AI Supply Intelligence demonstrator</span></td>
+              <td>synthetic</td>
+              <td class="mono">Not supplied</td>
+              <td class="mono">2026-07-20T03:40:00Z</td>
+            </tr>
+            
+            <tr id="source-linked-result-manufacturing-ea06b4697a3a">
+              <td class="mono">linked-result:manufacturing:ea06b4697a3a</td>
+              <td><a href="urn:sha256:ea06b4697a3af1a1d6fa32d1d6e0ff6a5ae80ee4ed2b0d75150694ccdca06077" target="_blank" rel="noreferrer">Frozen manufacturing reconciliation result</a><span>AI Supply Intelligence</span></td>
+              <td>synthetic</td>
+              <td class="mono">2026-07-20T03:20:00Z</td>
+              <td class="mono">2026-07-20T03:40:00Z</td>
+            </tr>
+            
+            <tr id="source-linked-result-datacenter_operational-000a0804e1b8">
+              <td class="mono">linked-result:datacenter_operational:000a0804e1b8</td>
+              <td><a href="urn:sha256:000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e" target="_blank" rel="noreferrer">Frozen datacenter operational reconciliation result</a><span>AI Supply Intelligence</span></td>
+              <td>synthetic</td>
+              <td class="mono">2026-07-18T03:00:00Z</td>
+              <td class="mono">2026-07-20T03:40:00Z</td>
+            </tr>
+            </tbody></table></div>
+    </section>
+
+    <footer>
+      <strong>Method:</strong> For each draw and stage, output is the minimum system-equivalent capacity of all constraints required up to that stage.
+      Share of Monte Carlo draws in which a constraint is the stage minimum; exact ties split probability equally.
+    </footer>
+  </main>
+  <script>
+    const bottlenecks = {"accelerator_package": [{"constraint_id": "silicon-interposers", "resource_name": "Silicon interposer equivalents", "probability": 0.94335}, {"constraint_id": "abf-substrates", "resource_name": "ABF substrate equivalents", "probability": 0.05665}, {"constraint_id": "linked-supplier-hbm-manufacturing-output", "resource_name": "Frozen supplier-HBM Blackwell manufacturing system equivalents", "probability": 0.0}], "server_assembly": [{"constraint_id": "silicon-interposers", "resource_name": "Silicon interposer equivalents", "probability": 0.5784}, {"constraint_id": "compute-tray-assembly", "resource_name": "GB200 compute-tray assembly", "probability": 0.32775}, {"constraint_id": "connectx7-nics", "resource_name": "ConnectX-7 400G NICs", "probability": 0.079}, {"constraint_id": "abf-substrates", "resource_name": "ABF substrate equivalents", "probability": 0.01485}, {"constraint_id": "bluefield3-dpus", "resource_name": "BlueField-3 DPUs", "probability": 0.0}, {"constraint_id": "linked-supplier-hbm-manufacturing-output", "resource_name": "Frozen supplier-HBM Blackwell manufacturing system equivalents", "probability": 0.0}], "rack_integration": [{"constraint_id": "silicon-interposers", "resource_name": "Silicon interposer equivalents", "probability": 0.4975}, {"constraint_id": "compute-tray-assembly", "resource_name": "GB200 compute-tray assembly", "probability": 0.25385}, {"constraint_id": "liquid-cooling-integration", "resource_name": "Liquid-cooling rack integration", "probability": 0.12065}, {"constraint_id": "nvlink-switch-trays", "resource_name": "NVLink switch trays", "probability": 0.10875}, {"constraint_id": "power-shelves", "resource_name": "Rack power shelves", "probability": 0.00975}, {"constraint_id": "abf-substrates", "resource_name": "ABF substrate equivalents", "probability": 0.0095}, {"constraint_id": "bluefield3-dpus", "resource_name": "BlueField-3 DPUs", "probability": 0.0}, {"constraint_id": "connectx7-nics", "resource_name": "ConnectX-7 400G NICs", "probability": 0.0}, {"constraint_id": "linked-supplier-hbm-manufacturing-output", "resource_name": "Frozen supplier-HBM Blackwell manufacturing system equivalents", "probability": 0.0}, {"constraint_id": "management-tor-switches", "resource_name": "Management top-of-rack switches", "probability": 0.0}], "shipped": [{"constraint_id": "linked-abilene-shipment-allocation", "resource_name": "Synthetic Abilene-target shipment allocation", "probability": 0.9997}, {"constraint_id": "silicon-interposers", "resource_name": "Silicon interposer equivalents", "probability": 0.0003}, {"constraint_id": "abf-substrates", "resource_name": "ABF substrate equivalents", "probability": 0.0}, {"constraint_id": "bluefield3-dpus", "resource_name": "BlueField-3 DPUs", "probability": 0.0}, {"constraint_id": "compute-tray-assembly", "resource_name": "GB200 compute-tray assembly", "probability": 0.0}, {"constraint_id": "connectx7-nics", "resource_name": "ConnectX-7 400G NICs", "probability": 0.0}, {"constraint_id": "factory-qualification", "resource_name": "Factory qualification slots", "probability": 0.0}, {"constraint_id": "linked-supplier-hbm-manufacturing-output", "resource_name": "Frozen supplier-HBM Blackwell manufacturing system equivalents", "probability": 0.0}, {"constraint_id": "liquid-cooling-integration", "resource_name": "Liquid-cooling rack integration", "probability": 0.0}, {"constraint_id": "management-tor-switches", "resource_name": "Management top-of-rack switches", "probability": 0.0}, {"constraint_id": "nvlink-switch-trays", "resource_name": "NVLink switch trays", "probability": 0.0}, {"constraint_id": "power-shelves", "resource_name": "Rack power shelves", "probability": 0.0}, {"constraint_id": "rack-logistics", "resource_name": "Qualified rack logistics slots", "probability": 0.0}], "installed": [{"constraint_id": "linked-abilene-shipment-allocation", "resource_name": "Synthetic Abilene-target shipment allocation", "probability": 0.9997}, {"constraint_id": "silicon-interposers", "resource_name": "Silicon interposer equivalents", "probability": 0.0003}, {"constraint_id": "abf-substrates", "resource_name": "ABF substrate equivalents", "probability": 0.0}, {"constraint_id": "bluefield3-dpus", "resource_name": "BlueField-3 DPUs", "probability": 0.0}, {"constraint_id": "compute-tray-assembly", "resource_name": "GB200 compute-tray assembly", "probability": 0.0}, {"constraint_id": "connectx7-nics", "resource_name": "ConnectX-7 400G NICs", "probability": 0.0}, {"constraint_id": "factory-qualification", "resource_name": "Factory qualification slots", "probability": 0.0}, {"constraint_id": "linked-supplier-hbm-manufacturing-output", "resource_name": "Frozen supplier-HBM Blackwell manufacturing system equivalents", "probability": 0.0}, {"constraint_id": "liquid-cooling-integration", "resource_name": "Liquid-cooling rack integration", "probability": 0.0}, {"constraint_id": "management-tor-switches", "resource_name": "Management top-of-rack switches", "probability": 0.0}, {"constraint_id": "nvlink-switch-trays", "resource_name": "NVLink switch trays", "probability": 0.0}, {"constraint_id": "power-shelves", "resource_name": "Rack power shelves", "probability": 0.0}, {"constraint_id": "rack-logistics", "resource_name": "Qualified rack logistics slots", "probability": 0.0}, {"constraint_id": "site-installation", "resource_name": "Customer-site installation slots", "probability": 0.0}], "operational": [{"constraint_id": "linked-abilene-shipment-allocation", "resource_name": "Synthetic Abilene-target shipment allocation", "probability": 0.86855}, {"constraint_id": "linked-abilene-operational-racks", "resource_name": "Frozen Abilene operational rack capacity", "probability": 0.13125}, {"constraint_id": "silicon-interposers", "resource_name": "Silicon interposer equivalents", "probability": 0.0002}, {"constraint_id": "abf-substrates", "resource_name": "ABF substrate equivalents", "probability": 0.0}, {"constraint_id": "bluefield3-dpus", "resource_name": "BlueField-3 DPUs", "probability": 0.0}, {"constraint_id": "compute-tray-assembly", "resource_name": "GB200 compute-tray assembly", "probability": 0.0}, {"constraint_id": "connectx7-nics", "resource_name": "ConnectX-7 400G NICs", "probability": 0.0}, {"constraint_id": "factory-qualification", "resource_name": "Factory qualification slots", "probability": 0.0}, {"constraint_id": "linked-supplier-hbm-manufacturing-output", "resource_name": "Frozen supplier-HBM Blackwell manufacturing system equivalents", "probability": 0.0}, {"constraint_id": "liquid-cooling-integration", "resource_name": "Liquid-cooling rack integration", "probability": 0.0}, {"constraint_id": "management-tor-switches", "resource_name": "Management top-of-rack switches", "probability": 0.0}, {"constraint_id": "nvlink-switch-trays", "resource_name": "NVLink switch trays", "probability": 0.0}, {"constraint_id": "power-shelves", "resource_name": "Rack power shelves", "probability": 0.0}, {"constraint_id": "rack-logistics", "resource_name": "Qualified rack logistics slots", "probability": 0.0}, {"constraint_id": "site-installation", "resource_name": "Customer-site installation slots", "probability": 0.0}]};
+    const stageSelect = document.getElementById('bottleneck-stage');
+    const chart = document.getElementById('bottleneck-chart');
+    function renderBottlenecks() {
+      const rows = (bottlenecks[stageSelect.value] || []).filter(row => row.probability > 0.0001).slice(0, 10);
+      if (!rows.length) { chart.innerHTML = '<p class="empty">No probabilistic bottleneck in this stage.</p>'; return; }
+      chart.innerHTML = rows.map(row => `
+        <div class="bottleneck-row">
+          <span class="label">${escapeText(row.resource_name)}</span>
+          <div class="track"><span class="bar" style="width:${(row.probability * 100).toFixed(3)}%"></span></div>
+          <strong class="mono">${(row.probability * 100).toFixed(1)}%</strong>
+        </div>`).join('');
+    }
+    function escapeText(value) {
+      const element = document.createElement('span');
+      element.textContent = value;
+      return element.innerHTML;
+    }
+    stageSelect.addEventListener('change', renderBottlenecks);
+    renderBottlenecks();
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-07-19T20:20:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "The annual report establishes TSMC's 4nm production on a 12-inch fab platform but does not identify Blackwell, NVIDIA allocation, or the fab used for Blackwell.",
+    "The observation is a wafer-format fact, not a product-capacity or geographic-production claim."
+  ],
+  "observation_id": "tsmc-4nm-production-12inch-format",
+  "published_at": "2026-03-12",
+  "publisher": "Taiwan Semiconductor Manufacturing Company",
+  "reported": {
+    "facility": "TSMC Arizona first facility",
+    "facility_wafer_format": "12-inch",
+    "production_start": "2024-Q4",
+    "process": "4nm technology"
+  },
+  "source_url": "https://investor.tsmc.com/static/annualReports/2025/english/index.html"
+}

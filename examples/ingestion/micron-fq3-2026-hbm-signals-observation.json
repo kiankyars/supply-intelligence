@@ -1,0 +1,36 @@
+{
+  "captured_at": "2026-07-19T19:50:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "The disclosed HBM4 revenue is a lower bound in dollars, not stack count, wafer starts, or sellable bits.",
+    "A relative ramp-rate statement does not disclose the absolute output of either HBM generation.",
+    "The Singapore packaging statement gives timing but no qualified throughput.",
+    "HBM4 and its lead platform do not establish HBM3E allocation to GB200 or GB300."
+  ],
+  "observation_id": "micron-fq3-2026-hbm-manufacturing-signals",
+  "observations": [
+    {
+      "metric": "cumulative HBM4 revenue shipped by the fiscal Q3 2026 report",
+      "qualifier": "greater_than",
+      "unit": "USD billion",
+      "value": 1
+    },
+    {
+      "comparison": "HBM3E 12-high",
+      "metric": "HBM4 12-high volume-ramp speed",
+      "unit": "ratio",
+      "value": 2
+    },
+    {
+      "metric": "HBM4 shipment state for lead-customer platform",
+      "value": "high_volume_shipments"
+    },
+    {
+      "metric": "Singapore contribution to Micron HBM packaging capacity",
+      "value": "meaningful_contribution_expected_2027h1"
+    }
+  ],
+  "published_at": "2026-06-24",
+  "publisher": "Micron Technology",
+  "source_url": "https://investors.micron.com/static-files/631b1a32-5537-46ae-8f40-82e42fc79dfe"
+}

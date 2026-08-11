@@ -1,0 +1,28 @@
+{
+  "allowed_postures": [
+    "reported"
+  ],
+  "claim_key": "company.tsmc.capex.2026_backend_bucket_share",
+  "conversion": null,
+  "expected_claim_dimensions": {
+    "capacity_basis": "capital_budget_share",
+    "customer": "all customers",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "2026",
+    "process_node": "all process nodes",
+    "product": "all products",
+    "qualifier": "advanced packaging, testing, mask making, and other items combined",
+    "quantity_semantics": "guidance_range",
+    "stage": "capital_investment"
+  },
+  "expected_known_at": "2026-07-19T20:00:00Z",
+  "expected_revision_id": "claimrev:582fd336fb46bc8e1ef9d7606407026b",
+  "expected_valid_at": "2026-07-19",
+  "format": "ai-supply-manufacturing-claim-selection.v1",
+  "nonbinding_rationale": "The disclosed bucket combines advanced packaging, testing, mask making, and other spending and does not establish quarterly product capacity or allocation.",
+  "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d",
+  "target_dimensions": {},
+  "target_input_path": "research.tsmc.backend_capex_bucket_share",
+  "usage": "directional_signal"
+}

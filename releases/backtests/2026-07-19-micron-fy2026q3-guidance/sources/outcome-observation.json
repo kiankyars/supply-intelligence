@@ -1,0 +1,101 @@
+{
+  "captured_at": "2026-07-19T22:00:00Z",
+  "entity": {
+    "id": "micron-technology",
+    "name": "Micron Technology",
+    "ticker": "MU"
+  },
+  "format": "ai-supply-reported-outcome-observation.v1",
+  "limitations": [
+    "The press-release values are unaudited quarterly results and should be checked against later regulatory filings for revision.",
+    "Guidance and outcome share one company source family and do not constitute independent evidence.",
+    "Reported financial results do not reveal HBM units, customer allocation, or physical AI-system production."
+  ],
+  "metrics": [
+    {
+      "basis": "GAAP and non-GAAP",
+      "id": "revenue",
+      "label": "Revenue",
+      "methodology": "Convert Micron's reported $41,456 million quarterly revenue to $41.456 billion.",
+      "metric_class": "supplier-revenue",
+      "revision_risk": "Unaudited quarterly value; monitor the subsequent Form 10-Q and later amendments.",
+      "unit": "USD billion",
+      "value": 41.456
+    },
+    {
+      "basis": "GAAP",
+      "id": "gaap-gross-margin",
+      "label": "GAAP gross margin",
+      "methodology": "Convert Micron's reported 84.6 percent GAAP gross margin to a ratio.",
+      "metric_class": "supplier-margin",
+      "revision_risk": "Unaudited quarterly percentage; monitor the subsequent Form 10-Q and later amendments.",
+      "unit": "ratio",
+      "value": 0.846
+    },
+    {
+      "basis": "non-GAAP",
+      "id": "non-gaap-gross-margin",
+      "label": "Non-GAAP gross margin",
+      "methodology": "Convert Micron's reported 84.9 percent non-GAAP gross margin to a ratio.",
+      "metric_class": "supplier-margin",
+      "revision_risk": "Non-GAAP quarterly percentage depends on the company's stated adjustments and may be recast.",
+      "unit": "ratio",
+      "value": 0.849
+    },
+    {
+      "basis": "GAAP",
+      "id": "gaap-operating-expenses",
+      "label": "GAAP operating expenses",
+      "methodology": "Convert Micron's reported $1,738 million GAAP operating expenses to $1.738 billion.",
+      "metric_class": "supplier-expense",
+      "revision_risk": "Unaudited quarterly value; monitor the subsequent Form 10-Q and later amendments.",
+      "unit": "USD billion",
+      "value": 1.738
+    },
+    {
+      "basis": "non-GAAP",
+      "id": "non-gaap-operating-expenses",
+      "label": "Non-GAAP operating expenses",
+      "methodology": "Convert Micron's reported $1,518 million non-GAAP operating expenses to $1.518 billion.",
+      "metric_class": "supplier-expense",
+      "revision_risk": "Non-GAAP quarterly value depends on the company's stated adjustments and may be recast.",
+      "unit": "USD billion",
+      "value": 1.518
+    },
+    {
+      "basis": "GAAP",
+      "id": "gaap-diluted-eps",
+      "label": "GAAP diluted EPS",
+      "methodology": "Record Micron's reported GAAP diluted earnings per share.",
+      "metric_class": "supplier-eps",
+      "revision_risk": "Unaudited quarterly value; monitor the subsequent Form 10-Q and later amendments.",
+      "unit": "USD/share",
+      "value": 24.67
+    },
+    {
+      "basis": "non-GAAP",
+      "id": "non-gaap-diluted-eps",
+      "label": "Non-GAAP diluted EPS",
+      "methodology": "Record Micron's reported non-GAAP diluted earnings per share.",
+      "metric_class": "supplier-eps",
+      "revision_risk": "Non-GAAP quarterly value depends on the company's stated adjustments and may be recast.",
+      "unit": "USD/share",
+      "value": 25.11
+    }
+  ],
+  "observation_id": "micron-fy2026q3-outcome",
+  "period": {
+    "end": "2026-05-28",
+    "label": "FY2026-Q3",
+    "start": "2026-02-27"
+  },
+  "source": {
+    "excerpt": "Micron reported FQ3 revenue, GAAP and non-GAAP margins, operating expenses, and diluted EPS after quarter-end.",
+    "license": "Micron investor-relations website terms",
+    "published_at": "2026-06-24",
+    "publisher": "Micron Technology",
+    "retrieved_at": "2026-07-19T21:45:00Z",
+    "source_family": "micron-quarterly-results",
+    "source_url": "https://investors.micron.com/node/50671"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "captured_at": "2026-07-18T03:22:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "This is a company-wide shipment total, not installed or economically usable capacity.",
+    "The disclosure does not allocate shipments by process node, customer, product, or package technology.",
+    "The observation cannot be used as NVIDIA or Blackwell wafer supply."
+  ],
+  "normalization": {
+    "equation": "4,336 thousand wafers x 1000 = 4,336,000 wafers",
+    "unit": "12-inch-equivalent wafer",
+    "value": 4336000
+  },
+  "observation_id": "tsmc-company-wafer-shipments-2026q2",
+  "period": "2026-Q2",
+  "published_at": "2026-07-16",
+  "publisher": "Taiwan Semiconductor Manufacturing Company",
+  "reported": {
+    "metric": "wafer shipments",
+    "scope": "consolidated company total",
+    "unit": "thousand 12-inch-equivalent wafers",
+    "value": 4336
+  },
+  "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf"
+}

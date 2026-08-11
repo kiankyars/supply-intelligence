@@ -1,0 +1,43 @@
+{
+  "allowed_postures": [
+    "derived"
+  ],
+  "claim_key": "platform.nvidia.blackwell.logic_wafer_diameter_mm",
+  "conversion": {
+    "multiplier": 1,
+    "source_unit": "mm",
+    "target_unit": "mm"
+  },
+  "expected_claim_dimensions": {
+    "capacity_basis": "physical_specification",
+    "customer": "NVIDIA",
+    "entity_scope": "product",
+    "geography": "global",
+    "period": "current_design",
+    "process_node": "TSMC 4NP",
+    "product": "NVIDIA Blackwell",
+    "quantity_semantics": "point_specification",
+    "stage": "logic_wafer_geometry",
+    "technology": "300mm silicon wafer"
+  },
+  "expected_known_at": "2026-07-19T20:30:00Z",
+  "expected_revision_id": "claimrev:f5a22a4e3df41d9696eaa9ed4494bfb2",
+  "expected_valid_at": "2026-07-19",
+  "format": "ai-supply-manufacturing-claim-selection.v1",
+  "nonbinding_rationale": null,
+  "snapshot_sha256": "b494e0c4141e31d2f27381a32d5d40650ab689bee1dd00bd207d38a6bb898ad3",
+  "target_dimensions": {
+    "capacity_basis": "physical_specification",
+    "customer": "NVIDIA",
+    "entity_scope": "product",
+    "geography": "global",
+    "period": "current_design",
+    "process_node": "TSMC 4NP",
+    "product": "NVIDIA Blackwell",
+    "quantity_semantics": "point_specification",
+    "stage": "logic_wafer_geometry",
+    "technology": "300mm silicon wafer"
+  },
+  "target_input_path": "logic.wafer.wafer_diameter_mm",
+  "usage": "constraint_input"
+}

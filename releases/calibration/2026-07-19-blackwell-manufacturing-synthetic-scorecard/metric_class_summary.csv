@@ -1,0 +1,5 @@
+metric_class,count,units,p10_p90_coverage_rate,mean_signed_error,mean_absolute_error,mean_signed_error_ratio,mean_absolute_percentage_error,mean_normalized_pinball_loss,mean_brier_score,brier_event_count,proposal_status,eligible_for_application,minimum_group_size,additional_outcomes_needed,p50_multiplier,half_width_multiplier
+logic_conversion,3,die,0.6666666666666666,97120.26046254342,153276.74046003132,0.12141126633880256,0.1707939823881853,0.05181657918233612,0.6032439153305266,3,insufficient_history,False,10,7,,
+memory_output,1,stack,1.0,-797165.3807513248,797165.3807513248,-0.10714285714285718,0.10714285714285718,0.027190002344063584,0.8594096552574801,1,insufficient_history,False,10,9,,
+packaging_output,1,package,1.0,18544.00893276866,18544.00893276866,0.052631578947368404,0.052631578947368404,0.021115689616557673,0.009008386521798339,1,insufficient_history,False,10,9,,
+system_conversion,1,system,0.0,-1287.778398108935,1287.778398108935,-0.2,0.2,0.06272666801788726,1.0,1,insufficient_history,False,10,9,,

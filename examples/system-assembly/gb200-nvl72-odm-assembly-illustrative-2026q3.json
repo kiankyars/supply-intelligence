@@ -1,0 +1,344 @@
+{
+  "format": "ai-supply-system-assembly.v1",
+  "scenario": {
+    "id": "gb200-nvl72-odm-assembly-illustrative-2026q3",
+    "name": "GB200 NVL72 supplier-resolved ODM and component assembly",
+    "quarter": "2026-Q3",
+    "as_of_date": "2026-07-19",
+    "recorded_at": "2026-07-20T04:15:00Z",
+    "synthetic": true,
+    "samples": 20000,
+    "seed": 20260725,
+    "notes": "Illustrative supplier-resolved assembly reconciliation. NVIDIA topology is hash-pinned; all ODM and component throughput, yield, qualification, allocation, and demand inputs are synthetic."
+  },
+  "platform": {
+    "id": "nvidia-dgx-gb200-nvl72",
+    "name": "NVIDIA DGX GB200 NVL72",
+    "customer": "Selected global DGX GB200 demand scope",
+    "accelerator_packages_per_compute_tray": {
+      "low": 4, "base": 4, "high": 4, "unit": "package/tray", "posture": "reported",
+      "methodology": "NVIDIA reports four Blackwell GPUs in each GB200 compute tray.", "confidence": 0.99,
+      "last_updated": "2026-07-19", "evidence_ids": ["nvidia:dgx-gb200-assembly-topology"],
+      "confirming_evidence": "A current NVIDIA rack BOM reports four accelerator packages per compute tray.",
+      "falsifying_evidence": "A current DGX GB200 rack BOM reports a different accelerator-package count per tray.", "correlation_group": null
+    },
+    "compute_trays_per_rack": {
+      "low": 18, "base": 18, "high": 18, "unit": "tray/rack", "posture": "reported",
+      "methodology": "NVIDIA reports eighteen compute trays in each DGX GB200 NVL72 rack.", "confidence": 0.99,
+      "last_updated": "2026-07-19", "evidence_ids": ["nvidia:dgx-gb200-assembly-topology"],
+      "confirming_evidence": "A current NVIDIA rack inventory reports eighteen compute trays.",
+      "falsifying_evidence": "A current DGX GB200 rack inventory reports a different tray count.", "correlation_group": null
+    },
+    "rack_demand": {
+      "low": 480, "base": 620, "high": 800, "unit": "rack", "posture": "synthetic",
+      "methodology": "Illustrative quarterly rack demand used only to exercise supply sufficiency and shadow-capacity logic.", "confidence": 0.15,
+      "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-demand"],
+      "confirming_evidence": "Customer purchase orders and allocation ledgers support the same quarter and platform demand range.",
+      "falsifying_evidence": "Dated orders, cancellations, or allocation records place demand outside the range.", "correlation_group": "gb200-rack-demand"
+    },
+    "notes": "The topology applies to NVIDIA DGX GB200 NVL72. Partner variants require separate BOMs."
+  },
+  "odms": [
+    {
+      "id": "illustrative-odm-a", "name": "Illustrative ODM scope A", "geography": "East Asia",
+      "tray_capacity_scope_id": "odm-a-gb200-tray-line-2026q3", "tray_capacity_scope": "One synthetic non-overlapping GB200-compatible compute-tray line scope for 2026-Q3.",
+      "tray_capacity_basis": "nameplate_input",
+      "compute_tray_capacity": {
+        "low": 3500, "base": 4300, "high": 5200, "unit": "tray", "posture": "synthetic",
+        "methodology": "Illustrative gross compute-tray starts for one declared ODM scope; not actual supplier throughput.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Line-level starts, station cycle times, shifts, and WIP records support the range.",
+        "falsifying_evidence": "Verified line output or serialized tray receipts fall outside the range.", "correlation_group": "odm-a-tray"
+      },
+      "compute_tray_effective_yield": {
+        "low": 0.88, "base": 0.93, "high": 0.97, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative post-assembly and functional-test tray yield.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "First-pass yield, rework, scrap, and acceptance records support the range.",
+        "falsifying_evidence": "Factory quality data show materially different sellable yield.", "correlation_group": "odm-a-tray"
+      },
+      "compute_tray_platform_qualified_share": {
+        "low": 0.72, "base": 0.82, "high": 0.91, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative share of good trays qualified for the selected GB200 rack scope.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Qualification lots and accepted configuration records support the share.",
+        "falsifying_evidence": "Qualification or configuration records imply a different share.", "correlation_group": "odm-a-qualification"
+      },
+      "compute_tray_customer_allocation_share": {
+        "low": 0.76, "base": 0.85, "high": 0.93, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative customer allocation after platform qualification.", "confidence": 0.15,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Allocation ledgers and serialized shipment destinations support the share.",
+        "falsifying_evidence": "Customer routing records show a materially different allocation.", "correlation_group": "odm-a-allocation"
+      },
+      "rack_capacity_scope_id": "odm-a-gb200-rack-line-2026q3", "rack_capacity_scope": "One synthetic non-overlapping GB200-compatible rack-integration and factory-test scope for 2026-Q3.",
+      "rack_capacity_basis": "nameplate_input",
+      "rack_integration_capacity": {
+        "low": 185, "base": 240, "high": 305, "unit": "rack", "posture": "synthetic",
+        "methodology": "Illustrative gross rack-integration starts for the declared ODM scope.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Rack-station cycle time, shifts, burn-in slots, and WIP support the range.",
+        "falsifying_evidence": "Verified integrated-rack output falls outside the range.", "correlation_group": "odm-a-rack"
+      },
+      "rack_integration_effective_yield": {
+        "low": 0.88, "base": 0.94, "high": 0.98, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative rack integration and factory-test completion yield.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Rack bring-up, rework, and acceptance records support the range.",
+        "falsifying_evidence": "Factory test records show materially different completion yield.", "correlation_group": "odm-a-rack"
+      },
+      "rack_platform_qualified_share": {
+        "low": 0.75, "base": 0.84, "high": 0.92, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative share of completed racks passing the selected platform configuration gate.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Configuration and qualification records support the share.",
+        "falsifying_evidence": "Factory acceptance records imply a different qualification share.", "correlation_group": "odm-a-qualification"
+      },
+      "rack_customer_allocation_share": {
+        "low": 0.77, "base": 0.86, "high": 0.94, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative selected-customer allocation of qualified rack output.", "confidence": 0.15,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Serialized rack allocation and shipment ledgers support the share.",
+        "falsifying_evidence": "Allocation or shipment records show a materially different share.", "correlation_group": "odm-a-allocation"
+      },
+      "notes": "Generic supplier label avoids attributing the synthetic values to a real ODM."
+    },
+    {
+      "id": "illustrative-odm-b", "name": "Illustrative ODM scope B", "geography": "North America and East Asia",
+      "tray_capacity_scope_id": "odm-b-gb200-tray-line-2026q3", "tray_capacity_scope": "A second synthetic non-overlapping compute-tray line scope for 2026-Q3.",
+      "tray_capacity_basis": "nameplate_input",
+      "compute_tray_capacity": {
+        "low": 2500, "base": 3200, "high": 4050, "unit": "tray", "posture": "synthetic",
+        "methodology": "Illustrative gross compute-tray starts for a second declared ODM scope.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Line-level starts, station cycle times, shifts, and WIP records support the range.",
+        "falsifying_evidence": "Verified line output or serialized tray receipts fall outside the range.", "correlation_group": "odm-b-tray"
+      },
+      "compute_tray_effective_yield": {
+        "low": 0.86, "base": 0.92, "high": 0.97, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative post-assembly and functional-test tray yield.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "First-pass yield, rework, scrap, and acceptance records support the range.",
+        "falsifying_evidence": "Factory quality data show materially different sellable yield.", "correlation_group": "odm-b-tray"
+      },
+      "compute_tray_platform_qualified_share": {
+        "low": 0.68, "base": 0.78, "high": 0.89, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative share of good trays qualified for the selected GB200 rack scope.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Qualification lots and accepted configuration records support the share.",
+        "falsifying_evidence": "Qualification or configuration records imply a different share.", "correlation_group": "odm-b-qualification"
+      },
+      "compute_tray_customer_allocation_share": {
+        "low": 0.72, "base": 0.82, "high": 0.92, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative customer allocation after platform qualification.", "confidence": 0.15,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Allocation ledgers and serialized shipment destinations support the share.",
+        "falsifying_evidence": "Customer routing records show a materially different allocation.", "correlation_group": "odm-b-allocation"
+      },
+      "rack_capacity_scope_id": "odm-b-gb200-rack-line-2026q3", "rack_capacity_scope": "A second synthetic non-overlapping rack-integration and factory-test scope for 2026-Q3.",
+      "rack_capacity_basis": "nameplate_input",
+      "rack_integration_capacity": {
+        "low": 125, "base": 170, "high": 225, "unit": "rack", "posture": "synthetic",
+        "methodology": "Illustrative gross rack-integration starts for the second declared ODM scope.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Rack-station cycle time, shifts, burn-in slots, and WIP support the range.",
+        "falsifying_evidence": "Verified integrated-rack output falls outside the range.", "correlation_group": "odm-b-rack"
+      },
+      "rack_integration_effective_yield": {
+        "low": 0.86, "base": 0.93, "high": 0.98, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative rack integration and factory-test completion yield.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Rack bring-up, rework, and acceptance records support the range.",
+        "falsifying_evidence": "Factory test records show materially different completion yield.", "correlation_group": "odm-b-rack"
+      },
+      "rack_platform_qualified_share": {
+        "low": 0.7, "base": 0.8, "high": 0.9, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative share of completed racks passing the selected platform configuration gate.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Configuration and qualification records support the share.",
+        "falsifying_evidence": "Factory acceptance records imply a different qualification share.", "correlation_group": "odm-b-qualification"
+      },
+      "rack_customer_allocation_share": {
+        "low": 0.73, "base": 0.83, "high": 0.93, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative selected-customer allocation of qualified rack output.", "confidence": 0.15,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Serialized rack allocation and shipment ledgers support the share.",
+        "falsifying_evidence": "Allocation or shipment records show a materially different share.", "correlation_group": "odm-b-allocation"
+      },
+      "notes": "Generic supplier label avoids attributing the synthetic values to a real ODM."
+    },
+    {
+      "id": "illustrative-odm-c", "name": "Illustrative ODM scope C", "geography": "East Asia",
+      "tray_capacity_scope_id": "odm-c-gb200-tray-line-2026q3", "tray_capacity_scope": "A third synthetic non-overlapping compute-tray line scope for 2026-Q3.",
+      "tray_capacity_basis": "nameplate_input",
+      "compute_tray_capacity": {
+        "low": 1450, "base": 1950, "high": 2550, "unit": "tray", "posture": "synthetic",
+        "methodology": "Illustrative gross compute-tray starts for a third declared ODM scope.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Line-level starts, station cycle times, shifts, and WIP records support the range.",
+        "falsifying_evidence": "Verified line output or serialized tray receipts fall outside the range.", "correlation_group": "odm-c-tray"
+      },
+      "compute_tray_effective_yield": {
+        "low": 0.84, "base": 0.91, "high": 0.96, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative post-assembly and functional-test tray yield.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "First-pass yield, rework, scrap, and acceptance records support the range.",
+        "falsifying_evidence": "Factory quality data show materially different sellable yield.", "correlation_group": "odm-c-tray"
+      },
+      "compute_tray_platform_qualified_share": {
+        "low": 0.62, "base": 0.74, "high": 0.86, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative share of good trays qualified for the selected GB200 rack scope.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Qualification lots and accepted configuration records support the share.",
+        "falsifying_evidence": "Qualification or configuration records imply a different share.", "correlation_group": "odm-c-qualification"
+      },
+      "compute_tray_customer_allocation_share": {
+        "low": 0.68, "base": 0.79, "high": 0.9, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative customer allocation after platform qualification.", "confidence": 0.15,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Allocation ledgers and serialized shipment destinations support the share.",
+        "falsifying_evidence": "Customer routing records show a materially different allocation.", "correlation_group": "odm-c-allocation"
+      },
+      "rack_capacity_scope_id": "odm-c-gb200-rack-line-2026q3", "rack_capacity_scope": "A third synthetic non-overlapping rack-integration and factory-test scope for 2026-Q3.",
+      "rack_capacity_basis": "nameplate_input",
+      "rack_integration_capacity": {
+        "low": 70, "base": 105, "high": 145, "unit": "rack", "posture": "synthetic",
+        "methodology": "Illustrative gross rack-integration starts for the third declared ODM scope.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Rack-station cycle time, shifts, burn-in slots, and WIP support the range.",
+        "falsifying_evidence": "Verified integrated-rack output falls outside the range.", "correlation_group": "odm-c-rack"
+      },
+      "rack_integration_effective_yield": {
+        "low": 0.83, "base": 0.91, "high": 0.97, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative rack integration and factory-test completion yield.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Rack bring-up, rework, and acceptance records support the range.",
+        "falsifying_evidence": "Factory test records show materially different completion yield.", "correlation_group": "odm-c-rack"
+      },
+      "rack_platform_qualified_share": {
+        "low": 0.64, "base": 0.76, "high": 0.88, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative share of completed racks passing the selected platform configuration gate.", "confidence": 0.2,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Configuration and qualification records support the share.",
+        "falsifying_evidence": "Factory acceptance records imply a different qualification share.", "correlation_group": "odm-c-qualification"
+      },
+      "rack_customer_allocation_share": {
+        "low": 0.69, "base": 0.8, "high": 0.91, "unit": "ratio", "posture": "synthetic",
+        "methodology": "Illustrative selected-customer allocation of qualified rack output.", "confidence": 0.15,
+        "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"],
+        "confirming_evidence": "Serialized rack allocation and shipment ledgers support the share.",
+        "falsifying_evidence": "Allocation or shipment records show a materially different share.", "correlation_group": "odm-c-allocation"
+      },
+      "notes": "Generic supplier label avoids attributing the synthetic values to a real ODM."
+    }
+  ],
+  "components": [
+    {
+      "id": "connectx7-nics", "name": "ConnectX-7 400G NICs", "stage": "server_assembly", "resource_kind": "retimer",
+      "capacity_scope_id": "gb200-connectx7-pool-2026q3", "capacity_scope": "Synthetic non-overlapping customer-addressable ConnectX-7 pool for this platform and quarter.", "capacity_basis": "nameplate_input",
+      "capacity": {"low": 30000, "base": 37000, "high": 45000, "unit": "NIC", "posture": "synthetic", "methodology": "Illustrative quarterly component input, not actual output.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Supplier sellable output and allocation records support the range.", "falsifying_evidence": "Verified output or allocations fall outside the range.", "correlation_group": "networking-components"},
+      "effective_yield": {"low": 0.96, "base": 0.98, "high": 0.995, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative final-test yield.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Final-test and RMA data support the range.", "falsifying_evidence": "Quality data show a different yield.", "correlation_group": "networking-components"},
+      "platform_qualified_share": {"low": 0.9, "base": 0.96, "high": 0.99, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative GB200-compatible share.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Qualified SKU records support the share.", "falsifying_evidence": "Qualification records imply another share.", "correlation_group": "networking-qualification"},
+      "customer_allocation_share": {"low": 0.82, "base": 0.89, "high": 0.95, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative platform/customer allocation.", "confidence": 0.15, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Allocation records support the share.", "falsifying_evidence": "Shipment routing implies another share.", "correlation_group": "networking-allocation"},
+      "units_per_rack": {"low": 72, "base": 72, "high": 72, "unit": "NIC/rack", "posture": "derived", "methodology": "Eighteen trays multiplied by four ConnectX-7 NICs per tray.", "confidence": 0.98, "last_updated": "2026-07-19", "evidence_ids": ["nvidia:dgx-gb200-assembly-topology"], "confirming_evidence": "A current rack BOM supports seventy-two NICs.", "falsifying_evidence": "A current rack BOM reports another NIC count.", "correlation_group": null},
+      "notes": "Retimer and NIC silicon should be separated when a component-level board BOM is available."
+    },
+    {
+      "id": "bluefield3-dpus", "name": "BlueField-3 DPUs", "stage": "server_assembly", "resource_kind": "network_switch",
+      "capacity_scope_id": "gb200-bluefield3-pool-2026q3", "capacity_scope": "Synthetic non-overlapping customer-addressable BlueField-3 pool for this platform and quarter.", "capacity_basis": "nameplate_input",
+      "capacity": {"low": 15500, "base": 19000, "high": 23000, "unit": "DPU", "posture": "synthetic", "methodology": "Illustrative quarterly component input, not actual output.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Supplier sellable output and allocation records support the range.", "falsifying_evidence": "Verified output or allocations fall outside the range.", "correlation_group": "networking-components"},
+      "effective_yield": {"low": 0.96, "base": 0.985, "high": 0.997, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative final-test yield.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Final-test and RMA data support the range.", "falsifying_evidence": "Quality data show a different yield.", "correlation_group": "networking-components"},
+      "platform_qualified_share": {"low": 0.9, "base": 0.96, "high": 0.99, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative GB200-compatible share.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Qualified SKU records support the share.", "falsifying_evidence": "Qualification records imply another share.", "correlation_group": "networking-qualification"},
+      "customer_allocation_share": {"low": 0.82, "base": 0.89, "high": 0.95, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative platform/customer allocation.", "confidence": 0.15, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Allocation records support the share.", "falsifying_evidence": "Shipment routing implies another share.", "correlation_group": "networking-allocation"},
+      "units_per_rack": {"low": 36, "base": 36, "high": 36, "unit": "DPU/rack", "posture": "derived", "methodology": "Eighteen trays multiplied by two BlueField-3 DPUs per tray.", "confidence": 0.98, "last_updated": "2026-07-19", "evidence_ids": ["nvidia:dgx-gb200-assembly-topology"], "confirming_evidence": "A current rack BOM supports thirty-six DPUs.", "falsifying_evidence": "A current rack BOM reports another DPU count.", "correlation_group": null},
+      "notes": "This pool models the disclosed DPU count, not external scale-out switching."
+    },
+    {
+      "id": "nvlink-switch-trays", "name": "NVLink switch trays", "stage": "rack_integration", "resource_kind": "network_switch",
+      "capacity_scope_id": "gb200-nvlink-switch-tray-pool-2026q3", "capacity_scope": "Synthetic non-overlapping customer-addressable NVLink switch-tray pool.", "capacity_basis": "nameplate_input",
+      "capacity": {"low": 3600, "base": 4400, "high": 5200, "unit": "switch_tray", "posture": "synthetic", "methodology": "Illustrative quarterly switch-tray input.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Supplier sellable output supports the range.", "falsifying_evidence": "Verified output falls outside the range.", "correlation_group": "networking-components"},
+      "effective_yield": {"low": 0.93, "base": 0.97, "high": 0.99, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative final-test yield.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Final-test data support the range.", "falsifying_evidence": "Quality data show another yield.", "correlation_group": "networking-components"},
+      "platform_qualified_share": {"low": 0.9, "base": 0.96, "high": 0.99, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative qualified share.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Qualification records support the share.", "falsifying_evidence": "Qualification records imply another share.", "correlation_group": "networking-qualification"},
+      "customer_allocation_share": {"low": 0.86, "base": 0.92, "high": 0.97, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative customer allocation.", "confidence": 0.15, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Allocation records support the share.", "falsifying_evidence": "Routing records imply another share.", "correlation_group": "networking-allocation"},
+      "units_per_rack": {"low": 9, "base": 9, "high": 9, "unit": "switch_tray/rack", "posture": "reported", "methodology": "NVIDIA reports nine NVLink switch trays per rack.", "confidence": 0.99, "last_updated": "2026-07-19", "evidence_ids": ["nvidia:dgx-gb200-assembly-topology"], "confirming_evidence": "A current rack inventory reports nine trays.", "falsifying_evidence": "A current rack inventory reports another count.", "correlation_group": null},
+      "notes": "External scale-out fabric is outside this pool."
+    },
+    {
+      "id": "management-tor-switches", "name": "Management top-of-rack switches", "stage": "rack_integration", "resource_kind": "network_switch",
+      "capacity_scope_id": "gb200-management-tor-pool-2026q3", "capacity_scope": "Synthetic non-overlapping management-switch pool.", "capacity_basis": "nameplate_input",
+      "capacity": {"low": 900, "base": 1150, "high": 1400, "unit": "switch", "posture": "synthetic", "methodology": "Illustrative quarterly management-switch input.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Supplier output supports the range.", "falsifying_evidence": "Verified output falls outside the range.", "correlation_group": "networking-components"},
+      "effective_yield": {"low": 0.97, "base": 0.99, "high": 0.999, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative final-test yield.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Final-test data support the range.", "falsifying_evidence": "Quality data show another yield.", "correlation_group": "networking-components"},
+      "platform_qualified_share": {"low": 0.9, "base": 0.96, "high": 0.99, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative qualified share.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Qualification records support the share.", "falsifying_evidence": "Qualification records imply another share.", "correlation_group": "networking-qualification"},
+      "customer_allocation_share": {"low": 0.86, "base": 0.92, "high": 0.97, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative customer allocation.", "confidence": 0.15, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Allocation records support the share.", "falsifying_evidence": "Routing records imply another share.", "correlation_group": "networking-allocation"},
+      "units_per_rack": {"low": 2, "base": 2, "high": 2, "unit": "switch/rack", "posture": "reported", "methodology": "NVIDIA reports two management TOR switches per rack.", "confidence": 0.99, "last_updated": "2026-07-19", "evidence_ids": ["nvidia:dgx-gb200-assembly-topology"], "confirming_evidence": "A current rack inventory reports two switches.", "falsifying_evidence": "A current rack inventory reports another count.", "correlation_group": null},
+      "notes": "Compute, storage, and external fabric switches remain outside this pool."
+    },
+    {
+      "id": "power-shelves", "name": "Rack power shelves", "stage": "rack_integration", "resource_kind": "power_delivery",
+      "capacity_scope_id": "gb200-power-shelf-pool-2026q3", "capacity_scope": "Synthetic non-overlapping GB200-compatible power-shelf pool.", "capacity_basis": "nameplate_input",
+      "capacity": {"low": 3500, "base": 4200, "high": 5000, "unit": "power_shelf", "posture": "synthetic", "methodology": "Illustrative quarterly power-shelf input.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Supplier output supports the range.", "falsifying_evidence": "Verified output falls outside the range.", "correlation_group": "power-components"},
+      "effective_yield": {"low": 0.96, "base": 0.985, "high": 0.997, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative final-test yield.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Final-test data support the range.", "falsifying_evidence": "Quality data show another yield.", "correlation_group": "power-components"},
+      "platform_qualified_share": {"low": 0.9, "base": 0.96, "high": 0.99, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative qualified share.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Qualification records support the share.", "falsifying_evidence": "Qualification records imply another share.", "correlation_group": "power-qualification"},
+      "customer_allocation_share": {"low": 0.86, "base": 0.92, "high": 0.97, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative customer allocation.", "confidence": 0.15, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Allocation records support the share.", "falsifying_evidence": "Routing records imply another share.", "correlation_group": "power-allocation"},
+      "units_per_rack": {"low": 8, "base": 8, "high": 8, "unit": "power_shelf/rack", "posture": "reported", "methodology": "NVIDIA reports eight power shelves per rack.", "confidence": 0.99, "last_updated": "2026-07-19", "evidence_ids": ["nvidia:dgx-gb200-assembly-topology"], "confirming_evidence": "A current rack inventory reports eight shelves.", "falsifying_evidence": "A current rack inventory reports another count.", "correlation_group": null},
+      "notes": "Upstream switchgear, transformers, and backup generation remain deployment constraints."
+    },
+    {
+      "id": "liquid-cooling-integration", "name": "Liquid-cooling rack integration sets", "stage": "rack_integration", "resource_kind": "cooling",
+      "capacity_scope_id": "gb200-cooling-integration-pool-2026q3", "capacity_scope": "Synthetic non-overlapping rack-side cooling integration-set pool.", "capacity_basis": "nameplate_input",
+      "capacity": {"low": 380, "base": 465, "high": 560, "unit": "rack_cooling_set", "posture": "synthetic", "methodology": "Illustrative quarterly rack-side cooling integration input.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Supplier and integrator output supports the range.", "falsifying_evidence": "Verified output falls outside the range.", "correlation_group": "cooling-components"},
+      "effective_yield": {"low": 0.88, "base": 0.94, "high": 0.98, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative integration and leak-test yield.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Acceptance and leak-test data support the range.", "falsifying_evidence": "Quality data show another yield.", "correlation_group": "cooling-components"},
+      "platform_qualified_share": {"low": 0.9, "base": 0.96, "high": 0.99, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative GB200-compatible share.", "confidence": 0.2, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Qualification records support the share.", "falsifying_evidence": "Qualification records imply another share.", "correlation_group": "cooling-qualification"},
+      "customer_allocation_share": {"low": 0.9, "base": 0.97, "high": 1.0, "unit": "ratio", "posture": "synthetic", "methodology": "Illustrative customer allocation.", "confidence": 0.15, "last_updated": "2026-07-19", "evidence_ids": ["synthetic:assembly-capacity"], "confirming_evidence": "Allocation records support the share.", "falsifying_evidence": "Routing records imply another share.", "correlation_group": "cooling-allocation"},
+      "units_per_rack": {"low": 1, "base": 1, "high": 1, "unit": "rack_cooling_set/rack", "posture": "derived", "methodology": "One complete rack-side cooling integration set per liquid-cooled rack.", "confidence": 0.85, "last_updated": "2026-07-19", "evidence_ids": ["nvidia:dgx-gb200-assembly-topology"], "confirming_evidence": "A manufacturing BOM supports one complete integration set per rack.", "falsifying_evidence": "The rack design requires a different count or splits the set into independent pools.", "correlation_group": null},
+      "notes": "Facility-side CDUs and heat rejection remain deployment constraints."
+    }
+  ],
+  "coverage": {
+    "output_basis": "component_cleared_complete_racks",
+    "absorbed_constraints": [
+      {"stage": "rack_integration", "resource_kind": "cooling"},
+      {"stage": "rack_integration", "resource_kind": "network_switch"},
+      {"stage": "rack_integration", "resource_kind": "power_delivery"},
+      {"stage": "rack_integration", "resource_kind": "rack_integration"},
+      {"stage": "server_assembly", "resource_kind": "network_switch"},
+      {"stage": "server_assembly", "resource_kind": "retimer"},
+      {"stage": "server_assembly", "resource_kind": "server_assembly"}
+    ],
+    "posture": "synthetic",
+    "methodology": "Defines each complete-rack output as having passed one local ODM compute-tray and rack-integration flow and having consumed every declared server- and rack-stage component pool. The declaration prevents those same constraints from being applied again downstream; it does not estimate real capacity.",
+    "confirming_evidence": "ODM routing, serialized BOM issue, WIP, qualification, and finished-rack records show that the output definition includes every declared resource before factory release.",
+    "falsifying_evidence": "Any declared component remains customer- or site-installed after the modeled output point, or the source capacities describe pre-material theoretical slots.",
+    "notes": "Synthetic scope declaration. Factory qualification, logistics, site installation, facility-side cooling, transformers, and backup power remain separate."
+  },
+  "evidence": [
+    {
+      "id": "nvidia:dgx-gb200-assembly-topology", "kind": "company_technical_document",
+      "title": "NVIDIA DGX GB200 rack topology normalized observation",
+      "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html", "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-20T04:02:00Z", "published_at": "2026-03-03",
+      "source_family": "nvidia-dgx-gb200-documentation", "license": "NVIDIA documentation terms",
+      "excerpt": "Normalized topology observation for compute trays, accelerators, NICs, DPUs, switch trays, management switches, and power shelves.",
+      "content_hash": "0f0a38d435b951e6d1a35e6c9ce497c510c358eb790e35171e1fd7c9475108f6"
+    },
+    {
+      "id": "synthetic:assembly-capacity", "kind": "synthetic", "title": "Illustrative ODM and component capacity assumptions",
+      "source_url": "urn:synthetic:gb200-assembly-capacity", "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-20T04:10:00Z", "published_at": null, "source_family": "synthetic-assembly-assumptions", "license": null,
+      "excerpt": "Demonstration-only capacity, yield, qualification, and allocation ranges.", "content_hash": null
+    },
+    {
+      "id": "synthetic:assembly-demand", "kind": "synthetic", "title": "Illustrative GB200 rack demand",
+      "source_url": "urn:synthetic:gb200-rack-demand", "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-20T04:10:00Z", "published_at": null, "source_family": "synthetic-assembly-assumptions", "license": null,
+      "excerpt": "Demonstration-only selected-scope quarterly rack demand.", "content_hash": null
+    }
+  ],
+  "source_files": [
+    {
+      "evidence_id": "nvidia:dgx-gb200-assembly-topology",
+      "path": "sources/nvidia-gb200-rack-topology-observation.json",
+      "sha256": "0f0a38d435b951e6d1a35e6c9ce497c510c358eb790e35171e1fd7c9475108f6"
+    }
+  ]
+}

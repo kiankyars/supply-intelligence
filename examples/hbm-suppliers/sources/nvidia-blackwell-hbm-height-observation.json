@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-07-19T23:00:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "The source distinguishes Blackwell's 8-Hi HBM3E from Blackwell Ultra's 12-Hi HBM3E but does not identify the memory supplier or stack placement count.",
+    "Stack height is product topology, not evidence of wafer starts, known-good-die yield, stack yield, qualification, or allocation."
+  ],
+  "observation_id": "nvidia-blackwell-hbm3e-stack-height",
+  "product": "NVIDIA Blackwell GPU",
+  "published_at": "2025-11-12",
+  "publisher": "NVIDIA",
+  "reported": {
+    "blackwell_hbm_stack_height": "8-Hi",
+    "blackwell_ultra_hbm_stack_height": "12-Hi",
+    "capacity_change": "1.5x larger HBM3E capacity for Blackwell Ultra"
+  },
+  "source_url": "https://developer.nvidia.com/blog/nvidia-blackwell-architecture-sweeps-mlperf-training-v5-1-benchmarks/"
+}

@@ -1,0 +1,55 @@
+{
+  "as_of_date": "2026-07-19",
+  "files": {
+    "README.md": {
+      "bytes": 631,
+      "sha256": "f5f06fe5c62099c12194c621c3e0cb36ba55a895e67e0fb78e244b3330b2e177"
+    },
+    "company_summary.csv": {
+      "bytes": 5680,
+      "sha256": "213fd066d794b6067e92ce47633b3bc542e15c0717f8b56cc1c738ac5ee8be0c"
+    },
+    "dashboard.html": {
+      "bytes": 18503,
+      "sha256": "51329b1438b6729deff0deabfa988aff1e22ad4258dd414c83db756b95faaf13"
+    },
+    "evidence.csv": {
+      "bytes": 1032,
+      "sha256": "4489dd323d12d94cbd247e9a5e7eace567007d2529d910366e9744b722915655"
+    },
+    "input_estimates.csv": {
+      "bytes": 32068,
+      "sha256": "ac682828c3f65277f5d5403c5686644518cdd1809ea61e1f65ba544d112200ca"
+    },
+    "line_items.csv": {
+      "bytes": 3640,
+      "sha256": "e807fabe36856667152fd4b251bdb536ec29ffed07183a6788d2ecc49ecbf3cb"
+    },
+    "named_cases.csv": {
+      "bytes": 3166,
+      "sha256": "9680f0460d322750d290376ff3e7769dc6ead0e1097012b1eabadf1e98d71915"
+    },
+    "rankings.csv": {
+      "bytes": 2445,
+      "sha256": "c57980025582ee09901e1bd8fcfc067d75d1345219b6944f0db62f55dc8fa68c"
+    },
+    "result.json": {
+      "bytes": 120889,
+      "sha256": "330af49de36048377b1d5465f41dd3e8ee90748e412efaf571f1d2c60b8e96d1"
+    },
+    "scenario.json": {
+      "bytes": 64515,
+      "sha256": "91d2743e33e0d90ccbeea278bb0b983c95632cc64fb4f68b7b64a599e8b93e93"
+    },
+    "source_result.json": {
+      "bytes": 54612,
+      "sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519"
+    }
+  },
+  "format": "ai-supply-earnings-release.v1",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-19T22:30:00Z",
+  "scenario_id": "blackwell-supplier-earnings-illustrative-2026q3",
+  "source_result_sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519",
+  "synthetic": true
+}

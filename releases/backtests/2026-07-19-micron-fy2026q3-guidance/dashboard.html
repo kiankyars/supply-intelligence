@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>micron-fy2026q3-guidance-backtest</title>
+  <style>
+    :root { color-scheme: light; --ink: #16211c; --muted: #66716c; --paper: #f3f1e9; --card: #fffdf8; --line: #d7d6cc; --green: #12684d; --green-soft: #dceee5; --red: #9b4035; --red-soft: #f4ddd8; --amber: #93620d; --amber-soft: #f6e9c8; --shadow: 0 18px 48px rgba(22, 33, 28, .08); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 42px 0 72px; }
+    header { padding: 36px; border-radius: 24px; background: var(--ink); color: #fffdf8; box-shadow: var(--shadow); }
+    .eyebrow { color: #9ed6bf; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 1050px; margin: 10px 0 12px; font: 700 clamp(34px, 5vw, 62px)/1.02 Georgia, serif; letter-spacing: -.035em; }
+    header p { max-width: 960px; margin: 0; color: #d5ddd9; font-size: 17px; }
+    .warning { margin-top: 22px; padding: 14px 16px; border: 1px solid #68736d; border-radius: 14px; color: #fff2c9; background: rgba(255,255,255,.04); }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 20px 0 34px; }
+    .card, section { background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+    .card { padding: 20px; }
+    .card span { display: block; color: var(--muted); font-size: 12px; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+    .card strong { display: block; margin: 6px 0 2px; font: 700 34px/1 Georgia, serif; }
+    .card small { color: var(--muted); }
+    section { margin-top: 20px; padding: 26px; overflow: hidden; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
+    .section-head h2 { margin: 2px 0 0; font: 700 28px/1.1 Georgia, serif; }
+    .section-head p { max-width: 620px; margin: 0; color: var(--muted); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+    table { width: 100%; min-width: 980px; border-collapse: collapse; }
+    th { padding: 11px 13px; background: #ecebe4; color: #58655f; font-size: 11px; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+    td { padding: 14px 13px; border-top: 1px solid var(--line); vertical-align: top; }
+    td strong, td span, td small { display: block; }
+    td span, td small { margin-top: 3px; color: var(--muted); font-size: 12px; }
+    .mono { font-variant-numeric: tabular-nums; }
+    .status { width: fit-content; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 800; }
+    .status-inside_range { color: var(--green); background: var(--green-soft); }
+    .status-above_range { color: var(--red); background: var(--red-soft); }
+    .status-below_range { color: var(--amber); background: var(--amber-soft); }
+    .evidence { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .evidence div { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: #f7f6f0; }
+    .evidence span, .evidence strong, .evidence a, .evidence code { display: block; }
+    .evidence span { color: var(--muted); font-size: 12px; text-transform: capitalize; }
+    .evidence a { margin: 5px 0; color: var(--green); }
+    .evidence code { overflow-wrap: anywhere; color: var(--muted); font-size: 11px; }
+    footer { margin-top: 24px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 900px) { .cards { grid-template-columns: 1fr 1fr; } .section-head, .evidence { display: block; } .section-head p, .evidence div + div { margin-top: 12px; } }
+    @media (max-width: 560px) { main { width: min(100% - 20px, 1440px); padding-top: 10px; } header, section { border-radius: 14px; padding: 20px; } .cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Reported guidance backtest · FY2026-Q3</div>
+    <h1>Micron Technology: actual results cleared 7 of 7 guidance ranges.</h1>
+    <p>This evidence-backed benchmark scores management's pre-period-end guidance against the later reported quarter, preserving basis, units, source dates, and normalized source hashes.</p>
+    <div class="warning"><strong>Boundary:</strong> reconstructed external benchmark, not a native model forecast. The source guidance was public before the outcome, but this normalized artifact was captured afterward and is never eligible for model calibration.</div>
+  </header>
+
+  <div class="cards">
+    <article class="card"><span>Metrics scored</span><strong>7</strong><small>same entity and fiscal period</small></article>
+    <article class="card"><span>Inside range</span><strong>0.0%</strong><small>0 reported outcomes</small></article>
+    <article class="card"><span>Largest midpoint surprise</span><strong>31.1%</strong><small>Non-GAAP diluted EPS</small></article>
+    <article class="card"><span>Calibration eligibility</span><strong>None</strong><small>external reconstruction</small></article>
+  </div>
+
+  <section>
+    <div class="section-head"><div><div class="eyebrow">Guidance versus reported result</div><h2>Range misses stay descriptive</h2></div><p>Management ranges are not probability quantiles. The benchmark reports coverage and midpoint error without inventing P10/P90, pinball, or Brier scores.</p></div>
+    <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Guidance</th><th>Actual</th><th>Midpoint surprise</th><th>Result</th></tr></thead><tbody>
+            <tr>
+              <td><strong>Revenue</strong><span>GAAP and non-GAAP · supplier-revenue</span></td>
+              <td class="mono"><strong>$32.750B – $34.250B</strong><span>management range</span></td>
+              <td class="mono"><strong>$41.456B</strong></td>
+              <td class="mono"><strong>23.7%</strong><span>actual vs midpoint</span></td>
+              <td><span class="status status-above_range">Above Range</span><small>normalized error 10.61x</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>GAAP gross margin</strong><span>GAAP · supplier-margin</span></td>
+              <td class="mono"><strong>81.0%</strong><span>approximate point</span></td>
+              <td class="mono"><strong>84.6%</strong></td>
+              <td class="mono"><strong>4.4%</strong><span>actual vs midpoint</span></td>
+              <td><span class="status status-above_range">Above Range</span><small>normalized error 4.44x</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>Non-GAAP gross margin</strong><span>non-GAAP · supplier-margin</span></td>
+              <td class="mono"><strong>81.0%</strong><span>approximate point</span></td>
+              <td class="mono"><strong>84.9%</strong></td>
+              <td class="mono"><strong>4.8%</strong><span>actual vs midpoint</span></td>
+              <td><span class="status status-above_range">Above Range</span><small>normalized error 4.81x</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>GAAP operating expenses</strong><span>GAAP · supplier-expense</span></td>
+              <td class="mono"><strong>$1.600B</strong><span>approximate point</span></td>
+              <td class="mono"><strong>$1.738B</strong></td>
+              <td class="mono"><strong>8.6%</strong><span>actual vs midpoint</span></td>
+              <td><span class="status status-above_range">Above Range</span><small>normalized error 8.62x</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>Non-GAAP operating expenses</strong><span>non-GAAP · supplier-expense</span></td>
+              <td class="mono"><strong>$1.400B</strong><span>approximate point</span></td>
+              <td class="mono"><strong>$1.518B</strong></td>
+              <td class="mono"><strong>8.4%</strong><span>actual vs midpoint</span></td>
+              <td><span class="status status-above_range">Above Range</span><small>normalized error 8.43x</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>GAAP diluted EPS</strong><span>GAAP · supplier-eps</span></td>
+              <td class="mono"><strong>$18.50 – $19.30</strong><span>management range</span></td>
+              <td class="mono"><strong>$24.67</strong></td>
+              <td class="mono"><strong>30.5%</strong><span>actual vs midpoint</span></td>
+              <td><span class="status status-above_range">Above Range</span><small>normalized error 14.42x</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>Non-GAAP diluted EPS</strong><span>non-GAAP · supplier-eps</span></td>
+              <td class="mono"><strong>$18.75 – $19.55</strong><span>management range</span></td>
+              <td class="mono"><strong>$25.11</strong></td>
+              <td class="mono"><strong>31.1%</strong><span>actual vs midpoint</span></td>
+              <td><span class="status status-above_range">Above Range</span><small>normalized error 14.90x</small></td>
+            </tr>
+            </tbody></table></div>
+  </section>
+
+  <section>
+    <div class="section-head"><div><div class="eyebrow">Frozen source lineage</div><h2>Two observations, one dependent source family</h2></div><p>The guidance and outcome are both Micron disclosures. Their dates establish order, but they do not provide independent confirmation.</p></div>
+    <div class="evidence">
+        <div>
+          <span>guidance · 2026-03-18</span>
+          <strong>Micron Technology FY2026-Q3 guidance</strong>
+          <a href="https://investors.micron.com/static-files/0cf459c6-1c96-49d1-982a-3a890f43dd77">Micron Technology</a>
+          <code>0b5272bd1d8eec0b1b1eb975d59bb4d25d18925c9965471c39fa705c9c4e6623</code>
+        </div>
+        
+        <div>
+          <span>outcome · 2026-06-24</span>
+          <strong>Micron Technology FY2026-Q3 outcome</strong>
+          <a href="https://investors.micron.com/node/50671">Micron Technology</a>
+          <code>1def68dea4c12198aaae543e4d79f9fdfae428b63536d2e70b4775a90f64922d</code>
+        </div>
+        </div>
+  </section>
+  <footer>Recorded 2026-07-19T22:15:00Z. This dashboard is a historical evidence benchmark, not an investment recommendation or evidence of native model skill.</footer>
+</main>
+</body>
+</html>

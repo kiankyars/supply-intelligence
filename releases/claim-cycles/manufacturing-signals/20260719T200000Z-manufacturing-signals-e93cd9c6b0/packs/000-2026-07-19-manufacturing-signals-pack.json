@@ -1,0 +1,349 @@
+{
+  "claims": [
+    {
+      "claim_key": "company.tsmc.capex.2026_guidance_usd_billion",
+      "confidence": 0.98,
+      "confirming_evidence": "TSMC's current 2026 capital-budget guidance remains a USD 60 billion to USD 64 billion range.",
+      "dimensions": {
+        "capacity_basis": "capital_budget",
+        "customer": "all customers",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "2026",
+        "process_node": "all process nodes",
+        "product": "all products",
+        "quantity_semantics": "guidance_range",
+        "stage": "capital_investment"
+      },
+      "evidence": [
+        {
+          "independence_group": "tsmc-quarterly-results",
+          "role": "primary",
+          "source_id": "tsmc-2026q2-manufacturing-signals"
+        }
+      ],
+      "falsifying_evidence": "TSMC revises or supersedes its full-year 2026 capital-budget guidance.",
+      "methodology": "Record the company guidance range. Capital spending is a leading indicator and cannot be converted directly into quarterly wafer or package output.",
+      "posture": "reported",
+      "predicate": "full-year capital-budget guidance",
+      "status": "asserted",
+      "subject": "Taiwan Semiconductor Manufacturing Company",
+      "supersedes_revision_id": null,
+      "unit": "USD billion",
+      "valid_from": "2026-01-01",
+      "valid_to": "2027-01-01",
+      "value": {
+        "high": 64,
+        "low": 60
+      }
+    },
+    {
+      "claim_key": "company.tsmc.capex.2026_backend_bucket_share",
+      "confidence": 0.95,
+      "confirming_evidence": "TSMC continues to guide roughly 10% to 20% of 2026 capital spending to the combined backend-related bucket.",
+      "dimensions": {
+        "capacity_basis": "capital_budget_share",
+        "customer": "all customers",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "2026",
+        "process_node": "all process nodes",
+        "product": "all products",
+        "qualifier": "advanced packaging, testing, mask making, and other items combined",
+        "quantity_semantics": "guidance_range",
+        "stage": "capital_investment"
+      },
+      "evidence": [
+        {
+          "independence_group": "tsmc-quarterly-results",
+          "role": "primary",
+          "source_id": "tsmc-2026q2-manufacturing-signals"
+        }
+      ],
+      "falsifying_evidence": "TSMC separates or revises the combined capital-spending bucket.",
+      "methodology": "Record the broad reported range. It cannot be treated as CoWoS-only capital spending or translated into package starts without tool mix, cost, qualification, and timing.",
+      "posture": "reported",
+      "predicate": "share of capital budget assigned to the combined backend-related bucket",
+      "status": "asserted",
+      "subject": "Taiwan Semiconductor Manufacturing Company",
+      "supersedes_revision_id": null,
+      "unit": "ratio",
+      "valid_from": "2026-01-01",
+      "valid_to": "2027-01-01",
+      "value": {
+        "high": 0.2,
+        "low": 0.1
+      }
+    },
+    {
+      "claim_key": "company.tsmc.taiwan.leading_edge_backend_fabs_building_count",
+      "confidence": 0.94,
+      "confirming_evidence": "TSMC continues to describe 13 leading-edge and advanced-packaging fabs under construction in Taiwan over multiple years.",
+      "dimensions": {
+        "capacity_basis": "projects_under_construction",
+        "customer": "all customers",
+        "entity_scope": "company",
+        "geography": "Taiwan",
+        "period": "multi_year_from_2026q2",
+        "process_node": "leading edge and unspecified",
+        "product": "logic wafers and advanced packaging combined",
+        "quantity_semantics": "point_in_time",
+        "stage": "facility_construction"
+      },
+      "evidence": [
+        {
+          "independence_group": "tsmc-quarterly-results",
+          "role": "primary",
+          "source_id": "tsmc-2026q2-manufacturing-signals"
+        }
+      ],
+      "falsifying_evidence": "TSMC clarifies a different project count or separates completed, wafer, and packaging facilities.",
+      "methodology": "Record the combined project count. The disclosure has no throughput, technology split, completion schedule, or customer allocation.",
+      "posture": "reported",
+      "predicate": "combined leading-edge and advanced-packaging fabs being built",
+      "status": "asserted",
+      "subject": "Taiwan Semiconductor Manufacturing Company",
+      "supersedes_revision_id": null,
+      "unit": "fab",
+      "valid_from": "2026-07-16",
+      "valid_to": null,
+      "value": 13
+    },
+    {
+      "claim_key": "company.tsmc.backend.capacity_status.2026q2",
+      "confidence": 0.92,
+      "confirming_evidence": "TSMC continues to characterize backend capacity as in shortage with a material demand-supply gap.",
+      "dimensions": {
+        "capacity_basis": "supply_demand_status",
+        "customer": "all customers",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "current_as_of_2026-07-16",
+        "process_node": "all applicable nodes",
+        "product": "backend services",
+        "quantity_semantics": "point_in_time_status",
+        "stage": "advanced_packaging"
+      },
+      "evidence": [
+        {
+          "independence_group": "tsmc-quarterly-results",
+          "role": "primary",
+          "source_id": "tsmc-2026q2-manufacturing-signals"
+        }
+      ],
+      "falsifying_evidence": "TSMC reports backend supply and demand are balanced or provides contrary utilization data.",
+      "methodology": "Preserve management's qualitative shortage statement. It is a bottleneck signal, not a probability or package-volume estimate.",
+      "posture": "reported",
+      "predicate": "backend supply-demand condition",
+      "status": "asserted",
+      "subject": "Taiwan Semiconductor Manufacturing Company",
+      "supersedes_revision_id": null,
+      "unit": "status",
+      "valid_from": "2026-07-16",
+      "valid_to": null,
+      "value": "shortage_mode"
+    },
+    {
+      "claim_key": "company.tsmc.tester.capacity_status.2026q2",
+      "confidence": 0.9,
+      "confirming_evidence": "TSMC continues to identify tester availability as a shortage requiring capital spending.",
+      "dimensions": {
+        "capacity_basis": "supply_status",
+        "customer": "all customers",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "current_as_of_2026-07-16",
+        "process_node": "all applicable nodes",
+        "product": "customer products requiring test",
+        "quantity_semantics": "point_in_time_status",
+        "stage": "final_test"
+      },
+      "evidence": [
+        {
+          "independence_group": "tsmc-quarterly-results",
+          "role": "primary",
+          "source_id": "tsmc-2026q2-manufacturing-signals"
+        }
+      ],
+      "falsifying_evidence": "TSMC reports adequate tester supply or discloses capacity above customer requirements.",
+      "methodology": "Preserve the qualitative tester-shortage signal without assigning it to Blackwell or converting it into tested packages.",
+      "posture": "reported",
+      "predicate": "tester supply condition",
+      "status": "asserted",
+      "subject": "Taiwan Semiconductor Manufacturing Company",
+      "supersedes_revision_id": null,
+      "unit": "status",
+      "valid_from": "2026-07-16",
+      "valid_to": null,
+      "value": "shortage"
+    },
+    {
+      "claim_key": "company.micron.hbm4.cumulative_revenue_lower_bound_fq3_2026",
+      "confidence": 0.96,
+      "confirming_evidence": "Micron's prepared remarks continue to state cumulative HBM4 revenue above USD 1 billion.",
+      "dimensions": {
+        "capacity_basis": "shipment_revenue",
+        "customer": "lead platform customer and other qualified customers not allocated",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "cumulative_through_fq3_2026",
+        "process_node": "1-beta DRAM",
+        "product": "HBM4 12-high",
+        "qualifier": "strict lower bound",
+        "quantity_semantics": "cumulative_lower_bound",
+        "stage": "hbm_shipment"
+      },
+      "evidence": [
+        {
+          "independence_group": "micron-quarterly-results",
+          "role": "primary",
+          "source_id": "micron-fq3-2026-hbm-signals"
+        }
+      ],
+      "falsifying_evidence": "Micron corrects the cumulative HBM4 revenue statement or clarifies a different product scope.",
+      "methodology": "Record the disclosed lower bound. Revenue cannot be converted into stacks without realized price, product mix, returns, and recognition timing.",
+      "posture": "reported",
+      "predicate": "cumulative HBM4 shipment revenue lower bound",
+      "status": "asserted",
+      "subject": "Micron Technology",
+      "supersedes_revision_id": null,
+      "unit": "USD billion",
+      "valid_from": "2026-05-28",
+      "valid_to": null,
+      "value": 1
+    },
+    {
+      "claim_key": "company.micron.hbm4_12h.ramp_speed_vs_hbm3e_12h",
+      "confidence": 0.9,
+      "confirming_evidence": "Micron continues to describe the HBM4 12-high volume ramp as twice as fast as its HBM3E 12-high ramp.",
+      "dimensions": {
+        "capacity_basis": "relative_volume_ramp_speed",
+        "customer": "all customers",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "current_as_of_fq3_2026",
+        "process_node": "1-beta DRAM",
+        "product": "HBM4 12-high",
+        "qualifier": "relative to Micron HBM3E 12-high ramp",
+        "quantity_semantics": "relative_ratio",
+        "stage": "hbm_manufacturing_ramp"
+      },
+      "evidence": [
+        {
+          "independence_group": "micron-quarterly-results",
+          "role": "primary",
+          "source_id": "micron-fq3-2026-hbm-signals"
+        }
+      ],
+      "falsifying_evidence": "Micron revises the comparison or provides an absolute ramp curve inconsistent with the ratio.",
+      "methodology": "Record the relative ramp-speed statement. The denominator and absolute output are undisclosed, so the ratio cannot determine wafer starts or stacks.",
+      "posture": "reported",
+      "predicate": "volume-ramp speed relative to HBM3E 12-high",
+      "status": "asserted",
+      "subject": "Micron Technology HBM4 12-high",
+      "supersedes_revision_id": null,
+      "unit": "ratio",
+      "valid_from": "2026-05-28",
+      "valid_to": null,
+      "value": 2
+    },
+    {
+      "claim_key": "company.micron.hbm4.lead_platform_shipment_status_fq3_2026",
+      "confidence": 0.94,
+      "confirming_evidence": "Micron continues to report HBM4 high-volume shipments for its lead customer's platform.",
+      "dimensions": {
+        "capacity_basis": "production_status",
+        "customer": "lead customer not named in prepared remarks",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "current_as_of_fq3_2026",
+        "process_node": "1-beta DRAM",
+        "product": "HBM4",
+        "quantity_semantics": "point_in_time_status",
+        "stage": "hbm_shipment"
+      },
+      "evidence": [
+        {
+          "independence_group": "micron-quarterly-results",
+          "role": "primary",
+          "source_id": "micron-fq3-2026-hbm-signals"
+        }
+      ],
+      "falsifying_evidence": "Micron retracts the high-volume status or identifies only qualification shipments.",
+      "methodology": "Record the production status. High-volume is not a numeric throughput range and does not apply to GB200 HBM3E.",
+      "posture": "reported",
+      "predicate": "lead-platform HBM4 shipment status",
+      "status": "asserted",
+      "subject": "Micron Technology HBM4",
+      "supersedes_revision_id": null,
+      "unit": "status",
+      "valid_from": "2026-05-28",
+      "valid_to": null,
+      "value": "high_volume_shipments"
+    },
+    {
+      "claim_key": "facility.micron.singapore.hbm_packaging_contribution_timing",
+      "confidence": 0.9,
+      "confirming_evidence": "Micron continues to expect its Singapore site to contribute meaningfully to HBM packaging capacity in the first half of 2027.",
+      "dimensions": {
+        "capacity_basis": "capacity_contribution_timing",
+        "customer": "all customers",
+        "entity_scope": "facility",
+        "geography": "Singapore",
+        "period": "2027-H1",
+        "process_node": "not disclosed",
+        "product": "HBM",
+        "quantity_semantics": "forecast_status",
+        "stage": "hbm_packaging"
+      },
+      "evidence": [
+        {
+          "independence_group": "micron-quarterly-results",
+          "role": "primary",
+          "source_id": "micron-fq3-2026-hbm-signals"
+        }
+      ],
+      "falsifying_evidence": "Micron changes the site's timing, scope, or expected contribution status.",
+      "methodology": "Record the forecast timing. The word meaningful supplies no qualified stack or wafer throughput and cannot constrain 2026-Q3 output.",
+      "posture": "reported",
+      "predicate": "expected timing of meaningful HBM packaging capacity contribution",
+      "status": "asserted",
+      "subject": "Micron Singapore advanced-packaging site",
+      "supersedes_revision_id": null,
+      "unit": "status",
+      "valid_from": "2027-01-01",
+      "valid_to": "2027-07-01",
+      "value": "meaningful_contribution_expected"
+    }
+  ],
+  "format": "ai-supply-ingest-pack.v1",
+  "recorded_at": "2026-07-19T20:00:00Z",
+  "sources": [
+    {
+      "capture_kind": "normalized_observation",
+      "content_file": "tsmc-2026q2-manufacturing-signals-observation.json",
+      "expected_sha256": "064cf1d8ed92d8ee856e0f857d46c326e25f39f04eb3b46a3f7379b365b8c24a",
+      "id": "tsmc-2026q2-manufacturing-signals",
+      "license": "TSMC and LSEG terms",
+      "media_type": "application/json",
+      "published_at": "2026-07-16",
+      "publisher": "Taiwan Semiconductor Manufacturing Company",
+      "retrieved_at": "2026-07-19T19:50:00Z",
+      "source_family": "tsmc-quarterly-results",
+      "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/547d1696765e05ce3adb81c108ce1c8c1682b80c/TSMC%202Q26%20Transcript.pdf"
+    },
+    {
+      "capture_kind": "normalized_observation",
+      "content_file": "micron-fq3-2026-hbm-signals-observation.json",
+      "expected_sha256": "122c7ebc82a3517e35a0a139ec917f1b8e96ee4382b89c9684704e7ea5aca3be",
+      "id": "micron-fq3-2026-hbm-signals",
+      "license": "Micron investor-relations terms",
+      "media_type": "application/json",
+      "published_at": "2026-06-24",
+      "publisher": "Micron Technology",
+      "retrieved_at": "2026-07-19T19:50:00Z",
+      "source_family": "micron-quarterly-results",
+      "source_url": "https://investors.micron.com/static-files/631b1a32-5537-46ae-8f40-82e42fc79dfe"
+    }
+  ]
+}

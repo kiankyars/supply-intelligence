@@ -1,0 +1,47 @@
+{
+  "as_of_date": "2026-07-19",
+  "format": "ai-supply-manufacturing-revision-recipe.v1",
+  "id": "blackwell-wafer-format-2026-07-19",
+  "notes": "Replace only the synthetic nominal logic-wafer diameter with the exact-scope derived 300mm claim. Wafer starts, die dimensions, yields, binning, HBM conversion, and package throughput remain synthetic.",
+  "recorded_at": "2026-07-19T20:45:00Z",
+  "replacements": [
+    {
+      "evidence_metadata": [
+        {
+          "excerpt": "TSMC describes its 12-inch GIGAFAB profile with a monthly 300mm capacity label and an advanced-node process span.",
+          "kind": "company_technical_document",
+          "snapshot_id": "snapshot:0b590bdda7bac062b987ed550d181499",
+          "title": "TSMC GIGAFAB facilities and wafer-format profile"
+        },
+        {
+          "excerpt": "NVIDIA identifies Blackwell as manufactured on a custom TSMC 4NP process with two reticle-limit dies.",
+          "kind": "company_technical_document",
+          "snapshot_id": "snapshot:36f9f5ada639aa4320efe6383271195d",
+          "title": "NVIDIA Blackwell platform launch"
+        },
+        {
+          "excerpt": "TSMC reports 4nm volume production at its 12-inch Arizona facility, establishing the foundry process wafer format.",
+          "kind": "company_disclosure",
+          "snapshot_id": "snapshot:3a52fa87274ef1434a926cde7f2cc172",
+          "title": "TSMC 2025 annual report"
+        }
+      ],
+      "selection": {
+        "path": "examples/claim-selections/nvidia-blackwell-logic-wafer-diameter.json",
+        "sha256": "aa8b41f9df3481a96f2117fceed8035fce08ccb0e9b7ede39195d63f97338082"
+      },
+      "snapshot": {
+        "path": "releases/claim-cycles/blackwell-wafer-format/20260719T203000Z-blackwell-wafer-format-7272ab2b1e/current_snapshot.json",
+        "sha256": "b494e0c4141e31d2f27381a32d5d40650ab689bee1dd00bd207d38a6bb898ad3"
+      }
+    }
+  ],
+  "source_scenario": {
+    "path": "releases/2026-07-17-blackwell-manufacturing-illustrative/scenario.json",
+    "sha256": "03915d9aec007e357e47707069f1a20d59bd969b64c8f1674c8a8d13f611f10c"
+  },
+  "target_catalog": {
+    "path": "examples/coverage/blackwell-manufacturing-targets-2026q3-wafer-format.json",
+    "sha256": "10a2baaf541c1dfa46e29a1407e4c582b7d67ad4511e7e5b3390e0205aaf752b"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "claim_count": 2,
+  "claims": [
+    {
+      "claim_key": "platform.nvidia.gb200_nvl72.rack_power_kw",
+      "confidence": 0.97,
+      "confirming_evidence": "A current NVIDIA rack guide continues to specify approximately 120 kW for a full GB200 NVL72 rack.",
+      "dimensions": {
+        "capacity_basis": "design_power",
+        "customer": null,
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": null,
+        "product": "NVIDIA GB200 NVL72",
+        "quantity_semantics": "point_specification",
+        "stage": "datacenter_power"
+      },
+      "evidence": [
+        {
+          "byte_count": 824,
+          "capture_kind": "normalized_observation",
+          "content_sha256": "2eb321eea07833570c6e5947d996a9ffaecd562385aa466faa5646137b6c9e38",
+          "evidence_role": "primary",
+          "independence_group": "nvidia-product-documentation",
+          "license": "NVIDIA documentation terms",
+          "media_type": "application/json",
+          "published_at": "2026-03-03",
+          "publisher": "NVIDIA",
+          "retrieved_at": "2026-07-18T03:22:00Z",
+          "snapshot_id": "snapshot:39005834f9212f90468b506eefe01766",
+          "source_family": "nvidia-dgx-gb-rack-guide",
+          "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html"
+        }
+      ],
+      "falsifying_evidence": "A superseding NVIDIA guide changes the designed full-rack power value or its scope.",
+      "methodology": "Record the qualified vendor design value from the normalized observation. The claim excludes facility overhead and is not a meter reading.",
+      "posture": "reported",
+      "predicate": "approximate full-rack power consumption",
+      "recorded_at": "2026-07-19T19:00:00Z",
+      "revision_id": "claimrev:65a9454356c62eb5d3f6078872541057",
+      "subject": "NVIDIA GB200 NVL72",
+      "supersedes_revision_id": null,
+      "unit": "kW/rack",
+      "valid_from": "2026-03-03",
+      "valid_to": null,
+      "value": 120
+    },
+    {
+      "claim_key": "platform.nvidia.gb200_nvl72.rack_power_mw",
+      "confidence": 0.97,
+      "confirming_evidence": "The underlying NVIDIA design value remains approximately 120 kW per rack and the unit conversion remains exact.",
+      "dimensions": {
+        "capacity_basis": "design_power",
+        "customer": null,
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": null,
+        "product": "NVIDIA GB200 NVL72",
+        "quantity_semantics": "point_specification",
+        "stage": "datacenter_power"
+      },
+      "evidence": [
+        {
+          "byte_count": 824,
+          "capture_kind": "normalized_observation",
+          "content_sha256": "2eb321eea07833570c6e5947d996a9ffaecd562385aa466faa5646137b6c9e38",
+          "evidence_role": "primary",
+          "independence_group": "nvidia-product-documentation",
+          "license": "NVIDIA documentation terms",
+          "media_type": "application/json",
+          "published_at": "2026-03-03",
+          "publisher": "NVIDIA",
+          "retrieved_at": "2026-07-18T03:22:00Z",
+          "snapshot_id": "snapshot:39005834f9212f90468b506eefe01766",
+          "source_family": "nvidia-dgx-gb-rack-guide",
+          "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html"
+        }
+      ],
+      "falsifying_evidence": "The underlying vendor value or its platform scope changes.",
+      "methodology": "Divide the reported 120 kW per rack by 1,000 to express the same approximate design value in MW per rack.",
+      "posture": "derived",
+      "predicate": "normalized approximate full-rack power consumption",
+      "recorded_at": "2026-07-19T19:00:00Z",
+      "revision_id": "claimrev:97bdc6ec05e22807f80622be3ba7f830",
+      "subject": "NVIDIA GB200 NVL72",
+      "supersedes_revision_id": null,
+      "unit": "MW/rack",
+      "valid_from": "2026-03-03",
+      "valid_to": null,
+      "value": 0.12
+    }
+  ],
+  "format": "ai-supply-claim-snapshot.v1",
+  "known_at": "2026-07-19T19:59:59Z",
+  "valid_at": "2026-07-19"
+}

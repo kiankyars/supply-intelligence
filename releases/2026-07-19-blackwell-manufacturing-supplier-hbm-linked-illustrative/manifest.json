@@ -1,0 +1,61 @@
+{
+  "as_of_date": "2026-07-19",
+  "files": {
+    "README.md": {
+      "bytes": 687,
+      "sha256": "4e70dc96281baebefd6d3f30954f82088c2171dc7050f20dbdd36a01b4ab7c82"
+    },
+    "bottlenecks.csv": {
+      "bytes": 74,
+      "sha256": "2a1484cbe7ddf6bd812fb5f2aa2a01100df2ce322d0665f9e463de333648bedd"
+    },
+    "conversion_outputs.csv": {
+      "bytes": 2884,
+      "sha256": "1a819af2c05cbcd96201ee8e25c09afd282057b11572e1eb40bdc4545ce93466"
+    },
+    "dashboard.html": {
+      "bytes": 8900,
+      "sha256": "50e8bea574921aff5e5d2aea7e076e53601ab2166b5c8348556a37aa9c1220e6"
+    },
+    "evidence.csv": {
+      "bytes": 4205,
+      "sha256": "876806ccdd9ee240c69b47569bc704bb89f61ec9c9f98627b97081c0c73bf2fe"
+    },
+    "evidence_gaps.csv": {
+      "bytes": 20097,
+      "sha256": "4d79857d4cffd6baa8487401363fe649e97b1ae5a0bb2abffdaabc9c096ca42a"
+    },
+    "hbm_supplier_result.json": {
+      "bytes": 78639,
+      "sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea"
+    },
+    "input_estimates.csv": {
+      "bytes": 8077,
+      "sha256": "181a0d4039e40403eed8ea56c39a9dbf9f48ce0ccfc939208f6b5e26b889dece"
+    },
+    "link_lineage.json": {
+      "bytes": 3442,
+      "sha256": "f9b315699468f167528d103472bb049bbc159cd7931f8b4acf5c83ce1d0b67c9"
+    },
+    "link_recipe.json": {
+      "bytes": 1946,
+      "sha256": "6d92dad11baf092653f7e5ea9305b1e9833e4b99e43482d0a4c9f15e5fb29a02"
+    },
+    "manufacturing_scenario.json": {
+      "bytes": 25993,
+      "sha256": "1826b8dd8dc7d13ea51cb4c3a0827395e402d78d34af7bd1018c0be76a3f12ec"
+    },
+    "result.json": {
+      "bytes": 76954,
+      "sha256": "99062b41914318b3292d0588943ee4c14aa1cfaa955360bbf246b5ffae069b5f"
+    }
+  },
+  "format": "ai-supply-hbm-manufacturing-link-release.v1",
+  "hbm_supplier_result_sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+  "manufacturing_scenario_sha256": "1826b8dd8dc7d13ea51cb4c3a0827395e402d78d34af7bd1018c0be76a3f12ec",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-20T03:20:00Z",
+  "removed_aggregate_hbm_wafer_flow_id": "hbm3e-memory-wafer",
+  "scenario_id": "blackwell-manufacturing-with-supplier-hbm-illustrative-2026q3",
+  "synthetic": true
+}

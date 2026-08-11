@@ -1,0 +1,106 @@
+{
+  "format": "ai-supply-hbm-manufacturing-lineage.v1",
+  "quarter": "2026-Q3",
+  "replacement": {
+    "confirming_evidence": "Draw-level supplier output or a common simulation state reproduces the imported allocated-stack distribution and its dependence with other manufacturing branches.",
+    "distribution_mapping": "source_p10_p50_p90_to_triangular_low_mode_high",
+    "double_count_guard": "The aggregate HBM wafer flow is not sampled or emitted; only the supplier result's customer-allocated stack pool enters package attempts.",
+    "falsifying_evidence": "A source correction changes supplier scope, topology, qualification, allocation, or the customer-allocated stack distribution.",
+    "imported_metric": "customer_allocated_stacks",
+    "notes": "The summary mapping is intentionally lossy: it truncates source tails and does not preserve supplier-level or cross-branch dependence.",
+    "removed_aggregate_hbm_wafer_flow_id": "hbm3e-memory-wafer",
+    "source_distribution": {
+      "maximum": 3283887.8072549477,
+      "mean": 2284389.72616004,
+      "minimum": 1504302.0329598992,
+      "p10": 1976823.4112589662,
+      "p50": 2275125.766786052,
+      "p90": 2608050.853684859
+    },
+    "source_unit": "stack",
+    "topology_checks": [
+      {
+        "field": "memory_dies_per_stack",
+        "hbm_supplier_result": [
+          8.0,
+          8.0,
+          8.0,
+          "die/stack"
+        ],
+        "manufacturing": [
+          8.0,
+          8.0,
+          8.0,
+          "die/stack"
+        ],
+        "match": true
+      },
+      {
+        "field": "stack_capacity_gb",
+        "hbm_supplier_result": [
+          24.0,
+          24.0,
+          24.0,
+          "GB/stack"
+        ],
+        "manufacturing": [
+          24.0,
+          24.0,
+          24.0,
+          "GB/stack"
+        ],
+        "match": true
+      },
+      {
+        "field": "stacks_per_accelerator",
+        "hbm_supplier_result": [
+          8.0,
+          8.0,
+          8.0,
+          "stack/accelerator"
+        ],
+        "manufacturing": [
+          8.0,
+          8.0,
+          8.0,
+          "stack/accelerator"
+        ],
+        "match": true
+      }
+    ]
+  },
+  "scenario_id": "blackwell-manufacturing-with-supplier-hbm-illustrative-2026q3",
+  "sources": {
+    "hbm_supplier_result": {
+      "capacity_scope_ids": [
+        "sk-hynix-global-hbm3e-compatible-2026q3",
+        "micron-global-hbm3e-compatible-2026q3",
+        "samsung-global-hbm3e-compatible-2026q3"
+      ],
+      "format": "ai-supply-hbm-supplier-result.v1",
+      "minimum_input_confidence": 0.3,
+      "scenario_id": "blackwell-hbm-supplier-portfolio-illustrative-2026q3",
+      "scope": "The frozen supplier portfolio's Blackwell-qualified and customer-allocated HBM3E stacks across three non-overlapping declared capacity scopes.",
+      "sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+      "supplier_ids": [
+        "sk-hynix",
+        "micron",
+        "samsung"
+      ],
+      "supplier_names": [
+        "SK hynix",
+        "Micron Technology",
+        "Samsung Electronics"
+      ],
+      "synthetic": true
+    },
+    "manufacturing_scenario": {
+      "format": "ai-supply-manufacturing.v1",
+      "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "scope": "The frozen Blackwell logic and advanced-package scenario, with its aggregate HBM wafer flow removed before reconciliation.",
+      "sha256": "1826b8dd8dc7d13ea51cb4c3a0827395e402d78d34af7bd1018c0be76a3f12ec",
+      "synthetic": true
+    }
+  },
+  "synthetic": true
+}

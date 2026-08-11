@@ -1,0 +1,23 @@
+{
+  "format": "ai-supply-manufacturing-target-catalog.v1",
+  "quarter": "2026-Q3",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "targets": [
+    {
+      "dimensions": {
+        "capacity_basis": "wafer_starts",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "2026-Q3",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "quantity_semantics": "quarter_total",
+        "stage": "logic_wafer_start"
+      },
+      "input_path": "logic.wafer.wafer_starts",
+      "rationale": "The modeled input is quarterly global Blackwell logic wafer starts at TSMC 4NP allocated to NVIDIA, not company-wide wafer shipments or installed fab capacity.",
+      "unit": "wafer"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+id,type,severity,path,details_json
+alert:22b1c25600c6686c,estimate_posture_changed,medium,inputs.logic.wafer.wafer_diameter_mm,"{""current_posture"":""derived"",""previous_posture"":""synthetic""}"

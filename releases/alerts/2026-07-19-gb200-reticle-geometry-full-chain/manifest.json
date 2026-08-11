@@ -1,0 +1,30 @@
+{
+  "alert_count": 0,
+  "current_recorded_at": "2026-07-20T06:00:00Z",
+  "files": {
+    "README.md": {
+      "bytes": 367,
+      "sha256": "3471658e491801ff1c927654b3e7b56df5bf1ff5d5872faad7cc88ba64ff3014"
+    },
+    "alerts.csv": {
+      "bytes": 36,
+      "sha256": "461b731046f2f46f2bf8bf808dd580daab3684a11740d40f1dec1155e564cf90"
+    },
+    "alerts.json": {
+      "bytes": 668,
+      "sha256": "deab0564cf839bca0fa474a99cb8bfe7c5efd2e2d638ff99fdf2b58422ddb55b"
+    },
+    "dashboard.html": {
+      "bytes": 4490,
+      "sha256": "b7cf0a6a9c5eb4b7138fe291538dbfcea90662042c69b7dec941c46c94bdc188"
+    },
+    "lineage.json": {
+      "bytes": 652,
+      "sha256": "bb9263afee84a02d9fd974f8de47a6f5778e9c83e672fd1fa2fae924c105b168"
+    }
+  },
+  "format": "ai-supply-revision-alert-release.v1",
+  "previous_recorded_at": "2026-07-20T04:40:00Z",
+  "result_format": "ai-supply-reconciliation.v1",
+  "scenario_id": "gb200-to-abilene-odm-assembly-draw-linked-illustrative-2026q3"
+}

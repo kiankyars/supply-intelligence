@@ -1,0 +1,21 @@
+{
+  "alert_count": 0,
+  "alerts": [],
+  "current": {
+    "as_of_date": "2026-07-19",
+    "recorded_at": "2026-07-20T06:00:00Z",
+    "sha256": "3ad80ed33e421529ba83ad6c5c31b4bdbb2ff0d730c28246a9fb49a0e6a37cac"
+  },
+  "format": "ai-supply-revision-alerts.v1",
+  "previous": {
+    "as_of_date": "2026-07-19",
+    "recorded_at": "2026-07-20T04:40:00Z",
+    "sha256": "a467084709140df98090c59be42557f1eb0e8f7dc23b091f2cc7b14d01d033fe"
+  },
+  "result_format": "ai-supply-reconciliation.v1",
+  "scenario_id": "gb200-to-abilene-odm-assembly-draw-linked-illustrative-2026q3",
+  "thresholds": {
+    "bottleneck_probability_change": 0.15,
+    "output_relative_change": 0.1
+  }
+}

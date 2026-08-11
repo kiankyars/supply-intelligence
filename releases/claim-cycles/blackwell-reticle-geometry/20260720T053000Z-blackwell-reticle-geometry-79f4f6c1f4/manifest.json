@@ -1,0 +1,40 @@
+{
+  "cycle_id": "claim-cycle:79f4f6c1f4de7e93ff15d953368ee939",
+  "files": {
+    "claim_diff.json": {
+      "bytes": 7642,
+      "sha256": "55156994d7651d7aaea56449a16c6378f101a21fa4598eff8cfe8210324c03d7"
+    },
+    "current_snapshot.json": {
+      "bytes": 6900,
+      "sha256": "5abd5cfe9f03d0de87f1d2e19898cb14f9053792b63dd3a14bee51fbffad71f3"
+    },
+    "ingest_lineage.json": {
+      "bytes": 428,
+      "sha256": "c0d6464f42535f8c3653c004a8b296193f83de3a6ba4cc16dc46ebf118afc61a"
+    },
+    "job.json": {
+      "bytes": 405,
+      "sha256": "8e279a0d3bc6d97847e9ca8de574f6a1f59a719f5f7b8d0765c54dff9239842e"
+    },
+    "notification_lineage.json": {
+      "bytes": 243,
+      "sha256": "00a287d8c9977c49cd5779ec4b9b0ef4aa1667db93bfa3de3d6fa766ae57e73a"
+    },
+    "packs/000-2026-07-19-blackwell-reticle-geometry-pack.json": {
+      "bytes": 5564,
+      "sha256": "7997a2bf9d0e04a2cd8c892ea47eac9e473a98348ecba6cbb6c7b4a21f29bd6a"
+    },
+    "previous_snapshot.json": {
+      "bytes": 148,
+      "sha256": "0cdd9c9b44f814efd57948f60dbcfbd53304da2fd767d5781481ecea44302f16"
+    },
+    "run.json": {
+      "bytes": 423,
+      "sha256": "3030e3401e73ce0130539905afde8c855d9aaeac8396b2ad42ab2f9646b06400"
+    }
+  },
+  "format": "ai-supply-claim-cycle-release.v1",
+  "job_id": "blackwell-reticle-geometry",
+  "run_at": "2026-07-20T05:30:00Z"
+}

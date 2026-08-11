@@ -1,0 +1,25 @@
+{
+  "captured_at": "2026-07-20T04:02:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "The NVIDIA documents define DGX GB200 rack topology and bring-up requirements, not quarterly component output, ODM throughput, sellable yield, platform qualification, or customer allocation.",
+    "The component counts apply to NVIDIA DGX GB200 NVL72. Partner reference designs and later revisions may use different management, networking, power, or cooling configurations."
+  ],
+  "observation_id": "nvidia-dgx-gb200-nvl72-rack-topology",
+  "product": "NVIDIA DGX GB200 NVL72",
+  "published_at": "2026-03-03",
+  "publisher": "NVIDIA",
+  "reported": {
+    "accelerator_packages_per_compute_tray": 4,
+    "bluefield_3_dpus_per_compute_tray": 2,
+    "compute_trays_per_rack": 18,
+    "connectx_7_nics_per_compute_tray": 4,
+    "management_tor_switches_per_rack": 2,
+    "nvlink_switch_trays_per_rack": 9,
+    "power_shelves_per_rack": 8
+  },
+  "source_urls": [
+    "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html",
+    "https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/dgx-superpod-components.html"
+  ]
+}

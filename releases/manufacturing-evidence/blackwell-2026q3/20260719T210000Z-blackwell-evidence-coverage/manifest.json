@@ -1,0 +1,171 @@
+{
+  "as_of_date": "2026-07-19",
+  "files": {
+    "README.md": {
+      "bytes": 606,
+      "sha256": "adaafc81403416423b70afb48703186e99dfe65be788b3e4f1b719d71e60774c"
+    },
+    "claim_assessments.csv": {
+      "bytes": 10032,
+      "sha256": "a225bf364075994f03a21c33e1375b04c8b10d1f3360870b89ae700545d2e7a7"
+    },
+    "coverage.json": {
+      "bytes": 47972,
+      "sha256": "548eef380ddcf7123efccc322ed7475fc4b332b1f5510fa7d74d9c1ff01b43c8"
+    },
+    "dashboard.html": {
+      "bytes": 28848,
+      "sha256": "4c5131b1fa0ec931dda684b85895c9ecc270d8179a74823b256a1e7ff467d768"
+    },
+    "input_coverage.csv": {
+      "bytes": 11034,
+      "sha256": "33bbb10f6369d350a4441f5aef1e88e62b5417be61281fc0c2eac6e755ba8b87"
+    },
+    "recipe.json": {
+      "bytes": 5463,
+      "sha256": "2a5d662983f409b297ae49a33ed4120fb9637073ad8c3c2e228bffe02a769785"
+    },
+    "sources/claim-cases/micron-hbm4-ramp-speed-signal/assessment.json": {
+      "bytes": 1755,
+      "sha256": "34b1eb9d641defebb6bd16c219fe4c09aa64cdf547c0f26f0a05e99ee1ddec1b"
+    },
+    "sources/claim-cases/micron-hbm4-ramp-speed-signal/selection.json": {
+      "bytes": 1167,
+      "sha256": "20039db9508bdf4936804ac4460f5ecd7630a5bdf2901d4b49350240440562cf"
+    },
+    "sources/claim-cases/micron-hbm4-ramp-speed-signal/snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "sources/claim-cases/micron-hbm4-revenue-lower-bound-signal/assessment.json": {
+      "bytes": 1817,
+      "sha256": "76a230b0e709eb3ff864c6f3c04ea2beba16256536411142d555b6d8b9d7c19b"
+    },
+    "sources/claim-cases/micron-hbm4-revenue-lower-bound-signal/selection.json": {
+      "bytes": 1214,
+      "sha256": "e47b881ca5776c66bacd6b3925563e502a7e2183a60848dd0fe6925de2171317"
+    },
+    "sources/claim-cases/micron-hbm4-revenue-lower-bound-signal/snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "sources/claim-cases/micron-hbm4-shipment-status-signal/assessment.json": {
+      "bytes": 1693,
+      "sha256": "767fefd95e976e9edabb34be98d700c066b69a50430e9fe57a61a26b1c022d8a"
+    },
+    "sources/claim-cases/micron-hbm4-shipment-status-signal/selection.json": {
+      "bytes": 1077,
+      "sha256": "e9d7005ff657d7a23cc4c48c537ecb87cb78eccd28e77ebd1568c7d87144c523"
+    },
+    "sources/claim-cases/micron-hbm4-shipment-status-signal/snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "sources/claim-cases/tsmc-backend-capex-share-signal/assessment.json": {
+      "bytes": 1802,
+      "sha256": "b11cec2ec8d0befe7bded07b52d18fe9faa4a5b6dc63095bc052b3204928dfe8"
+    },
+    "sources/claim-cases/tsmc-backend-capex-share-signal/selection.json": {
+      "bytes": 1180,
+      "sha256": "9cd66059620ec5b0c55c3d2e72725ddbcd5fa7e77a5e4dc45e625c13aaec766e"
+    },
+    "sources/claim-cases/tsmc-backend-capex-share-signal/snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "sources/claim-cases/tsmc-backend-shortage-signal/assessment.json": {
+      "bytes": 1740,
+      "sha256": "69caec5ed102095d2661d1ac28291874ebc1464c1dd224cc93d342e16f49ea84"
+    },
+    "sources/claim-cases/tsmc-backend-shortage-signal/selection.json": {
+      "bytes": 1140,
+      "sha256": "fe1f3ce7278d6f8c8ff462c7bc4141446aaf1857e090ac5c77180c738ec58039"
+    },
+    "sources/claim-cases/tsmc-backend-shortage-signal/snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "sources/claim-cases/tsmc-capex-guidance-signal/assessment.json": {
+      "bytes": 1684,
+      "sha256": "9433bee9b8676c11a3e5ae0ab6d9e9f88125ce00d40dd0949cdb8f6aeb9a3ec8"
+    },
+    "sources/claim-cases/tsmc-capex-guidance-signal/selection.json": {
+      "bytes": 1063,
+      "sha256": "7c4709defc56858b4124c0ec5dfc6e318031135c03c8accc4a2443e9a37c85e6"
+    },
+    "sources/claim-cases/tsmc-capex-guidance-signal/snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "sources/claim-cases/tsmc-fabs-under-construction-signal/assessment.json": {
+      "bytes": 1778,
+      "sha256": "0046c7326a623d5206319fd2de07dffd177dc2ddde504a8ac7d8cb999e335328"
+    },
+    "sources/claim-cases/tsmc-fabs-under-construction-signal/selection.json": {
+      "bytes": 1187,
+      "sha256": "102c3d776a15e1ff843ba10651f6df45f8f9830cd182a723a6adc5e258712226"
+    },
+    "sources/claim-cases/tsmc-fabs-under-construction-signal/snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "sources/claim-cases/tsmc-tester-shortage-signal/assessment.json": {
+      "bytes": 1717,
+      "sha256": "53f50d1669ac8abb614678819a18340289fa8d212c588fa08e58c52458dd566e"
+    },
+    "sources/claim-cases/tsmc-tester-shortage-signal/selection.json": {
+      "bytes": 1123,
+      "sha256": "7d53f1f2017f57986de120e6838f0f63d52153e392801a73baeeca161258e313"
+    },
+    "sources/claim-cases/tsmc-tester-shortage-signal/snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "sources/claim-cases/tsmc-wafer-shipments-rejected/assessment.json": {
+      "bytes": 3474,
+      "sha256": "c419ee4926322d6e730cfd56753f5ff9c910529dae210c8c6e1a9c721b71b735"
+    },
+    "sources/claim-cases/tsmc-wafer-shipments-rejected/selection.json": {
+      "bytes": 1311,
+      "sha256": "0bbf4e858583c4f03e905bd95e8965ffa400dd8f0d1d2e745873be83249c6933"
+    },
+    "sources/claim-cases/tsmc-wafer-shipments-rejected/snapshot.json": {
+      "bytes": 8567,
+      "sha256": "e9ca94bd1d698c8203f2bdb7cf7909f9c3481e4abfdc3c2ba67b94e8e0a87e52"
+    },
+    "sources/claim-cases/tsmc-wafer-shipments-scale-control/assessment.json": {
+      "bytes": 2303,
+      "sha256": "e1861e7c3c7c335d629fe690290e485d6febb9137035f95e0f6ce05440ae2a30"
+    },
+    "sources/claim-cases/tsmc-wafer-shipments-scale-control/selection.json": {
+      "bytes": 1149,
+      "sha256": "935490c05fc2a04ec9935c6a66b8b39e9b965ea226849dde460efefd74b2f4fa"
+    },
+    "sources/claim-cases/tsmc-wafer-shipments-scale-control/snapshot.json": {
+      "bytes": 8567,
+      "sha256": "e9ca94bd1d698c8203f2bdb7cf7909f9c3481e4abfdc3c2ba67b94e8e0a87e52"
+    },
+    "sources/constraint-target-catalog.json": {
+      "bytes": 785,
+      "sha256": "1b8d27786c4a39ff576c28c2896a3192dee3817255a0058a0b94a0fa2578af0a"
+    },
+    "sources/manufacturing-evidence-gaps.csv": {
+      "bytes": 9375,
+      "sha256": "13a029e78113edd5a137612cf013f43615eb17e445f90b3de97f2bb01934d398"
+    },
+    "sources/manufacturing-manifest.json": {
+      "bytes": 1613,
+      "sha256": "7a1881a9f498b073aac8e677072f152cd52ba1371faf81adca9e6c23fdc3b91f"
+    },
+    "sources/manufacturing-result.json": {
+      "bytes": 54612,
+      "sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519"
+    }
+  },
+  "format": "ai-supply-manufacturing-evidence-coverage-release.v1",
+  "id": "blackwell-manufacturing-evidence-coverage-2026-07-19",
+  "recorded_at": "2026-07-19T21:00:00Z",
+  "source_quarter": "2026-Q3",
+  "source_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "source_synthetic": true
+}

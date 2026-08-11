@@ -1,0 +1,4 @@
+constraint,probability
+odm_assembly,0.9826
+component:liquid-cooling-integration,0.013
+component:nvlink-switch-trays,0.0044

@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-07-19T23:00:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "The source reports maximum HBM capacity per Blackwell GPU, not the supplier, sellable yield, customer allocation, or quarterly production.",
+    "A current GB200 NVL72 product page reports 372 GB across two GPUs rather than 384 GB; the difference may reflect addressable capacity, SKU configuration, or a specification revision and must remain visible."
+  ],
+  "observation_id": "nvidia-blackwell-hbm3e-max-capacity",
+  "product": "NVIDIA Blackwell GPU",
+  "published_at": "2025-08-22",
+  "publisher": "NVIDIA",
+  "reported": {
+    "hbm_generation": "HBM3E",
+    "maximum_hbm_capacity_gb": 192,
+    "maximum_hbm_bandwidth_tb_per_second": 8
+  },
+  "source_url": "https://developer.nvidia.com/blog/?p=104887"
+}

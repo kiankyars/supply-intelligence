@@ -1,0 +1,1 @@
+forecast_id,metric,unit,forecast_p10,forecast_p50,forecast_p90,actual_value,inside_p10_p90,signed_error,absolute_error,interval_miss,pinball_p10,pinball_p50,pinball_p90,event_operator,event_threshold,event_probability,event_realized,brier_score

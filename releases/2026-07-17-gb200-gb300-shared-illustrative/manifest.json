@@ -1,0 +1,46 @@
+{
+  "as_of_date": "2026-07-17",
+  "files": {
+    "README.md": {
+      "bytes": 349,
+      "sha256": "b50e8a7ebd998e890ca658ab54d4fa7d0fad46318079f851601da2281f59addd"
+    },
+    "dashboard.html": {
+      "bytes": 49719,
+      "sha256": "9c9c305f534a9efcd246e0fadc630c6e413a520bc6ac43edab91ba30d465a8e8"
+    },
+    "evidence.csv": {
+      "bytes": 2249,
+      "sha256": "5595854459fef5c6beb6a66fd582d41b8d2f62f13d8d8170317e5d31394e2c11"
+    },
+    "input_estimates.csv": {
+      "bytes": 21880,
+      "sha256": "95cfe65f8639ff6ece5c3aca70b6802c6df56e21addd3f77957c24b21814495b"
+    },
+    "inventory.csv": {
+      "bytes": 1537,
+      "sha256": "00a3137c723c380f1be134375f93fa78ae058d6ea481a8bcf6f292a176c5a552"
+    },
+    "platform_stage_outputs.csv": {
+      "bytes": 2043,
+      "sha256": "ba871cb17784f8115899fb9510c875489b43b6805e129d088ca6b3a3290b6c93"
+    },
+    "portfolio.json": {
+      "bytes": 53303,
+      "sha256": "548889187d8d9c7981055dbc40a9225ce46098f08d58d5210f0ebab827d25b16"
+    },
+    "resource_pools.csv": {
+      "bytes": 3129,
+      "sha256": "e0a876651d707f16dd13d8403ad69c6a4d1420e16c2aa2da55ba46f531308c3f"
+    },
+    "result.json": {
+      "bytes": 91661,
+      "sha256": "f868f5a8b1ace81b9b66c877dbd16cbe4a327af7a4f85cf873d0b4d243dfafcc"
+    }
+  },
+  "format": "ai-supply-portfolio-release.v1",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-18T02:07:24Z",
+  "scenario_id": "gb200-gb300-shared-illustrative-2026q3",
+  "synthetic": true
+}

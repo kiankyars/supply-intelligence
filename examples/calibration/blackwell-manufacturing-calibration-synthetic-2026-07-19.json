@@ -1,0 +1,167 @@
+{
+  "as_of_date": "2026-07-19",
+  "evidence": [
+    {
+      "content_hash": null,
+      "excerpt": "Six deliberately varied synthetic outcomes; not historical production, shipment, or deployment observations.",
+      "id": "synthetic:blackwell-calibration-outcomes",
+      "kind": "synthetic",
+      "license": "Internal demonstration",
+      "published_at": null,
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-19T23:00:00Z",
+      "source_family": "synthetic-calibration-fixture",
+      "source_url": "urn:synthetic:blackwell-calibration-outcomes",
+      "title": "Synthetic Blackwell calibration outcome fixtures"
+    }
+  ],
+  "forecasts": [
+    {
+      "format": "ai-supply-manufacturing-result.v1",
+      "id": "blackwell-manufacturing-2026q3-v1",
+      "path": "releases/2026-07-17-blackwell-manufacturing-illustrative/result.json",
+      "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519"
+    }
+  ],
+  "format": "ai-supply-calibration-dataset.v1",
+  "id": "blackwell-manufacturing-synthetic-scorecard-2026-07-19",
+  "minimum_group_size": 10,
+  "notes": "Contract fixture for coverage, bias, pinball, Brier, grouping, and replay tests. It must never be presented as measured Blackwell output.",
+  "outcomes": [
+    {
+      "actual_value": 1896462.9356520725,
+      "event": {
+        "operator": "at_least",
+        "threshold": 1958304.118336379,
+        "unit": "die"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "logic_gross_dies",
+      "id": "synthetic-logic-gross-dies",
+      "methodology": "Synthetic outcome set to 0.92 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "logic_conversion",
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "posture": "synthetic",
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "die"
+    },
+    {
+      "actual_value": 1137168.7199491297,
+      "event": {
+        "operator": "at_least",
+        "threshold": 1052933.999952898,
+        "unit": "die"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "logic_known_good_dies",
+      "id": "synthetic-logic-known-good-dies",
+      "methodology": "Synthetic outcome set to 1.08 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "logic_conversion",
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "posture": "synthetic",
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "die"
+    },
+    {
+      "actual_value": 599643.8610013827,
+      "event": {
+        "operator": "at_least",
+        "threshold": 648263.6335150084,
+        "unit": "die"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "logic_binned_dies",
+      "id": "synthetic-logic-binned-dies",
+      "methodology": "Synthetic outcome set to 0.74 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "logic_conversion",
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "posture": "synthetic",
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "die"
+    },
+    {
+      "actual_value": 7440210.2203456955,
+      "event": {
+        "operator": "at_least",
+        "threshold": 7307349.323553808,
+        "unit": "stack"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "hbm_good_stacks",
+      "id": "synthetic-hbm-good-stacks",
+      "methodology": "Synthetic outcome set to 1.12 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "memory_output",
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "posture": "synthetic",
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "stack"
+    },
+    {
+      "actual_value": 352336.1697226046,
+      "event": {
+        "operator": "at_most",
+        "threshold": 333792.16078983597,
+        "unit": "package"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "finished_accelerator_packages",
+      "id": "synthetic-finished-accelerator-packages",
+      "methodology": "Synthetic outcome set to 0.95 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "packaging_output",
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "posture": "synthetic",
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "package"
+    },
+    {
+      "actual_value": 6438.8919905446755,
+      "event": {
+        "operator": "at_least",
+        "threshold": 6181.3363109228885,
+        "unit": "system"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "complete_system_equivalents",
+      "id": "synthetic-complete-system-equivalents",
+      "methodology": "Synthetic outcome set to 1.25 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "system_conversion",
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "posture": "synthetic",
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "system"
+    }
+  ],
+  "recorded_at": "2026-07-19T23:15:00Z",
+  "synthetic": true
+}

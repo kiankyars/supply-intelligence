@@ -1,0 +1,14 @@
+{
+  "format": "ai-supply-claim-cycle-ingest-lineage.v1",
+  "packs": [
+    {
+      "claim_count": 1,
+      "job_relative_path": "2026-07-19-blackwell-wafer-format-pack.json",
+      "pack_sha256": "8697996e6177ed42c88ac7f280c98c315236f7b7320c5bb9b8a1b73938724be9",
+      "recorded_at": "2026-07-19T20:30:00Z",
+      "run_id": "ingest:a8f639ed066c3eaa46ca354bf6519b7d",
+      "sequence": 0,
+      "source_count": 3
+    }
+  ]
+}

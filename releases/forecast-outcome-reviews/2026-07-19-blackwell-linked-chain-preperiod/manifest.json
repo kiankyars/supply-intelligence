@@ -1,0 +1,57 @@
+{
+  "as_of_date": "2026-07-19",
+  "disposition_count": 5,
+  "evidence_count": 0,
+  "files": {
+    "README.md": {
+      "bytes": 535,
+      "sha256": "59242a7e1894ded9c5e6724d04d62fa7b3a0eec4243ef35e2b6c650e9c34eedd"
+    },
+    "dashboard.html": {
+      "bytes": 7893,
+      "sha256": "ea991fea0762f9fd6b563e42337207beb1f098e83118259f99bee0771e5bc206"
+    },
+    "dispositions.csv": {
+      "bytes": 1891,
+      "sha256": "5b643a76a7a96189239103df13d460515019398f4a11bb45fea201daeeedadfc"
+    },
+    "replay-review.json": {
+      "bytes": 2902,
+      "sha256": "21111416d8ebb81630994b70bb72a21a31333bbdc08a43cce16895f8321972c4"
+    },
+    "result.json": {
+      "bytes": 5932,
+      "sha256": "7b45e3de8fa9bbea402a4d629f59b06b904c408c361a5803d2e29d3c38f03ca1"
+    },
+    "review.json": {
+      "bytes": 2956,
+      "sha256": "89ce28559c6199a3a3738ec282529c087c56d7433bd3cac9797ed77ab129ecfd"
+    },
+    "scores.csv": {
+      "bytes": 246,
+      "sha256": "887ae2d83e221a6360450c20044d69cc3a047a87af81c91c1a6f324c48b73267"
+    },
+    "sources/registry-release/manifest.json": {
+      "bytes": 2157,
+      "sha256": "2c87fe5e4db877763cd463c192e9ec0ad19a125e68b4fd6dcb80a09246e7bac5"
+    },
+    "sources/registry-release/registry.json": {
+      "bytes": 13235,
+      "sha256": "6e592fe17cc97587b4ba3e83587def66cf9ff793694ab31b86d90fd77250ae2a"
+    },
+    "sources/registry-release/result.json": {
+      "bytes": 18950,
+      "sha256": "44047dc6fb696e846a1f54ad2232d3e77aaecd820c406e153f209bd2d405e8a2"
+    }
+  },
+  "forecast_count": 5,
+  "format": "ai-supply-forecast-outcome-review-release.v1",
+  "recorded_at": "2026-07-20T06:20:00Z",
+  "registry_manifest_sha256": "2c87fe5e4db877763cd463c192e9ec0ad19a125e68b4fd6dcb80a09246e7bac5",
+  "registry_result_sha256": "44047dc6fb696e846a1f54ad2232d3e77aaecd820c406e153f209bd2d405e8a2",
+  "registry_sha256": "6e592fe17cc97587b4ba3e83587def66cf9ff793694ab31b86d90fd77250ae2a",
+  "review_id": "blackwell-linked-chain-preperiod-review-2026q3",
+  "review_sha256": "89ce28559c6199a3a3738ec282529c087c56d7433bd3cac9797ed77ab129ecfd",
+  "score_count": 0,
+  "source_synthetic": true
+}

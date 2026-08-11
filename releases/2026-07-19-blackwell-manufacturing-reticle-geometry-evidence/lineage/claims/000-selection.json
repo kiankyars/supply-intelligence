@@ -1,0 +1,45 @@
+{
+  "allowed_postures": [
+    "derived"
+  ],
+  "claim_key": "platform.nvidia.blackwell.logic_die_height_mm",
+  "conversion": {
+    "multiplier": 1,
+    "source_unit": "mm",
+    "target_unit": "mm"
+  },
+  "expected_claim_dimensions": {
+    "capacity_basis": "physical_geometry_estimate",
+    "customer": "NVIDIA",
+    "entity_scope": "product",
+    "geography": "global",
+    "period": "current_design",
+    "process_node": "TSMC 4NP",
+    "product": "NVIDIA Blackwell",
+    "qualifier": "long-axis estimate from reticle-limit description",
+    "quantity_semantics": "modeled_interval_from_reticle_limit",
+    "stage": "logic_die_geometry",
+    "technology": "standard full-field lithography"
+  },
+  "expected_known_at": "2026-07-20T05:30:00Z",
+  "expected_revision_id": "claimrev:3ad665e2983383cc8777b1d4bd549b82",
+  "expected_valid_at": "2026-07-19",
+  "format": "ai-supply-manufacturing-claim-selection.v1",
+  "nonbinding_rationale": null,
+  "snapshot_sha256": "5abd5cfe9f03d0de87f1d2e19898cb14f9053792b63dd3a14bee51fbffad71f3",
+  "target_dimensions": {
+    "capacity_basis": "physical_geometry_estimate",
+    "customer": "NVIDIA",
+    "entity_scope": "product",
+    "geography": "global",
+    "period": "current_design",
+    "process_node": "TSMC 4NP",
+    "product": "NVIDIA Blackwell",
+    "qualifier": "long-axis estimate from reticle-limit description",
+    "quantity_semantics": "modeled_interval_from_reticle_limit",
+    "stage": "logic_die_geometry",
+    "technology": "standard full-field lithography"
+  },
+  "target_input_path": "logic.wafer.die_height_mm",
+  "usage": "constraint_input"
+}

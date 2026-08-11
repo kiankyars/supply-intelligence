@@ -1,0 +1,12 @@
+{
+  "alert_count": 4,
+  "claim_count": 4,
+  "current_known_at": "2026-07-19T19:00:00Z",
+  "cycle_id": "claim-cycle:9784ceec7b6f1a3c6096f87eb16eff84",
+  "format": "ai-supply-claim-cycle-run.v1",
+  "job_id": "official-controls",
+  "job_sha256": "11b0dc6fe5b2d241504abae87a007456e14c163c3d4797cb894c3c390ed9d20c",
+  "pack_count": 1,
+  "previous_known_at": "2026-07-19T18:59:59Z",
+  "run_at": "2026-07-19T19:00:00Z"
+}

@@ -1,0 +1,89 @@
+{
+  "all_numeric_values_unchanged": true,
+  "as_of_date": "2026-07-19",
+  "format": "ai-supply-manufacturing-revision-result.v1",
+  "notes": "Replace only the synthetic nominal logic-wafer diameter with the exact-scope derived 300mm claim. Wafer starts, die dimensions, yields, binning, HBM conversion, and package throughput remain synthetic.",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-19T20:45:00Z",
+  "remaining_synthetic_input_count": 20,
+  "replacement_count": 1,
+  "replacements": [
+    {
+      "claim_key": "platform.nvidia.blackwell.logic_wafer_diameter_mm",
+      "claim_posture": "derived",
+      "claim_revision_id": "claimrev:f5a22a4e3df41d9696eaa9ed4494bfb2",
+      "lineage": {
+        "selection_path": "examples/claim-selections/nvidia-blackwell-logic-wafer-diameter.json",
+        "selection_sha256": "aa8b41f9df3481a96f2117fceed8035fce08ccb0e9b7ede39195d63f97338082",
+        "snapshot_path": "releases/claim-cycles/blackwell-wafer-format/20260719T203000Z-blackwell-wafer-format-7272ab2b1e/current_snapshot.json",
+        "snapshot_sha256": "b494e0c4141e31d2f27381a32d5d40650ab689bee1dd00bd207d38a6bb898ad3"
+      },
+      "numeric_changed": false,
+      "previous_estimate": {
+        "base": 300,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 300,
+        "last_updated": "2026-07-17",
+        "low": 300,
+        "methodology": "Reference 300 mm logic wafer diameter; the cited product documents do not state wafer diameter.",
+        "posture": "synthetic",
+        "unit": "mm"
+      },
+      "revised_estimate": {
+        "base": 300.0,
+        "confidence": 0.96,
+        "confirming_evidence": "A current NVIDIA or TSMC process-integration document explicitly identifies Blackwell 4NP as a 300mm wafer process.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "snapshot:0b590bdda7bac062b987ed550d181499",
+          "snapshot:36f9f5ada639aa4320efe6383271195d",
+          "snapshot:3a52fa87274ef1434a926cde7f2cc172"
+        ],
+        "falsifying_evidence": "NVIDIA or TSMC identifies a non-300mm wafer format for Blackwell 4NP, or NVIDIA identifies a different foundry process for this design.",
+        "high": 300.0,
+        "last_updated": "2026-07-19",
+        "low": 300.0,
+        "methodology": "Claim gate conversion: Combine NVIDIA's reported Blackwell 4NP process with TSMC disclosures that its 4nm production uses a 12-inch fab and that TSMC labels the 12-inch GIGAFAB profile as 300mm capacity. Treat 300mm as the nominal semiconductor wafer format, not as an arithmetic conversion of 12 inches. This does not identify Blackwell's fab location, wafer starts, yield, or production volume. Applied multiplier 1 from mm to mm.",
+        "posture": "derived",
+        "unit": "mm"
+      },
+      "source_snapshot_ids": [
+        "snapshot:0b590bdda7bac062b987ed550d181499",
+        "snapshot:36f9f5ada639aa4320efe6383271195d",
+        "snapshot:3a52fa87274ef1434a926cde7f2cc172"
+      ],
+      "target_dimensions": {
+        "capacity_basis": "physical_specification",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "quantity_semantics": "point_specification",
+        "stage": "logic_wafer_geometry",
+        "technology": "300mm silicon wafer"
+      },
+      "target_input_path": "logic.wafer.wafer_diameter_mm",
+      "target_rationale": "The modeled input is the nominal diameter of the silicon wafer carrying Blackwell logic dies on TSMC 4NP. It is a physical specification, not wafer starts, yield, allocation, or capacity."
+    }
+  ],
+  "revision_id": "blackwell-wafer-format-2026-07-19",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "source_scenario": {
+    "as_of_date": "2026-07-17",
+    "path": "releases/2026-07-17-blackwell-manufacturing-illustrative/scenario.json",
+    "recorded_at": "2026-07-18T03:22:00Z",
+    "sha256": "03915d9aec007e357e47707069f1a20d59bd969b64c8f1674c8a8d13f611f10c"
+  },
+  "target_catalog": {
+    "path": "examples/coverage/blackwell-manufacturing-targets-2026q3-wafer-format.json",
+    "sha256": "10a2baaf541c1dfa46e29a1407e4c582b7d67ad4511e7e5b3390e0205aaf752b"
+  }
+}

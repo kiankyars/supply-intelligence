@@ -1,0 +1,3 @@
+id,type,severity,path,details_json
+alert:5c6dd97df186b820,estimate_posture_changed,medium,inputs.logic.wafer.die_height_mm,"{""current_posture"":""derived"",""previous_posture"":""synthetic""}"
+alert:8bfed7b1fbe1f894,estimate_posture_changed,medium,inputs.logic.wafer.die_width_mm,"{""current_posture"":""derived"",""previous_posture"":""synthetic""}"

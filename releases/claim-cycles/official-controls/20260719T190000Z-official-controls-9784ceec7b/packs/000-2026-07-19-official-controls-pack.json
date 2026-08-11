@@ -1,0 +1,170 @@
+{
+  "claims": [
+    {
+      "claim_key": "platform.nvidia.gb200_nvl72.rack_power_kw",
+      "confidence": 0.97,
+      "confirming_evidence": "A current NVIDIA rack guide continues to specify approximately 120 kW for a full GB200 NVL72 rack.",
+      "dimensions": {
+        "capacity_basis": "design_power",
+        "customer": null,
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": null,
+        "product": "NVIDIA GB200 NVL72",
+        "quantity_semantics": "point_specification",
+        "stage": "datacenter_power"
+      },
+      "evidence": [
+        {
+          "independence_group": "nvidia-product-documentation",
+          "role": "primary",
+          "source_id": "nvidia-gb200-rack-power"
+        }
+      ],
+      "falsifying_evidence": "A superseding NVIDIA guide changes the designed full-rack power value or its scope.",
+      "methodology": "Record the qualified vendor design value from the normalized observation. The claim excludes facility overhead and is not a meter reading.",
+      "posture": "reported",
+      "predicate": "approximate full-rack power consumption",
+      "status": "asserted",
+      "subject": "NVIDIA GB200 NVL72",
+      "supersedes_revision_id": null,
+      "unit": "kW/rack",
+      "valid_from": "2026-03-03",
+      "valid_to": null,
+      "value": 120
+    },
+    {
+      "claim_key": "platform.nvidia.gb200_nvl72.rack_power_mw",
+      "confidence": 0.97,
+      "confirming_evidence": "The underlying NVIDIA design value remains approximately 120 kW per rack and the unit conversion remains exact.",
+      "dimensions": {
+        "capacity_basis": "design_power",
+        "customer": null,
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": null,
+        "product": "NVIDIA GB200 NVL72",
+        "quantity_semantics": "point_specification",
+        "stage": "datacenter_power"
+      },
+      "evidence": [
+        {
+          "independence_group": "nvidia-product-documentation",
+          "role": "primary",
+          "source_id": "nvidia-gb200-rack-power"
+        }
+      ],
+      "falsifying_evidence": "The underlying vendor value or its platform scope changes.",
+      "methodology": "Divide the reported 120 kW per rack by 1,000 to express the same approximate design value in MW per rack.",
+      "posture": "derived",
+      "predicate": "normalized approximate full-rack power consumption",
+      "status": "asserted",
+      "subject": "NVIDIA GB200 NVL72",
+      "supersedes_revision_id": null,
+      "unit": "MW/rack",
+      "valid_from": "2026-03-03",
+      "valid_to": null,
+      "value": 0.12
+    },
+    {
+      "claim_key": "company.tsmc.wafer_shipments.2026q2_kpcs",
+      "confidence": 0.98,
+      "confirming_evidence": "TSMC's final 2Q26 management report continues to show 4,336 thousand 12-inch-equivalent wafer shipments.",
+      "dimensions": {
+        "capacity_basis": "shipments",
+        "customer": "all customers",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "2026-Q2",
+        "process_node": "all process nodes",
+        "product": "all products",
+        "quantity_semantics": "quarter_total",
+        "stage": "wafer_shipment"
+      },
+      "evidence": [
+        {
+          "independence_group": "tsmc-quarterly-results",
+          "role": "primary",
+          "source_id": "tsmc-2026q2-wafer-shipments"
+        }
+      ],
+      "falsifying_evidence": "TSMC publishes a corrected 2Q26 management report with a different shipment total or unit basis.",
+      "methodology": "Record the consolidated shipment value and unit shown in TSMC's 2Q26 management report. It is not node, customer, or product capacity.",
+      "posture": "reported",
+      "predicate": "consolidated wafer shipments during 2026-Q2",
+      "status": "asserted",
+      "subject": "Taiwan Semiconductor Manufacturing Company",
+      "supersedes_revision_id": null,
+      "unit": "thousand 12-inch-equivalent wafers",
+      "valid_from": "2026-04-01",
+      "valid_to": "2026-07-01",
+      "value": 4336
+    },
+    {
+      "claim_key": "company.tsmc.wafer_shipments.2026q2_wafers",
+      "confidence": 0.98,
+      "confirming_evidence": "The reported 4,336-thousand shipment value remains unchanged and the thousand-to-unit conversion remains exact.",
+      "dimensions": {
+        "capacity_basis": "shipments",
+        "customer": "all customers",
+        "entity_scope": "company",
+        "geography": "global",
+        "period": "2026-Q2",
+        "process_node": "all process nodes",
+        "product": "all products",
+        "quantity_semantics": "quarter_total",
+        "stage": "wafer_shipment"
+      },
+      "evidence": [
+        {
+          "independence_group": "tsmc-quarterly-results",
+          "role": "primary",
+          "source_id": "tsmc-2026q2-wafer-shipments"
+        }
+      ],
+      "falsifying_evidence": "TSMC revises the underlying shipment value or states a different unit basis.",
+      "methodology": "Multiply TSMC's reported 4,336 thousand 12-inch-equivalent wafer shipments by 1,000. This company-wide shipment total cannot be allocated to 4NP, NVIDIA, or Blackwell.",
+      "posture": "derived",
+      "predicate": "normalized consolidated wafer shipments during 2026-Q2",
+      "status": "asserted",
+      "subject": "Taiwan Semiconductor Manufacturing Company",
+      "supersedes_revision_id": null,
+      "unit": "12-inch-equivalent wafer",
+      "valid_from": "2026-04-01",
+      "valid_to": "2026-07-01",
+      "value": 4336000
+    }
+  ],
+  "format": "ai-supply-ingest-pack.v1",
+  "recorded_at": "2026-07-19T19:00:00Z",
+  "sources": [
+    {
+      "capture_kind": "normalized_observation",
+      "content_file": "nvidia-gb200-rack-power-observation.json",
+      "expected_sha256": "2eb321eea07833570c6e5947d996a9ffaecd562385aa466faa5646137b6c9e38",
+      "id": "nvidia-gb200-rack-power",
+      "license": "NVIDIA documentation terms",
+      "media_type": "application/json",
+      "published_at": "2026-03-03",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T03:22:00Z",
+      "source_family": "nvidia-dgx-gb-rack-guide",
+      "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html"
+    },
+    {
+      "capture_kind": "normalized_observation",
+      "content_file": "tsmc-2026q2-wafer-shipments-observation.json",
+      "expected_sha256": "a4ab48cc0533ffd632c344d59d1139b5a83b92fb2fa26da27e6b62d6bf87e0ae",
+      "id": "tsmc-2026q2-wafer-shipments",
+      "license": "TSMC website terms",
+      "media_type": "application/json",
+      "published_at": "2026-07-16",
+      "publisher": "Taiwan Semiconductor Manufacturing Company",
+      "retrieved_at": "2026-07-18T03:22:00Z",
+      "source_family": "tsmc-quarterly-results",
+      "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf"
+    }
+  ]
+}

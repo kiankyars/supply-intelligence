@@ -1,0 +1,61 @@
+{
+  "as_of_date": "2026-07-19",
+  "dispositions": [
+    {
+      "forecast_id": "blackwell-selected-flow-packages-2026q3",
+      "id": "blackwell-selected-flow-packages-preperiod",
+      "rationale": "The 2026-Q3 production period has not ended; no realized package outcome can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "status": "pending"
+    },
+    {
+      "forecast_id": "blackwell-component-cleared-racks-2026q3",
+      "id": "blackwell-component-cleared-racks-preperiod",
+      "rationale": "The 2026-Q3 assembly period has not ended; no realized integrated-rack outcome can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "status": "pending"
+    },
+    {
+      "forecast_id": "gb200-abilene-systems-shipped-2026q3",
+      "id": "gb200-abilene-shipped-preperiod",
+      "rationale": "The 2026-Q3 shipment period has not ended; no destination-specific realized shipment count can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "status": "pending"
+    },
+    {
+      "forecast_id": "gb200-abilene-systems-installed-2026q3",
+      "id": "gb200-abilene-installed-preperiod",
+      "rationale": "The 2026-Q3 installation cutoff has not passed; no quarter-end installed-system stock can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "status": "pending"
+    },
+    {
+      "forecast_id": "gb200-abilene-systems-operational-2026q3",
+      "id": "gb200-abilene-operational-preperiod",
+      "rationale": "The 2026-Q3 operational cutoff has not passed; no quarter-end commissioned-system stock can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "status": "pending"
+    }
+  ],
+  "evidence": [],
+  "format": "ai-supply-forecast-outcome-review.v1",
+  "id": "blackwell-linked-chain-preperiod-review-2026q3",
+  "notes": "This pre-period review proves complete disposition coverage and correctly emits no actuals or scores. It must not be revised in place after quarter end; a later review should pin this same immutable forecast registry.",
+  "recorded_at": "2026-07-20T06:20:00Z",
+  "registry_release": {
+    "manifest_format": "ai-supply-forecast-registry-release.v1",
+    "manifest_sha256": "2c87fe5e4db877763cd463c192e9ec0ad19a125e68b4fd6dcb80a09246e7bac5",
+    "path": "sources/registry-release",
+    "registry_file": "registry.json",
+    "registry_id": "blackwell-linked-chain-native-vintage-2026q3",
+    "registry_sha256": "6e592fe17cc97587b4ba3e83587def66cf9ff793694ab31b86d90fd77250ae2a",
+    "result_file": "result.json",
+    "result_format": "ai-supply-forecast-registry-result.v1",
+    "result_sha256": "44047dc6fb696e846a1f54ad2232d3e77aaecd820c406e153f209bd2d405e8a2"
+  }
+}

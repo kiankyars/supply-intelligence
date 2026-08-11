@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-07-19T23:00:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "Micron states that its products use 300 mm wafers and separately identifies 8-high 24 GB HBM3E on 1-beta; the 300 mm HBM3E wafer-format conclusion is derived across those statements.",
+    "The filing does not disclose HBM3E wafer starts, die dimensions, yield, NVIDIA qualification, customer allocation, or quarterly stack output."
+  ],
+  "observation_id": "micron-2025-10k-hbm3e-300mm-wafer-format",
+  "product": "Micron 8-high 24GB HBM3E",
+  "published_at": "2025-10-03",
+  "publisher": "Micron Technology",
+  "reported": {
+    "hbm3e_product": "8-high 24GB",
+    "hbm3e_process_node": "1-beta",
+    "manufacturing_wafer_diameter_mm": 300,
+    "wafer_scope": "Micron products"
+  },
+  "source_url": "https://investors.micron.com/static-files/8791eb80-8263-4c6f-aa74-fdd03fbbb027"
+}

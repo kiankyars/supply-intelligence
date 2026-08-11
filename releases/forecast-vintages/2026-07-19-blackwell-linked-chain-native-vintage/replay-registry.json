@@ -1,0 +1,206 @@
+{
+  "as_of_date": "2026-07-19",
+  "forecast_kind": "native_model",
+  "forecasts": [
+    {
+      "draw_column": "physical.accelerator_packages_produced",
+      "event": {
+        "operator": "at_least",
+        "rationale": "Round production milestone fixed before quarter end; it is not a disclosed company target.",
+        "threshold": 300000,
+        "unit": "package"
+      },
+      "id": "blackwell-selected-flow-packages-2026q3",
+      "metric": "accelerator_packages_produced",
+      "metric_class": "manufacturing-output",
+      "outcome_contract": {
+        "acceptable_postures": [
+          "reported",
+          "derived"
+        ],
+        "confirming_evidence": "A direct product-quarter finished-package total, or auditable serialized shipment and acceptance records reconciling to that total.",
+        "earliest_observed_at": "2026-10-01",
+        "expected_evidence_by": "2026-12-31",
+        "falsifying_evidence": "A scope-matched total outside the frozen interval, or evidence that the selected supplier flow double counts packages, uses a different product mix, or measures capacity rather than output.",
+        "known_observability_gap": "No public source currently discloses a scope-matched Blackwell product-quarter finished-package total, so this outcome may remain unobservable.",
+        "measurement_method": "Use a directly reported quarter total or sum only mutually exclusive source records whose product, stage, geography, and cutoff match the frozen target; document every exclusion and conversion.",
+        "required_evidence": "Publication-dated, content-hashed primary supplier or customer records that state or permit a non-overlapping derivation of finished Blackwell package output for the same product, flow, and quarter.",
+        "revision_window_end": "2027-03-31"
+      },
+      "period": "2026-Q3",
+      "target": {
+        "aggregation": "quarterly flow",
+        "cutoff_date": "2026-09-30",
+        "entity": "Selected Blackwell material-cleared supplier-HBM manufacturing flow",
+        "geography": "Supplier flow represented by the source scenario; not a disclosed global total",
+        "product": "NVIDIA Blackwell accelerator package",
+        "quantity_semantics": "finished accelerator packages produced during 2026-Q3",
+        "scope_definition": "Count finished Blackwell accelerator packages from the same material-cleared logic, supplier-HBM, and package-start scope represented by the frozen source; exclude work in process, rejected packages, inventory transfers, other Blackwell products, and capacity-rate statements."
+      },
+      "unit": "package"
+    },
+    {
+      "draw_column": "physical.integrated_racks",
+      "event": {
+        "operator": "at_least",
+        "rationale": "Round completed-rack milestone fixed before quarter end; it is not a supplier plan.",
+        "threshold": 300,
+        "unit": "rack-scale system"
+      },
+      "id": "blackwell-component-cleared-racks-2026q3",
+      "metric": "integrated_racks",
+      "metric_class": "assembly-output",
+      "outcome_contract": {
+        "acceptable_postures": [
+          "reported",
+          "derived"
+        ],
+        "confirming_evidence": "ODM acceptance or shipment records that reconcile unique completed rack serials across the same assembly scopes.",
+        "earliest_observed_at": "2026-10-01",
+        "expected_evidence_by": "2026-12-31",
+        "falsifying_evidence": "Evidence that counts trays or kits as racks, combines overlapping ODM scopes, includes other platforms, or shows a scope-matched completed-rack total outside the interval.",
+        "known_observability_gap": "The checked ODM identities and throughputs are synthetic, so a directly comparable external outcome is unlikely without a later evidence-backed scope replacement.",
+        "measurement_method": "Sum only serial-level or directly reported component-complete rack counts across mutually exclusive ODM scopes after confirming platform identity and completion stage.",
+        "required_evidence": "Publication-dated, content-hashed primary ODM, customer, or logistics records that identify completed GB200 NVL72 racks, non-overlapping assembly scopes, and the quarter cutoff.",
+        "revision_window_end": "2027-03-31"
+      },
+      "period": "2026-Q3",
+      "target": {
+        "aggregation": "quarterly flow",
+        "cutoff_date": "2026-09-30",
+        "entity": "Three component-cleared generic ODM scopes in the source scenario",
+        "geography": "ODM assembly scope represented by the source scenario",
+        "product": "GB200 NVL72 rack-scale system",
+        "quantity_semantics": "component-complete integrated racks produced during 2026-Q3",
+        "scope_definition": "Count component-complete GB200 NVL72 racks after compute-tray and rack integration within the same three non-overlapping ODM scopes; exclude partial racks, component kits, site installation, and other platform variants."
+      },
+      "unit": "rack-scale system"
+    },
+    {
+      "draw_column": "physical.systems_shipped",
+      "event": {
+        "operator": "at_least",
+        "rationale": "Round site-shipment milestone fixed before quarter end; it is not a customer target.",
+        "threshold": 20,
+        "unit": "rack-scale system"
+      },
+      "id": "gb200-abilene-systems-shipped-2026q3",
+      "metric": "systems_shipped",
+      "metric_class": "site-shipment",
+      "outcome_contract": {
+        "acceptable_postures": [
+          "reported",
+          "derived"
+        ],
+        "confirming_evidence": "A destination-specific shipment ledger or directly reported GB200 NVL72 rack count with a quarter cutoff.",
+        "earliest_observed_at": "2026-10-01",
+        "expected_evidence_by": "2026-12-31",
+        "falsifying_evidence": "A destination- and platform-matched unique shipment count outside the interval, or evidence that the modeled site allocation includes non-Abilene or non-GB200 systems.",
+        "known_observability_gap": "Public disclosures may discuss campus capacity or construction without identifying platform-specific shipped rack counts.",
+        "measurement_method": "Count unique rack-scale system serials at the first qualifying outbound custody event to Abilene and reconcile returns, reroutes, and duplicate carrier scans.",
+        "required_evidence": "Publication-dated, content-hashed customer, ODM, or carrier records with platform, destination, unique-system count, shipment event, and date fields sufficient to deduplicate the quarter flow.",
+        "revision_window_end": "2027-03-31"
+      },
+      "period": "2026-Q3",
+      "target": {
+        "aggregation": "quarterly flow",
+        "cutoff_date": "2026-09-30",
+        "entity": "Abilene target allocation represented by the source scenario",
+        "geography": "Abilene, Texas, United States",
+        "product": "GB200 NVL72 rack-scale system",
+        "quantity_semantics": "complete rack-scale systems shipped to the site during 2026-Q3",
+        "scope_definition": "Count unique complete GB200 NVL72 rack-scale systems whose custody transfer or carrier departure to the Abilene target occurred during the quarter; exclude component shipments, other sites, cancellations, and duplicate logistics events."
+      },
+      "unit": "rack-scale system"
+    },
+    {
+      "draw_column": "physical.systems_installed",
+      "event": {
+        "operator": "at_least",
+        "rationale": "Round installed-system milestone fixed before quarter end; it is not a site plan.",
+        "threshold": 20,
+        "unit": "rack-scale system"
+      },
+      "id": "gb200-abilene-systems-installed-2026q3",
+      "metric": "systems_installed",
+      "metric_class": "site-installation",
+      "outcome_contract": {
+        "acceptable_postures": [
+          "reported",
+          "derived"
+        ],
+        "confirming_evidence": "Rack-level installation acceptance records or a directly reported installed GB200 NVL72 count at the target site.",
+        "earliest_observed_at": "2026-10-01",
+        "expected_evidence_by": "2026-12-31",
+        "falsifying_evidence": "A platform- and site-matched installed count outside the interval, or evidence that delivered or staged racks were classified as installed.",
+        "known_observability_gap": "Construction imagery, power capacity, and building completion do not establish a platform-specific installed rack count.",
+        "measurement_method": "Count unique systems with completed physical placement, required connections, and installation acceptance by the cutoff; reconcile removals and systems awaiting commissioning separately.",
+        "required_evidence": "Publication-dated, content-hashed site acceptance, construction, customer, or vendor records with unique rack identity, platform, installation stage, location, and cutoff.",
+        "revision_window_end": "2027-03-31"
+      },
+      "period": "2026-Q3",
+      "target": {
+        "aggregation": "end-of-quarter stock",
+        "cutoff_date": "2026-09-30",
+        "entity": "Abilene target allocation represented by the source scenario",
+        "geography": "Abilene, Texas, United States",
+        "product": "GB200 NVL72 rack-scale system",
+        "quantity_semantics": "complete rack-scale systems physically installed by 2026-Q3 end",
+        "scope_definition": "Count unique complete GB200 NVL72 systems physically placed, connected, and installation-accepted at the Abilene target by quarter end; exclude delivered but uninstalled racks, partial assemblies, other sites, and deinstalled systems."
+      },
+      "unit": "rack-scale system"
+    },
+    {
+      "draw_column": "physical.systems_operational",
+      "event": {
+        "operator": "at_least",
+        "rationale": "Round operational-system milestone fixed before quarter end; it is not a site or customer target.",
+        "threshold": 20,
+        "unit": "rack-scale system"
+      },
+      "id": "gb200-abilene-systems-operational-2026q3",
+      "metric": "systems_operational",
+      "metric_class": "site-operation",
+      "outcome_contract": {
+        "acceptable_postures": [
+          "reported",
+          "derived"
+        ],
+        "confirming_evidence": "A site commissioning ledger or directly reported platform-specific operational system count at the cutoff.",
+        "earliest_observed_at": "2026-10-01",
+        "expected_evidence_by": "2026-12-31",
+        "falsifying_evidence": "A site- and platform-matched commissioned count outside the interval, or evidence that installed, energized, or burn-in systems were classified as workload-ready without acceptance.",
+        "known_observability_gap": "Public campus announcements and energized megawatts are not sufficient to derive platform-specific operational rack counts without allocation and commissioning evidence.",
+        "measurement_method": "Count unique systems only after documented operational acceptance across power, cooling, network, and workload-readiness checks; reconcile later failures or decommissions as revisions.",
+        "required_evidence": "Publication-dated, content-hashed customer or site-operator commissioning records with unique system count, GB200 NVL72 identity, operational acceptance criteria, location, and quarter-end cutoff.",
+        "revision_window_end": "2027-03-31"
+      },
+      "period": "2026-Q3",
+      "target": {
+        "aggregation": "end-of-quarter stock",
+        "cutoff_date": "2026-09-30",
+        "entity": "Abilene target allocation represented by the source scenario",
+        "geography": "Abilene, Texas, United States",
+        "product": "GB200 NVL72 rack-scale system",
+        "quantity_semantics": "commissioned rack-scale systems available for workload by 2026-Q3 end",
+        "scope_definition": "Count unique installed GB200 NVL72 systems that completed power, cooling, network, and acceptance commissioning and were available for workload at the Abilene target by quarter end; exclude burn-in failures, staged racks, and systems lacking operational acceptance."
+      },
+      "unit": "rack-scale system"
+    }
+  ],
+  "format": "ai-supply-forecast-registry.v1",
+  "id": "blackwell-linked-chain-native-vintage-2026q3",
+  "notes": "This registry freezes a native Q3 forecast before period end and preserves the full linked-chain draw ledger. The underlying source remains synthetic and illustrative, so the vintage demonstrates transaction-time integrity and future outcome discipline rather than actual market forecasting skill.",
+  "recorded_at": "2026-07-20T06:10:00Z",
+  "source_release": {
+    "draws_file": "chain_draws.csv",
+    "draws_sha256": "60b6fef761ea2f2386b26b423661786163ee4575f3316df0ff8dcb89388f0742",
+    "manifest_format": "ai-supply-linked-chain-release.v2",
+    "manifest_sha256": "268e00bf36a544887d8a7020ee4c3c60e73a2d8c46df50f91c79c6d22777ede5",
+    "path": "sources/source-release",
+    "result_file": "result.json",
+    "result_format": "ai-supply-reconciliation.v1",
+    "result_sha256": "3ad80ed33e421529ba83ad6c5c31b4bdbb2ff0d730c28246a9fb49a0e6a37cac",
+    "scenario_id": "gb200-to-abilene-odm-assembly-draw-linked-illustrative-2026q3"
+  }
+}

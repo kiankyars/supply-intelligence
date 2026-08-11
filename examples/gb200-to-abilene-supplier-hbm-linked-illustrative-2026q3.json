@@ -1,0 +1,115 @@
+{
+  "base_scenario": {
+    "expected_scenario_id": "gb200-nvl72-illustrative-2026q3",
+    "sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787"
+  },
+  "evidence": [
+    {
+      "content_hash": null,
+      "excerpt": "Synthetic allocation used only to make the global-to-site scope transition executable.",
+      "id": "synthetic:abilene-site-allocation",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": null,
+      "publisher": "AI Supply Intelligence demonstrator",
+      "retrieved_at": "2026-07-20T03:40:00Z",
+      "source_family": "synthetic-chain-link",
+      "source_url": "urn:synthetic:abilene-site-allocation",
+      "title": "Synthetic Abilene-target shipment allocation"
+    }
+  ],
+  "format": "ai-supply-chain-link.v1",
+  "links": [
+    {
+      "capacity_basis": "sellable_output",
+      "confirming_evidence": "A frozen manufacturing release with the same platform topology and quarter supports the complete-system range.",
+      "falsifying_evidence": "The source topology differs from GB200 NVL72, the source result is revised, or observed package output falls outside the linked range.",
+      "id": "linked-supplier-hbm-manufacturing-output",
+      "metric": "complete_system_equivalents",
+      "notes": "Replaces separate illustrative logic-die, aggregate-HBM, and package-throughput constraints because the frozen manufacturing result already reconciles logic and packaging with the supplier-resolved customer-allocated HBM pool. Interposer and ABF constraints remain separate.",
+      "platform_allocation": null,
+      "replace_constraint_ids": [
+        "blackwell-packages",
+        "blackwell-reticle-dies",
+        "hbm3e-capacity"
+      ],
+      "resource_kind": "accelerator_package",
+      "resource_name": "Frozen supplier-HBM Blackwell manufacturing system equivalents",
+      "source": "manufacturing",
+      "stage": "accelerator_package",
+      "units_per_system": 1.0
+    },
+    {
+      "capacity_basis": "allocated_output",
+      "confirming_evidence": "Customer allocation, purchase-order, logistics, or receiving records support this share of the frozen manufacturing flow moving to the selected site.",
+      "falsifying_evidence": "Allocation or receiving records show a materially different site share or that the manufacturing source covers a different supply scope.",
+      "id": "linked-abilene-shipment-allocation",
+      "metric": "complete_system_equivalents",
+      "notes": "Creates the explicit scope transition from the selected manufacturing flow to a synthetic Abilene-target shipped subset. It is not an observed customer allocation.",
+      "platform_allocation": {
+        "base": 0.06,
+        "confidence": 0.1,
+        "confirming_evidence": "Dated customer allocation and site receiving records support a six-percent central share for the same supply population.",
+        "correlation_group": "abilene-site-allocation",
+        "evidence_ids": [
+          "synthetic:abilene-site-allocation"
+        ],
+        "falsifying_evidence": "Shipment destinations, purchase orders, or receiving logs put the selected site's share outside four to eight percent.",
+        "high": 0.08,
+        "last_updated": "2026-07-19",
+        "low": 0.04,
+        "methodology": "Synthetic share chosen only to exercise a customer-and-site allocation boundary between manufacturing and deployment.",
+        "posture": "synthetic",
+        "unit": "ratio"
+      },
+      "replace_constraint_ids": [],
+      "resource_kind": "logistics",
+      "resource_name": "Synthetic Abilene-target shipment allocation",
+      "source": "manufacturing",
+      "stage": "shipped",
+      "units_per_system": 1.0
+    },
+    {
+      "capacity_basis": "energized_resource",
+      "confirming_evidence": "A frozen site-operational release for the same site, platform class, and quarter supports the operational-rack range.",
+      "falsifying_evidence": "The site scope or rack class differs, the source result is revised, or rack-level acceptance records fall outside the range.",
+      "id": "linked-abilene-operational-racks",
+      "metric": "operational_racks",
+      "notes": "Replaces separate illustrative power and commissioning constraints because the frozen operational result already takes their minimum after site deductions.",
+      "platform_allocation": null,
+      "replace_constraint_ids": [
+        "datacenter-commissioning",
+        "energized-datacenter-power"
+      ],
+      "resource_kind": "datacenter_commissioning",
+      "resource_name": "Frozen Abilene operational rack capacity",
+      "source": "datacenter_operational",
+      "stage": "operational",
+      "units_per_system": 1.0
+    }
+  ],
+  "preserve_market_views": false,
+  "scenario": {
+    "as_of_date": "2026-07-19",
+    "id": "gb200-to-abilene-supplier-hbm-linked-illustrative-2026q3",
+    "name": "GB200 supplier-HBM-to-Abilene linked chain demonstrator",
+    "notes": "Frozen supplier-resolved HBM manufacturing and site-operational results replace overlapping synthetic constraints. The site shipment share and all remaining capacity inputs are still synthetic.",
+    "quarter": "2026-Q3",
+    "recorded_at": "2026-07-20T03:40:00Z",
+    "samples": 20000,
+    "scope_notes": "Accelerator-package through rack-integration outputs represent the selected illustrative Blackwell supply flow after supplier-qualified and customer-allocated HBM replaces the aggregate HBM branch. A shipped-stage synthetic allocation narrows shipped, installed, and operational outputs to the Abilene-target subset. Supplier economics, consensus, opportunity ranking, and customer allocation are intentionally removed.",
+    "seed": 20260721
+  },
+  "sources": {
+    "datacenter_operational": {
+      "expected_scenario_id": "datacenter:openai-abilene-net-operational-illustrative-2026q3",
+      "scope": "One selected Abilene campus target-platform operational envelope.",
+      "sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e"
+    },
+    "manufacturing": {
+      "expected_scenario_id": "blackwell-manufacturing-with-supplier-hbm-illustrative-2026q3",
+      "scope": "Illustrative Blackwell manufacturing flow whose aggregate HBM branch has been replaced once by a frozen three-supplier customer-allocated stack pool.",
+      "sha256": "ea06b4697a3af1a1d6fa32d1d6e0ff6a5ae80ee4ed2b0d75150694ccdca06077"
+    }
+  }
+}

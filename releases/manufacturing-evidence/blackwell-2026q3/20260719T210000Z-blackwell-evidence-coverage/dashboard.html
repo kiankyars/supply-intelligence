@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blackwell-manufacturing-evidence-coverage-2026-07-19</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #14231d;
+      --muted: #607069;
+      --paper: #f4f2ea;
+      --card: #fffdf8;
+      --line: #d8d7ce;
+      --green: #0f6b4b;
+      --green-soft: #dceee5;
+      --amber: #98600a;
+      --amber-soft: #f7e9c6;
+      --red: #a13d33;
+      --red-soft: #f5ddd9;
+      --slate-soft: #e7ebe8;
+      --shadow: 0 18px 50px rgba(20, 35, 29, .08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(1500px, calc(100% - 40px)); margin: 0 auto; padding: 42px 0 72px; }
+    header { background: var(--ink); color: #fffdf8; border-radius: 24px; padding: 36px; box-shadow: var(--shadow); }
+    .eyebrow { color: #a7d5c2; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 980px; margin: 10px 0 12px; font: 700 clamp(32px, 5vw, 60px)/1.02 Georgia, serif; letter-spacing: -.035em; }
+    header p { max-width: 920px; margin: 0; color: #d4ddd8; font-size: 17px; }
+    .warning { margin-top: 22px; padding: 14px 16px; border: 1px solid #6c756f; border-radius: 14px; color: #fff4cf; background: rgba(255, 255, 255, .04); }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 20px 0 34px; }
+    .card, section { background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+    .card { padding: 20px; }
+    .card span { display: block; color: var(--muted); font-size: 12px; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+    .card strong { display: block; margin: 6px 0 2px; font: 700 34px/1 Georgia, serif; }
+    .card small { color: var(--muted); }
+    section { margin-top: 20px; padding: 26px; overflow: hidden; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
+    .section-head h2 { margin: 2px 0 0; font: 700 28px/1.1 Georgia, serif; }
+    .section-head p { max-width: 620px; margin: 0; color: var(--muted); }
+    .progress { height: 14px; overflow: hidden; border-radius: 999px; background: #e2e3dd; }
+    .progress i { display: block; height: 100%; width: 0.0000%; background: var(--green); }
+    .progress-note { display: flex; justify-content: space-between; margin-top: 7px; color: var(--muted); font-size: 13px; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+    table { width: 100%; min-width: 1050px; border-collapse: collapse; }
+    th { padding: 11px 13px; background: #ecebe4; color: #58665f; font-size: 11px; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+    td { padding: 13px; border-top: 1px solid var(--line); vertical-align: top; }
+    td strong, td span, td small { display: block; }
+    td span, td small { margin-top: 3px; color: var(--muted); font-size: 12px; }
+    td small { max-width: 420px; }
+    .mono { font-variant-numeric: tabular-nums; }
+    .status { display: inline-block; width: fit-content; margin: 0 0 3px; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .02em; }
+    .status-constraint_eligible, .status-eligible_claim_candidate { color: var(--green); background: var(--green-soft); }
+    .status-scale_control, .status-directional_signal { color: var(--amber); background: var(--amber-soft); }
+    .status-rejected, .status-scope_rejected_claim, .status-rejected_claim { color: var(--red); background: var(--red-soft); }
+    .status-no_constraint_claim { color: #56635d; background: var(--slate-soft); }
+    .lineage { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .lineage div { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: #f7f6f0; }
+    .lineage span { display: block; color: var(--muted); font-size: 12px; }
+    .lineage code { overflow-wrap: anywhere; font-size: 12px; }
+    footer { margin-top: 24px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 950px) { .cards { grid-template-columns: 1fr 1fr; } .section-head, .lineage { display: block; } .section-head p, .lineage div + div { margin-top: 12px; } }
+    @media (max-width: 560px) { main { width: min(100% - 20px, 1500px); padding-top: 10px; } header, section { border-radius: 14px; padding: 20px; } .cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Manufacturing evidence coverage · 2026-07-19</div>
+    <h1>0 of 21 synthetic inputs have a gate-passing constraint claim; zero replacements were applied.</h1>
+    <p>This release joins a frozen manufacturing research queue to claim-level scope decisions. Accepted directional evidence informs what to investigate; it does not become throughput.</p>
+    <div class="warning"><strong>Boundary:</strong> the source manufacturing run remains entirely synthetic. A gate decision does not mutate its inputs, and no public claim in this release qualifies as Blackwell quarterly capacity.</div>
+  </header>
+
+  <div class="cards">
+    <article class="card"><span>Synthetic inputs</span><strong>21</strong><small>All remain unreplaced</small></article>
+    <article class="card"><span>Eligible claim candidates</span><strong>0</strong><small>0.0% of research priority</small></article>
+    <article class="card"><span>Scope-rejected inputs</span><strong>1</strong><small>Claim found, target mismatch</small></article>
+    <article class="card"><span>Nonbinding evidence</span><strong>9</strong><small>8 signals · 1 scale control</small></article>
+  </div>
+
+  <section>
+    <div class="section-head"><div><div class="eyebrow">Coverage weighted by modeled influence</div><h2>Gate-passing evidence still covers 0.0%</h2></div><p>Research priority equals the current branch influence multiplied by evidence weakness. It is a sourcing order, not a causal sensitivity estimate.</p></div>
+    <div class="progress" role="img" aria-label="Eligible claim candidates cover 0.0% of research priority"><i></i></div>
+    <div class="progress-note"><span>0%</span><span>0.0% eligible</span><span>100%</span></div>
+  </section>
+
+  <section>
+    <div class="section-head"><div><div class="eyebrow">Constraint-input audit</div><h2>Source the assumptions that can move output first</h2></div><p>Every row preserves its low/base/high range, current-run influence, confirmation test, and any claim-gate blockers.</p></div>
+    <div class="table-wrap"><table><thead><tr><th>Input</th><th>Evidence status</th><th>Priority</th><th>Source range</th><th>What is missing</th></tr></thead><tbody>
+            <tr>
+              <td><strong>package.assembly_yield</strong><span>package · advanced-package-assembly</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.650</strong><span>100.0% modeled influence</span></td>
+              <td class="mono">0.9 / <strong>0.95</strong> / 0.98<span>ratio</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.clustering_alpha</strong><span>logic_process · logic-yield-and-binning</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">2 / <strong>3</strong> / 4<span>alpha</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.defect_density_per_cm2</strong><span>logic_process · logic-yield-and-binning</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">0.05 / <strong>0.08</strong> / 0.12<span>defects/cm2</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.performance_bin_share</strong><span>logic_process · logic-yield-and-binning</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">0.65 / <strong>0.78</strong> / 0.88<span>ratio</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.wafer.die_height_mm</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">31.5 / <strong>32.0</strong> / 32.5<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.wafer.die_width_mm</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">25.5 / <strong>26.0</strong> / 26.5<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.wafer.edge_exclusion_mm</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">2 / <strong>2.5</strong> / 3<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.wafer.scribe_width_mm</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">0.07 / <strong>0.1</strong> / 0.13<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.wafer.wafer_diameter_mm</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">300.0 / <strong>300.0</strong> / 300.0<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.wafer.wafer_starts</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+              <td><span class="status status-scope_rejected_claim">Scope-rejected claim</span><span>tsmc-wafer-shipments-rejected</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">25,000 / <strong>35,000</strong> / 45,000<span>wafer</span></td>
+              <td><span>dimension_mismatch:capacity_basis, dimension_mismatch:customer, dimension_mismatch:entity_scope, dimension_mismatch:period, dimension_mismatch:process_node, dimension_mismatch:product, dimension_mismatch:stage</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic.wafer_sort_yield</strong><span>logic_process · logic-yield-and-binning</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.460</strong><span>70.8% modeled influence</span></td>
+              <td class="mono">0.92 / <strong>0.96</strong> / 0.985<span>ratio</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>package.assembly_starts</strong><span>package · advanced-package-assembly</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.190</strong><span>29.2% modeled influence</span></td>
+              <td class="mono">350,000 / <strong>450,000</strong> / 550,000<span>package</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.known_good_die_yield</strong><span>hbm_process · hbm-die-and-stack</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">0.82 / <strong>0.9</strong> / 0.95<span>ratio</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.stack_assembly_yield</strong><span>hbm_process · hbm-die-and-stack</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">0.88 / <strong>0.94</strong> / 0.98<span>ratio</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.stack_final_test_yield</strong><span>hbm_process · hbm-die-and-stack</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">0.94 / <strong>0.975</strong> / 0.995<span>ratio</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.wafer.die_height_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">10.5 / <strong>11.0</strong> / 11.5<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.wafer.die_width_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">9.5 / <strong>10.0</strong> / 10.5<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.wafer.edge_exclusion_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">2 / <strong>2.5</strong> / 3<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.wafer.scribe_width_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">0.05 / <strong>0.08</strong> / 0.11<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.wafer.wafer_diameter_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">300.0 / <strong>300.0</strong> / 300.0<span>mm</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm.wafer.wafer_starts</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+              <td><span class="status status-no_constraint_claim">No constraint claim</span><span>None</span></td>
+              <td class="mono"><strong>0.000</strong><span>0.0% modeled influence</span></td>
+              <td class="mono">90,000 / <strong>120,000</strong> / 150,000<span>wafer</span></td>
+              <td><span>—</span><small>Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</small></td>
+            </tr>
+            </tbody></table></div>
+  </section>
+
+  <section>
+    <div class="section-head"><div><div class="eyebrow">Claim-level decisions</div><h2>Signals stay separate from capacity</h2></div><p>Each assessment pins a ledger revision and snapshot. Nonbinding claims can sharpen research without changing the production estimate.</p></div>
+    <div class="table-wrap"><table><thead><tr><th>Assessment</th><th>Decision</th><th>Claim value</th><th>Claim scope</th><th>Boundary</th></tr></thead><tbody>
+            <tr>
+              <td><strong>tsmc-wafer-shipments-rejected</strong><span>company.tsmc.wafer_shipments.2026q2_wafers</span></td>
+              <td><span class="status status-rejected">Rejected</span><span>constraint_input</span></td>
+              <td><strong>4336000</strong><span>12-inch-equivalent wafer</span></td>
+              <td><strong>wafer_shipment</strong><span>2026-Q2 · all products</span></td>
+              <td><span>dimension_mismatch:capacity_basis, dimension_mismatch:customer, dimension_mismatch:entity_scope, dimension_mismatch:period, dimension_mismatch:process_node, dimension_mismatch:product, dimension_mismatch:stage</span><small>Target: logic.wafer.wafer_starts</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>tsmc-wafer-shipments-scale-control</strong><span>company.tsmc.wafer_shipments.2026q2_wafers</span></td>
+              <td><span class="status status-scale_control">Scale control</span><span>scale_control</span></td>
+              <td><strong>4336000</strong><span>12-inch-equivalent wafer</span></td>
+              <td><strong>wafer_shipment</strong><span>2026-Q2 · all products</span></td>
+              <td><span>Company-wide prior-quarter shipments check scale only and cannot constrain Blackwell wafer starts or package output.</span><small>Target: references.tsmc_total_wafer_shipments_2026q2</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>tsmc-backend-shortage-signal</strong><span>company.tsmc.backend.capacity_status.2026q2</span></td>
+              <td><span class="status status-directional_signal">Directional signal</span><span>directional_signal</span></td>
+              <td><strong>&quot;shortage_mode&quot;</strong><span>status</span></td>
+              <td><strong>advanced_packaging</strong><span>current_as_of_2026-07-16 · backend services</span></td>
+              <td><span>A company-wide shortage status identifies a likely bottleneck family but contains no package starts, product mix, technology split, yield, or customer allocation.</span><small>Target: research.advanced_packaging.supply_demand_status</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>tsmc-tester-shortage-signal</strong><span>company.tsmc.tester.capacity_status.2026q2</span></td>
+              <td><span class="status status-directional_signal">Directional signal</span><span>directional_signal</span></td>
+              <td><strong>&quot;shortage&quot;</strong><span>status</span></td>
+              <td><strong>final_test</strong><span>current_as_of_2026-07-16 · customer products requiring test</span></td>
+              <td><span>A broad tester shortage disclosure identifies a bottleneck family but has no product-specific test time, tool fleet, utilization, yield, or allocation quantity.</span><small>Target: research.final_test.supply_status</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>tsmc-fabs-under-construction-signal</strong><span>company.tsmc.taiwan.leading_edge_backend_fabs_building_count</span></td>
+              <td><span class="status status-directional_signal">Directional signal</span><span>directional_signal</span></td>
+              <td><strong>13</strong><span>fab</span></td>
+              <td><strong>facility_construction</strong><span>multi_year_from_2026q2 · logic wafers and advanced packaging combined</span></td>
+              <td><span>A combined multi-year construction count does not identify fab type, completion quarter, qualified capacity, process output, product mix, or customer allocation.</span><small>Target: research.tsmc.taiwan_construction_pipeline</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>tsmc-capex-guidance-signal</strong><span>company.tsmc.capex.2026_guidance_usd_billion</span></td>
+              <td><span class="status status-directional_signal">Directional signal</span><span>directional_signal</span></td>
+              <td><strong>{&quot;high&quot;: 64, &quot;low&quot;: 60}</strong><span>USD billion</span></td>
+              <td><strong>capital_investment</strong><span>2026 · all products</span></td>
+              <td><span>Company-wide annual capex is a direction-of-investment signal, not quarterly installed, qualified, usable, or NVIDIA-allocated capacity.</span><small>Target: research.tsmc.annual_capex_guidance</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>tsmc-backend-capex-share-signal</strong><span>company.tsmc.capex.2026_backend_bucket_share</span></td>
+              <td><span class="status status-directional_signal">Directional signal</span><span>directional_signal</span></td>
+              <td><strong>{&quot;high&quot;: 0.2, &quot;low&quot;: 0.1}</strong><span>ratio</span></td>
+              <td><strong>capital_investment</strong><span>2026 · all products</span></td>
+              <td><span>The disclosed bucket combines advanced packaging, testing, mask making, and other spending and does not establish quarterly product capacity or allocation.</span><small>Target: research.tsmc.backend_capex_bucket_share</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>micron-hbm4-ramp-speed-signal</strong><span>company.micron.hbm4_12h.ramp_speed_vs_hbm3e_12h</span></td>
+              <td><span class="status status-directional_signal">Directional signal</span><span>directional_signal</span></td>
+              <td><strong>2</strong><span>ratio</span></td>
+              <td><strong>hbm_manufacturing_ramp</strong><span>current_as_of_fq3_2026 · HBM4 12-high</span></td>
+              <td><span>A relative HBM4 ramp-speed comparison has no absolute wafer, die, stack, yield, or customer-allocation quantity and does not describe GB200 HBM3E supply.</span><small>Target: research.hbm4.ramp_speed_vs_hbm3e</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>micron-hbm4-revenue-lower-bound-signal</strong><span>company.micron.hbm4.cumulative_revenue_lower_bound_fq3_2026</span></td>
+              <td><span class="status status-directional_signal">Directional signal</span><span>directional_signal</span></td>
+              <td><strong>1</strong><span>USD billion</span></td>
+              <td><strong>hbm_shipment</strong><span>cumulative_through_fq3_2026 · HBM4 12-high</span></td>
+              <td><span>Revenue confirms commercial HBM4 shipments but cannot be converted into HBM stack counts without price, mix, timing, and customer allocation evidence.</span><small>Target: research.hbm4.cumulative_revenue_lower_bound</small></td>
+            </tr>
+            
+            <tr>
+              <td><strong>micron-hbm4-shipment-status-signal</strong><span>company.micron.hbm4.lead_platform_shipment_status_fq3_2026</span></td>
+              <td><span class="status status-directional_signal">Directional signal</span><span>directional_signal</span></td>
+              <td><strong>&quot;high_volume_shipments&quot;</strong><span>status</span></td>
+              <td><strong>hbm_shipment</strong><span>current_as_of_fq3_2026 · HBM4</span></td>
+              <td><span>High-volume HBM4 status has no stack count and does not establish HBM3E supply or allocation for GB200.</span><small>Target: research.hbm4.production_status</small></td>
+            </tr>
+            </tbody></table></div>
+  </section>
+
+  <section>
+    <div class="section-head"><div><div class="eyebrow">Frozen lineage</div><h2>Reproduce the exact evidence view</h2></div><p>The release includes the source research queue, claim snapshots, selections, assessments, and hashes.</p></div>
+    <div class="lineage">
+      <div><span>Manufacturing release</span><code>releases/2026-07-17-blackwell-manufacturing-illustrative</code></div>
+      <div><span>Manufacturing manifest SHA-256</span><code>7a1881a9f498b073aac8e677072f152cd52ba1371faf81adca9e6c23fdc3b91f</code></div>
+      <div><span>Scenario</span><code>blackwell-wafer-hbm-illustrative-2026q3 · 2026-Q3</code></div>
+      <div><span>Coverage recipe SHA-256</span><code>2a5d662983f409b297ae49a33ed4120fb9637073ad8c3c2e228bffe02a769785</code></div>
+    </div>
+  </section>
+  <footer>Recorded 2026-07-19T21:00:00Z. This dashboard is an evidence audit, not an estimate of actual Blackwell output or an investment recommendation.</footer>
+</main>
+</body>
+</html>

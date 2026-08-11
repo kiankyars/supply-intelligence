@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-07-20T05:25:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "ASML specifies the maximum exposure field of its standard full-field lithography platform, not the measured dimensions of a Blackwell production die.",
+    "Combining this field limit with NVIDIA's reticle-limit description supports a bounded geometry estimate only; it does not establish die yield, scribe width, wafer starts, or production volume."
+  ],
+  "observation_id": "asml-standard-full-field-exposure-size",
+  "published_at": null,
+  "publisher": "ASML",
+  "reported": {
+    "field_height_mm": 33,
+    "field_width_mm": 26,
+    "maximum_exposure_field": "26 mm x 33 mm",
+    "platform": "TWINSCAN standard full-field DUV and EUV lithography"
+  },
+  "source_url": "https://www.asml.com/en/products/duv-lithography-systems/twinscan-nxt2050i"
+}

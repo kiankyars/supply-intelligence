@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Blackwell supplier-resolved HBM3E portfolio</title>
+  <style>
+    :root { --bg:#f0eee7; --paper:#fffdf8; --ink:#16211d; --muted:#65716b; --line:#d6d4cb; --green:#0d6b55; --mint:#9ed7c1; --orange:#c56b36; --blue:#547698; --warn:#8e4b11; --warn-bg:#fff0d7; --shadow:0 14px 38px rgba(22,33,29,.07); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.48 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:var(--green); }
+    header,main { width:min(1480px,calc(100% - 40px)); margin-inline:auto; }
+    header { display:flex; justify-content:space-between; gap:28px; align-items:end; padding:38px 0 24px; border-bottom:1px solid var(--line); }
+    h1 { max-width:1000px; margin:7px 0; font:600 clamp(38px,5.5vw,70px)/.98 Georgia,serif; letter-spacing:-.04em; }
+    h2,h3 { font-family:Georgia,serif; }
+    header p,.muted,.section-head p { margin:0; color:var(--muted); }
+    .eyebrow { color:var(--green); font:800 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; }
+    .stamp { min-width:190px; text-align:right; } .stamp span,.stamp strong { display:block; } .stamp strong { font-size:21px; } .stamp span { color:var(--muted); }
+    main { padding:22px 0 70px; }
+    .notice { display:grid; grid-template-columns:210px 1fr; gap:20px; padding:15px 17px; border:1px solid #e1bf89; background:var(--warn-bg); } .notice strong { color:var(--warn); } .notice ul { margin:0; padding-left:18px; }
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; margin:18px 0 28px; }
+    .card,.supplier-card,.panel,.table-wrap { border:1px solid var(--line); background:var(--paper); box-shadow:var(--shadow); }
+    .card { padding:19px; } .card span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; } .card strong { display:block; margin:7px 0 2px; font:600 35px/1 Georgia,serif; } .card small { color:var(--muted); }
+    .supplier-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; } .supplier-card { padding:19px; border-top:4px solid var(--green); } .supplier-card.series-2 { border-top-color:var(--orange); } .supplier-card.series-3 { border-top-color:var(--blue); } .supplier-card h2 { margin:4px 0 14px; font-size:27px; } .supplier-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; } .supplier-metrics span,.supplier-metrics small { display:block; color:var(--muted); font-size:12px; } .supplier-metrics strong { display:block; margin:3px 0; font:600 25px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .section-head { display:flex; justify-content:space-between; gap:24px; align-items:end; margin:34px 0 12px; } .section-head h2 { margin:4px 0 0; font-size:29px; } .section-head p { max-width:640px; }
+    .two-column { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(350px,.9fr); gap:16px; } .panel { padding:22px; }
+    .stacked-bar { display:flex; height:30px; overflow:hidden; background:#e2ded4; margin:20px 0 16px; } .segment { height:100%; background:var(--green); } .segment.series-2 { background:var(--orange); } .segment.series-3 { background:var(--blue); } .legend { display:grid; gap:10px; } .legend div { display:grid; grid-template-columns:12px 1fr auto; gap:9px; align-items:center; } .dot { width:9px; height:9px; border-radius:50%; background:var(--green); } .dot.series-2 { background:var(--orange); } .dot.series-3 { background:var(--blue); }
+    .table-wrap { overflow-x:auto; } table { width:100%; min-width:1020px; border-collapse:collapse; } th,td { padding:12px 13px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } th { color:var(--muted); font-size:11px; letter-spacing:.06em; text-transform:uppercase; } tbody tr:last-child td { border-bottom:0; } td span,td small { display:block; margin-top:3px; color:var(--muted); font-size:12px; } code,.mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-variant-numeric:tabular-nums; } code { overflow-wrap:anywhere; }
+    footer { margin-top:34px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); }
+    @media(max-width:1000px) { .cards,.supplier-grid { grid-template-columns:1fr 1fr; } .two-column { grid-template-columns:1fr; } }
+    @media(max-width:680px) { header,.section-head { display:block; } .stamp { margin-top:15px; text-align:left; } .notice { grid-template-columns:1fr; gap:5px; } .cards,.supplier-grid { grid-template-columns:1fr; } .supplier-metrics { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div><div class="eyebrow">Supplier-resolved HBM · 2026-Q3</div><h1>Blackwell supplier-resolved HBM3E portfolio</h1><p>Compatible HBM supply is qualified and allocated by supplier before aggregation for NVIDIA Blackwell 192GB HBM3E reference configuration.</p></div>
+    <div class="stamp"><span>As of</span><strong>2026-07-19</strong><span>20,000 draws · seed 20260719</span></div>
+  </header>
+  <main>
+    <aside class="notice"><strong>Illustrative supplier portfolio</strong><ul><li>Capacity is summed only across unique declared capacity_scope_id values; the declaration still requires source review for real-world overlap.</li><li>Platform qualification and customer allocation are separate multiplicative estimates and must not be inferred from supplier-wide HBM output.</li><li>Gross die counts use the manufacturing engine&#x27;s area and edge-loss approximation; reticle layout, repair, and partial dies are not modeled.</li><li>One or more supplier wafer, yield, qualification, allocation, or demand inputs are synthetic; this is not an estimate of actual HBM supply.</li></ul></aside>
+    <div class="cards">
+      <article class="card"><span>Allocated stacks</span><strong>2.28M</strong><small>P10–P90 1.98M–2.61M</small></article>
+      <article class="card"><span>Package equivalents</span><strong>284,391</strong><small>NVIDIA Blackwell 192GB HBM3E reference configuration</small></article>
+      <article class="card"><span>HBM-limited probability</span><strong>98.7%</strong><small>against package demand</small></article>
+      <article class="card"><span>Supplier HHI</span><strong>0.421</strong><small>allocated-stack concentration</small></article>
+    </div>
+    <section><div class="section-head"><div><div class="eyebrow">Supplier ledger</div><h2>Three scopes, consumed once</h2></div><p>Each supplier owns a unique declared capacity scope. Qualification and customer allocation remain visible deductions.</p></div><div class="supplier-grid">
+            <article class="supplier-card series-1">
+              <div class="eyebrow">Illustrative 24GB 8-high-compatible HBM3E · supplier HBM3E process not source-verified</div>
+              <h2>SK hynix</h2>
+              <div class="supplier-metrics">
+                <div><span>Allocated stacks</span><strong>1.14M</strong><small>P10–P90 918,183–1.40M</small></div>
+                <div><span>Supply share</span><strong>50.4%</strong><small>median customer allocation</small></div>
+                <div><span>Criticality</span><strong>100.0%</strong><small>demand uncovered without supplier</small></div>
+              </div>
+            </article>
+            
+            <article class="supplier-card series-2">
+              <div class="eyebrow">Illustrative 24GB 8-high-compatible HBM3E · 1-beta</div>
+              <h2>Micron Technology</h2>
+              <div class="supplier-metrics">
+                <div><span>Allocated stacks</span><strong>874,811</strong><small>P10–P90 706,356–1.07M</small></div>
+                <div><span>Supply share</span><strong>38.6%</strong><small>median customer allocation</small></div>
+                <div><span>Criticality</span><strong>100.0%</strong><small>demand uncovered without supplier</small></div>
+              </div>
+            </article>
+            
+            <article class="supplier-card series-3">
+              <div class="eyebrow">Illustrative 24GB 8-high-compatible HBM3E · supplier HBM3E process not source-verified</div>
+              <h2>Samsung Electronics</h2>
+              <div class="supplier-metrics">
+                <div><span>Allocated stacks</span><strong>239,749</strong><small>P10–P90 164,066–343,407</small></div>
+                <div><span>Supply share</span><strong>10.6%</strong><small>median customer allocation</small></div>
+                <div><span>Criticality</span><strong>99.8%</strong><small>demand uncovered without supplier</small></div>
+              </div>
+            </article>
+            </div></section>
+    <section class="two-column"><div><div class="section-head"><div><div class="eyebrow">Allocation mix</div><h2>Who supplies the customer pool</h2></div></div><div class="panel"><div class="stacked-bar"><span class="segment series-1" style="width:50.43619%" title="SK hynix 50.4%"></span><span class="segment series-2" style="width:38.62338%" title="Micron Technology 38.6%"></span><span class="segment series-3" style="width:10.59350%" title="Samsung Electronics 10.6%"></span></div><div class="legend"><div><i class="dot series-1"></i><span>SK hynix</span><strong>50.4%</strong></div><div><i class="dot series-2"></i><span>Micron Technology</span><strong>38.6%</strong></div><div><i class="dot series-3"></i><span>Samsung Electronics</span><strong>10.6%</strong></div></div></div></div><div><div class="section-head"><div><div class="eyebrow">Demand bridge</div><h2>Reserved stacks to packages</h2></div></div><div class="panel"><p><strong>344,118 / 399,559 / 455,548</strong> package demand</p><p><strong>247,103 / 284,391 / 325,069</strong> packages supported</p><p><strong>47,133 / 114,882 / 180,750</strong> unfilled demand</p><p class="muted">Values show P10 / P50 / P90.</p></div></div></section>
+    <section><div class="section-head"><div><div class="eyebrow">Physical conversion</div><h2>Supplier output audit</h2></div><p>Good stacks are not customer supply until platform qualification and allocation pass.</p></div><div class="table-wrap"><table><thead><tr><th>Supplier</th><th>Capacity scope</th><th>Good stacks</th><th>Qualified</th><th>Customer allocated</th><th>Package equivalents</th></tr></thead><tbody>
+            <tr>
+              <td><strong>SK hynix</strong><span>global supplier network · supplier hbm3e compatible</span></td>
+              <td><code>sk-hynix-global-hbm3e-compatible-2026q3</code><span>Only SK hynix&#x27;s modeled 2026-Q3 HBM3E-compatible memory-wafer flow, before Blackwell qualification and NVIDIA allocation; no other supplier scope is included.</span></td>
+              <td class="mono">2.55M / 3.04M / 3.58M</td>
+              <td class="mono">2.12M / 2.55M / 3.02M</td>
+              <td class="mono">918,183 / 1.14M / 1.40M</td>
+              <td class="mono">114,773 / 142,809 / 175,406</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Micron Technology</strong><span>global supplier network · supplier hbm3e compatible</span></td>
+              <td><code>micron-global-hbm3e-compatible-2026q3</code><span>Only Micron Technology&#x27;s modeled 2026-Q3 HBM3E-compatible memory-wafer flow, before Blackwell qualification and NVIDIA allocation; no other supplier scope is included.</span></td>
+              <td class="mono">1.67M / 2.00M / 2.35M</td>
+              <td class="mono">1.32M / 1.60M / 1.91M</td>
+              <td class="mono">706,356 / 874,811 / 1.07M</td>
+              <td class="mono">88,295 / 109,351 / 133,648</td>
+            </tr>
+            
+            <tr>
+              <td><strong>Samsung Electronics</strong><span>global supplier network · supplier hbm3e compatible</span></td>
+              <td><code>samsung-global-hbm3e-compatible-2026q3</code><span>Only Samsung Electronics&#x27;s modeled 2026-Q3 HBM3E-compatible memory-wafer flow, before Blackwell qualification and NVIDIA allocation; no other supplier scope is included.</span></td>
+              <td class="mono">1.24M / 1.54M / 1.87M</td>
+              <td class="mono">691,210 / 916,670 / 1.18M</td>
+              <td class="mono">164,066 / 239,749 / 343,407</td>
+              <td class="mono">20,508 / 29,969 / 42,926</td>
+            </tr>
+            </tbody></table></div></section>
+    <section><div class="section-head"><div><div class="eyebrow">Evidence queue</div><h2>Highest-priority synthetic inputs</h2></div><p>Priority combines median supplier contribution with missing confidence. It is conditional on this illustrative scenario.</p></div><div class="table-wrap"><table><thead><tr><th>Owner</th><th>Input</th><th>Low / base / high</th><th>Confidence</th><th>Evidence needed</th></tr></thead><tbody>
+            <tr>
+              <td><strong>nvidia-blackwell-24gb-8high-reference</strong><span>platform</span></td>
+              <td><code>accelerator_package_demand</code></td>
+              <td class="mono">300,000.000 / 400,000.000 / 500,000.000 package</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>customer_allocation_share</code></td>
+              <td class="mono">0.350 / 0.450 / 0.550 ratio</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>known_good_die_yield</code></td>
+              <td class="mono">0.820 / 0.900 / 0.950 ratio</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>platform_qualified_share</code></td>
+              <td class="mono">0.750 / 0.850 / 0.920 ratio</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>stack_assembly_yield</code></td>
+              <td class="mono">0.880 / 0.940 / 0.980 ratio</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>stack_final_test_yield</code></td>
+              <td class="mono">0.940 / 0.975 / 0.995 ratio</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>wafer.die_height_mm</code></td>
+              <td class="mono">10.500 / 11.000 / 11.500 mm</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>wafer.die_width_mm</code></td>
+              <td class="mono">9.500 / 10.000 / 10.500 mm</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>wafer.edge_exclusion_mm</code></td>
+              <td class="mono">2.000 / 2.500 / 3.000 mm</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>wafer.scribe_width_mm</code></td>
+              <td class="mono">0.050 / 0.080 / 0.110 mm</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>wafer.wafer_diameter_mm</code></td>
+              <td class="mono">300.000 / 300.000 / 300.000 mm</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            
+            <tr>
+              <td><strong>sk-hynix</strong><span>supplier</span></td>
+              <td><code>wafer.wafer_starts</code></td>
+              <td class="mono">40,000.000 / 55,000.000 / 70,000.000 wafer</td>
+              <td class="mono">30%</td>
+              <td>Supplier wafer, yield, qualification, or allocation records support the range.</td>
+            </tr>
+            </tbody></table></div></section>
+    <section><div class="section-head"><div><div class="eyebrow">Source lineage</div><h2>Evidence retained with the run</h2></div></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Source</th><th>Kind</th><th>Published</th><th>Retrieved</th></tr></thead><tbody>
+            <tr id="source-nvidia-blackwell-hbm-capacity">
+              <td><code>nvidia:blackwell-hbm-capacity</code></td>
+              <td><a href="https://developer.nvidia.com/blog/?p=104887">NVIDIA Blackwell and Blackwell Ultra architecture comparison</a><span>NVIDIA</span></td>
+              <td>company technical document</td>
+              <td class="mono">2025-08-22</td>
+              <td class="mono">2026-07-19T23:10:00Z</td>
+            </tr>
+            
+            <tr id="source-nvidia-blackwell-hbm-height">
+              <td><code>nvidia:blackwell-hbm-height</code></td>
+              <td><a href="https://developer.nvidia.com/blog/nvidia-blackwell-architecture-sweeps-mlperf-training-v5-1-benchmarks/">NVIDIA Blackwell MLPerf Training v5.1 architecture notes</a><span>NVIDIA</span></td>
+              <td>company technical document</td>
+              <td class="mono">2025-11-12</td>
+              <td class="mono">2026-07-19T23:10:00Z</td>
+            </tr>
+            
+            <tr id="source-micron-hbm3e-reference">
+              <td><code>micron:hbm3e-reference</code></td>
+              <td><a href="https://www.micron.com/products/memory/hbm/hbm3e">Micron HBM3E product specifications</a><span>Micron Technology</span></td>
+              <td>company technical document</td>
+              <td class="mono">not supplied</td>
+              <td class="mono">2026-07-19T23:10:00Z</td>
+            </tr>
+            
+            <tr id="source-micron-2025-10k-hbm-wafer">
+              <td><code>micron:2025-10k-hbm-wafer</code></td>
+              <td><a href="https://investors.micron.com/static-files/8791eb80-8263-4c6f-aa74-fdd03fbbb027">Micron 2025 Form 10-K</a><span>Micron Technology</span></td>
+              <td>company disclosure</td>
+              <td class="mono">2025-10-03</td>
+              <td class="mono">2026-07-19T23:10:00Z</td>
+            </tr>
+            
+            <tr id="source-synthetic-hbm-supplier-portfolio">
+              <td><code>synthetic:hbm-supplier-portfolio</code></td>
+              <td><a href="urn:synthetic:blackwell-hbm-supplier-portfolio">Illustrative supplier HBM capacity and allocation assumptions</a><span>AI Supply Intelligence demo</span></td>
+              <td>synthetic</td>
+              <td class="mono">2026-07-19</td>
+              <td class="mono">2026-07-19T23:10:00Z</td>
+            </tr>
+            </tbody></table></div></section>
+    <footer>Capacity-scope uniqueness is enforced inside this scenario. It does not prove that external disclosures are independent, complete, or free of undisclosed overlap.</footer>
+  </main>
+</body>
+</html>

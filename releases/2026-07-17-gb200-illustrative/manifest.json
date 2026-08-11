@@ -1,0 +1,46 @@
+{
+  "as_of_date": "2026-07-17",
+  "files": {
+    "README.md": {
+      "bytes": 406,
+      "sha256": "fddbc9bc93ebcd16fe7470e1890aeac76c5d7aba90319c466669632cd3f282ad"
+    },
+    "bottlenecks.csv": {
+      "bytes": 4725,
+      "sha256": "dcead97d645c30c183487b648b7f9bc4d7d97e99a18911f7696cbc6420d3f61f"
+    },
+    "customer_allocations.csv": {
+      "bytes": 1231,
+      "sha256": "1e799373c64ab1fbdf7363d5916bbcd63a616096bb0ec0ab4575e0b31d07c4b8"
+    },
+    "dashboard.html": {
+      "bytes": 90520,
+      "sha256": "f8a57fe6b3f7fa214d3b33d36cea8dc68d7cfbf867361fd49c2193a4b8c63e0c"
+    },
+    "evidence.csv": {
+      "bytes": 2438,
+      "sha256": "699602fe0f5e49192f2bb5ca3ad3675e67785ed3ee39246477ee811e7c12053f"
+    },
+    "input_estimates.csv": {
+      "bytes": 35206,
+      "sha256": "5d77ddc24d2aec63a959d31aaa173406c31b3e0ce9420751b0d0c1f39fd7d91c"
+    },
+    "result.json": {
+      "bytes": 120788,
+      "sha256": "0a8f3d0edc61367ad00dc1efc4314be25534232ea1f5a4fd52587d740139b3cc"
+    },
+    "scenario.json": {
+      "bytes": 76236,
+      "sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787"
+    },
+    "stage_outputs.csv": {
+      "bytes": 902,
+      "sha256": "6b2bbc4f6a6c5feb8c3b45db7e2eb7c6c5850cc32314f5410c0d7ba813eba2a2"
+    }
+  },
+  "format": "ai-supply-release.v1",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-18T01:49:33Z",
+  "scenario_id": "gb200-nvl72-illustrative-2026q3",
+  "synthetic": true
+}

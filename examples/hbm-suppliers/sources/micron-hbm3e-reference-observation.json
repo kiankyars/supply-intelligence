@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-07-19T23:00:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "The product page reports Micron's 24 GB 8-high placement and 1-beta technology; it does not establish Micron supply to NVIDIA Blackwell.",
+    "The observation cannot be generalized to SK hynix or Samsung process geometry, yield, qualification, allocation, or output."
+  ],
+  "observation_id": "micron-hbm3e-24gb-8high-reference",
+  "product": "Micron HBM3E",
+  "published_at": null,
+  "publisher": "Micron Technology",
+  "reported": {
+    "capacity_gb_per_placement": 24,
+    "memory_die_height": "8-high",
+    "process_node": "1-beta",
+    "shipping_product": "24GB 8-high HBM3E"
+  },
+  "source_url": "https://www.micron.com/products/memory/hbm/hbm3e"
+}

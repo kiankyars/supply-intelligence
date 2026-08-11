@@ -1,0 +1,15 @@
+{
+  "baseline_known_at": "2026-07-19T18:59:59Z",
+  "format": "ai-supply-claim-cycle.v1",
+  "job_id": "official-controls",
+  "packs": [
+    {
+      "expected_sha256": "1abfe4d64ce4781857364fbd6d6b7b59bdb06a04055b34ee4bbeac3c8e49c1bc",
+      "path": "2026-07-19-official-controls-pack.json"
+    }
+  ],
+  "schedule": {
+    "minimum_interval_minutes": 1440
+  },
+  "valid_at": "2026-06-30"
+}

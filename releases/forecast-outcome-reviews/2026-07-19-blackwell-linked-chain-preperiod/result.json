@@ -1,0 +1,126 @@
+{
+  "dispositions": [
+    {
+      "calendar_status": "pending_period_end",
+      "eligible_for_model_calibration": false,
+      "forecast_id": "blackwell-selected-flow-packages-2026q3",
+      "id": "blackwell-selected-flow-packages-preperiod",
+      "metric": "accelerator_packages_produced",
+      "metric_class": "manufacturing-output",
+      "period": "2026-Q3",
+      "rationale": "The 2026-Q3 production period has not ended; no realized package outcome can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "score": null,
+      "status": "pending",
+      "unit": "package"
+    },
+    {
+      "calendar_status": "pending_period_end",
+      "eligible_for_model_calibration": false,
+      "forecast_id": "blackwell-component-cleared-racks-2026q3",
+      "id": "blackwell-component-cleared-racks-preperiod",
+      "metric": "integrated_racks",
+      "metric_class": "assembly-output",
+      "period": "2026-Q3",
+      "rationale": "The 2026-Q3 assembly period has not ended; no realized integrated-rack outcome can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "score": null,
+      "status": "pending",
+      "unit": "rack-scale system"
+    },
+    {
+      "calendar_status": "pending_period_end",
+      "eligible_for_model_calibration": false,
+      "forecast_id": "gb200-abilene-systems-shipped-2026q3",
+      "id": "gb200-abilene-shipped-preperiod",
+      "metric": "systems_shipped",
+      "metric_class": "site-shipment",
+      "period": "2026-Q3",
+      "rationale": "The 2026-Q3 shipment period has not ended; no destination-specific realized shipment count can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "score": null,
+      "status": "pending",
+      "unit": "rack-scale system"
+    },
+    {
+      "calendar_status": "pending_period_end",
+      "eligible_for_model_calibration": false,
+      "forecast_id": "gb200-abilene-systems-installed-2026q3",
+      "id": "gb200-abilene-installed-preperiod",
+      "metric": "systems_installed",
+      "metric_class": "site-installation",
+      "period": "2026-Q3",
+      "rationale": "The 2026-Q3 installation cutoff has not passed; no quarter-end installed-system stock can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "score": null,
+      "status": "pending",
+      "unit": "rack-scale system"
+    },
+    {
+      "calendar_status": "pending_period_end",
+      "eligible_for_model_calibration": false,
+      "forecast_id": "gb200-abilene-systems-operational-2026q3",
+      "id": "gb200-abilene-operational-preperiod",
+      "metric": "systems_operational",
+      "metric_class": "site-operation",
+      "period": "2026-Q3",
+      "rationale": "The 2026-Q3 operational cutoff has not passed; no quarter-end commissioned-system stock can be attached.",
+      "reviewed_at": "2026-07-20T06:15:00Z",
+      "reviewer": "preperiod-vintage-audit",
+      "score": null,
+      "status": "pending",
+      "unit": "rack-scale system"
+    }
+  ],
+  "evidence": [],
+  "format": "ai-supply-forecast-outcome-review-result.v1",
+  "methodology": {
+    "calibration": "No review automatically calibrates a model. Synthetic source forecasts remain ineligible even when descriptively scored.",
+    "complete_coverage": "Every frozen forecast requires exactly one disposition, preventing selective scoring of convenient outcomes.",
+    "not_comparable": "Candidate evidence is retained with explicit mismatch dimensions and receives no numeric score.",
+    "observed": "Only reported or derived, scope-reviewed outcomes with hash-pinned evidence receive interval, pinball, and exact-draw event scores.",
+    "pending": "A pending row becomes invalid after its expected evidence date; it must then be observed, scope-mismatched, or explicitly unobservable.",
+    "unobservable": "Unobservability can be closed only after the frozen expected evidence date and receives no numeric score."
+  },
+  "registry": {
+    "forecast_count": 5,
+    "manifest_format": "ai-supply-forecast-registry-release.v1",
+    "manifest_sha256": "2c87fe5e4db877763cd463c192e9ec0ad19a125e68b4fd6dcb80a09246e7bac5",
+    "path": "releases/forecast-vintages/2026-07-19-blackwell-linked-chain-native-vintage-v2",
+    "recorded_at": "2026-07-20T06:10:00Z",
+    "registry_file": "registry.json",
+    "registry_id": "blackwell-linked-chain-native-vintage-2026q3",
+    "registry_sha256": "6e592fe17cc97587b4ba3e83587def66cf9ff793694ab31b86d90fd77250ae2a",
+    "result_file": "result.json",
+    "result_format": "ai-supply-forecast-registry-result.v1",
+    "result_sha256": "44047dc6fb696e846a1f54ad2232d3e77aaecd820c406e153f209bd2d405e8a2",
+    "synthetic": true
+  },
+  "review": {
+    "as_of_date": "2026-07-19",
+    "format": "ai-supply-forecast-outcome-review.v1",
+    "id": "blackwell-linked-chain-preperiod-review-2026q3",
+    "notes": "This pre-period review proves complete disposition coverage and correctly emits no actuals or scores. It must not be revised in place after quarter end; a later review should pin this same immutable forecast registry.",
+    "recorded_at": "2026-07-20T06:20:00Z",
+    "sha256": "89ce28559c6199a3a3738ec282529c087c56d7433bd3cac9797ed77ab129ecfd"
+  },
+  "summary": {
+    "disposition_count": 5,
+    "disposition_status_counts": {
+      "pending": 5
+    },
+    "eligible_for_model_calibration": false,
+    "forecast_count": 5,
+    "interval_coverage_rate": null,
+    "score_count": 0,
+    "source_synthetic": true
+  },
+  "warnings": [
+    "The frozen registry source is synthetic; any observed score is diagnostic, not evidence of an investable or production-grade forecast.",
+    "Capacity announcements, construction progress, and directional statements must be marked not comparable unless they satisfy the frozen quantity scope."
+  ]
+}

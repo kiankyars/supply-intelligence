@@ -1,0 +1,50 @@
+{
+  "as_of_date": "2026-07-17",
+  "files": {
+    "README.md": {
+      "bytes": 611,
+      "sha256": "8769baee4ba9fb605c813d3d73aa52cb484dff8dd82108a92872dd1853400a7c"
+    },
+    "bottlenecks.csv": {
+      "bytes": 82,
+      "sha256": "e09563b4168ee0212583c18105ce9b2ce2f3f6d9ded52eda66387932791582c3"
+    },
+    "conversion_outputs.csv": {
+      "bytes": 4052,
+      "sha256": "4c1b3c18d7263732a5ca4f81b07f12b4d715676b9ef8eb981bab22ea249ee2e4"
+    },
+    "dashboard.html": {
+      "bytes": 50783,
+      "sha256": "9377c29e5d8dc49142f77c9f2a71a11faaf42aff0531103f78aad1be306b3ce7"
+    },
+    "evidence.csv": {
+      "bytes": 2337,
+      "sha256": "2d2ddace585d69a0b8876a6cc9915d74f5428ae7fefdb413bd7f426c1abecad6"
+    },
+    "evidence_gaps.csv": {
+      "bytes": 9375,
+      "sha256": "13a029e78113edd5a137612cf013f43615eb17e445f90b3de97f2bb01934d398"
+    },
+    "input_estimates.csv": {
+      "bytes": 10487,
+      "sha256": "9c525bd3cc0a8ed7fba726b3491e66ded86a5dace07570f9c34206fe99c7f507"
+    },
+    "reference_comparisons.csv": {
+      "bytes": 612,
+      "sha256": "907539c25bb21385ee6eeecc951f45e45937f20eed7b00874293c595f0629548"
+    },
+    "result.json": {
+      "bytes": 54612,
+      "sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519"
+    },
+    "scenario.json": {
+      "bytes": 23068,
+      "sha256": "03915d9aec007e357e47707069f1a20d59bd969b64c8f1674c8a8d13f611f10c"
+    }
+  },
+  "format": "ai-supply-manufacturing-release.v1",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-18T03:22:00Z",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "synthetic": true
+}

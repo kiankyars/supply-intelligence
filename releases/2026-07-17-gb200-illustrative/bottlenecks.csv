@@ -1,0 +1,72 @@
+stage,constraint_id,resource_name,probability
+accelerator_package,blackwell-reticle-dies,Blackwell reticle-limited dies,0.51225
+accelerator_package,hbm3e-capacity,HBM3E capacity,0.2752
+accelerator_package,silicon-interposers,Silicon interposer equivalents,0.18775
+accelerator_package,blackwell-packages,Blackwell advanced-package throughput,0.02355
+accelerator_package,abf-substrates,ABF substrate equivalents,0.00125
+server_assembly,blackwell-reticle-dies,Blackwell reticle-limited dies,0.4897
+server_assembly,hbm3e-capacity,HBM3E capacity,0.24875
+server_assembly,silicon-interposers,Silicon interposer equivalents,0.17385
+server_assembly,compute-tray-assembly,GB200 compute-tray assembly,0.06215
+server_assembly,blackwell-packages,Blackwell advanced-package throughput,0.01835
+server_assembly,connectx7-nics,ConnectX-7 400G NICs,0.0064
+server_assembly,abf-substrates,ABF substrate equivalents,0.0008
+server_assembly,bluefield3-dpus,BlueField-3 DPUs,0.0
+rack_integration,blackwell-reticle-dies,Blackwell reticle-limited dies,0.4776
+rack_integration,hbm3e-capacity,HBM3E capacity,0.2359
+rack_integration,silicon-interposers,Silicon interposer equivalents,0.168
+rack_integration,compute-tray-assembly,GB200 compute-tray assembly,0.05655
+rack_integration,liquid-cooling-integration,Liquid-cooling rack integration,0.0288
+rack_integration,nvlink-switch-trays,NVLink switch trays,0.01635
+rack_integration,blackwell-packages,Blackwell advanced-package throughput,0.0161
+rack_integration,abf-substrates,ABF substrate equivalents,0.0006
+rack_integration,power-shelves,Rack power shelves,0.0001
+rack_integration,bluefield3-dpus,BlueField-3 DPUs,0.0
+rack_integration,connectx7-nics,ConnectX-7 400G NICs,0.0
+rack_integration,management-tor-switches,Management top-of-rack switches,0.0
+shipped,blackwell-reticle-dies,Blackwell reticle-limited dies,0.45355
+shipped,hbm3e-capacity,HBM3E capacity,0.2124
+shipped,silicon-interposers,Silicon interposer equivalents,0.1564
+shipped,factory-qualification,Factory qualification slots,0.07225
+shipped,compute-tray-assembly,GB200 compute-tray assembly,0.0464
+shipped,liquid-cooling-integration,Liquid-cooling rack integration,0.0235
+shipped,blackwell-packages,Blackwell advanced-package throughput,0.0131
+shipped,nvlink-switch-trays,NVLink switch trays,0.012
+shipped,rack-logistics,Qualified rack logistics slots,0.01
+shipped,abf-substrates,ABF substrate equivalents,0.0004
+shipped,bluefield3-dpus,BlueField-3 DPUs,0.0
+shipped,connectx7-nics,ConnectX-7 400G NICs,0.0
+shipped,management-tor-switches,Management top-of-rack switches,0.0
+shipped,power-shelves,Rack power shelves,0.0
+installed,blackwell-reticle-dies,Blackwell reticle-limited dies,0.42515
+installed,hbm3e-capacity,HBM3E capacity,0.187
+installed,silicon-interposers,Silicon interposer equivalents,0.14315
+installed,site-installation,Customer-site installation slots,0.10575
+installed,factory-qualification,Factory qualification slots,0.0586
+installed,compute-tray-assembly,GB200 compute-tray assembly,0.03705
+installed,liquid-cooling-integration,Liquid-cooling rack integration,0.01715
+installed,blackwell-packages,Blackwell advanced-package throughput,0.00995
+installed,nvlink-switch-trays,NVLink switch trays,0.0089
+installed,rack-logistics,Qualified rack logistics slots,0.0071
+installed,abf-substrates,ABF substrate equivalents,0.0002
+installed,bluefield3-dpus,BlueField-3 DPUs,0.0
+installed,connectx7-nics,ConnectX-7 400G NICs,0.0
+installed,management-tor-switches,Management top-of-rack switches,0.0
+installed,power-shelves,Rack power shelves,0.0
+operational,blackwell-reticle-dies,Blackwell reticle-limited dies,0.3209
+operational,energized-datacenter-power,Energized critical IT power,0.30545
+operational,hbm3e-capacity,HBM3E capacity,0.1185
+operational,silicon-interposers,Silicon interposer equivalents,0.09895
+operational,datacenter-commissioning,Data-center commissioning slots,0.07795
+operational,factory-qualification,Factory qualification slots,0.0354
+operational,compute-tray-assembly,GB200 compute-tray assembly,0.02075
+operational,liquid-cooling-integration,Liquid-cooling rack integration,0.0096
+operational,blackwell-packages,Blackwell advanced-package throughput,0.00515
+operational,nvlink-switch-trays,NVLink switch trays,0.0039
+operational,rack-logistics,Qualified rack logistics slots,0.00345
+operational,abf-substrates,ABF substrate equivalents,0.0
+operational,bluefield3-dpus,BlueField-3 DPUs,0.0
+operational,connectx7-nics,ConnectX-7 400G NICs,0.0
+operational,management-tor-switches,Management top-of-rack switches,0.0
+operational,power-shelves,Rack power shelves,0.0
+operational,site-installation,Customer-site installation slots,0.0

@@ -1,0 +1,52 @@
+{
+  "as_of_date": "2026-07-19",
+  "dataset_id": "blackwell-manufacturing-synthetic-scorecard-2026-07-19",
+  "dataset_sha256": "5adf199e3b647b06ad47dd026629e57f37db1ca71bc35bf6e1acf2087db7336c",
+  "files": {
+    "README.md": {
+      "bytes": 627,
+      "sha256": "c61884e59898fddab02a7da88e713baa5de753e3d3c60247390d5b848ea8f783"
+    },
+    "dashboard.html": {
+      "bytes": 13248,
+      "sha256": "6a468ba3ffeaeacc29d04ebf4dd859e46e705225105ff65754ea90aacb99bd3b"
+    },
+    "dataset.json": {
+      "bytes": 6792,
+      "sha256": "5adf199e3b647b06ad47dd026629e57f37db1ca71bc35bf6e1acf2087db7336c"
+    },
+    "evidence.csv": {
+      "bytes": 461,
+      "sha256": "259c807611e4dbfb5b0256217abaafdd7bd2863b4d0f3eafe6d88582b166416b"
+    },
+    "metric_class_summary.csv": {
+      "bytes": 1030,
+      "sha256": "9772423a28fd123b7e4a2a6e3292029fb4c4f763828eee5ee85441fef3c93448"
+    },
+    "replay-dataset.json": {
+      "bytes": 6780,
+      "sha256": "3f1cc1e6dfafe9e8ceb1eb2fa261923d4d7f482a8431a324f1743734df18627c"
+    },
+    "result.json": {
+      "bytes": 19091,
+      "sha256": "7d1b8d6ea3e344de286867aaafc98505dc023e2f1c6da12ce3b50f14dc3ca0f0"
+    },
+    "scores.csv": {
+      "bytes": 5507,
+      "sha256": "5c2ed5c5f52206c1eb467df8f28f11a04a0a7cba5b3ae3136a819c577a67d6a5"
+    },
+    "source_family_summary.csv": {
+      "bytes": 518,
+      "sha256": "732e346f68b10b6dae27c192eb3a9c023c29824b19f89c2ea3c38e12037cd22c"
+    },
+    "sources/forecasts/blackwell-manufacturing-2026q3-v1.json": {
+      "bytes": 54612,
+      "sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519"
+    }
+  },
+  "forecast_count": 1,
+  "format": "ai-supply-calibration-release.v1",
+  "outcome_count": 6,
+  "recorded_at": "2026-07-19T23:15:00Z",
+  "synthetic": true
+}

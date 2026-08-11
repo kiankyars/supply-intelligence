@@ -1,0 +1,40 @@
+{
+  "accepted_for_usage": true,
+  "blocking_reasons": [],
+  "claim_dimensions": {
+    "capacity_basis": "production_status",
+    "customer": "lead customer not named in prepared remarks",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "current_as_of_fq3_2026",
+    "process_node": "1-beta DRAM",
+    "product": "HBM4",
+    "quantity_semantics": "point_in_time_status",
+    "stage": "hbm_shipment"
+  },
+  "claim_key": "company.micron.hbm4.lead_platform_shipment_status_fq3_2026",
+  "claim_posture": "reported",
+  "claim_unit": "status",
+  "claim_value": "high_volume_shipments",
+  "constraint_estimate": null,
+  "conversion": null,
+  "eligible_as_constraint": false,
+  "format": "ai-supply-manufacturing-claim-assessment.v1",
+  "lineage": {
+    "known_at": "2026-07-19T20:00:00Z",
+    "selection_path": "examples/claim-selections/micron-fq3-2026-hbm4-shipment-status-signal.json",
+    "selection_sha256": "e9d7005ff657d7a23cc4c48c537ecb87cb78eccd28e77ebd1568c7d87144c523",
+    "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+    "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d",
+    "source_snapshot_ids": [
+      "snapshot:2a0a2b2f47785af675afbef8bcc29300"
+    ],
+    "valid_at": "2026-07-19"
+  },
+  "nonbinding_rationale": "High-volume HBM4 status has no stack count and does not establish HBM3E supply or allocation for GB200.",
+  "normalized_estimate": null,
+  "revision_id": "claimrev:394548070917471158f34b6949445906",
+  "target_dimensions": {},
+  "target_input_path": "research.hbm4.production_status",
+  "usage": "directional_signal"
+}

@@ -1,0 +1,89 @@
+{
+  "absorbed_resource_kinds": [
+    "silicon_interposer",
+    "abf_substrate"
+  ],
+  "as_of_date": "2026-07-19",
+  "capacity_draw_count": 20000,
+  "files": {
+    "README.md": {
+      "bytes": 1089,
+      "sha256": "7e92d1ebe9f3ec1b13631c44565b4c0b4e97b241813ba529ef166bf1caa40a93"
+    },
+    "bottlenecks.csv": {
+      "bytes": 108,
+      "sha256": "ac98a29d603a7f367bf4139daa6c8770ab5948f73c0c79ca050547d542263466"
+    },
+    "conversion_outputs.csv": {
+      "bytes": 2889,
+      "sha256": "449ba079b073fa8fdf328ff15a58a9226f5a4e056efde35769a2097e3fecaddf"
+    },
+    "dashboard.html": {
+      "bytes": 9623,
+      "sha256": "e64103302d1d8d91529b09d8956ad6d7fcb3d102f3dfeeb2f18b2322b1fb04eb"
+    },
+    "evidence.csv": {
+      "bytes": 4650,
+      "sha256": "b6ad587ee90d19b87dcf61f68a81a72db0908684504f5f9a5a8fd9f48d896fad"
+    },
+    "evidence_gaps.csv": {
+      "bytes": 19318,
+      "sha256": "c0db9071d154e683c496536a066e623b540d8e7a7ab9817cda15d28822be71e9"
+    },
+    "hbm_supplier_capacity_draws.csv": {
+      "bytes": 3956810,
+      "sha256": "ff5121657df8afe5c81531c7a900b12e01850e03be2c47d664880dba3df12f81"
+    },
+    "hbm_supplier_result.json": {
+      "bytes": 78639,
+      "sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea"
+    },
+    "input_estimates.csv": {
+      "bytes": 9312,
+      "sha256": "0035f2c91dcc3de3226cb47e1e90386bc7ddc926cd6b3e79ce4336e4a7f32a71"
+    },
+    "link_lineage.json": {
+      "bytes": 5012,
+      "sha256": "cfd6af63e3e8bd548e24670262e7c255f329a9b7964632dc51db13d5fc204023"
+    },
+    "link_recipe.json": {
+      "bytes": 3612,
+      "sha256": "2a3ec45a14daea407b5e92f96a781ed82d0750aab10f8296fedd62bdc3d34895"
+    },
+    "manufacturing_draws.csv": {
+      "bytes": 3194948,
+      "sha256": "052f8ed5715875a78b8ebf064741edcf7f937a9fd2c3302f2ac488e4d7835a51"
+    },
+    "manufacturing_scenario.json": {
+      "bytes": 28141,
+      "sha256": "c18df128472dd30ce692f7cde4fd9c14aa256779fdf5e9146d25ae615d0a95ef"
+    },
+    "result.json": {
+      "bytes": 80700,
+      "sha256": "9f11428aa87f83eecc5066c0b91759371d56fdb64db3b8109b4c3c29b418759a"
+    }
+  },
+  "format": "ai-supply-hbm-manufacturing-link-release.v4",
+  "hbm_supplier_capacity_draws_sha256": "ff5121657df8afe5c81531c7a900b12e01850e03be2c47d664880dba3df12f81",
+  "hbm_supplier_result_sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+  "manufacturing_draw_count": 20000,
+  "manufacturing_draw_fields": [
+    "draw_index",
+    "source_hbm_draw_index",
+    "logic_package_equivalents",
+    "customer_allocated_hbm_stacks",
+    "hbm_package_equivalents",
+    "package_assembly_start_capacity",
+    "package_attempts",
+    "package_assembly_yield",
+    "finished_accelerator_packages",
+    "complete_system_equivalents"
+  ],
+  "manufacturing_scenario_sha256": "c18df128472dd30ce692f7cde4fd9c14aa256779fdf5e9146d25ae615d0a95ef",
+  "package_assembly_start_basis": "material_cleared_starts",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-20T05:50:00Z",
+  "removed_aggregate_hbm_wafer_flow_id": "hbm3e-memory-wafer",
+  "scenario_id": "blackwell-manufacturing-with-supplier-hbm-draws-material-cleared-illustrative-2026q3",
+  "synthetic": true
+}

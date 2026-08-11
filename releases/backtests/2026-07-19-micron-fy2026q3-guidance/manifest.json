@@ -1,0 +1,47 @@
+{
+  "as_of_date": "2026-07-19",
+  "case_id": "micron-fy2026q3-guidance-backtest",
+  "eligible_for_model_calibration": false,
+  "entity_id": "micron-technology",
+  "files": {
+    "README.md": {
+      "bytes": 525,
+      "sha256": "f6a5472fe74ee3bcb697d80ead357e46c41669e0de9302a66462d73d0d35d61a"
+    },
+    "case.json": {
+      "bytes": 1387,
+      "sha256": "10930ba132ffaad505aa25d47666fa02dc2c74b46a71cd3fcadcb53d89687760"
+    },
+    "dashboard.html": {
+      "bytes": 10603,
+      "sha256": "6cfc21ebe62b37ecf1edd9bd3af744989245d39d5571b8a21e60621f3b90135f"
+    },
+    "evidence.csv": {
+      "bytes": 1002,
+      "sha256": "eb7c4b0fca0d48d8415b747f3749365977ea79c3c97c36dd4c9a82bc2941133b"
+    },
+    "result.json": {
+      "bytes": 12483,
+      "sha256": "4f95cd53e476a0d5a8c6e49168a712f9a52bbb0a37e91f47cc4a0cbbc63d88d2"
+    },
+    "scores.csv": {
+      "bytes": 4052,
+      "sha256": "12c2cbb74f33decb73175ec8cb948536d024829067d4e3f1ba555f9e3ec545e0"
+    },
+    "sources/guidance-observation.json": {
+      "bytes": 4084,
+      "sha256": "0b5272bd1d8eec0b1b1eb975d59bb4d25d18925c9965471c39fa705c9c4e6623"
+    },
+    "sources/outcome-observation.json": {
+      "bytes": 4039,
+      "sha256": "1def68dea4c12198aaae543e4d79f9fdfae428b63536d2e70b4775a90f64922d"
+    }
+  },
+  "format": "ai-supply-guidance-backtest-release.v1",
+  "guidance_observation_sha256": "0b5272bd1d8eec0b1b1eb975d59bb4d25d18925c9965471c39fa705c9c4e6623",
+  "metric_count": 7,
+  "native_model_forecast": false,
+  "outcome_observation_sha256": "1def68dea4c12198aaae543e4d79f9fdfae428b63536d2e70b4775a90f64922d",
+  "period": "FY2026-Q3",
+  "recorded_at": "2026-07-19T22:15:00Z"
+}

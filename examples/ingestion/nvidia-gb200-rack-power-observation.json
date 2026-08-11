@@ -1,0 +1,25 @@
+{
+  "captured_at": "2026-07-18T03:22:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "This is a vendor design value, not a site meter reading.",
+    "The value covers rack equipment and does not include facility overhead or PUE.",
+    "The source qualifies the value as approximate."
+  ],
+  "normalization": {
+    "equation": "120 kW / 1000 = 0.12 MW",
+    "unit": "MW/rack",
+    "value": 0.12
+  },
+  "observation_id": "nvidia-gb200-nvl72-rack-power-2026-03-03",
+  "published_at": "2026-03-03",
+  "publisher": "NVIDIA",
+  "reported": {
+    "metric": "approximate full-rack power consumption",
+    "platform": "NVIDIA GB200 NVL72",
+    "qualifier": "approximately",
+    "unit": "kW/rack",
+    "value": 120
+  },
+  "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html"
+}

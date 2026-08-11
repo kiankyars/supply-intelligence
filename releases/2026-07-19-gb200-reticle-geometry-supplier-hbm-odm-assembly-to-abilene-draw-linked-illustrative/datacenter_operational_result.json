@@ -1,0 +1,649 @@
+{
+  "bottlenecks": [
+    {
+      "constraint": "commissioning",
+      "probability": 0.62175
+    },
+    {
+      "constraint": "power",
+      "probability": 0.37825
+    }
+  ],
+  "conversion_outputs": {
+    "commissioning_completed_capacity": {
+      "maximum": 781.0938776980611,
+      "mean": 504.38135743749484,
+      "minimum": 281.77967971786296,
+      "p10": 371.85810796191384,
+      "p50": 497.4520832782464,
+      "p90": 647.8090706041241
+    },
+    "commissioning_slots": {
+      "maximum": 849.3006021252476,
+      "mean": 615.5237709293456,
+      "minimum": 401.9393009525106,
+      "p10": 494.89136447318083,
+      "p50": 611.0889530725965,
+      "p90": 742.5052047620707
+    },
+    "commissioning_utilization": {
+      "maximum": 1.0,
+      "mean": 0.7932939395107225,
+      "minimum": 0.0,
+      "p10": 0.13679610507259118,
+      "p50": 1.0,
+      "p90": 1.0
+    },
+    "contracted_reservations": {
+      "maximum": 89.72571158686934,
+      "mean": 61.80900910875256,
+      "minimum": 35.2963852507987,
+      "p10": 46.9662901034212,
+      "p50": 61.45410508659754,
+      "p90": 77.21073879206095
+    },
+    "current_critical_it_load": {
+      "maximum": 239.64269054748135,
+      "mean": 203.51248867435524,
+      "minimum": 170.36628141736412,
+      "p10": 184.78828547594705,
+      "p50": 202.81389371593897,
+      "p90": 223.33971213669145
+    },
+    "gross_critical_it_power": {
+      "maximum": 587.7879244379959,
+      "mean": 436.56070635974163,
+      "minimum": 301.2315456073298,
+      "p10": 358.80162440461424,
+      "p50": 432.9993355061823,
+      "p90": 519.3732556986715
+    },
+    "gross_power_utilization": {
+      "maximum": 0.23791434137912254,
+      "mean": 0.1067327118205527,
+      "minimum": 0.0,
+      "p10": 0.021909499300682582,
+      "p50": 0.11486021896669735,
+      "p90": 0.16031244190342647
+    },
+    "net_uncommitted_compatible_power": {
+      "maximum": 344.68978725205875,
+      "mean": 108.03891266973619,
+      "minimum": 0.0,
+      "p10": 10.97374085251013,
+      "p50": 104.6936890857553,
+      "p90": 203.10801807354912
+    },
+    "operational_rack_power": {
+      "maximum": 93.59711522064975,
+      "mean": 47.5994047316329,
+      "minimum": 0.0,
+      "p10": 8.187560687581481,
+      "p50": 52.01280103595954,
+      "p90": 72.34572014796055
+    },
+    "operational_racks": {
+      "maximum": 779.9759601720813,
+      "mean": 396.66170609694086,
+      "minimum": 0.0,
+      "p10": 68.22967239651236,
+      "p50": 433.4400086329962,
+      "p90": 602.8810012330047
+    },
+    "other_platform_commitments": {
+      "maximum": 59.77351379696185,
+      "mean": 36.78262161970757,
+      "minimum": 15.23978747438954,
+      "p10": 24.681205370306195,
+      "p50": 36.429003042929246,
+      "p90": 49.43961512049219
+    },
+    "other_unallocated_compatible_power": {
+      "maximum": 121.4521197447506,
+      "mean": 27.03112045708454,
+      "minimum": 0.0,
+      "p10": 2.5605159336874177,
+      "p50": 24.705504122893302,
+      "p90": 53.24431928289784
+    },
+    "oversubscribed_deductions": {
+      "maximum": 118.53599948186383,
+      "mean": 2.0158262234613296,
+      "minimum": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.0
+    },
+    "power_limited_racks": {
+      "maximum": 2247.0990831316367,
+      "mean": 675.0649351054304,
+      "minimum": 0.0,
+      "p10": 68.22967239651236,
+      "p50": 648.8813232100263,
+      "p90": 1273.206315241269
+    },
+    "rack_incompatible_capacity": {
+      "maximum": 49.78646675998204,
+      "mean": 28.43350051065138,
+      "minimum": 10.195785652988356,
+      "p10": 17.90467108411415,
+      "p50": 27.77705094977039,
+      "p90": 40.04357365301354
+    },
+    "shadow_allocatable_power": {
+      "maximum": 230.2301586833776,
+      "mean": 33.40838748101874,
+      "minimum": 0.0,
+      "p10": 0.0,
+      "p50": 17.81185684867836,
+      "p90": 93.58835887369908
+    },
+    "shadow_commissioning_capacity": {
+      "maximum": 771.4848039621121,
+      "mean": 107.71965134055398,
+      "minimum": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 416.8228164183864
+    },
+    "target_allocatable_power": {
+      "maximum": 269.6518899757964,
+      "mean": 81.00779221265165,
+      "minimum": 0.0,
+      "p10": 8.187560687581481,
+      "p50": 77.86575878520316,
+      "p90": 152.78475782895228
+    },
+    "target_power_utilization": {
+      "maximum": 1.0000000000000002,
+      "mean": 0.6639015288126143,
+      "minimum": 0.0,
+      "p10": 0.2797912222238462,
+      "p50": 0.6777043108438818,
+      "p90": 1.0
+    },
+    "total_deductions": {
+      "maximum": 438.92838269129453,
+      "mean": 330.53761991346676,
+      "minimum": 231.0982397955407,
+      "p10": 274.34045203378855,
+      "p50": 328.47405279523616,
+      "p90": 390.03363970225814
+    }
+  },
+  "diagnostics": {
+    "deduction_non_overlap_rationale": "Current load covers energized consumption only. Reservations cover contracted but not yet energized capacity. Other-platform commitments exclude both current load and reservations. Rack-incompatible capacity is the remaining otherwise-uncommitted MW that fails NVL72 density or liquid-cooling requirements. This partition is a scenario contract, not an observed fact.",
+    "zero_residual_probability": 0.0737
+  },
+  "evidence": [
+    {
+      "content_hash": "279ace3f8e2ae875e2a6bb21beb122554ed3378bb90755dab7284571d1a8c795",
+      "excerpt": "Attribution: Epoch AI, \"AI Data Centers\" (2026)",
+      "id": "datacenter:eb6b58f32ca7:b760a63b-bde3-559b-96fb-6bf562a29a08",
+      "kind": "third_party_research",
+      "license": "CC-BY-4.0",
+      "published_at": null,
+      "publisher": "Epoch AI",
+      "retrieved_at": "2026-07-18T00:59:24Z",
+      "source_family": "epoch_ai_data_centers",
+      "source_url": "https://epoch.ai/data/ai-data-centers",
+      "title": "Epoch AI data center record: OpenAI Stargate Abilene"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "The guide reports approximate full-rack power of 120 kW for an NVL72 rack.",
+      "id": "nvidia:dgx-gb-rack-power",
+      "kind": "company_technical_document",
+      "license": null,
+      "published_at": "2026-03-03",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-17T20:00:00-07:00",
+      "source_family": "nvidia-dgx-gb-rack-guide",
+      "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html",
+      "title": "Hardware — NVIDIA DGX GB Rack Scale Systems User Guide"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "Synthetic values exist only to exercise the subtraction, allocation, and commissioning equations.",
+      "id": "synthetic:abilene-operational-assumptions",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": null,
+      "publisher": "AI Supply Intelligence demonstrator",
+      "retrieved_at": "2026-07-17T20:00:00-07:00",
+      "source_family": "synthetic-operational-demo",
+      "source_url": "urn:synthetic:abilene-operational-assumptions",
+      "title": "Synthetic Abilene operational assumptions"
+    }
+  ],
+  "format": "ai-supply-datacenter-operational-result.v1",
+  "gross_lineage": {
+    "availability_status": "not_net_incremental_capacity",
+    "capacity_semantics": "gross_site_critical_it_envelope",
+    "datacenter_release": {
+      "as_of": "2026-07-17",
+      "format": "datacenter-atlas-release-v1",
+      "manifest_sha256": "eb6b58f32ca70374c2a3329a787312ed6c41b2721d8027e3c41cc6bc18d36570",
+      "recorded_at": "2026-07-18T02:00:00Z"
+    },
+    "selected_capacity_rows": [
+      {
+        "as_of_date": "2026-05-23",
+        "base": 421.0,
+        "confidence": "0.8",
+        "entity_id": "2dd31763-2dd4-5cb5-927d-0d000dadf767",
+        "entity_kind": "campus",
+        "evidence_id": "b760a63b-bde3-559b-96fb-6bf562a29a08",
+        "high": 589.4,
+        "low": 300.7142857142857,
+        "method": "modeled",
+        "metric": "critical_it_mw",
+        "name": "OpenAI Stargate Abilene",
+        "notes": "Epoch AI modeled current capacity; 80% interval is base divided/multiplied by 1.4.",
+        "source_license": "CC-BY-4.0",
+        "source_publisher": "Epoch AI",
+        "source_retrieved_at": "2026-07-18T00:59:24Z",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "stage": "operational",
+        "target_date": "",
+        "unit": "MW"
+      }
+    ],
+    "selection": {
+      "aggregation_policy": "single_site",
+      "aggregation_rationale": "The selection contains one resolved campus and therefore cannot double count another campus row.",
+      "availability_status": "not_net_incremental_capacity",
+      "capacity_semantics": "gross_site_critical_it_envelope",
+      "confirming_evidence": "Metered critical IT load, energized capacity records, and tenant reservations support the campus range and identify unused headroom.",
+      "correlation_group": "abilene-site-power",
+      "entity_ids": [
+        "2dd31763-2dd4-5cb5-927d-0d000dadf767"
+      ],
+      "expected_release_as_of": "2026-07-17",
+      "expected_release_recorded_at": "2026-07-18T02:00:00Z",
+      "falsifying_evidence": "The campus estimate is gross facility power, duplicates another site, or current load and reservations leave no compatible headroom.",
+      "format": "ai-supply-datacenter-selection.v1",
+      "metric": "critical_it_mw",
+      "minimum_capacity_as_of": "2026-01-01",
+      "required_countries": [
+        "United States"
+      ],
+      "required_user_labels": [
+        "OpenAI #confident"
+      ],
+      "scope_description": "A checked bridge demonstration for one campus tagged OpenAI confident in the pinned atlas release. It is not a claim that all campus power is vacant or assigned to NVIDIA platforms.",
+      "scope_name": "OpenAI Stargate Abilene site envelope",
+      "stage": "operational",
+      "target_quarter": "2026-Q3",
+      "unit": "MW"
+    }
+  },
+  "inputs": {
+    "commissioning_completion_ratio": {
+      "base": 0.82,
+      "confidence": 0.1,
+      "confirming_evidence": "Dated rack-level handoff records show that roughly this share of scheduled slots reaches operational acceptance within the quarter.",
+      "correlation_group": "abilene-commissioning",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Acceptance logs show materially different completion rates or that delayed racks roll into another quarter.",
+      "high": 0.92,
+      "last_updated": "2026-07-17",
+      "low": 0.7,
+      "methodology": "Synthetic target-quarter completion ratio used only to exercise the commissioning branch.",
+      "posture": "synthetic",
+      "unit": "ratio"
+    },
+    "commissioning_slots": {
+      "base": 600.0,
+      "confidence": 0.1,
+      "confirming_evidence": "A site commissioning schedule identifies this many distinct NVL72 rack acceptance slots in the target quarter.",
+      "correlation_group": "abilene-commissioning",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Rack delivery, coolant-loop, electrical, network, burn-in, or acceptance records support materially different throughput.",
+      "high": 850.0,
+      "last_updated": "2026-07-17",
+      "low": 400.0,
+      "methodology": "Synthetic count of rack commissioning slots available during 2026-Q3; it is not a site forecast.",
+      "posture": "synthetic",
+      "unit": "rack"
+    },
+    "deductions": {
+      "contracted_reservations": {
+        "base": 60.0,
+        "confidence": 0.1,
+        "confirming_evidence": "Executed capacity reservations identify committed MW that is not already present in metered current load.",
+        "correlation_group": "abilene-unavailable-power",
+        "evidence_ids": [
+          "synthetic:abilene-operational-assumptions"
+        ],
+        "falsifying_evidence": "Reservation ledgers show a materially different total or show that these MW are already counted in current load.",
+        "high": 90.0,
+        "last_updated": "2026-07-17",
+        "low": 35.0,
+        "methodology": "Synthetic incremental reservation range, excluding capacity already counted in current critical IT load.",
+        "posture": "synthetic",
+        "unit": "MW"
+      },
+      "current_critical_it_load": {
+        "base": 200.0,
+        "confidence": 0.15,
+        "confirming_evidence": "Metered site critical IT load over the target-quarter planning window supports this range.",
+        "correlation_group": "abilene-unavailable-power",
+        "evidence_ids": [
+          "synthetic:abilene-operational-assumptions"
+        ],
+        "falsifying_evidence": "Revenue-grade meters or operator load reports show materially different energized IT load.",
+        "high": 240.0,
+        "last_updated": "2026-07-17",
+        "low": 170.0,
+        "methodology": "Synthetic current-load range used to demonstrate subtraction from the imported gross critical-IT envelope.",
+        "posture": "synthetic",
+        "unit": "MW"
+      },
+      "non_overlap_rationale": "Current load covers energized consumption only. Reservations cover contracted but not yet energized capacity. Other-platform commitments exclude both current load and reservations. Rack-incompatible capacity is the remaining otherwise-uncommitted MW that fails NVL72 density or liquid-cooling requirements. This partition is a scenario contract, not an observed fact.",
+      "other_platform_commitments": {
+        "base": 35.0,
+        "confidence": 0.1,
+        "confirming_evidence": "Platform allocation schedules identify committed MW not present in current load or the reservation ledger.",
+        "correlation_group": "abilene-unavailable-power",
+        "evidence_ids": [
+          "synthetic:abilene-operational-assumptions"
+        ],
+        "falsifying_evidence": "Allocation schedules show a materially different total or overlap with current load or contracted reservations.",
+        "high": 60.0,
+        "last_updated": "2026-07-17",
+        "low": 15.0,
+        "methodology": "Synthetic MW committed to non-target compute platforms after excluding load and reservations.",
+        "posture": "synthetic",
+        "unit": "MW"
+      },
+      "rack_incompatible_capacity": {
+        "base": 25.0,
+        "confidence": 0.1,
+        "confirming_evidence": "Electrical one-lines, cooling-loop capacity, and hall density maps identify residual MW that cannot host NVL72 racks.",
+        "correlation_group": "abilene-unavailable-power",
+        "evidence_ids": [
+          "synthetic:abilene-operational-assumptions"
+        ],
+        "falsifying_evidence": "Engineering records show materially different liquid-cooling or rack-density-compatible residual capacity.",
+        "high": 50.0,
+        "last_updated": "2026-07-17",
+        "low": 10.0,
+        "methodology": "Synthetic residual MW that is neither loaded nor committed but lacks target-rack power-density or liquid-cooling compatibility.",
+        "posture": "synthetic",
+        "unit": "MW"
+      }
+    },
+    "gross_power": {
+      "availability_status": "not_net_incremental_capacity",
+      "capacity_semantics": "gross_site_critical_it_envelope",
+      "datacenter_manifest_sha256": "eb6b58f32ca70374c2a3329a787312ed6c41b2721d8027e3c41cc6bc18d36570",
+      "estimate": {
+        "base": 421.0,
+        "confidence": 0.8,
+        "confirming_evidence": "Metered critical IT load, energized capacity records, and tenant reservations support the campus range and identify unused headroom.",
+        "correlation_group": "abilene-site-power",
+        "evidence_ids": [
+          "datacenter:eb6b58f32ca7:b760a63b-bde3-559b-96fb-6bf562a29a08"
+        ],
+        "falsifying_evidence": "The campus estimate is gross facility power, duplicates another site, or current load and reservations leave no compatible headroom.",
+        "high": 589.4,
+        "last_updated": "2026-07-17",
+        "low": 300.7142857142857,
+        "methodology": "Summed critical_it_mw across 1 explicitly selected Data Center Atlas site(s) for OpenAI Stargate Abilene site envelope. This is a gross site critical IT power envelope, not vacant or platform-allocated MW. Existing load, reservations, and rack-compatible headroom must be removed before use as an incremental power pool. Aggregation: single_site. Rationale: The selection contains one resolved campus and therefore cannot double count another campus row.",
+        "posture": "modeled",
+        "unit": "MW"
+      },
+      "expected_entity_ids": [
+        "2dd31763-2dd4-5cb5-927d-0d000dadf767"
+      ],
+      "source_sha256": "5817a973d960dfebb3f606ca5b10e45c68c2b9056ba5e7ef5c4e2762522d9b6e"
+    },
+    "rack_it_load": {
+      "base": 0.12,
+      "confidence": 0.95,
+      "confirming_evidence": "A current NVIDIA rack guide or measured critical-IT telemetry supports approximately 120 kW at full rack load.",
+      "correlation_group": null,
+      "evidence_ids": [
+        "nvidia:dgx-gb-rack-power"
+      ],
+      "falsifying_evidence": "A platform-specific NVIDIA revision or metered rack data establishes a materially different full-load critical-IT requirement.",
+      "high": 0.12,
+      "last_updated": "2026-07-17",
+      "low": 0.12,
+      "methodology": "Convert NVIDIA's approximate 120 kW full-rack load to 0.12 MW per NVL72 rack. This is critical-IT rack power, not total facility power with PUE.",
+      "posture": "reported",
+      "unit": "MW/rack"
+    },
+    "target_platform_share": {
+      "base": 0.75,
+      "confidence": 0.1,
+      "confirming_evidence": "A dated customer and platform allocation schedule assigns this share of residual compatible MW to the target rack platform.",
+      "correlation_group": null,
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Customer or platform allocation schedules assign a materially different share or no capacity to the target platform.",
+      "high": 0.9,
+      "last_updated": "2026-07-17",
+      "low": 0.6,
+      "methodology": "Synthetic share of residual compatible MW allocated to the target NVL72 rack platform.",
+      "posture": "synthetic",
+      "unit": "ratio"
+    }
+  },
+  "methodology": {
+    "gross_to_net": "For each draw, subtract current critical-IT load, contracted reservations, other-platform commitments, and rack-incompatible capacity from gross critical-IT MW, flooring residual power at zero.",
+    "operational_throughput": "Divide target MW by rack critical-IT MW, then take the minimum of power-supported racks and target-quarter commissioning slots times their completion ratio.",
+    "platform_allocation": "Apply the target-platform share only to residual compatible MW.",
+    "shadow_capacity": "Shadow power is target-allocated compatible MW left unused when commissioning binds; shadow commissioning capacity is completed rack throughput left unused when power binds."
+  },
+  "research_queue": [
+    {
+      "base": 0.82,
+      "branch": "commissioning",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.1,
+      "confirming_evidence": "Dated rack-level handoff records show that roughly this share of scheduled slots reaches operational acceptance within the quarter.",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Acceptance logs show materially different completion rates or that delayed racks roll into another quarter.",
+      "high": 0.92,
+      "influence_method": "Current-run probability that this input's branch constrains operational racks; this is a triage heuristic, not causal proof.",
+      "influence_probability": 0.62175,
+      "last_updated": "2026-07-17",
+      "low": 0.7,
+      "methodology": "Synthetic target-quarter completion ratio used only to exercise the commissioning branch.",
+      "parameter": "commissioning_completion_ratio",
+      "posture": "synthetic",
+      "research_priority": 0.559575,
+      "unit": "ratio"
+    },
+    {
+      "base": 600.0,
+      "branch": "commissioning",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.1,
+      "confirming_evidence": "A site commissioning schedule identifies this many distinct NVL72 rack acceptance slots in the target quarter.",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Rack delivery, coolant-loop, electrical, network, burn-in, or acceptance records support materially different throughput.",
+      "high": 850.0,
+      "influence_method": "Current-run probability that this input's branch constrains operational racks; this is a triage heuristic, not causal proof.",
+      "influence_probability": 0.62175,
+      "last_updated": "2026-07-17",
+      "low": 400.0,
+      "methodology": "Synthetic count of rack commissioning slots available during 2026-Q3; it is not a site forecast.",
+      "parameter": "commissioning_slots",
+      "posture": "synthetic",
+      "research_priority": 0.559575,
+      "unit": "rack"
+    },
+    {
+      "base": 60.0,
+      "branch": "power",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.1,
+      "confirming_evidence": "Executed capacity reservations identify committed MW that is not already present in metered current load.",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Reservation ledgers show a materially different total or show that these MW are already counted in current load.",
+      "high": 90.0,
+      "influence_method": "Current-run probability that this input's branch constrains operational racks; this is a triage heuristic, not causal proof.",
+      "influence_probability": 0.37825,
+      "last_updated": "2026-07-17",
+      "low": 35.0,
+      "methodology": "Synthetic incremental reservation range, excluding capacity already counted in current critical IT load.",
+      "parameter": "contracted_reservations",
+      "posture": "synthetic",
+      "research_priority": 0.340425,
+      "unit": "MW"
+    },
+    {
+      "base": 35.0,
+      "branch": "power",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.1,
+      "confirming_evidence": "Platform allocation schedules identify committed MW not present in current load or the reservation ledger.",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Allocation schedules show a materially different total or overlap with current load or contracted reservations.",
+      "high": 60.0,
+      "influence_method": "Current-run probability that this input's branch constrains operational racks; this is a triage heuristic, not causal proof.",
+      "influence_probability": 0.37825,
+      "last_updated": "2026-07-17",
+      "low": 15.0,
+      "methodology": "Synthetic MW committed to non-target compute platforms after excluding load and reservations.",
+      "parameter": "other_platform_commitments",
+      "posture": "synthetic",
+      "research_priority": 0.340425,
+      "unit": "MW"
+    },
+    {
+      "base": 25.0,
+      "branch": "power",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.1,
+      "confirming_evidence": "Electrical one-lines, cooling-loop capacity, and hall density maps identify residual MW that cannot host NVL72 racks.",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Engineering records show materially different liquid-cooling or rack-density-compatible residual capacity.",
+      "high": 50.0,
+      "influence_method": "Current-run probability that this input's branch constrains operational racks; this is a triage heuristic, not causal proof.",
+      "influence_probability": 0.37825,
+      "last_updated": "2026-07-17",
+      "low": 10.0,
+      "methodology": "Synthetic residual MW that is neither loaded nor committed but lacks target-rack power-density or liquid-cooling compatibility.",
+      "parameter": "rack_incompatible_capacity",
+      "posture": "synthetic",
+      "research_priority": 0.340425,
+      "unit": "MW"
+    },
+    {
+      "base": 0.75,
+      "branch": "power",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.1,
+      "confirming_evidence": "A dated customer and platform allocation schedule assigns this share of residual compatible MW to the target rack platform.",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Customer or platform allocation schedules assign a materially different share or no capacity to the target platform.",
+      "high": 0.9,
+      "influence_method": "Current-run probability that this input's branch constrains operational racks; this is a triage heuristic, not causal proof.",
+      "influence_probability": 0.37825,
+      "last_updated": "2026-07-17",
+      "low": 0.6,
+      "methodology": "Synthetic share of residual compatible MW allocated to the target NVL72 rack platform.",
+      "parameter": "target_platform_share",
+      "posture": "synthetic",
+      "research_priority": 0.340425,
+      "unit": "ratio"
+    },
+    {
+      "base": 200.0,
+      "branch": "power",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.15,
+      "confirming_evidence": "Metered site critical IT load over the target-quarter planning window supports this range.",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Revenue-grade meters or operator load reports show materially different energized IT load.",
+      "high": 240.0,
+      "influence_method": "Current-run probability that this input's branch constrains operational racks; this is a triage heuristic, not causal proof.",
+      "influence_probability": 0.37825,
+      "last_updated": "2026-07-17",
+      "low": 170.0,
+      "methodology": "Synthetic current-load range used to demonstrate subtraction from the imported gross critical-IT envelope.",
+      "parameter": "current_critical_it_load",
+      "posture": "synthetic",
+      "research_priority": 0.3215125,
+      "unit": "MW"
+    }
+  ],
+  "scenario": {
+    "as_of_date": "2026-07-17",
+    "id": "datacenter:openai-abilene-net-operational-illustrative-2026q3",
+    "name": "Abilene gross-to-net operational rack demonstrator",
+    "notes": "The imported gross envelope is live and hash-pinned. Every site-specific deduction, target allocation, and commissioning value is synthetic.",
+    "quarter": "2026-Q3",
+    "recorded_at": "2026-07-18T03:00:00Z",
+    "samples": 20000,
+    "scope_description": "A checked method demonstration for one Data Center Atlas campus. It does not estimate actual OpenAI, Oracle, NVIDIA, or site-operator capacity or deployments.",
+    "seed": 211,
+    "synthetic": true
+  },
+  "sites": [
+    {
+      "capacity": {
+        "as_of_date": "2026-05-23",
+        "base": 421.0,
+        "confidence": "0.8",
+        "entity_id": "2dd31763-2dd4-5cb5-927d-0d000dadf767",
+        "entity_kind": "campus",
+        "evidence_id": "b760a63b-bde3-559b-96fb-6bf562a29a08",
+        "high": 589.4,
+        "low": 300.7142857142857,
+        "method": "modeled",
+        "metric": "critical_it_mw",
+        "name": "OpenAI Stargate Abilene",
+        "notes": "Epoch AI modeled current capacity; 80% interval is base divided/multiplied by 1.4.",
+        "source_license": "CC-BY-4.0",
+        "source_publisher": "Epoch AI",
+        "source_retrieved_at": "2026-07-18T00:59:24Z",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "stage": "operational",
+        "target_date": "",
+        "unit": "MW"
+      },
+      "country": "United States",
+      "entity_id": "2dd31763-2dd4-5cb5-927d-0d000dadf767",
+      "name": "OpenAI Stargate Abilene",
+      "operator": "",
+      "owner": "Oracle #confident",
+      "status": "expansion",
+      "status_as_of": "2026-07-17",
+      "status_confidence": "0.7",
+      "status_evidence_id": "b760a63b-bde3-559b-96fb-6bf562a29a08",
+      "status_method": "epoch_positive_power_with_future_growth",
+      "users": "OpenAI #confident"
+    }
+  ],
+  "usable_as_operational_capacity": false,
+  "warnings": [
+    "The imported MW range is a gross site critical-IT envelope, not vacant or platform-allocated capacity.",
+    "Deductions are additive only because the scenario supplies an explicit non-overlap rationale; overlapping categories would double count unavailable power.",
+    "Operational racks are the lower of power-supported racks and completed commissioning slots in the target quarter.",
+    "Site load, reservations, platform commitments, compatibility, allocation, and commissioning inputs are synthetic; outputs are not an estimate of actual Abilene headroom or deployments."
+  ]
+}

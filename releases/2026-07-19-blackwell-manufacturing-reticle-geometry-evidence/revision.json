@@ -1,0 +1,152 @@
+{
+  "all_numeric_values_unchanged": false,
+  "as_of_date": "2026-07-19",
+  "format": "ai-supply-manufacturing-revision-result.v1",
+  "notes": "Replace the remaining synthetic Blackwell logic-die width and height with bounded derived estimates from NVIDIA's reticle-limit description and ASML's standard 26mm by 33mm maximum exposure field. These are not teardown measurements. Wafer starts, defect/yield/binning, scribe/edge, HBM conversion, and package throughput remain synthetic.",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-20T05:40:00Z",
+  "remaining_synthetic_input_count": 18,
+  "replacement_count": 2,
+  "replacements": [
+    {
+      "claim_key": "platform.nvidia.blackwell.logic_die_height_mm",
+      "claim_posture": "derived",
+      "claim_revision_id": "claimrev:3ad665e2983383cc8777b1d4bd549b82",
+      "lineage": {
+        "selection_path": "examples/claim-selections/nvidia-blackwell-logic-die-height.json",
+        "selection_sha256": "eda96d6738b6f8c846766f7fa7ff66e7c112a2a660d0eb49fe3f3ea0388858c3",
+        "snapshot_path": "releases/claim-cycles/blackwell-reticle-geometry/20260720T053000Z-blackwell-reticle-geometry-79f4f6c1f4/current_snapshot.json",
+        "snapshot_sha256": "5abd5cfe9f03d0de87f1d2e19898cb14f9053792b63dd3a14bee51fbffad71f3"
+      },
+      "numeric_changed": true,
+      "previous_estimate": {
+        "base": 32,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": "logic-geometry",
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 32.5,
+        "last_updated": "2026-07-17",
+        "low": 31.5,
+        "methodology": "Illustrative reticle-scale die height. NVIDIA discloses a reticle-limit design but not dimensions.",
+        "posture": "synthetic",
+        "unit": "mm"
+      },
+      "revised_estimate": {
+        "base": 32.0,
+        "confidence": 0.68,
+        "confirming_evidence": "A public Blackwell teardown, mask analysis, or floorplan measurement places the long die dimension within the derived interval.",
+        "correlation_group": "logic-geometry",
+        "evidence_ids": [
+          "snapshot:36f9f5ada639aa4320efe6383271195d",
+          "snapshot:e715fb7f3649cad3c181aeee1a611575"
+        ],
+        "falsifying_evidence": "A public die measurement places the Blackwell logic die's long axis outside 31mm to 33mm, or NVIDIA clarifies that reticle-limit refers to a different geometry.",
+        "high": 33.0,
+        "last_updated": "2026-07-20",
+        "low": 31.0,
+        "methodology": "Claim gate conversion: Interpret NVIDIA's description of each Blackwell logic die as reticle limit against ASML's reported 26mm by 33mm maximum standard full exposure field. Use the long field axis as the model's height coordinate and assign a 31mm to 33mm interval around a 32mm base to reflect that reticle-limit does not prove the design occupies the full field. This is a derived interval, not a reported or teardown-measured die dimension. Applied multiplier 1 from mm to mm.",
+        "posture": "derived",
+        "unit": "mm"
+      },
+      "source_snapshot_ids": [
+        "snapshot:36f9f5ada639aa4320efe6383271195d",
+        "snapshot:e715fb7f3649cad3c181aeee1a611575"
+      ],
+      "target_dimensions": {
+        "capacity_basis": "physical_geometry_estimate",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "qualifier": "long-axis estimate from reticle-limit description",
+        "quantity_semantics": "modeled_interval_from_reticle_limit",
+        "stage": "logic_die_geometry",
+        "technology": "standard full-field lithography"
+      },
+      "target_input_path": "logic.wafer.die_height_mm",
+      "target_rationale": "The modeled input is the long-axis dimension used in gross-die geometry for one Blackwell logic die. It is an uncertainty-bearing physical estimate, not wafer starts, yield, or capacity."
+    },
+    {
+      "claim_key": "platform.nvidia.blackwell.logic_die_width_mm",
+      "claim_posture": "derived",
+      "claim_revision_id": "claimrev:2cacc131bb18ed30f188fb0f847cb15f",
+      "lineage": {
+        "selection_path": "examples/claim-selections/nvidia-blackwell-logic-die-width.json",
+        "selection_sha256": "fb829c02f5b2750bc7600b107051ad2be28a6760b6be50c8c70a7cb9a0d844d8",
+        "snapshot_path": "releases/claim-cycles/blackwell-reticle-geometry/20260720T053000Z-blackwell-reticle-geometry-79f4f6c1f4/current_snapshot.json",
+        "snapshot_sha256": "5abd5cfe9f03d0de87f1d2e19898cb14f9053792b63dd3a14bee51fbffad71f3"
+      },
+      "numeric_changed": true,
+      "previous_estimate": {
+        "base": 26,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": "logic-geometry",
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 26.5,
+        "last_updated": "2026-07-17",
+        "low": 25.5,
+        "methodology": "Illustrative reticle-scale die width. NVIDIA discloses a reticle-limit design but not dimensions.",
+        "posture": "synthetic",
+        "unit": "mm"
+      },
+      "revised_estimate": {
+        "base": 26.0,
+        "confidence": 0.72,
+        "confirming_evidence": "A public Blackwell teardown, mask analysis, or floorplan measurement places the short die dimension within the derived interval.",
+        "correlation_group": "logic-geometry",
+        "evidence_ids": [
+          "snapshot:36f9f5ada639aa4320efe6383271195d",
+          "snapshot:e715fb7f3649cad3c181aeee1a611575"
+        ],
+        "falsifying_evidence": "A public die measurement places the Blackwell logic die's short axis outside 25.5mm to 26mm, or NVIDIA clarifies that reticle-limit refers to a different geometry.",
+        "high": 26.0,
+        "last_updated": "2026-07-20",
+        "low": 25.5,
+        "methodology": "Claim gate conversion: Interpret NVIDIA's description of each Blackwell logic die as reticle limit against ASML's reported 26mm by 33mm maximum standard full exposure field. Use the short field axis as the model's width coordinate and retain a 0.5mm analyst allowance below the maximum. This is a derived interval, not a reported or teardown-measured die dimension. Applied multiplier 1 from mm to mm.",
+        "posture": "derived",
+        "unit": "mm"
+      },
+      "source_snapshot_ids": [
+        "snapshot:36f9f5ada639aa4320efe6383271195d",
+        "snapshot:e715fb7f3649cad3c181aeee1a611575"
+      ],
+      "target_dimensions": {
+        "capacity_basis": "physical_geometry_estimate",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "qualifier": "short-axis estimate from reticle-limit description",
+        "quantity_semantics": "modeled_interval_from_reticle_limit",
+        "stage": "logic_die_geometry",
+        "technology": "standard full-field lithography"
+      },
+      "target_input_path": "logic.wafer.die_width_mm",
+      "target_rationale": "The modeled input is the short-axis dimension used in gross-die geometry for one Blackwell logic die. It is an uncertainty-bearing physical estimate, not wafer starts, yield, or capacity."
+    }
+  ],
+  "revision_id": "blackwell-reticle-geometry-2026-07-19",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "source_scenario": {
+    "as_of_date": "2026-07-19",
+    "path": "releases/2026-07-19-blackwell-manufacturing-wafer-format-evidence/scenario.json",
+    "recorded_at": "2026-07-19T20:45:00Z",
+    "sha256": "1826b8dd8dc7d13ea51cb4c3a0827395e402d78d34af7bd1018c0be76a3f12ec"
+  },
+  "target_catalog": {
+    "path": "examples/coverage/blackwell-manufacturing-targets-2026q3-reticle-geometry.json",
+    "sha256": "8f13a0cc2f70368fc8e14860e568594c0344982724367f21b7bfc5393e552b22"
+  }
+}

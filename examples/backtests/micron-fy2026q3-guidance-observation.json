@@ -1,0 +1,115 @@
+{
+  "captured_at": "2026-07-19T22:00:00Z",
+  "entity": {
+    "id": "micron-technology",
+    "name": "Micron Technology",
+    "ticker": "MU"
+  },
+  "format": "ai-supply-reported-guidance-observation.v1",
+  "limitations": [
+    "Management guidance is an external range, not an AI Supply Intelligence forecast or a probability distribution.",
+    "The normalized observation was captured after the outcome and is a historical reconstruction from a pre-outcome disclosure.",
+    "Company financial guidance cannot validate physical Blackwell production, HBM units, customer allocation, or supplier attribution."
+  ],
+  "metrics": [
+    {
+      "basis": "GAAP and non-GAAP",
+      "high": 34.25,
+      "id": "revenue",
+      "label": "Revenue",
+      "low": 32.75,
+      "methodology": "Record Micron's $33.5 billion midpoint and stated plus-or-minus $750 million range in USD billions.",
+      "metric_class": "supplier-revenue",
+      "midpoint": 33.5,
+      "range_semantics": "management_range",
+      "unit": "USD billion"
+    },
+    {
+      "basis": "GAAP",
+      "high": 0.81,
+      "id": "gaap-gross-margin",
+      "label": "GAAP gross margin",
+      "low": 0.81,
+      "methodology": "Record Micron's approximate 81 percent GAAP outlook as an approximate point, not an interval.",
+      "metric_class": "supplier-margin",
+      "midpoint": 0.81,
+      "range_semantics": "approximate_point",
+      "unit": "ratio"
+    },
+    {
+      "basis": "non-GAAP",
+      "high": 0.81,
+      "id": "non-gaap-gross-margin",
+      "label": "Non-GAAP gross margin",
+      "low": 0.81,
+      "methodology": "Record Micron's approximate 81 percent non-GAAP outlook as an approximate point, not an interval.",
+      "metric_class": "supplier-margin",
+      "midpoint": 0.81,
+      "range_semantics": "approximate_point",
+      "unit": "ratio"
+    },
+    {
+      "basis": "GAAP",
+      "high": 1.6,
+      "id": "gaap-operating-expenses",
+      "label": "GAAP operating expenses",
+      "low": 1.6,
+      "methodology": "Record Micron's approximate $1.60 billion GAAP operating-expense outlook as an approximate point.",
+      "metric_class": "supplier-expense",
+      "midpoint": 1.6,
+      "range_semantics": "approximate_point",
+      "unit": "USD billion"
+    },
+    {
+      "basis": "non-GAAP",
+      "high": 1.4,
+      "id": "non-gaap-operating-expenses",
+      "label": "Non-GAAP operating expenses",
+      "low": 1.4,
+      "methodology": "Record Micron's approximate $1.40 billion non-GAAP operating-expense outlook as an approximate point.",
+      "metric_class": "supplier-expense",
+      "midpoint": 1.4,
+      "range_semantics": "approximate_point",
+      "unit": "USD billion"
+    },
+    {
+      "basis": "GAAP",
+      "high": 19.3,
+      "id": "gaap-diluted-eps",
+      "label": "GAAP diluted EPS",
+      "low": 18.5,
+      "methodology": "Record Micron's $18.90 GAAP diluted-EPS midpoint and stated plus-or-minus $0.40 range.",
+      "metric_class": "supplier-eps",
+      "midpoint": 18.9,
+      "range_semantics": "management_range",
+      "unit": "USD/share"
+    },
+    {
+      "basis": "non-GAAP",
+      "high": 19.55,
+      "id": "non-gaap-diluted-eps",
+      "label": "Non-GAAP diluted EPS",
+      "low": 18.75,
+      "methodology": "Record Micron's $19.15 non-GAAP diluted-EPS midpoint and stated plus-or-minus $0.40 range.",
+      "metric_class": "supplier-eps",
+      "midpoint": 19.15,
+      "range_semantics": "management_range",
+      "unit": "USD/share"
+    }
+  ],
+  "observation_id": "micron-fy2026q3-guidance",
+  "period": {
+    "end": "2026-05-28",
+    "label": "FY2026-Q3",
+    "start": "2026-02-27"
+  },
+  "source": {
+    "excerpt": "Micron's FQ2 release provided FQ3 revenue, gross-margin, operating-expense, and diluted-EPS guidance.",
+    "license": "Micron investor-relations website terms",
+    "published_at": "2026-03-18",
+    "publisher": "Micron Technology",
+    "retrieved_at": "2026-07-19T21:45:00Z",
+    "source_family": "micron-quarterly-results",
+    "source_url": "https://investors.micron.com/static-files/0cf459c6-1c96-49d1-982a-3a890f43dd77"
+  }
+}

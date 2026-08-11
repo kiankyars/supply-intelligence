@@ -1,0 +1,217 @@
+{
+  "alert_count": 4,
+  "alerts": [
+    {
+      "claim_key": "company.tsmc.wafer_shipments.2026q2_kpcs",
+      "current": {
+        "claim_key": "company.tsmc.wafer_shipments.2026q2_kpcs",
+        "confidence": 0.98,
+        "confirming_evidence": "TSMC's final 2Q26 management report continues to show 4,336 thousand 12-inch-equivalent wafer shipments.",
+        "dimensions": {
+          "capacity_basis": "shipments",
+          "customer": "all customers",
+          "entity_scope": "company",
+          "geography": "global",
+          "period": "2026-Q2",
+          "process_node": "all process nodes",
+          "product": "all products",
+          "quantity_semantics": "quarter_total",
+          "stage": "wafer_shipment"
+        },
+        "evidence": [
+          {
+            "byte_count": 1054,
+            "capture_kind": "normalized_observation",
+            "content_sha256": "a4ab48cc0533ffd632c344d59d1139b5a83b92fb2fa26da27e6b62d6bf87e0ae",
+            "evidence_role": "primary",
+            "independence_group": "tsmc-quarterly-results",
+            "license": "TSMC website terms",
+            "media_type": "application/json",
+            "published_at": "2026-07-16",
+            "publisher": "Taiwan Semiconductor Manufacturing Company",
+            "retrieved_at": "2026-07-18T03:22:00Z",
+            "snapshot_id": "snapshot:b3fbb0c860915022b2e634a40b318cc9",
+            "source_family": "tsmc-quarterly-results",
+            "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf"
+          }
+        ],
+        "falsifying_evidence": "TSMC publishes a corrected 2Q26 management report with a different shipment total or unit basis.",
+        "methodology": "Record the consolidated shipment value and unit shown in TSMC's 2Q26 management report. It is not node, customer, or product capacity.",
+        "posture": "reported",
+        "predicate": "consolidated wafer shipments during 2026-Q2",
+        "recorded_at": "2026-07-19T19:00:00Z",
+        "revision_id": "claimrev:d0f19accfff2671e7cdac9885b66b14a",
+        "subject": "Taiwan Semiconductor Manufacturing Company",
+        "supersedes_revision_id": null,
+        "unit": "thousand 12-inch-equivalent wafers",
+        "valid_from": "2026-04-01",
+        "valid_to": "2026-07-01",
+        "value": 4336
+      },
+      "id": "claim-alert:1761746ba4e50417",
+      "previous": null,
+      "severity": "info",
+      "type": "claim_added"
+    },
+    {
+      "claim_key": "company.tsmc.wafer_shipments.2026q2_wafers",
+      "current": {
+        "claim_key": "company.tsmc.wafer_shipments.2026q2_wafers",
+        "confidence": 0.98,
+        "confirming_evidence": "The reported 4,336-thousand shipment value remains unchanged and the thousand-to-unit conversion remains exact.",
+        "dimensions": {
+          "capacity_basis": "shipments",
+          "customer": "all customers",
+          "entity_scope": "company",
+          "geography": "global",
+          "period": "2026-Q2",
+          "process_node": "all process nodes",
+          "product": "all products",
+          "quantity_semantics": "quarter_total",
+          "stage": "wafer_shipment"
+        },
+        "evidence": [
+          {
+            "byte_count": 1054,
+            "capture_kind": "normalized_observation",
+            "content_sha256": "a4ab48cc0533ffd632c344d59d1139b5a83b92fb2fa26da27e6b62d6bf87e0ae",
+            "evidence_role": "primary",
+            "independence_group": "tsmc-quarterly-results",
+            "license": "TSMC website terms",
+            "media_type": "application/json",
+            "published_at": "2026-07-16",
+            "publisher": "Taiwan Semiconductor Manufacturing Company",
+            "retrieved_at": "2026-07-18T03:22:00Z",
+            "snapshot_id": "snapshot:b3fbb0c860915022b2e634a40b318cc9",
+            "source_family": "tsmc-quarterly-results",
+            "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf"
+          }
+        ],
+        "falsifying_evidence": "TSMC revises the underlying shipment value or states a different unit basis.",
+        "methodology": "Multiply TSMC's reported 4,336 thousand 12-inch-equivalent wafer shipments by 1,000. This company-wide shipment total cannot be allocated to 4NP, NVIDIA, or Blackwell.",
+        "posture": "derived",
+        "predicate": "normalized consolidated wafer shipments during 2026-Q2",
+        "recorded_at": "2026-07-19T19:00:00Z",
+        "revision_id": "claimrev:787a5271a7ede387fbb8e3b3c2e29d51",
+        "subject": "Taiwan Semiconductor Manufacturing Company",
+        "supersedes_revision_id": null,
+        "unit": "12-inch-equivalent wafer",
+        "valid_from": "2026-04-01",
+        "valid_to": "2026-07-01",
+        "value": 4336000
+      },
+      "id": "claim-alert:eac32fde08719ee1",
+      "previous": null,
+      "severity": "info",
+      "type": "claim_added"
+    },
+    {
+      "claim_key": "platform.nvidia.gb200_nvl72.rack_power_kw",
+      "current": {
+        "claim_key": "platform.nvidia.gb200_nvl72.rack_power_kw",
+        "confidence": 0.97,
+        "confirming_evidence": "A current NVIDIA rack guide continues to specify approximately 120 kW for a full GB200 NVL72 rack.",
+        "dimensions": {
+          "capacity_basis": "design_power",
+          "customer": null,
+          "entity_scope": "product",
+          "geography": "global",
+          "period": "current_design",
+          "process_node": null,
+          "product": "NVIDIA GB200 NVL72",
+          "quantity_semantics": "point_specification",
+          "stage": "datacenter_power"
+        },
+        "evidence": [
+          {
+            "byte_count": 824,
+            "capture_kind": "normalized_observation",
+            "content_sha256": "2eb321eea07833570c6e5947d996a9ffaecd562385aa466faa5646137b6c9e38",
+            "evidence_role": "primary",
+            "independence_group": "nvidia-product-documentation",
+            "license": "NVIDIA documentation terms",
+            "media_type": "application/json",
+            "published_at": "2026-03-03",
+            "publisher": "NVIDIA",
+            "retrieved_at": "2026-07-18T03:22:00Z",
+            "snapshot_id": "snapshot:39005834f9212f90468b506eefe01766",
+            "source_family": "nvidia-dgx-gb-rack-guide",
+            "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html"
+          }
+        ],
+        "falsifying_evidence": "A superseding NVIDIA guide changes the designed full-rack power value or its scope.",
+        "methodology": "Record the qualified vendor design value from the normalized observation. The claim excludes facility overhead and is not a meter reading.",
+        "posture": "reported",
+        "predicate": "approximate full-rack power consumption",
+        "recorded_at": "2026-07-19T19:00:00Z",
+        "revision_id": "claimrev:65a9454356c62eb5d3f6078872541057",
+        "subject": "NVIDIA GB200 NVL72",
+        "supersedes_revision_id": null,
+        "unit": "kW/rack",
+        "valid_from": "2026-03-03",
+        "valid_to": null,
+        "value": 120
+      },
+      "id": "claim-alert:e616aee532179dc2",
+      "previous": null,
+      "severity": "info",
+      "type": "claim_added"
+    },
+    {
+      "claim_key": "platform.nvidia.gb200_nvl72.rack_power_mw",
+      "current": {
+        "claim_key": "platform.nvidia.gb200_nvl72.rack_power_mw",
+        "confidence": 0.97,
+        "confirming_evidence": "The underlying NVIDIA design value remains approximately 120 kW per rack and the unit conversion remains exact.",
+        "dimensions": {
+          "capacity_basis": "design_power",
+          "customer": null,
+          "entity_scope": "product",
+          "geography": "global",
+          "period": "current_design",
+          "process_node": null,
+          "product": "NVIDIA GB200 NVL72",
+          "quantity_semantics": "point_specification",
+          "stage": "datacenter_power"
+        },
+        "evidence": [
+          {
+            "byte_count": 824,
+            "capture_kind": "normalized_observation",
+            "content_sha256": "2eb321eea07833570c6e5947d996a9ffaecd562385aa466faa5646137b6c9e38",
+            "evidence_role": "primary",
+            "independence_group": "nvidia-product-documentation",
+            "license": "NVIDIA documentation terms",
+            "media_type": "application/json",
+            "published_at": "2026-03-03",
+            "publisher": "NVIDIA",
+            "retrieved_at": "2026-07-18T03:22:00Z",
+            "snapshot_id": "snapshot:39005834f9212f90468b506eefe01766",
+            "source_family": "nvidia-dgx-gb-rack-guide",
+            "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html"
+          }
+        ],
+        "falsifying_evidence": "The underlying vendor value or its platform scope changes.",
+        "methodology": "Divide the reported 120 kW per rack by 1,000 to express the same approximate design value in MW per rack.",
+        "posture": "derived",
+        "predicate": "normalized approximate full-rack power consumption",
+        "recorded_at": "2026-07-19T19:00:00Z",
+        "revision_id": "claimrev:97bdc6ec05e22807f80622be3ba7f830",
+        "subject": "NVIDIA GB200 NVL72",
+        "supersedes_revision_id": null,
+        "unit": "MW/rack",
+        "valid_from": "2026-03-03",
+        "valid_to": null,
+        "value": 0.12
+      },
+      "id": "claim-alert:e3bac7a33652806a",
+      "previous": null,
+      "severity": "info",
+      "type": "claim_added"
+    }
+  ],
+  "current_known_at": "2026-07-19T19:00:00Z",
+  "format": "ai-supply-claim-diff.v1",
+  "previous_known_at": "2026-07-19T18:59:59Z",
+  "valid_at": "2026-06-30"
+}

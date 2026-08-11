@@ -1,0 +1,134 @@
+{
+  "base_scenario": {
+    "scenario_id": "gb200-nvl72-illustrative-2026q3",
+    "sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787"
+  },
+  "format": "ai-supply-chain-lineage.v2",
+  "links": [
+    {
+      "constraint_id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+      "distribution_mapping": "source_capacity_draws_deterministic_cross_source_permutation",
+      "metric": "complete_system_equivalents",
+      "replace_constraint_ids": [
+        "blackwell-packages",
+        "blackwell-reticle-dies",
+        "hbm3e-capacity",
+        "silicon-interposers",
+        "abf-substrates"
+      ],
+      "required_source_coverage": [
+        "silicon_interposer",
+        "abf_substrate"
+      ],
+      "source": "manufacturing",
+      "source_sha256": "9f11428aa87f83eecc5066c0b91759371d56fdb64db3b8109b4c3c29b418759a",
+      "source_unit": "system"
+    },
+    {
+      "constraint_id": "linked-component-cleared-odm-complete-racks",
+      "distribution_mapping": "source_capacity_draws_deterministic_cross_source_permutation",
+      "metric": "complete_racks",
+      "replace_constraint_ids": [
+        "compute-tray-assembly",
+        "connectx7-nics",
+        "bluefield3-dpus",
+        "nvlink-switch-trays",
+        "management-tor-switches",
+        "power-shelves",
+        "liquid-cooling-integration"
+      ],
+      "required_source_coverage_selectors": [
+        {
+          "resource_kind": "cooling",
+          "stage": "rack_integration"
+        },
+        {
+          "resource_kind": "network_switch",
+          "stage": "rack_integration"
+        },
+        {
+          "resource_kind": "power_delivery",
+          "stage": "rack_integration"
+        },
+        {
+          "resource_kind": "rack_integration",
+          "stage": "rack_integration"
+        },
+        {
+          "resource_kind": "network_switch",
+          "stage": "server_assembly"
+        },
+        {
+          "resource_kind": "retimer",
+          "stage": "server_assembly"
+        },
+        {
+          "resource_kind": "server_assembly",
+          "stage": "server_assembly"
+        }
+      ],
+      "source": "system_assembly",
+      "source_sha256": "f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6",
+      "source_unit": "rack"
+    },
+    {
+      "constraint_id": "linked-abilene-complete-rack-allocation",
+      "distribution_mapping": "source_capacity_draws_deterministic_cross_source_permutation",
+      "metric": "complete_racks",
+      "replace_constraint_ids": [],
+      "source": "system_assembly",
+      "source_sha256": "f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6",
+      "source_unit": "rack"
+    },
+    {
+      "constraint_id": "linked-abilene-operational-racks",
+      "distribution_mapping": "source_capacity_draws_deterministic_cross_source_permutation",
+      "metric": "operational_racks",
+      "replace_constraint_ids": [
+        "datacenter-commissioning",
+        "energized-datacenter-power"
+      ],
+      "source": "datacenter_operational",
+      "source_sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e",
+      "source_unit": "rack"
+    }
+  ],
+  "preserve_market_views": false,
+  "scenario_id": "gb200-to-abilene-odm-assembly-draw-linked-illustrative-2026q3",
+  "scope_notes": "Package output represents the selected illustrative Blackwell manufacturing flow after the wafer format and reticle-bounded die geometry become derived evidence inputs. Component-cleared complete racks then represent three synthetic non-overlapping ODM scopes after exact server and rack resources are consumed once. A shipped-stage synthetic allocation narrows the same assembly draws to the Abilene-target subset. Frozen draws preserve source marginals and within-source dependence, but independent deterministic permutations do not establish cross-source causal dependence. The geometry interval is not a teardown measurement; factory qualification, logistics, site installation, deployment infrastructure, supplier economics, consensus, and opportunity ranking remain separate or outside this run.",
+  "sources": {
+    "datacenter_operational": {
+      "capacity_draw_count": 20000,
+      "capacity_draws_sha256": "4b48c75596f5c3b74a4b461bede31c89357e5220eadad9e266b079fe4a51c76b",
+      "draw_permutation": "deterministic_independent_cross_source_permutation",
+      "format": "ai-supply-datacenter-operational-result.v1",
+      "minimum_input_confidence": 0.1,
+      "scenario_id": "datacenter:openai-abilene-net-operational-illustrative-2026q3",
+      "scope": "One selected Abilene campus target-platform operational envelope.",
+      "sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e",
+      "synthetic": true
+    },
+    "manufacturing": {
+      "capacity_draw_count": 20000,
+      "capacity_draws_sha256": "052f8ed5715875a78b8ebf064741edcf7f937a9fd2c3302f2ac488e4d7835a51",
+      "draw_permutation": "deterministic_independent_cross_source_permutation",
+      "format": "ai-supply-manufacturing-result.v1",
+      "minimum_input_confidence": 0.3,
+      "scenario_id": "blackwell-manufacturing-with-supplier-hbm-draws-material-cleared-illustrative-2026q3",
+      "scope": "Illustrative Blackwell manufacturing flow with derived wafer format, bounded reticle-based die geometry, exact supplier HBM draws, and synthetic material-cleared package starts.",
+      "sha256": "9f11428aa87f83eecc5066c0b91759371d56fdb64db3b8109b4c3c29b418759a",
+      "synthetic": true
+    },
+    "system_assembly": {
+      "capacity_draw_count": 20000,
+      "capacity_draws_sha256": "897d619a3659a392e405cbffb063fbefb2a00a91854b68da16f0c57f04896759",
+      "draw_permutation": "deterministic_independent_cross_source_permutation",
+      "format": "ai-supply-system-assembly-result.v1",
+      "minimum_input_confidence": 0.15,
+      "scenario_id": "gb200-nvl72-odm-assembly-illustrative-2026q3",
+      "scope": "Illustrative three-ODM GB200 assembly flow with exact capacity draws and synthetic component-cleared complete-rack output.",
+      "sha256": "f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6",
+      "synthetic": true
+    }
+  }
+}

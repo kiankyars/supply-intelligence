@@ -1,0 +1,14 @@
+{
+  "format": "ai-supply-claim-cycle-ingest-lineage.v1",
+  "packs": [
+    {
+      "claim_count": 2,
+      "job_relative_path": "2026-07-19-blackwell-reticle-geometry-pack.json",
+      "pack_sha256": "7997a2bf9d0e04a2cd8c892ea47eac9e473a98348ecba6cbb6c7b4a21f29bd6a",
+      "recorded_at": "2026-07-20T05:30:00Z",
+      "run_id": "ingest:38274ea966429e6450dd0e8b8007ad8f",
+      "sequence": 0,
+      "source_count": 2
+    }
+  ]
+}

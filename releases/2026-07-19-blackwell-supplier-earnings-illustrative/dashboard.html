@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Illustrative Blackwell supplier earnings and discrepancy bridge</title>
+  <style>
+    :root { --ink:#14231d; --paper:#f4f2ea; --card:#fffdf8; --line:#d8d7ce; --muted:#66736d; --green:#0f6b4b; --green-soft:#dceee5; --red:#a13d33; --red-soft:#f5ddd9; --amber:#98600a; --shadow:0 18px 50px rgba(20,35,29,.08); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { width:min(1500px,calc(100% - 40px)); margin:auto; padding:42px 0 72px; }
+    header { display:flex; flex-direction:column; align-items:flex-start; gap:18px; padding:36px; border-radius:24px; background:var(--ink); color:#fffdf8; box-shadow:var(--shadow); }
+    .eyebrow { color:#9fd0bd; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { max-width:1100px; margin:0; font:700 clamp(34px,5vw,62px)/1.02 Georgia,serif; letter-spacing:-.035em; }
+    header p { max-width:960px; margin:0; color:#d2ddd7; font-size:17px; }
+    .warning { width:100%; padding:14px 16px; border:1px solid #6c756f; border-radius:14px; background:rgba(255,255,255,.04); color:#fff4cf; }
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:20px 0 34px; }
+    .card, section { border:1px solid var(--line); border-radius:18px; background:var(--card); box-shadow:var(--shadow); }
+    .card { padding:20px; } .card span { display:block; color:var(--muted); font-size:12px; font-weight:750; letter-spacing:.07em; text-transform:uppercase; }
+    .card strong { display:block; margin:6px 0 2px; font:700 32px/1 Georgia,serif; } .card small { color:var(--muted); } .source-card strong { overflow-wrap:anywhere; font-size:22px; line-height:1.05; }
+    section { margin-top:20px; padding:26px; overflow:hidden; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:18px; }
+    h2 { margin:3px 0 0; font:700 30px/1.1 Georgia,serif; } h3 { margin:26px 0 12px; font:700 20px/1.1 Georgia,serif; }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:14px; }
+    table { width:100%; min-width:1050px; border-collapse:collapse; }
+    th { padding:11px 13px; background:#ecebe4; color:#58665f; font-size:11px; letter-spacing:.08em; text-align:left; text-transform:uppercase; }
+    td { padding:13px; border-top:1px solid var(--line); vertical-align:top; } td strong,td span { display:block; } td span { margin-top:3px; color:var(--muted); font-size:12px; }
+    .rank { font:700 24px/1 Georgia,serif; } .mono { font-variant-numeric:tabular-nums; }
+    .pill { display:inline-block; width:fit-content; padding:4px 8px; border-radius:999px; font-size:11px; font-weight:800; }
+    .pill.positive { color:var(--green); background:var(--green-soft); } .pill.negative { color:var(--red); background:var(--red-soft); }
+    .company-meta span { display:block; margin-top:6px; color:var(--muted); font-size:12px; text-align:right; }
+    .positive-text { color:var(--green); } .negative-text { color:var(--red); }
+    .thesis-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
+    .thesis-grid article { padding:16px; border:1px solid var(--line); border-radius:12px; background:#f7f6f0; }
+    .thesis-grid span { color:var(--muted); font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; } .thesis-grid p { margin:5px 0 0; }
+    footer { margin-top:24px; color:var(--muted); font-size:12px; }
+    @media(max-width:950px) { .cards { grid-template-columns:1fr 1fr; } .section-head { display:block; } .section-head>div+div { margin-top:12px; } }
+    @media(max-width:600px) { main { width:calc(100% - 20px); padding-top:10px; } header,section { padding:20px; border-radius:14px; } .cards,.thesis-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body><main>
+  <header>
+    <div class="eyebrow">Supplier earnings bridge · 2026-Q3</div>
+    <h1>Physical output now reaches revenue, EPS, consensus discrepancy, and a research ranking.</h1>
+    <p>Inventory and recognition timing stay explicit. Named cases hold the comparator fixed, and every opportunity exposes its first rejection and thesis kill.</p>
+    <div class="warning"><strong>Boundary:</strong> this checked run is synthetic and the physical source is synthetic. Every security remains <code>wait_for_proof</code>; no row is a recommendation or price target.</div>
+  </header>
+  <div class="cards">
+    <article class="card"><span>Companies</span><strong>3</strong><small>public-company bridges</small></article>
+    <article class="card source-card"><span>Physical source</span><strong>blackwell-wafer-hbm-illustrative-2026q3</strong><small>ai-supply-manufacturing-result.v1</small></article>
+    <article class="card"><span>Top research queue</span><strong>#1 MU</strong><small>wait for proof</small></article>
+    <article class="card"><span>Monte Carlo draws</span><strong>20,000</strong><small>P10 / P50 / P90 reported</small></article>
+  </div>
+  <section>
+    <div class="section-head"><div><div class="eyebrow">Long / short research queue</div><h2>Rank discrepancy only after evidence-readiness penalties</h2></div><p>Direction follows median EPS discrepancy. Score also requires confidence, liquidity, catalyst proximity, evidence readiness, and downside resilience.</p></div>
+    <div class="table-wrap"><table><thead><tr><th>Rank</th><th>Security</th><th>Direction</th><th>Revenue gap</th><th>EPS gap</th><th>Score</th><th>Catalyst / first rejection</th></tr></thead><tbody>
+            <tr>
+              <td class="rank">1</td>
+              <td><strong>MU</strong><span>Micron illustrative HBM bridge</span></td>
+              <td><span class="pill negative">Short research</span><span>wait for proof</span></td>
+              <td class="mono negative-text">-6.3%<span>P10/P90 -18.4% / +7.3%</span></td>
+              <td class="mono negative-text"><strong>-43.8%</strong><span>P10/P90 -63.1% / -22.6%</span></td>
+              <td class="mono">0.0025<span>research priority only</span></td>
+              <td>2026-09-23<span>Source HBM3E supplier share, good-stack output, price, inventory, and comparable consensus.</span></td>
+            </tr>
+            
+            <tr>
+              <td class="rank">2</td>
+              <td><strong>NVDA</strong><span>NVIDIA illustrative Blackwell bridge</span></td>
+              <td><span class="pill positive">Long research</span><span>wait for proof</span></td>
+              <td class="mono positive-text">+5.1%<span>P10/P90 -2.2% / +12.8%</span></td>
+              <td class="mono positive-text"><strong>+10.5%</strong><span>P10/P90 +0.4% / +21.7%</span></td>
+              <td class="mono">0.0009<span>research priority only</span></td>
+              <td>2026-08-26<span>Source actual Blackwell sell-through, bundle ASP, channel inventory, and comparable consensus.</span></td>
+            </tr>
+            
+            <tr>
+              <td class="rank">3</td>
+              <td><strong>TSM</strong><span>TSMC illustrative advanced-packaging bridge</span></td>
+              <td><span class="pill negative">Short research</span><span>wait for proof</span></td>
+              <td class="mono negative-text">-3.4%<span>P10/P90 -11.0% / +4.6%</span></td>
+              <td class="mono negative-text"><strong>-14.6%</strong><span>P10/P90 -25.9% / -2.4%</span></td>
+              <td class="mono">0.0008<span>research priority only</span></td>
+              <td>2026-10-15<span>Source product-specific package starts, service pricing, revenue timing, and comparable consensus.</span></td>
+            </tr>
+            </tbody></table></div>
+  </section>
+  
+            <section>
+              <div class="section-head"><div><div class="eyebrow">#1 · wait for proof</div><h2>MU · Micron illustrative HBM bridge</h2></div><div class="company-meta"><span class="pill negative">Short research</span><span>13.7x synthetic NTM P/E · $229.86B market cap</span></div></div>
+              <div class="table-wrap"><table><thead><tr><th>Case</th><th>AI-chain revenue</th><th>Total revenue</th><th>Gross profit</th><th>EPS</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>Bear</strong></td>
+                  <td class="mono">$1.12B<span>13.8% of total</span></td>
+                  <td class="mono">$8.12B<span>-42.0% vs consensus</span></td>
+                  <td class="mono">$3.16B<span>39.0% margin</span></td>
+                  <td class="mono"><strong>-$1.02</strong><span>-130.1% vs consensus</span></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>Base</strong></td>
+                  <td class="mono">$4.20B<span>31.8% of total</span></td>
+                  <td class="mono">$13.20B<span>-5.7% vs consensus</span></td>
+                  <td class="mono">$6.45B<span>48.9% margin</span></td>
+                  <td class="mono"><strong>$2.02</strong><span>-40.7% vs consensus</span></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>Bull</strong></td>
+                  <td class="mono">$9.66B<span>46.7% of total</span></td>
+                  <td class="mono">$20.66B<span>+47.5% vs consensus</span></td>
+                  <td class="mono">$11.82B<span>57.2% margin</span></td>
+                  <td class="mono"><strong>$6.97</strong><span>+104.9% vs consensus</span></td>
+                </tr>
+                </tbody></table></div>
+              <h3>Physical-to-revenue lines</h3>
+              <div class="table-wrap"><table><thead><tr><th>Line</th><th>Physical source</th><th>Attributed production</th><th>Recognized units</th><th>Revenue</th><th>Gross profit</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>Illustrative HBM stack revenue</strong><span>hbm_good_stacks</span></td>
+                  <td class="mono">6.65M<span>stack</span></td>
+                  <td class="mono">1.99M<span>HBM-stack</span></td>
+                  <td class="mono">1.72M<span>HBM-stack</span></td>
+                  <td class="mono">$4.09B</td>
+                  <td class="mono">$2.20B</td>
+                </tr>
+                </tbody></table></div>
+              <div class="thesis-grid">
+                <article><span>Variant wedge</span><p>Illustrative HBM mix and attribution could create a positive or negative EPS discrepancy.</p></article>
+                <article><span>What is priced in</span><p>Unknown. The market snapshot and consensus comparator are synthetic.</p></article>
+                <article><span>First rejection</span><p>Source HBM3E supplier share, good-stack output, price, inventory, and comparable consensus.</p></article>
+                <article><span>Thesis kill</span><p>Supplier allocation or pricing evidence invalidates the HBM revenue bridge.</p></article>
+              </div>
+            </section>
+            
+            <section>
+              <div class="section-head"><div><div class="eyebrow">#2 · wait for proof</div><h2>NVDA · NVIDIA illustrative Blackwell bridge</h2></div><div class="company-meta"><span class="pill positive">Long research</span><span>28.1x synthetic NTM P/E · $4200.49B market cap</span></div></div>
+              <div class="table-wrap"><table><thead><tr><th>Case</th><th>AI-chain revenue</th><th>Total revenue</th><th>Gross profit</th><th>EPS</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>Bear</strong></td>
+                  <td class="mono">$5.31B<span>11.2% of total</span></td>
+                  <td class="mono">$47.31B<span>-15.5% vs consensus</span></td>
+                  <td class="mono">$32.01B<span>67.7% margin</span></td>
+                  <td class="mono"><strong>$0.79</strong><span>-27.8% vs consensus</span></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>Base</strong></td>
+                  <td class="mono">$10.89B<span>18.5% of total</span></td>
+                  <td class="mono">$58.89B<span>+5.2% vs consensus</span></td>
+                  <td class="mono">$42.40B<span>72.0% margin</span></td>
+                  <td class="mono"><strong>$1.23</strong><span>+12.2% vs consensus</span></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>Bull</strong></td>
+                  <td class="mono">$17.61B<span>24.3% of total</span></td>
+                  <td class="mono">$72.61B<span>+29.7% vs consensus</span></td>
+                  <td class="mono">$54.63B<span>75.2% margin</span></td>
+                  <td class="mono"><strong>$1.76</strong><span>+59.9% vs consensus</span></td>
+                </tr>
+                </tbody></table></div>
+              <h3>Physical-to-revenue lines</h3>
+              <div class="table-wrap"><table><thead><tr><th>Line</th><th>Physical source</th><th>Attributed production</th><th>Recognized units</th><th>Revenue</th><th>Gross profit</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>Illustrative Blackwell accelerator revenue</strong><span>finished_accelerator_packages</span></td>
+                  <td class="mono">370,817<span>package</span></td>
+                  <td class="mono">364,678<span>accelerator</span></td>
+                  <td class="mono">329,035<span>accelerator</span></td>
+                  <td class="mono">$10.48B</td>
+                  <td class="mono">$7.44B</td>
+                </tr>
+                </tbody></table></div>
+              <div class="thesis-grid">
+                <article><span>Variant wedge</span><p>Illustrative Blackwell accelerator recognition could differ from a synthetic same-quarter comparator.</p></article>
+                <article><span>What is priced in</span><p>Unknown. The market snapshot and consensus comparator are synthetic.</p></article>
+                <article><span>First rejection</span><p>Source actual Blackwell sell-through, bundle ASP, channel inventory, and comparable consensus.</p></article>
+                <article><span>Thesis kill</span><p>Sourced unit economics or sell-through remove the modeled EPS discrepancy.</p></article>
+              </div>
+            </section>
+            
+            <section>
+              <div class="section-head"><div><div class="eyebrow">#3 · wait for proof</div><h2>TSM · TSMC illustrative advanced-packaging bridge</h2></div><div class="company-meta"><span class="pill negative">Short research</span><span>34.7x synthetic NTM P/E · $950.47B market cap</span></div></div>
+              <div class="table-wrap"><table><thead><tr><th>Case</th><th>AI-chain revenue</th><th>Total revenue</th><th>Gross profit</th><th>EPS</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>Bear</strong></td>
+                  <td class="mono">$816.2M<span>2.9% of total</span></td>
+                  <td class="mono">$27.82B<span>-18.2% vs consensus</span></td>
+                  <td class="mono">$14.43B<span>51.9% margin</span></td>
+                  <td class="mono"><strong>$1.11</strong><span>-51.7% vs consensus</span></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>Base</strong></td>
+                  <td class="mono">$1.90B<span>5.8% of total</span></td>
+                  <td class="mono">$32.90B<span>-3.2% vs consensus</span></td>
+                  <td class="mono">$18.71B<span>56.9% margin</span></td>
+                  <td class="mono"><strong>$1.99</strong><span>-13.6% vs consensus</span></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>Bull</strong></td>
+                  <td class="mono">$3.43B<span>8.9% of total</span></td>
+                  <td class="mono">$38.43B<span>+13.0% vs consensus</span></td>
+                  <td class="mono">$23.41B<span>60.9% margin</span></td>
+                  <td class="mono"><strong>$3.00</strong><span>+30.5% vs consensus</span></td>
+                </tr>
+                </tbody></table></div>
+              <h3>Physical-to-revenue lines</h3>
+              <div class="table-wrap"><table><thead><tr><th>Line</th><th>Physical source</th><th>Attributed production</th><th>Recognized units</th><th>Revenue</th><th>Gross profit</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>Illustrative advanced-package service revenue</strong><span>package_attempts</span></td>
+                  <td class="mono">392,876<span>package</span></td>
+                  <td class="mono">352,520<span>package-service</span></td>
+                  <td class="mono">337,338<span>package-service</span></td>
+                  <td class="mono">$1.84B</td>
+                  <td class="mono">$1.00B</td>
+                </tr>
+                </tbody></table></div>
+              <div class="thesis-grid">
+                <article><span>Variant wedge</span><p>Illustrative advanced-package revenue could differ from a synthetic company comparator.</p></article>
+                <article><span>What is priced in</span><p>Unknown. The market snapshot and consensus comparator are synthetic.</p></article>
+                <article><span>First rejection</span><p>Source product-specific package starts, service pricing, revenue timing, and comparable consensus.</p></article>
+                <article><span>Thesis kill</span><p>Exact package economics or broader company results remove the modeled EPS discrepancy.</p></article>
+              </div>
+            </section>
+            
+  <section>
+    <div class="section-head"><div><div class="eyebrow">Frozen lineage</div><h2>One physical result, one earnings vintage</h2></div></div>
+    <div class="thesis-grid"><article><span>Source result SHA-256</span><p class="mono">2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519</p></article><article><span>Recorded at</span><p>2026-07-19T22:30:00Z</p></article><article><span>Source approximation</span><p>P10, P50, and P90 become triangular low, mode, and high values.</p></article><article><span>Current status</span><p>Research workflow only; all candidates wait for sourced proof.</p></article></div>
+  </section>
+  <footer>As of 2026-07-19. Synthetic capacity, earnings, consensus, price, valuation, and ranking inputs are demonstration data.</footer>
+</main></body></html>

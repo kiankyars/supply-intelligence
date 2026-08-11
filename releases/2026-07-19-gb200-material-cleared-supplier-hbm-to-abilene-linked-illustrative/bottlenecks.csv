@@ -1,0 +1,50 @@
+stage,constraint_id,resource_name,probability
+accelerator_package,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,1.0
+server_assembly,compute-tray-assembly,GB200 compute-tray assembly,0.767
+server_assembly,connectx7-nics,ConnectX-7 400G NICs,0.233
+server_assembly,bluefield3-dpus,BlueField-3 DPUs,0.0
+server_assembly,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+rack_integration,compute-tray-assembly,GB200 compute-tray assembly,0.50115
+rack_integration,liquid-cooling-integration,Liquid-cooling rack integration,0.2338
+rack_integration,nvlink-switch-trays,NVLink switch trays,0.23255
+rack_integration,power-shelves,Rack power shelves,0.0325
+rack_integration,bluefield3-dpus,BlueField-3 DPUs,0.0
+rack_integration,connectx7-nics,ConnectX-7 400G NICs,0.0
+rack_integration,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+rack_integration,management-tor-switches,Management top-of-rack switches,0.0
+shipped,linked-abilene-shipment-allocation,Synthetic Abilene-target shipment allocation,1.0
+shipped,bluefield3-dpus,BlueField-3 DPUs,0.0
+shipped,compute-tray-assembly,GB200 compute-tray assembly,0.0
+shipped,connectx7-nics,ConnectX-7 400G NICs,0.0
+shipped,factory-qualification,Factory qualification slots,0.0
+shipped,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+shipped,liquid-cooling-integration,Liquid-cooling rack integration,0.0
+shipped,management-tor-switches,Management top-of-rack switches,0.0
+shipped,nvlink-switch-trays,NVLink switch trays,0.0
+shipped,power-shelves,Rack power shelves,0.0
+shipped,rack-logistics,Qualified rack logistics slots,0.0
+installed,linked-abilene-shipment-allocation,Synthetic Abilene-target shipment allocation,1.0
+installed,bluefield3-dpus,BlueField-3 DPUs,0.0
+installed,compute-tray-assembly,GB200 compute-tray assembly,0.0
+installed,connectx7-nics,ConnectX-7 400G NICs,0.0
+installed,factory-qualification,Factory qualification slots,0.0
+installed,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+installed,liquid-cooling-integration,Liquid-cooling rack integration,0.0
+installed,management-tor-switches,Management top-of-rack switches,0.0
+installed,nvlink-switch-trays,NVLink switch trays,0.0
+installed,power-shelves,Rack power shelves,0.0
+installed,rack-logistics,Qualified rack logistics slots,0.0
+installed,site-installation,Customer-site installation slots,0.0
+operational,linked-abilene-shipment-allocation,Synthetic Abilene-target shipment allocation,0.86975
+operational,linked-abilene-operational-racks,Frozen Abilene operational rack capacity,0.13025
+operational,bluefield3-dpus,BlueField-3 DPUs,0.0
+operational,compute-tray-assembly,GB200 compute-tray assembly,0.0
+operational,connectx7-nics,ConnectX-7 400G NICs,0.0
+operational,factory-qualification,Factory qualification slots,0.0
+operational,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+operational,liquid-cooling-integration,Liquid-cooling rack integration,0.0
+operational,management-tor-switches,Management top-of-rack switches,0.0
+operational,nvlink-switch-trays,NVLink switch trays,0.0
+operational,power-shelves,Rack power shelves,0.0
+operational,rack-logistics,Qualified rack logistics slots,0.0
+operational,site-installation,Customer-site installation slots,0.0

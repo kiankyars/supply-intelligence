@@ -1,0 +1,40 @@
+{
+  "cycle_id": "claim-cycle:7272ab2b1e80ce418a6cb14660b9ea81",
+  "files": {
+    "claim_diff.json": {
+      "bytes": 4512,
+      "sha256": "21adf0a05a1f9cfdb18b5ed570a44af446a0286bb1fd3433cba1c8c6048d1e0f"
+    },
+    "current_snapshot.json": {
+      "bytes": 4091,
+      "sha256": "b494e0c4141e31d2f27381a32d5d40650ab689bee1dd00bd207d38a6bb898ad3"
+    },
+    "ingest_lineage.json": {
+      "bytes": 424,
+      "sha256": "a4ad945271fac615146b20a6806c375e14a90eb79590b70b47cba995104e268d"
+    },
+    "job.json": {
+      "bytes": 397,
+      "sha256": "ddfa6525d98e94f2b28d9074c93d185257bd177523d6f5f3d74cb06da10d3b3b"
+    },
+    "notification_lineage.json": {
+      "bytes": 194,
+      "sha256": "8c2abad4019b119b2908f19744ef5007edd1742ab8ff10fde409f99ef0f24c11"
+    },
+    "packs/000-2026-07-19-blackwell-wafer-format-pack.json": {
+      "bytes": 4023,
+      "sha256": "8697996e6177ed42c88ac7f280c98c315236f7b7320c5bb9b8a1b73938724be9"
+    },
+    "previous_snapshot.json": {
+      "bytes": 148,
+      "sha256": "68d9478c8fdd83075fabbd35e8ebc9ea782fd626d34b1f32f6acafdfdfaa6b0f"
+    },
+    "run.json": {
+      "bytes": 419,
+      "sha256": "d69f131b0259f0e53e9e5c6bcd66dce2abebf8eabb4fcc74d3dfd3a1f5e29887"
+    }
+  },
+  "format": "ai-supply-claim-cycle-release.v1",
+  "job_id": "blackwell-wafer-format",
+  "run_at": "2026-07-19T20:30:00Z"
+}

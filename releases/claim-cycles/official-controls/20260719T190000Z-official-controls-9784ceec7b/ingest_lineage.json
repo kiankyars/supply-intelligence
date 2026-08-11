@@ -1,0 +1,14 @@
+{
+  "format": "ai-supply-claim-cycle-ingest-lineage.v1",
+  "packs": [
+    {
+      "claim_count": 4,
+      "job_relative_path": "2026-07-19-official-controls-pack.json",
+      "pack_sha256": "1abfe4d64ce4781857364fbd6d6b7b59bdb06a04055b34ee4bbeac3c8e49c1bc",
+      "recorded_at": "2026-07-19T19:00:00Z",
+      "run_id": "ingest:10a63660067f60b0de08e6a2c5fb1e4e",
+      "sequence": 0,
+      "source_count": 2
+    }
+  ]
+}

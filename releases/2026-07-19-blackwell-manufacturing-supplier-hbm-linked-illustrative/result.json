@@ -1,0 +1,1848 @@
+{
+  "bottlenecks": [
+    {
+      "constraint": "hbm_good_stacks",
+      "probability": 0.9749
+    },
+    {
+      "constraint": "logic_binned_dies",
+      "probability": 0.0251
+    }
+  ],
+  "conversion_outputs": {
+    "assembly_start_utilization": {
+      "maximum": 0.913391620307059,
+      "mean": 0.6385620981339147,
+      "minimum": 0.46311423247661154,
+      "p10": 0.5533810926148561,
+      "p50": 0.63315799375313,
+      "p90": 0.7334750305553024
+    },
+    "complete_system_equivalents": {
+      "maximum": 4356.602136372472,
+      "mean": 3738.4888775772547,
+      "minimum": 2783.157227913678,
+      "p10": 3445.936815090922,
+      "p50": 3736.9125095434374,
+      "p90": 4034.655677132526
+    },
+    "finished_accelerator_packages": {
+      "maximum": 313675.353818818,
+      "mean": 269171.1991855624,
+      "minimum": 200387.32040978482,
+      "p10": 248107.4506865464,
+      "p50": 269057.7006871275,
+      "p90": 290495.20875354187
+    },
+    "hbm_gb_per_accelerator": {
+      "maximum": 192.0,
+      "mean": 192.0,
+      "minimum": 192.0,
+      "p10": 192.0,
+      "p50": 192.0,
+      "p90": 192.0
+    },
+    "hbm_good_stacks": {
+      "maximum": 2606628.2076586676,
+      "mean": 2285684.549183706,
+      "minimum": 1978091.9191623083,
+      "p10": 2112895.3535279194,
+      "p50": 2284017.327566411,
+      "p90": 2461802.3245693785
+    },
+    "hbm_memory_dies_per_accelerator": {
+      "maximum": 64.0,
+      "mean": 64.0,
+      "minimum": 64.0,
+      "p10": 64.0,
+      "p50": 64.0,
+      "p90": 64.0
+    },
+    "hbm_package_equivalents": {
+      "maximum": 325828.52595733345,
+      "mean": 285710.5686479632,
+      "minimum": 247261.48989528854,
+      "p10": 264111.9191909899,
+      "p50": 285502.16594580136,
+      "p90": 307725.2905711723
+    },
+    "hbm_stack_utilization": {
+      "maximum": 1.0,
+      "mean": 0.998567471642674,
+      "minimum": 0.7338859990418136,
+      "p10": 1.0,
+      "p50": 1.0,
+      "p90": 1.0
+    },
+    "logic_binned_dies": {
+      "maximum": 1416995.0990981164,
+      "mean": 816625.5406001897,
+      "minimum": 426921.7278699551,
+      "p10": 649339.830004062,
+      "p50": 810492.102622166,
+      "p90": 992951.9706842846
+    },
+    "logic_binned_yield": {
+      "maximum": 0.5440584352002253,
+      "mean": 0.395801014705877,
+      "minimum": 0.27638964497980795,
+      "p10": 0.3398250130317623,
+      "p50": 0.3946547991368542,
+      "p90": 0.4529801437095238
+    },
+    "logic_defect_yield": {
+      "maximum": 0.6857270929376342,
+      "mean": 0.5388573094986657,
+      "minimum": 0.40487779209177044,
+      "p10": 0.4635851835982024,
+      "p50": 0.5387062250698162,
+      "p90": 0.6157352286686615
+    },
+    "logic_die_utilization": {
+      "maximum": 1.0,
+      "mean": 0.71695470585593,
+      "minimum": 0.397729541683632,
+      "p10": 0.5674084789946806,
+      "p50": 0.7048252319514952,
+      "p90": 0.8883046085863023
+    },
+    "logic_effective_known_good_yield": {
+      "maximum": 0.6314260944897635,
+      "mean": 0.5138760591721072,
+      "minimum": 0.39842729512314057,
+      "p10": 0.45065081116858785,
+      "p50": 0.514957894180783,
+      "p90": 0.576364813169696
+    },
+    "logic_gross_dies": {
+      "maximum": 2703442.598298572,
+      "mean": 2062980.4685086124,
+      "minimum": 1428962.22133315,
+      "p10": 1733367.637039112,
+      "p50": 2063412.1434323683,
+      "p90": 2391965.080118273
+    },
+    "logic_gross_dies_per_wafer": {
+      "maximum": 61.74206368097197,
+      "mean": 58.95663129566243,
+      "minimum": 56.15491537831042,
+      "p10": 57.59711565107387,
+      "p50": 58.94728978242858,
+      "p90": 60.3294126262759
+    },
+    "logic_known_good_dies": {
+      "maximum": 1640377.823114754,
+      "mean": 1060245.4025275644,
+      "minimum": 621516.2546300378,
+      "p10": 857072.4057259767,
+      "p50": 1051948.58803926,
+      "p90": 1272462.8192719829
+    },
+    "logic_package_equivalents": {
+      "maximum": 708497.5495490582,
+      "mean": 408312.77030009485,
+      "minimum": 213460.86393497756,
+      "p10": 324669.915002031,
+      "p50": 405246.051311083,
+      "p90": 496475.9853421423
+    },
+    "package_assembly_start_capacity": {
+      "maximum": 549111.1636713421,
+      "mean": 450471.1244097189,
+      "minimum": 350768.5623609395,
+      "p10": 395328.526371234,
+      "p50": 450558.8511387904,
+      "p90": 504762.8510963624
+    },
+    "package_assembly_yield": {
+      "maximum": 0.9796920980638303,
+      "mean": 0.9435270389343142,
+      "minimum": 0.9003437115368017,
+      "p10": 0.9202715332571942,
+      "p50": 0.9449698963768352,
+      "p90": 0.9643293919418681
+    },
+    "package_attempts": {
+      "maximum": 325828.52595733345,
+      "mean": 285281.5612506134,
+      "minimum": 213460.86393497756,
+      "p10": 263698.00400900847,
+      "p50": 285107.8219721983,
+      "p90": 307077.3460114405
+    },
+    "surplus_binned_logic_dies": {
+      "maximum": 853414.2877658699,
+      "mean": 246062.41809896287,
+      "minimum": 0.0,
+      "p10": 72957.79532124213,
+      "p50": 239119.0343394155,
+      "p90": 425561.4649521224
+    },
+    "surplus_good_hbm_stacks": {
+      "maximum": 619223.4175214609,
+      "mean": 3432.059178798791,
+      "minimum": 0.0,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.0
+    }
+  },
+  "evidence": [
+    {
+      "content_hash": null,
+      "excerpt": "NVIDIA reports a custom TSMC 4NP process and two reticle-limit GPU dies per Blackwell GPU.",
+      "id": "nvidia:blackwell-launch",
+      "kind": "company_technical_document",
+      "license": "NVIDIA website terms",
+      "published_at": "2024-03-18",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T03:22:00Z",
+      "source_family": "nvidia-blackwell-documentation",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing",
+      "title": "NVIDIA Blackwell Platform Arrives to Power a New Era of Computing"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "NVIDIA documents 192 GB HBM3E per GB200 Blackwell GPU.",
+      "id": "nvidia:gb200-memory",
+      "kind": "company_technical_document",
+      "license": "NVIDIA documentation terms",
+      "published_at": null,
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T03:22:00Z",
+      "source_family": "nvidia-gb200-documentation",
+      "source_url": "https://docs.nvidia.com/deeplearning/transformer-engine-releases/release-2.15/user-guide/features/other_optimizations/cpu_offloading/cpu_offloading.html",
+      "title": "NVIDIA Transformer Engine CPU offloading documentation"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "Micron reports 24 GB capacity for an 8-high HBM3E placement and 36 GB for a 12-high placement.",
+      "id": "micron:hbm3e-reference",
+      "kind": "company_technical_document",
+      "license": "Micron website terms",
+      "published_at": null,
+      "publisher": "Micron Technology",
+      "retrieved_at": "2026-07-18T03:22:00Z",
+      "source_family": "micron-hbm3e-documentation",
+      "source_url": "https://www.micron.com/products/memory/hbm/hbm3e",
+      "title": "Micron HBM3E product specifications"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "NVIDIA reports 72 Blackwell GPUs in one GB200 NVL72 rack-scale system.",
+      "id": "nvidia:gb200-product",
+      "kind": "company_technical_document",
+      "license": "NVIDIA website terms",
+      "published_at": null,
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T03:22:00Z",
+      "source_family": "nvidia-gb200-documentation",
+      "source_url": "https://www.nvidia.com/en-us/data-center/gb200-nvl72/",
+      "title": "NVIDIA GB200 NVL72 product specifications"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "TSMC reports 4.336 million 12-inch-equivalent wafer shipments across the company in 2Q26.",
+      "id": "tsmc:2026q2-management-report",
+      "kind": "company_disclosure",
+      "license": "TSMC website terms",
+      "published_at": "2026-07-16",
+      "publisher": "Taiwan Semiconductor Manufacturing Company",
+      "retrieved_at": "2026-07-18T03:22:00Z",
+      "source_family": "tsmc-quarterly-results",
+      "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf",
+      "title": "TSMC second-quarter 2026 management report"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "Wafer starts, die geometry, defect density, yield, bin share, supplier allocation, and assembly throughput are synthetic.",
+      "id": "synthetic:manufacturing-process",
+      "kind": "synthetic",
+      "license": "CC0-1.0",
+      "published_at": "2026-07-17",
+      "publisher": "AI Supply Intelligence demo",
+      "retrieved_at": "2026-07-18T03:22:00Z",
+      "source_family": "synthetic-manufacturing-demo",
+      "source_url": "urn:synthetic:blackwell-manufacturing-process",
+      "title": "Illustrative wafer, yield, binning, and assembly assumptions"
+    },
+    {
+      "content_hash": "31cc218b80cba4cc17a1a7c722dfd126ce2f9304a2331bb6ebb90c7447ed7746",
+      "excerpt": "TSMC describes its 12-inch GIGAFAB profile with a monthly 300mm capacity label and an advanced-node process span.",
+      "id": "snapshot:0b590bdda7bac062b987ed550d181499",
+      "kind": "company_technical_document",
+      "license": "TSMC website terms",
+      "published_at": null,
+      "publisher": "Taiwan Semiconductor Manufacturing Company",
+      "retrieved_at": "2026-07-19T20:20:00Z",
+      "source_family": "tsmc-manufacturing-website",
+      "source_url": "https://www.tsmc.com/english/dedicatedFoundry/manufacturing/gigafab",
+      "title": "TSMC GIGAFAB facilities and wafer-format profile"
+    },
+    {
+      "content_hash": "b188f5033ffc645622449112eba4a3337e4ccf1094ec037cac03ac40874f8103",
+      "excerpt": "NVIDIA identifies Blackwell as manufactured on a custom TSMC 4NP process with two reticle-limit dies.",
+      "id": "snapshot:36f9f5ada639aa4320efe6383271195d",
+      "kind": "company_technical_document",
+      "license": "NVIDIA website terms",
+      "published_at": "2024-03-18",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-19T20:20:00Z",
+      "source_family": "nvidia-blackwell-documentation",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing",
+      "title": "NVIDIA Blackwell platform launch"
+    },
+    {
+      "content_hash": "bcfd6959c26599305d14717b5dbb2b167f0e4baee1d2679fe7985a637e006faf",
+      "excerpt": "TSMC reports 4nm volume production at its 12-inch Arizona facility, establishing the foundry process wafer format.",
+      "id": "snapshot:3a52fa87274ef1434a926cde7f2cc172",
+      "kind": "company_disclosure",
+      "license": "TSMC website terms",
+      "published_at": "2026-03-12",
+      "publisher": "Taiwan Semiconductor Manufacturing Company",
+      "retrieved_at": "2026-07-19T20:20:00Z",
+      "source_family": "tsmc-annual-report",
+      "source_url": "https://investor.tsmc.com/static/annualReports/2025/english/index.html",
+      "title": "TSMC 2025 annual report"
+    },
+    {
+      "content_hash": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+      "excerpt": "Hash-pinned 2026-Q3 customer-allocated HBM stack result for blackwell-hbm-supplier-portfolio-illustrative-2026q3; synthetic=true.",
+      "id": "linked-result:hbm-suppliers:a6b2f7061c41",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": "2026-07-19T23:20:00Z",
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-20T03:20:00Z",
+      "source_family": "ai-supply-frozen-hbm-supplier-result",
+      "source_url": "urn:sha256:a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+      "title": "Frozen supplier-resolved HBM reconciliation result"
+    }
+  ],
+  "format": "ai-supply-manufacturing-result.v1",
+  "inputs": {
+    "hbm": {
+      "customer_allocated_stacks": {
+        "base": 2275125.766786052,
+        "confidence": 0.3,
+        "confirming_evidence": "Draw-level supplier output or a common simulation state reproduces the imported allocated-stack distribution and its dependence with other manufacturing branches.",
+        "correlation_group": "linked:hbm-suppliers:a6b2f7061c41",
+        "evidence_ids": [
+          "linked-result:hbm-suppliers:a6b2f7061c41"
+        ],
+        "falsifying_evidence": "A source correction changes supplier scope, topology, qualification, allocation, or the customer-allocated stack distribution.",
+        "high": 2608050.853684859,
+        "last_updated": "2026-07-19",
+        "low": 1976823.4112589662,
+        "methodology": "Import customer_allocated_stacks from frozen HBM supplier result a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea. Source P10, P50, and P90 become the triangular low, mode, and high; source tails and joint dependence are not preserved.",
+        "posture": "synthetic",
+        "unit": "stack"
+      },
+      "memory_dies_per_stack": {
+        "base": 8.0,
+        "confidence": 0.98,
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "micron:hbm3e-reference"
+        ],
+        "falsifying_evidence": "A GB200 manufacturing BOM uses a different HBM layer count or capacity per placement.",
+        "high": 8.0,
+        "last_updated": "2026-07-17",
+        "low": 8.0,
+        "methodology": "Uses Micron's disclosed 24 GB 8-high HBM3E product as a reference stack. It does not assert Micron supply to GB200.",
+        "posture": "reported",
+        "unit": "die/stack"
+      },
+      "removed_aggregate_hbm_wafer_flow_id": "hbm3e-memory-wafer",
+      "replacement_basis": "customer_allocated_stacks",
+      "source_result_sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+      "source_scenario_id": "blackwell-hbm-supplier-portfolio-illustrative-2026q3",
+      "stack_capacity_gb": {
+        "base": 24.0,
+        "confidence": 0.98,
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "micron:hbm3e-reference"
+        ],
+        "falsifying_evidence": "The selected GB200 configuration uses a different capacity per HBM placement.",
+        "high": 24.0,
+        "last_updated": "2026-07-17",
+        "low": 24.0,
+        "methodology": "Uses Micron's disclosed 24 GB 8-high HBM3E product as a reference placement.",
+        "posture": "reported",
+        "unit": "GB/stack"
+      },
+      "stacks_per_accelerator": {
+        "base": 8.0,
+        "confidence": 0.82,
+        "confirming_evidence": "A current product BOM reports the same physical topology.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "nvidia:gb200-memory",
+          "micron:hbm3e-reference"
+        ],
+        "falsifying_evidence": "A product BOM reports a different placement count or stack capacity.",
+        "high": 8.0,
+        "last_updated": "2026-07-17",
+        "low": 8.0,
+        "methodology": "Divides NVIDIA's 192 GB per GB200 GPU by the 24 GB reference HBM3E placement. This derives eight placements and does not identify the memory supplier.",
+        "posture": "derived",
+        "unit": "stack/accelerator"
+      }
+    },
+    "logic": {
+      "clustering_alpha": {
+        "base": 3.0,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": "logic-yield",
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 4.0,
+        "last_updated": "2026-07-17",
+        "low": 2.0,
+        "methodology": "Illustrative negative-binomial defect-clustering parameter.",
+        "posture": "synthetic",
+        "unit": "alpha"
+      },
+      "defect_density_per_cm2": {
+        "base": 0.08,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": "logic-yield",
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 0.12,
+        "last_updated": "2026-07-17",
+        "low": 0.05,
+        "methodology": "Illustrative random-defect density for the negative-binomial yield model.",
+        "posture": "synthetic",
+        "unit": "defects/cm2"
+      },
+      "performance_bin_share": {
+        "base": 0.78,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": "logic-binning",
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 0.88,
+        "last_updated": "2026-07-17",
+        "low": 0.65,
+        "methodology": "Illustrative share of known-good logic dies that meet the modeled accelerator bin.",
+        "posture": "synthetic",
+        "unit": "ratio"
+      },
+      "wafer": {
+        "die_height_mm": {
+          "base": 32.0,
+          "confidence": 0.35,
+          "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+          "correlation_group": "logic-geometry",
+          "evidence_ids": [
+            "synthetic:manufacturing-process"
+          ],
+          "falsifying_evidence": "Verified production or process data place the input outside the range.",
+          "high": 32.5,
+          "last_updated": "2026-07-17",
+          "low": 31.5,
+          "methodology": "Illustrative reticle-scale die height. NVIDIA discloses a reticle-limit design but not dimensions.",
+          "posture": "synthetic",
+          "unit": "mm"
+        },
+        "die_width_mm": {
+          "base": 26.0,
+          "confidence": 0.35,
+          "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+          "correlation_group": "logic-geometry",
+          "evidence_ids": [
+            "synthetic:manufacturing-process"
+          ],
+          "falsifying_evidence": "Verified production or process data place the input outside the range.",
+          "high": 26.5,
+          "last_updated": "2026-07-17",
+          "low": 25.5,
+          "methodology": "Illustrative reticle-scale die width. NVIDIA discloses a reticle-limit design but not dimensions.",
+          "posture": "synthetic",
+          "unit": "mm"
+        },
+        "edge_exclusion_mm": {
+          "base": 2.5,
+          "confidence": 0.35,
+          "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "synthetic:manufacturing-process"
+          ],
+          "falsifying_evidence": "Verified production or process data place the input outside the range.",
+          "high": 3.0,
+          "last_updated": "2026-07-17",
+          "low": 2.0,
+          "methodology": "Illustrative unusable wafer edge used by the gross-die approximation.",
+          "posture": "synthetic",
+          "unit": "mm"
+        },
+        "id": "blackwell-logic-wafer",
+        "name": "Illustrative Blackwell logic wafer flow",
+        "notes": "The gross-die result is a geometry sensitivity, not a disclosed Blackwell dies-per-wafer value.",
+        "scribe_width_mm": {
+          "base": 0.1,
+          "confidence": 0.35,
+          "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "synthetic:manufacturing-process"
+          ],
+          "falsifying_evidence": "Verified production or process data place the input outside the range.",
+          "high": 0.13,
+          "last_updated": "2026-07-17",
+          "low": 0.07,
+          "methodology": "Illustrative scribe width added to both die dimensions.",
+          "posture": "synthetic",
+          "unit": "mm"
+        },
+        "wafer_diameter_mm": {
+          "base": 300.0,
+          "confidence": 0.96,
+          "confirming_evidence": "A current NVIDIA or TSMC process-integration document explicitly identifies Blackwell 4NP as a 300mm wafer process.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "snapshot:0b590bdda7bac062b987ed550d181499",
+            "snapshot:36f9f5ada639aa4320efe6383271195d",
+            "snapshot:3a52fa87274ef1434a926cde7f2cc172"
+          ],
+          "falsifying_evidence": "NVIDIA or TSMC identifies a non-300mm wafer format for Blackwell 4NP, or NVIDIA identifies a different foundry process for this design.",
+          "high": 300.0,
+          "last_updated": "2026-07-19",
+          "low": 300.0,
+          "methodology": "Claim gate conversion: Combine NVIDIA's reported Blackwell 4NP process with TSMC disclosures that its 4nm production uses a 12-inch fab and that TSMC labels the 12-inch GIGAFAB profile as 300mm capacity. Treat 300mm as the nominal semiconductor wafer format, not as an arithmetic conversion of 12 inches. This does not identify Blackwell's fab location, wafer starts, yield, or production volume. Applied multiplier 1 from mm to mm.",
+          "posture": "derived",
+          "unit": "mm"
+        },
+        "wafer_starts": {
+          "base": 35000.0,
+          "confidence": 0.35,
+          "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+          "correlation_group": "logic-front-end",
+          "evidence_ids": [
+            "synthetic:manufacturing-process"
+          ],
+          "falsifying_evidence": "Verified production or process data place the input outside the range.",
+          "high": 45000.0,
+          "last_updated": "2026-07-17",
+          "low": 25000.0,
+          "methodology": "Illustrative quarterly Blackwell logic wafer starts. NVIDIA and TSMC do not disclose this range in the cited documents.",
+          "posture": "synthetic",
+          "unit": "wafer"
+        }
+      },
+      "wafer_sort_yield": {
+        "base": 0.96,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": "logic-yield",
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 0.985,
+        "last_updated": "2026-07-17",
+        "low": 0.92,
+        "methodology": "Illustrative post-defect wafer-sort pass rate.",
+        "posture": "synthetic",
+        "unit": "ratio"
+      }
+    },
+    "package": {
+      "accelerators_per_system": {
+        "base": 72.0,
+        "confidence": 0.98,
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "nvidia:gb200-product"
+        ],
+        "falsifying_evidence": "A current NVIDIA rack BOM reports a different GPU count.",
+        "high": 72.0,
+        "last_updated": "2026-07-17",
+        "low": 72.0,
+        "methodology": "Uses NVIDIA's disclosure of 72 Blackwell GPUs per GB200 NVL72.",
+        "posture": "reported",
+        "unit": "accelerator/system"
+      },
+      "assembly_starts": {
+        "base": 450000.0,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": "package-assembly",
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 550000.0,
+        "last_updated": "2026-07-17",
+        "low": 350000.0,
+        "methodology": "Illustrative quarterly advanced-package assembly starts allocated to the modeled accelerator.",
+        "posture": "synthetic",
+        "unit": "package"
+      },
+      "assembly_yield": {
+        "base": 0.95,
+        "confidence": 0.35,
+        "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+        "correlation_group": "package-assembly",
+        "evidence_ids": [
+          "synthetic:manufacturing-process"
+        ],
+        "falsifying_evidence": "Verified production or process data place the input outside the range.",
+        "high": 0.98,
+        "last_updated": "2026-07-17",
+        "low": 0.9,
+        "methodology": "Illustrative final advanced-package assembly and test yield.",
+        "posture": "synthetic",
+        "unit": "ratio"
+      },
+      "logic_dies_per_accelerator": {
+        "base": 2.0,
+        "confidence": 0.98,
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "nvidia:blackwell-launch"
+        ],
+        "falsifying_evidence": "A product teardown or manufacturing BOM reports a different logic-die count.",
+        "high": 2.0,
+        "last_updated": "2026-07-17",
+        "low": 2.0,
+        "methodology": "Uses NVIDIA's disclosure of two reticle-limit GPU dies in one Blackwell GPU.",
+        "posture": "reported",
+        "unit": "die/accelerator"
+      }
+    },
+    "references": [
+      {
+        "comparison_target": "logic_wafer_starts",
+        "estimate": {
+          "base": 4336000.0,
+          "confidence": 0.98,
+          "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "tsmc:2026q2-management-report"
+          ],
+          "falsifying_evidence": "TSMC revises the reported 2Q26 shipment total or changes its unit basis.",
+          "high": 4336000.0,
+          "last_updated": "2026-07-17",
+          "low": 4336000.0,
+          "methodology": "Uses TSMC's reported 2Q26 company-wide 12-inch-equivalent wafer shipments as a prior-quarter scale control. It does not isolate 4NP, NVIDIA, or Blackwell.",
+          "posture": "reported",
+          "unit": "wafer"
+        },
+        "id": "tsmc-total-wafer-shipments-2026q2",
+        "name": "TSMC total 12-inch-equivalent wafer shipments",
+        "notes": "This prior-quarter company total checks scale only. It cannot allocate wafers by node, customer, or product and does not replace synthetic Blackwell wafer starts.",
+        "period": "2026-Q2",
+        "usable_as_product_capacity": false
+      }
+    ]
+  },
+  "lineage": {
+    "format": "ai-supply-hbm-manufacturing-lineage.v1",
+    "quarter": "2026-Q3",
+    "replacement": {
+      "confirming_evidence": "Draw-level supplier output or a common simulation state reproduces the imported allocated-stack distribution and its dependence with other manufacturing branches.",
+      "distribution_mapping": "source_p10_p50_p90_to_triangular_low_mode_high",
+      "double_count_guard": "The aggregate HBM wafer flow is not sampled or emitted; only the supplier result's customer-allocated stack pool enters package attempts.",
+      "falsifying_evidence": "A source correction changes supplier scope, topology, qualification, allocation, or the customer-allocated stack distribution.",
+      "imported_metric": "customer_allocated_stacks",
+      "notes": "The summary mapping is intentionally lossy: it truncates source tails and does not preserve supplier-level or cross-branch dependence.",
+      "removed_aggregate_hbm_wafer_flow_id": "hbm3e-memory-wafer",
+      "source_distribution": {
+        "maximum": 3283887.8072549477,
+        "mean": 2284389.72616004,
+        "minimum": 1504302.0329598992,
+        "p10": 1976823.4112589662,
+        "p50": 2275125.766786052,
+        "p90": 2608050.853684859
+      },
+      "source_unit": "stack",
+      "topology_checks": [
+        {
+          "field": "memory_dies_per_stack",
+          "hbm_supplier_result": [
+            8.0,
+            8.0,
+            8.0,
+            "die/stack"
+          ],
+          "manufacturing": [
+            8.0,
+            8.0,
+            8.0,
+            "die/stack"
+          ],
+          "match": true
+        },
+        {
+          "field": "stack_capacity_gb",
+          "hbm_supplier_result": [
+            24.0,
+            24.0,
+            24.0,
+            "GB/stack"
+          ],
+          "manufacturing": [
+            24.0,
+            24.0,
+            24.0,
+            "GB/stack"
+          ],
+          "match": true
+        },
+        {
+          "field": "stacks_per_accelerator",
+          "hbm_supplier_result": [
+            8.0,
+            8.0,
+            8.0,
+            "stack/accelerator"
+          ],
+          "manufacturing": [
+            8.0,
+            8.0,
+            8.0,
+            "stack/accelerator"
+          ],
+          "match": true
+        }
+      ]
+    },
+    "scenario_id": "blackwell-manufacturing-with-supplier-hbm-illustrative-2026q3",
+    "sources": {
+      "hbm_supplier_result": {
+        "capacity_scope_ids": [
+          "sk-hynix-global-hbm3e-compatible-2026q3",
+          "micron-global-hbm3e-compatible-2026q3",
+          "samsung-global-hbm3e-compatible-2026q3"
+        ],
+        "format": "ai-supply-hbm-supplier-result.v1",
+        "minimum_input_confidence": 0.3,
+        "scenario_id": "blackwell-hbm-supplier-portfolio-illustrative-2026q3",
+        "scope": "The frozen supplier portfolio's Blackwell-qualified and customer-allocated HBM3E stacks across three non-overlapping declared capacity scopes.",
+        "sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+        "supplier_ids": [
+          "sk-hynix",
+          "micron",
+          "samsung"
+        ],
+        "synthetic": true
+      },
+      "manufacturing_scenario": {
+        "format": "ai-supply-manufacturing.v1",
+        "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+        "scope": "The frozen Blackwell logic and advanced-package scenario, with its aggregate HBM wafer flow removed before reconciliation.",
+        "sha256": "1826b8dd8dc7d13ea51cb4c3a0827395e402d78d34af7bd1018c0be76a3f12ec",
+        "synthetic": true
+      }
+    },
+    "synthetic": true
+  },
+  "methodology": {
+    "distribution_mapping": "source_p10_p50_p90_to_triangular_low_mode_high",
+    "gross_dies_per_wafer": "Circular wafer area divided by effective die and scribe area, less an analytical edge-loss term.",
+    "hbm_replacement": "Remove the aggregate HBM wafer path and import customer-allocated stacks from one hash-pinned supplier result.",
+    "logic_yield": "Negative-binomial random-defect yield multiplied by wafer-sort yield and performance-bin share.",
+    "package_output": "The minimum of logic-die, imported allocated-HBM-stack, and assembly-start package equivalents, multiplied by final assembly yield."
+  },
+  "reference_comparisons": [
+    {
+      "comparison_target": "logic_wafer_starts",
+      "id": "tsmc-total-wafer-shipments-2026q2",
+      "modeled_target": {
+        "maximum": 44810.039795958815,
+        "mean": 34991.359026988415,
+        "minimum": 25044.960149211835,
+        "p10": 29433.974529607756,
+        "p50": 35000.25421072649,
+        "p90": 40510.952220528576
+      },
+      "name": "TSMC total 12-inch-equivalent wafer shipments",
+      "notes": "This prior-quarter company total checks scale only. It cannot allocate wafers by node, customer, or product and does not replace synthetic Blackwell wafer starts.",
+      "period": "2026-Q2",
+      "reference_value": {
+        "maximum": 4336000.0,
+        "mean": 4336000.0,
+        "minimum": 4336000.0,
+        "p10": 4336000.0,
+        "p50": 4336000.0,
+        "p90": 4336000.0
+      },
+      "target_share": {
+        "maximum": 0.010334418772130724,
+        "mean": 0.008069962875227956,
+        "minimum": 0.0057760516949289286,
+        "p10": 0.006788278258673375,
+        "p50": 0.008072014347492272,
+        "p90": 0.009342931785177255
+      },
+      "unit": "wafer",
+      "usable_as_product_capacity": false
+    }
+  ],
+  "research_queue": [
+    {
+      "base": 0.95,
+      "branch": "package_assembly_starts",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 0.98,
+      "influence_method": "Applied to every attempted package",
+      "influence_probability": 1.0,
+      "last_updated": "2026-07-17",
+      "low": 0.9,
+      "methodology": "Illustrative final advanced-package assembly and test yield.",
+      "owner_id": "advanced-package-assembly",
+      "owner_type": "package",
+      "parameter": "assembly_yield",
+      "research_priority": 0.65,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.45,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.55,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 0.35,
+      "methodology": "Illustrative share of SK hynix Blackwell-qualified stacks allocated to NVIDIA Blackwell in 2026-Q3.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "customer_allocation_share",
+      "research_priority": 0.34419169175948294,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.9,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.95,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 0.82,
+      "methodology": "Illustrative SK hynix known-good HBM memory-die yield after repair and test.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "known_good_die_yield",
+      "research_priority": 0.34419169175948294,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.85,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.92,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 0.75,
+      "methodology": "Illustrative share of SK hynix good 24GB 8-high-compatible stacks qualified for Blackwell.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "platform_qualified_share",
+      "research_priority": 0.34419169175948294,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.94,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.98,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 0.88,
+      "methodology": "Illustrative SK hynix HBM3E stack-assembly yield.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "stack_assembly_yield",
+      "research_priority": 0.34419169175948294,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.975,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.995,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 0.94,
+      "methodology": "Illustrative SK hynix HBM3E final stack-test yield.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "stack_final_test_yield",
+      "research_priority": 0.34419169175948294,
+      "unit": "ratio"
+    },
+    {
+      "base": 11.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 11.5,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 10.5,
+      "methodology": "Illustrative sk-hynix HBM3E memory-die height.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.die_height_mm",
+      "research_priority": 0.34419169175948294,
+      "unit": "mm"
+    },
+    {
+      "base": 10.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 10.5,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 9.5,
+      "methodology": "Illustrative sk-hynix HBM3E memory-die width.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.die_width_mm",
+      "research_priority": 0.34419169175948294,
+      "unit": "mm"
+    },
+    {
+      "base": 2.5,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 3.0,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 2.0,
+      "methodology": "Illustrative sk-hynix HBM wafer edge exclusion.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.edge_exclusion_mm",
+      "research_priority": 0.34419169175948294,
+      "unit": "mm"
+    },
+    {
+      "base": 0.08,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.11,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 0.05,
+      "methodology": "Illustrative sk-hynix HBM scribe width.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.scribe_width_mm",
+      "research_priority": 0.34419169175948294,
+      "unit": "mm"
+    },
+    {
+      "base": 300.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 300.0,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 300.0,
+      "methodology": "Unverified reference wafer diameter for sk-hynix; do not infer it from Micron evidence.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.wafer_diameter_mm",
+      "research_priority": 0.34419169175948294,
+      "unit": "mm"
+    },
+    {
+      "base": 55000.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 70000.0,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.4917024167992614,
+      "last_updated": "2026-07-19",
+      "low": 40000.0,
+      "methodology": "Illustrative quarterly sk-hynix HBM3E-compatible wafer starts before platform qualification and customer allocation.",
+      "owner_id": "sk-hynix",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.wafer_starts",
+      "research_priority": 0.34419169175948294,
+      "unit": "wafer"
+    },
+    {
+      "base": 0.55,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.65,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 0.45,
+      "methodology": "Illustrative share of Micron Technology Blackwell-qualified stacks allocated to NVIDIA Blackwell in 2026-Q3.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "customer_allocation_share",
+      "research_priority": 0.2635775205363675,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.91,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.96,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 0.84,
+      "methodology": "Illustrative Micron Technology known-good HBM memory-die yield after repair and test.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "known_good_die_yield",
+      "research_priority": 0.2635775205363675,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.8,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.9,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 0.7,
+      "methodology": "Illustrative share of Micron Technology good 24GB 8-high-compatible stacks qualified for Blackwell.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "platform_qualified_share",
+      "research_priority": 0.2635775205363675,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.95,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.985,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 0.9,
+      "methodology": "Illustrative Micron Technology HBM3E stack-assembly yield.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "stack_assembly_yield",
+      "research_priority": 0.2635775205363675,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.98,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.997,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 0.95,
+      "methodology": "Illustrative Micron Technology HBM3E final stack-test yield.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "stack_final_test_yield",
+      "research_priority": 0.2635775205363675,
+      "unit": "ratio"
+    },
+    {
+      "base": 11.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 11.5,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 10.5,
+      "methodology": "Illustrative micron HBM3E memory-die height.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.die_height_mm",
+      "research_priority": 0.2635775205363675,
+      "unit": "mm"
+    },
+    {
+      "base": 10.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 10.5,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 9.5,
+      "methodology": "Illustrative micron HBM3E memory-die width.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.die_width_mm",
+      "research_priority": 0.2635775205363675,
+      "unit": "mm"
+    },
+    {
+      "base": 2.5,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 3.0,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 2.0,
+      "methodology": "Illustrative micron HBM wafer edge exclusion.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.edge_exclusion_mm",
+      "research_priority": 0.2635775205363675,
+      "unit": "mm"
+    },
+    {
+      "base": 0.08,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.11,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 0.05,
+      "methodology": "Illustrative micron HBM scribe width.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.scribe_width_mm",
+      "research_priority": 0.2635775205363675,
+      "unit": "mm"
+    },
+    {
+      "base": 35000.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 45000.0,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.37653931505195365,
+      "last_updated": "2026-07-19",
+      "low": 25000.0,
+      "methodology": "Illustrative quarterly micron HBM3E-compatible wafer starts before platform qualification and customer allocation.",
+      "owner_id": "micron",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.wafer_starts",
+      "research_priority": 0.2635775205363675,
+      "unit": "wafer"
+    },
+    {
+      "base": 0.25,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.4,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 0.15,
+      "methodology": "Illustrative share of Samsung Electronics Blackwell-qualified stacks allocated to NVIDIA Blackwell in 2026-Q3.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "customer_allocation_share",
+      "research_priority": 0.0722932121982043,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.87,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.94,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 0.78,
+      "methodology": "Illustrative Samsung Electronics known-good HBM memory-die yield after repair and test.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "known_good_die_yield",
+      "research_priority": 0.0722932121982043,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.6,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.8,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 0.4,
+      "methodology": "Illustrative share of Samsung Electronics good 24GB 8-high-compatible stacks qualified for Blackwell.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "platform_qualified_share",
+      "research_priority": 0.0722932121982043,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.91,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.97,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 0.84,
+      "methodology": "Illustrative Samsung Electronics HBM3E stack-assembly yield.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "stack_assembly_yield",
+      "research_priority": 0.0722932121982043,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.965,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.992,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 0.92,
+      "methodology": "Illustrative Samsung Electronics HBM3E final stack-test yield.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "stack_final_test_yield",
+      "research_priority": 0.0722932121982043,
+      "unit": "ratio"
+    },
+    {
+      "base": 11.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 11.5,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 10.5,
+      "methodology": "Illustrative samsung HBM3E memory-die height.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.die_height_mm",
+      "research_priority": 0.0722932121982043,
+      "unit": "mm"
+    },
+    {
+      "base": 10.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 10.5,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 9.5,
+      "methodology": "Illustrative samsung HBM3E memory-die width.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.die_width_mm",
+      "research_priority": 0.0722932121982043,
+      "unit": "mm"
+    },
+    {
+      "base": 2.5,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 3.0,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 2.0,
+      "methodology": "Illustrative samsung HBM wafer edge exclusion.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.edge_exclusion_mm",
+      "research_priority": 0.0722932121982043,
+      "unit": "mm"
+    },
+    {
+      "base": 0.08,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 0.11,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 0.05,
+      "methodology": "Illustrative samsung HBM scribe width.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.scribe_width_mm",
+      "research_priority": 0.0722932121982043,
+      "unit": "mm"
+    },
+    {
+      "base": 300.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 300.0,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 300.0,
+      "methodology": "Unverified reference wafer diameter for samsung; do not infer it from Micron evidence.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.wafer_diameter_mm",
+      "research_priority": 0.0722932121982043,
+      "unit": "mm"
+    },
+    {
+      "base": 30000.0,
+      "branch": "hbm_good_stacks",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.3,
+      "confirming_evidence": "Supplier wafer, yield, qualification, or allocation records support the range.",
+      "evidence_ids": [
+        "synthetic:hbm-supplier-portfolio"
+      ],
+      "falsifying_evidence": "Verified supplier or customer records place the input outside the range.",
+      "high": 40000.0,
+      "influence_method": "Linked HBM binding probability multiplied by upstream supplier share",
+      "influence_probability": 0.10327601742600614,
+      "last_updated": "2026-07-19",
+      "low": 20000.0,
+      "methodology": "Illustrative quarterly samsung HBM3E-compatible wafer starts before platform qualification and customer allocation.",
+      "owner_id": "samsung",
+      "owner_type": "hbm_supplier",
+      "parameter": "wafer.wafer_starts",
+      "research_priority": 0.0722932121982043,
+      "unit": "wafer"
+    },
+    {
+      "base": 3.0,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 4.0,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 2.0,
+      "methodology": "Illustrative negative-binomial defect-clustering parameter.",
+      "owner_id": "logic-yield-and-binning",
+      "owner_type": "logic_process",
+      "parameter": "clustering_alpha",
+      "research_priority": 0.016315,
+      "unit": "alpha"
+    },
+    {
+      "base": 0.08,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 0.12,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 0.05,
+      "methodology": "Illustrative random-defect density for the negative-binomial yield model.",
+      "owner_id": "logic-yield-and-binning",
+      "owner_type": "logic_process",
+      "parameter": "defect_density_per_cm2",
+      "research_priority": 0.016315,
+      "unit": "defects/cm2"
+    },
+    {
+      "base": 0.78,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 0.88,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 0.65,
+      "methodology": "Illustrative share of known-good logic dies that meet the modeled accelerator bin.",
+      "owner_id": "logic-yield-and-binning",
+      "owner_type": "logic_process",
+      "parameter": "performance_bin_share",
+      "research_priority": 0.016315,
+      "unit": "ratio"
+    },
+    {
+      "base": 0.96,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 0.985,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 0.92,
+      "methodology": "Illustrative post-defect wafer-sort pass rate.",
+      "owner_id": "logic-yield-and-binning",
+      "owner_type": "logic_process",
+      "parameter": "wafer_sort_yield",
+      "research_priority": 0.016315,
+      "unit": "ratio"
+    },
+    {
+      "base": 32.0,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 32.5,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 31.5,
+      "methodology": "Illustrative reticle-scale die height. NVIDIA discloses a reticle-limit design but not dimensions.",
+      "owner_id": "blackwell-logic-wafer",
+      "owner_type": "logic_wafer",
+      "parameter": "die_height_mm",
+      "research_priority": 0.016315,
+      "unit": "mm"
+    },
+    {
+      "base": 26.0,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 26.5,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 25.5,
+      "methodology": "Illustrative reticle-scale die width. NVIDIA discloses a reticle-limit design but not dimensions.",
+      "owner_id": "blackwell-logic-wafer",
+      "owner_type": "logic_wafer",
+      "parameter": "die_width_mm",
+      "research_priority": 0.016315,
+      "unit": "mm"
+    },
+    {
+      "base": 2.5,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 3.0,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 2.0,
+      "methodology": "Illustrative unusable wafer edge used by the gross-die approximation.",
+      "owner_id": "blackwell-logic-wafer",
+      "owner_type": "logic_wafer",
+      "parameter": "edge_exclusion_mm",
+      "research_priority": 0.016315,
+      "unit": "mm"
+    },
+    {
+      "base": 0.1,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 0.13,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 0.07,
+      "methodology": "Illustrative scribe width added to both die dimensions.",
+      "owner_id": "blackwell-logic-wafer",
+      "owner_type": "logic_wafer",
+      "parameter": "scribe_width_mm",
+      "research_priority": 0.016315,
+      "unit": "mm"
+    },
+    {
+      "base": 35000.0,
+      "branch": "logic_binned_dies",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 45000.0,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0251,
+      "last_updated": "2026-07-17",
+      "low": 25000.0,
+      "methodology": "Illustrative quarterly Blackwell logic wafer starts. NVIDIA and TSMC do not disclose this range in the cited documents.",
+      "owner_id": "blackwell-logic-wafer",
+      "owner_type": "logic_wafer",
+      "parameter": "wafer_starts",
+      "research_priority": 0.016315,
+      "unit": "wafer"
+    },
+    {
+      "base": 450000.0,
+      "branch": "package_assembly_starts",
+      "conditional_on_current_scenario": true,
+      "confidence": 0.35,
+      "confirming_evidence": "Supplier wafer starts, process-control, yield, binning, or assembly records support the range.",
+      "evidence_ids": [
+        "synthetic:manufacturing-process"
+      ],
+      "falsifying_evidence": "Verified production or process data place the input outside the range.",
+      "high": 550000.0,
+      "influence_method": "Current linked branch binding probability",
+      "influence_probability": 0.0,
+      "last_updated": "2026-07-17",
+      "low": 350000.0,
+      "methodology": "Illustrative quarterly advanced-package assembly starts allocated to the modeled accelerator.",
+      "owner_id": "advanced-package-assembly",
+      "owner_type": "package",
+      "parameter": "assembly_starts",
+      "research_priority": 0.0,
+      "unit": "package"
+    }
+  ],
+  "scenario": {
+    "as_of_date": "2026-07-19",
+    "id": "blackwell-manufacturing-with-supplier-hbm-illustrative-2026q3",
+    "name": "Blackwell manufacturing with supplier-resolved HBM",
+    "notes": "Illustrative integration that replaces the aggregate HBM wafer branch once. Logic, packaging, supplier capacity, yield, qualification, allocation, and demand inputs remain synthetic.",
+    "quarter": "2026-Q3",
+    "recorded_at": "2026-07-20T03:20:00Z",
+    "samples": 20000,
+    "seed": 20260720,
+    "synthetic": true
+  },
+  "topology": {
+    "accelerators_per_system": {
+      "base": 72.0,
+      "confidence": 0.98,
+      "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+      "correlation_group": null,
+      "evidence_ids": [
+        "nvidia:gb200-product"
+      ],
+      "falsifying_evidence": "A current NVIDIA rack BOM reports a different GPU count.",
+      "high": 72.0,
+      "last_updated": "2026-07-17",
+      "low": 72.0,
+      "methodology": "Uses NVIDIA's disclosure of 72 Blackwell GPUs per GB200 NVL72.",
+      "posture": "reported",
+      "unit": "accelerator/system"
+    },
+    "hbm_memory_dies_per_stack": {
+      "base": 8.0,
+      "confidence": 0.98,
+      "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+      "correlation_group": null,
+      "evidence_ids": [
+        "micron:hbm3e-reference"
+      ],
+      "falsifying_evidence": "A GB200 manufacturing BOM uses a different HBM layer count or capacity per placement.",
+      "high": 8.0,
+      "last_updated": "2026-07-17",
+      "low": 8.0,
+      "methodology": "Uses Micron's disclosed 24 GB 8-high HBM3E product as a reference stack. It does not assert Micron supply to GB200.",
+      "posture": "reported",
+      "unit": "die/stack"
+    },
+    "hbm_stack_capacity_gb": {
+      "base": 24.0,
+      "confidence": 0.98,
+      "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+      "correlation_group": null,
+      "evidence_ids": [
+        "micron:hbm3e-reference"
+      ],
+      "falsifying_evidence": "The selected GB200 configuration uses a different capacity per HBM placement.",
+      "high": 24.0,
+      "last_updated": "2026-07-17",
+      "low": 24.0,
+      "methodology": "Uses Micron's disclosed 24 GB 8-high HBM3E product as a reference placement.",
+      "posture": "reported",
+      "unit": "GB/stack"
+    },
+    "hbm_stacks_per_accelerator": {
+      "base": 8.0,
+      "confidence": 0.82,
+      "confirming_evidence": "A current product BOM reports the same physical topology.",
+      "correlation_group": null,
+      "evidence_ids": [
+        "nvidia:gb200-memory",
+        "micron:hbm3e-reference"
+      ],
+      "falsifying_evidence": "A product BOM reports a different placement count or stack capacity.",
+      "high": 8.0,
+      "last_updated": "2026-07-17",
+      "low": 8.0,
+      "methodology": "Divides NVIDIA's 192 GB per GB200 GPU by the 24 GB reference HBM3E placement. This derives eight placements and does not identify the memory supplier.",
+      "posture": "derived",
+      "unit": "stack/accelerator"
+    },
+    "logic_dies_per_accelerator": {
+      "base": 2.0,
+      "confidence": 0.98,
+      "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+      "correlation_group": null,
+      "evidence_ids": [
+        "nvidia:blackwell-launch"
+      ],
+      "falsifying_evidence": "A product teardown or manufacturing BOM reports a different logic-die count.",
+      "high": 2.0,
+      "last_updated": "2026-07-17",
+      "low": 2.0,
+      "methodology": "Uses NVIDIA's disclosure of two reticle-limit GPU dies in one Blackwell GPU.",
+      "posture": "reported",
+      "unit": "die/accelerator"
+    }
+  },
+  "warnings": [
+    "Aggregate HBM wafer flow hbm3e-memory-wafer is removed. Only the frozen supplier result's customer-allocated stacks enter package attempts.",
+    "The source P10, P50, and P90 are triangular endpoints and mode. This truncates source tails and does not preserve supplier or cross-branch dependence.",
+    "Pre-allocation HBM gross-die, known-good-die, and raw-stack outputs are not re-emitted as aggregate manufacturing outputs; they remain in the source result.",
+    "The linked manufacturing and supplier-capacity inputs are synthetic; this is not an estimate of actual Blackwell output."
+  ]
+}

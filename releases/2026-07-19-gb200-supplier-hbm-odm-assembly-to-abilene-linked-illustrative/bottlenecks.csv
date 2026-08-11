@@ -1,0 +1,23 @@
+stage,constraint_id,resource_name,probability
+accelerator_package,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,1.0
+server_assembly,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,1.0
+rack_integration,linked-component-cleared-odm-complete-racks,Frozen component-cleared ODM complete-rack output,1.0
+rack_integration,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+shipped,linked-abilene-complete-rack-allocation,Synthetic Abilene-target complete-rack allocation,1.0
+shipped,factory-qualification,Factory qualification slots,0.0
+shipped,linked-component-cleared-odm-complete-racks,Frozen component-cleared ODM complete-rack output,0.0
+shipped,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+shipped,rack-logistics,Qualified rack logistics slots,0.0
+installed,linked-abilene-complete-rack-allocation,Synthetic Abilene-target complete-rack allocation,1.0
+installed,factory-qualification,Factory qualification slots,0.0
+installed,linked-component-cleared-odm-complete-racks,Frozen component-cleared ODM complete-rack output,0.0
+installed,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+installed,rack-logistics,Qualified rack logistics slots,0.0
+installed,site-installation,Customer-site installation slots,0.0
+operational,linked-abilene-complete-rack-allocation,Synthetic Abilene-target complete-rack allocation,1.0
+operational,factory-qualification,Factory qualification slots,0.0
+operational,linked-abilene-operational-racks,Frozen Abilene operational rack capacity,0.0
+operational,linked-component-cleared-odm-complete-racks,Frozen component-cleared ODM complete-rack output,0.0
+operational,linked-material-cleared-supplier-hbm-manufacturing-output,Frozen material-cleared supplier-HBM manufacturing system equivalents,0.0
+operational,rack-logistics,Qualified rack logistics slots,0.0
+operational,site-installation,Customer-site installation slots,0.0

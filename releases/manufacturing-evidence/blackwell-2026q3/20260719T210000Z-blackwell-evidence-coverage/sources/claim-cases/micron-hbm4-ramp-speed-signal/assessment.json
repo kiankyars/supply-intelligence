@@ -1,0 +1,41 @@
+{
+  "accepted_for_usage": true,
+  "blocking_reasons": [],
+  "claim_dimensions": {
+    "capacity_basis": "relative_volume_ramp_speed",
+    "customer": "all customers",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "current_as_of_fq3_2026",
+    "process_node": "1-beta DRAM",
+    "product": "HBM4 12-high",
+    "qualifier": "relative to Micron HBM3E 12-high ramp",
+    "quantity_semantics": "relative_ratio",
+    "stage": "hbm_manufacturing_ramp"
+  },
+  "claim_key": "company.micron.hbm4_12h.ramp_speed_vs_hbm3e_12h",
+  "claim_posture": "reported",
+  "claim_unit": "ratio",
+  "claim_value": 2,
+  "constraint_estimate": null,
+  "conversion": null,
+  "eligible_as_constraint": false,
+  "format": "ai-supply-manufacturing-claim-assessment.v1",
+  "lineage": {
+    "known_at": "2026-07-19T20:00:00Z",
+    "selection_path": "examples/claim-selections/micron-fq3-2026-hbm4-ramp-speed-signal.json",
+    "selection_sha256": "20039db9508bdf4936804ac4460f5ecd7630a5bdf2901d4b49350240440562cf",
+    "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+    "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d",
+    "source_snapshot_ids": [
+      "snapshot:2a0a2b2f47785af675afbef8bcc29300"
+    ],
+    "valid_at": "2026-07-19"
+  },
+  "nonbinding_rationale": "A relative HBM4 ramp-speed comparison has no absolute wafer, die, stack, yield, or customer-allocation quantity and does not describe GB200 HBM3E supply.",
+  "normalized_estimate": null,
+  "revision_id": "claimrev:ef095c97e5a60e6a6f2ca9031e207de8",
+  "target_dimensions": {},
+  "target_input_path": "research.hbm4.ramp_speed_vs_hbm3e",
+  "usage": "directional_signal"
+}

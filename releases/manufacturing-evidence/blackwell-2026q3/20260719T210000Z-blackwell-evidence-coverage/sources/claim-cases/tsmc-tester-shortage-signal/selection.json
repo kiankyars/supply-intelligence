@@ -1,0 +1,27 @@
+{
+  "allowed_postures": [
+    "reported"
+  ],
+  "claim_key": "company.tsmc.tester.capacity_status.2026q2",
+  "conversion": null,
+  "expected_claim_dimensions": {
+    "capacity_basis": "supply_status",
+    "customer": "all customers",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "current_as_of_2026-07-16",
+    "process_node": "all applicable nodes",
+    "product": "customer products requiring test",
+    "quantity_semantics": "point_in_time_status",
+    "stage": "final_test"
+  },
+  "expected_known_at": "2026-07-19T20:00:00Z",
+  "expected_revision_id": "claimrev:68c2771e73b2a39b10d171044c861e6b",
+  "expected_valid_at": "2026-07-19",
+  "format": "ai-supply-manufacturing-claim-selection.v1",
+  "nonbinding_rationale": "A broad tester shortage disclosure identifies a bottleneck family but has no product-specific test time, tool fleet, utilization, yield, or allocation quantity.",
+  "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d",
+  "target_dimensions": {},
+  "target_input_path": "research.final_test.supply_status",
+  "usage": "directional_signal"
+}

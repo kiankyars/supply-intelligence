@@ -1,0 +1,70 @@
+{
+  "base_scenario": {
+    "scenario_id": "gb200-nvl72-illustrative-2026q3",
+    "sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787"
+  },
+  "format": "ai-supply-chain-lineage.v1",
+  "links": [
+    {
+      "constraint_id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+      "distribution_mapping": "source_p10_p50_p90_to_triangular_low_mode_high",
+      "metric": "complete_system_equivalents",
+      "replace_constraint_ids": [
+        "blackwell-packages",
+        "blackwell-reticle-dies",
+        "hbm3e-capacity",
+        "silicon-interposers",
+        "abf-substrates"
+      ],
+      "required_source_coverage": [
+        "silicon_interposer",
+        "abf_substrate"
+      ],
+      "source": "manufacturing",
+      "source_sha256": "c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d",
+      "source_unit": "system"
+    },
+    {
+      "constraint_id": "linked-abilene-shipment-allocation",
+      "distribution_mapping": "source_p10_p50_p90_to_triangular_low_mode_high",
+      "metric": "complete_system_equivalents",
+      "replace_constraint_ids": [],
+      "source": "manufacturing",
+      "source_sha256": "c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d",
+      "source_unit": "system"
+    },
+    {
+      "constraint_id": "linked-abilene-operational-racks",
+      "distribution_mapping": "source_p10_p50_p90_to_triangular_low_mode_high",
+      "metric": "operational_racks",
+      "replace_constraint_ids": [
+        "datacenter-commissioning",
+        "energized-datacenter-power"
+      ],
+      "source": "datacenter_operational",
+      "source_sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e",
+      "source_unit": "rack"
+    }
+  ],
+  "preserve_market_views": false,
+  "scenario_id": "gb200-to-abilene-material-cleared-supplier-hbm-linked-illustrative-2026q3",
+  "scope_notes": "Accelerator-package through rack-integration outputs represent the selected illustrative Blackwell supply flow after supplier HBM replaces aggregate HBM and material-cleared package starts absorb interposer and substrate availability once. A shipped-stage synthetic allocation narrows later output to the Abilene-target subset. Direct interposer and substrate capacity, supplier economics, consensus, opportunity ranking, and customer allocation remain outside this run.",
+  "sources": {
+    "datacenter_operational": {
+      "format": "ai-supply-datacenter-operational-result.v1",
+      "minimum_input_confidence": 0.1,
+      "scenario_id": "datacenter:openai-abilene-net-operational-illustrative-2026q3",
+      "scope": "One selected Abilene campus target-platform operational envelope.",
+      "sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e",
+      "synthetic": true
+    },
+    "manufacturing": {
+      "format": "ai-supply-manufacturing-result.v1",
+      "minimum_input_confidence": 0.3,
+      "scenario_id": "blackwell-manufacturing-with-supplier-hbm-draws-material-cleared-illustrative-2026q3",
+      "scope": "Illustrative Blackwell manufacturing flow with exact supplier HBM draws and synthetic material-cleared package starts that absorb silicon interposer and ABF substrate availability.",
+      "sha256": "c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d",
+      "synthetic": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-19T20:00:00Z",
+  "event_count": 8,
+  "event_ids": [
+    "notification:claim-alert:949624ab184ec58a",
+    "notification:claim-alert:c272a07c4619125e",
+    "notification:claim-alert:84ffc1d0480c59ed",
+    "notification:claim-alert:2b422ef547cdedbc",
+    "notification:claim-alert:1974bb69802eb74b",
+    "notification:claim-alert:05754531bc078d5f",
+    "notification:claim-alert:92694e35688a09e9",
+    "notification:claim-alert:dc413314bb87dc99"
+  ],
+  "format": "ai-supply-claim-cycle-notification-lineage.v1"
+}

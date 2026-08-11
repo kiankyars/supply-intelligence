@@ -1,0 +1,1326 @@
+{
+  "format": "ai-supply-earnings-bridge.v1",
+  "id": "blackwell-supplier-earnings-illustrative-2026q3",
+  "name": "Illustrative Blackwell supplier earnings and discrepancy bridge",
+  "quarter": "2026-Q3",
+  "as_of_date": "2026-07-19",
+  "recorded_at": "2026-07-19T22:30:00Z",
+  "synthetic": true,
+  "samples": 20000,
+  "seed": 20260719,
+  "source_result": {
+    "sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519",
+    "format": "ai-supply-manufacturing-result.v1",
+    "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3"
+  },
+  "evidence": [
+    {
+      "id": "synthetic:earnings-economics",
+      "kind": "synthetic",
+      "title": "Illustrative supplier economics and accounting bridge",
+      "source_url": "urn:synthetic:blackwell-supplier-economics",
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-19T22:30:00Z",
+      "published_at": null,
+      "source_family": "synthetic-earnings-demo",
+      "license": "Internal demonstration",
+      "excerpt": "Prices, attribution, inventory, recognition, margins, expenses, tax, and shares are synthetic.",
+      "content_hash": null
+    },
+    {
+      "id": "synthetic:consensus-market",
+      "kind": "synthetic",
+      "title": "Illustrative consensus and market snapshot",
+      "source_url": "urn:synthetic:blackwell-consensus-market",
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-19T22:30:00Z",
+      "published_at": null,
+      "source_family": "synthetic-market-demo",
+      "license": "Internal demonstration",
+      "excerpt": "Revenue, EPS, price, market cap, and valuation comparators are not live or sell-side data.",
+      "content_hash": null
+    },
+    {
+      "id": "synthetic:opportunity",
+      "kind": "synthetic",
+      "title": "Illustrative opportunity-screen factors",
+      "source_url": "urn:synthetic:blackwell-opportunity",
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-19T22:30:00Z",
+      "published_at": null,
+      "source_family": "synthetic-opportunity-demo",
+      "license": "Internal demonstration",
+      "excerpt": "Research confidence, readiness, liquidity, timing, and downside factors are synthetic.",
+      "content_hash": null
+    }
+  ],
+  "companies": [
+    {
+      "id": "nvidia-illustrative",
+      "name": "NVIDIA illustrative Blackwell bridge",
+      "ticker": "NVDA",
+      "reporting_currency": "USD",
+      "line_items": [
+        {
+          "id": "nvidia-blackwell-accelerators",
+          "name": "Illustrative Blackwell accelerator revenue",
+          "source_metric": "finished_accelerator_packages",
+          "source_unit": "package",
+          "component_unit": "accelerator",
+          "currency": "USD",
+          "units_per_source_unit": {
+            "low": 1,
+            "base": 1,
+            "high": 1,
+            "unit": "accelerator/package",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative Blackwell accelerator revenue units per physical source unit; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative Blackwell accelerator revenue units per physical source unit range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative Blackwell accelerator revenue units per physical source unit outside the range.",
+            "correlation_group": null
+          },
+          "attributable_share": {
+            "low": 0.95,
+            "base": 1,
+            "high": 1,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative Blackwell accelerator revenue supplier attribution; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative Blackwell accelerator revenue supplier attribution range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative Blackwell accelerator revenue supplier attribution outside the range.",
+            "correlation_group": null
+          },
+          "beginning_inventory_units": {
+            "low": 20000,
+            "base": 35000,
+            "high": 50000,
+            "unit": "accelerator",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative Blackwell accelerator revenue beginning inventory; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative Blackwell accelerator revenue beginning inventory range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative Blackwell accelerator revenue beginning inventory outside the range.",
+            "correlation_group": null
+          },
+          "ending_inventory_units": {
+            "low": 25000,
+            "base": 40000,
+            "high": 60000,
+            "unit": "accelerator",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative Blackwell accelerator revenue ending inventory; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative Blackwell accelerator revenue ending inventory range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative Blackwell accelerator revenue ending inventory outside the range.",
+            "correlation_group": null
+          },
+          "revenue_recognition_share": {
+            "low": 0.85,
+            "base": 0.93,
+            "high": 0.98,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative Blackwell accelerator revenue current-quarter recognition share; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative Blackwell accelerator revenue current-quarter recognition share range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative Blackwell accelerator revenue current-quarter recognition share outside the range.",
+            "correlation_group": null
+          },
+          "unit_price_local": {
+            "low": 25000,
+            "base": 32000,
+            "high": 39000,
+            "unit": "USD/accelerator",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative Blackwell accelerator revenue unit price; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative Blackwell accelerator revenue unit price range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative Blackwell accelerator revenue unit price outside the range.",
+            "correlation_group": null
+          },
+          "fx_usd_per_local": {
+            "low": 1,
+            "base": 1,
+            "high": 1,
+            "unit": "USD/USD",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative Blackwell accelerator revenue USD conversion; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative Blackwell accelerator revenue USD conversion range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative Blackwell accelerator revenue USD conversion outside the range.",
+            "correlation_group": null
+          },
+          "gross_margin": {
+            "low": 0.65,
+            "base": 0.72,
+            "high": 0.76,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative Blackwell accelerator revenue gross margin; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative Blackwell accelerator revenue gross margin range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative Blackwell accelerator revenue gross margin outside the range.",
+            "correlation_group": null
+          },
+          "notes": "The physical package count is synthetic and the ASP does not represent disclosed NVIDIA pricing or bundle allocation."
+        }
+      ],
+      "rest_of_company_revenue": {
+        "low": 42000000000.0,
+        "base": 48000000000.0,
+        "high": 55000000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative NVDA rest-of-company quarterly revenue; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the NVDA rest-of-company quarterly revenue range.",
+        "falsifying_evidence": "A dated, scope-comparable source places NVDA rest-of-company quarterly revenue outside the range.",
+        "correlation_group": "nvda-company-demand"
+      },
+      "rest_of_company_gross_margin": {
+        "low": 0.68,
+        "base": 0.72,
+        "high": 0.75,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative NVDA rest-of-company gross margin; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the NVDA rest-of-company gross margin range.",
+        "falsifying_evidence": "A dated, scope-comparable source places NVDA rest-of-company gross margin outside the range.",
+        "correlation_group": null
+      },
+      "operating_expenses": {
+        "low": 6000000000.0,
+        "base": 6500000000.0,
+        "high": 7200000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative NVDA quarterly operating expenses; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the NVDA quarterly operating expenses range.",
+        "falsifying_evidence": "A dated, scope-comparable source places NVDA quarterly operating expenses outside the range.",
+        "correlation_group": null
+      },
+      "net_nonoperating_expense": {
+        "low": 0,
+        "base": 200000000.0,
+        "high": 500000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative NVDA quarterly net nonoperating expense; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the NVDA quarterly net nonoperating expense range.",
+        "falsifying_evidence": "A dated, scope-comparable source places NVDA quarterly net nonoperating expense outside the range.",
+        "correlation_group": null
+      },
+      "tax_rate": {
+        "low": 0.15,
+        "base": 0.17,
+        "high": 0.2,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative NVDA effective tax rate; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the NVDA effective tax rate range.",
+        "falsifying_evidence": "A dated, scope-comparable source places NVDA effective tax rate outside the range.",
+        "correlation_group": null
+      },
+      "diluted_shares": {
+        "low": 23500000000.0,
+        "base": 24000000000.0,
+        "high": 24500000000.0,
+        "unit": "share",
+        "posture": "synthetic",
+        "methodology": "Illustrative NVDA diluted share count; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the NVDA diluted share count range.",
+        "falsifying_evidence": "A dated, scope-comparable source places NVDA diluted share count outside the range.",
+        "correlation_group": null
+      },
+      "consensus": {
+        "as_of_date": "2026-07-19",
+        "comparable_scope": "Synthetic same-quarter total revenue and diluted EPS comparator; not sell-side consensus.",
+        "revenue": {
+          "low": 53000000000.0,
+          "base": 56000000000.0,
+          "high": 59000000000.0,
+          "unit": "USD",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA same-quarter consensus revenue comparator; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA same-quarter consensus revenue comparator range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA same-quarter consensus revenue comparator outside the range.",
+          "correlation_group": null
+        },
+        "eps": {
+          "low": 1,
+          "base": 1.1,
+          "high": 1.2,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA same-quarter consensus EPS comparator; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA same-quarter consensus EPS comparator range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA same-quarter consensus EPS comparator outside the range.",
+          "correlation_group": null
+        }
+      },
+      "market_snapshot": {
+        "as_of_date": "2026-07-19",
+        "price": {
+          "low": 160,
+          "base": 175,
+          "high": 190,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA share price; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA share price range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA share price outside the range.",
+          "correlation_group": null
+        },
+        "next_twelve_month_eps": {
+          "low": 5.5,
+          "base": 6.2,
+          "high": 7,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA next-twelve-month EPS; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA next-twelve-month EPS range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA next-twelve-month EPS outside the range.",
+          "correlation_group": null
+        },
+        "market_cap": {
+          "low": 3800000000000.0,
+          "base": 4200000000000.0,
+          "high": 4600000000000.0,
+          "unit": "USD",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA market capitalization; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA market capitalization range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA market capitalization outside the range.",
+          "correlation_group": null
+        },
+        "valuation_context": "Synthetic valuation fixture. No live price, multiple, positioning, or ownership data are included."
+      },
+      "opportunity": {
+        "catalyst_date": "2026-08-26",
+        "confidence": {
+          "low": 0.2,
+          "base": 0.3,
+          "high": 0.4,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA research confidence; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA research confidence range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA research confidence outside the range.",
+          "correlation_group": null
+        },
+        "evidence_readiness": {
+          "low": 0.05,
+          "base": 0.1,
+          "high": 0.2,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA evidence readiness; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA evidence readiness range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA evidence readiness outside the range.",
+          "correlation_group": null
+        },
+        "liquidity": {
+          "low": 0.9,
+          "base": 0.95,
+          "high": 1,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA liquidity factor; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA liquidity factor range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA liquidity factor outside the range.",
+          "correlation_group": null
+        },
+        "catalyst_proximity": {
+          "low": 0.7,
+          "base": 0.85,
+          "high": 0.95,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA catalyst proximity; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA catalyst proximity range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA catalyst proximity outside the range.",
+          "correlation_group": null
+        },
+        "downside_resilience": {
+          "low": 0.2,
+          "base": 0.35,
+          "high": 0.5,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative NVDA downside resilience; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the NVDA downside resilience range.",
+          "falsifying_evidence": "A dated, scope-comparable source places NVDA downside resilience outside the range.",
+          "correlation_group": null
+        },
+        "actionability": "Research queue only; physical, earnings, consensus, and market inputs remain synthetic.",
+        "variant_wedge": "Illustrative Blackwell accelerator recognition could differ from a synthetic same-quarter comparator.",
+        "what_is_priced_in": "Unknown. The market snapshot and consensus comparator are synthetic.",
+        "why_now": "The illustrative earnings date creates a bounded research window.",
+        "catalyst": "Illustrative quarterly earnings and platform shipment commentary.",
+        "first_rejection": "Source actual Blackwell sell-through, bundle ASP, channel inventory, and comparable consensus.",
+        "investable_if": "Exact-scope physical output, supplier attribution, accounting bridge, current consensus, valuation, and downside are all sourced and the discrepancy survives review.",
+        "thesis_kill": "Sourced unit economics or sell-through remove the modeled EPS discrepancy.",
+        "next_workflow": "Build a disclosed revenue-segment bridge and reconcile distributor and customer acceptance data."
+      },
+      "notes": "Real security name with wholly synthetic economics and market data; not an NVIDIA forecast."
+    },
+    {
+      "id": "micron-illustrative",
+      "name": "Micron illustrative HBM bridge",
+      "ticker": "MU",
+      "reporting_currency": "USD",
+      "line_items": [
+        {
+          "id": "micron-hbm-stacks",
+          "name": "Illustrative HBM stack revenue",
+          "source_metric": "hbm_good_stacks",
+          "source_unit": "stack",
+          "component_unit": "HBM-stack",
+          "currency": "USD",
+          "units_per_source_unit": {
+            "low": 1,
+            "base": 1,
+            "high": 1,
+            "unit": "HBM-stack/stack",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative HBM stack revenue units per physical source unit; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative HBM stack revenue units per physical source unit range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative HBM stack revenue units per physical source unit outside the range.",
+            "correlation_group": null
+          },
+          "attributable_share": {
+            "low": 0.2,
+            "base": 0.3,
+            "high": 0.4,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative HBM stack revenue supplier attribution; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative HBM stack revenue supplier attribution range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative HBM stack revenue supplier attribution outside the range.",
+            "correlation_group": null
+          },
+          "beginning_inventory_units": {
+            "low": 100000,
+            "base": 200000,
+            "high": 350000,
+            "unit": "HBM-stack",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative HBM stack revenue beginning inventory; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative HBM stack revenue beginning inventory range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative HBM stack revenue beginning inventory outside the range.",
+            "correlation_group": null
+          },
+          "ending_inventory_units": {
+            "low": 150000,
+            "base": 250000,
+            "high": 450000,
+            "unit": "HBM-stack",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative HBM stack revenue ending inventory; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative HBM stack revenue ending inventory range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative HBM stack revenue ending inventory outside the range.",
+            "correlation_group": null
+          },
+          "revenue_recognition_share": {
+            "low": 0.8,
+            "base": 0.9,
+            "high": 0.98,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative HBM stack revenue current-quarter recognition share; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative HBM stack revenue current-quarter recognition share range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative HBM stack revenue current-quarter recognition share outside the range.",
+            "correlation_group": null
+          },
+          "unit_price_local": {
+            "low": 1800,
+            "base": 2400,
+            "high": 3000,
+            "unit": "USD/HBM-stack",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative HBM stack revenue unit price; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative HBM stack revenue unit price range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative HBM stack revenue unit price outside the range.",
+            "correlation_group": null
+          },
+          "fx_usd_per_local": {
+            "low": 1,
+            "base": 1,
+            "high": 1,
+            "unit": "USD/USD",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative HBM stack revenue USD conversion; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative HBM stack revenue USD conversion range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative HBM stack revenue USD conversion outside the range.",
+            "correlation_group": null
+          },
+          "gross_margin": {
+            "low": 0.45,
+            "base": 0.55,
+            "high": 0.62,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative HBM stack revenue gross margin; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative HBM stack revenue gross margin range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative HBM stack revenue gross margin outside the range.",
+            "correlation_group": null
+          },
+          "notes": "The source HBM3E flow is not supplier allocated; the Micron share, stack price, inventory, and recognition inputs are synthetic."
+        }
+      ],
+      "rest_of_company_revenue": {
+        "low": 7000000000.0,
+        "base": 9000000000.0,
+        "high": 11000000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative MU rest-of-company quarterly revenue; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the MU rest-of-company quarterly revenue range.",
+        "falsifying_evidence": "A dated, scope-comparable source places MU rest-of-company quarterly revenue outside the range.",
+        "correlation_group": "mu-company-demand"
+      },
+      "rest_of_company_gross_margin": {
+        "low": 0.38,
+        "base": 0.46,
+        "high": 0.53,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative MU rest-of-company gross margin; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the MU rest-of-company gross margin range.",
+        "falsifying_evidence": "A dated, scope-comparable source places MU rest-of-company gross margin outside the range.",
+        "correlation_group": null
+      },
+      "operating_expenses": {
+        "low": 3200000000.0,
+        "base": 3600000000.0,
+        "high": 4000000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative MU quarterly operating expenses; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the MU quarterly operating expenses range.",
+        "falsifying_evidence": "A dated, scope-comparable source places MU quarterly operating expenses outside the range.",
+        "correlation_group": null
+      },
+      "net_nonoperating_expense": {
+        "low": 100000000.0,
+        "base": 200000000.0,
+        "high": 350000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative MU quarterly net nonoperating expense; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the MU quarterly net nonoperating expense range.",
+        "falsifying_evidence": "A dated, scope-comparable source places MU quarterly net nonoperating expense outside the range.",
+        "correlation_group": null
+      },
+      "tax_rate": {
+        "low": 0.1,
+        "base": 0.14,
+        "high": 0.18,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative MU effective tax rate; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the MU effective tax rate range.",
+        "falsifying_evidence": "A dated, scope-comparable source places MU effective tax rate outside the range.",
+        "correlation_group": null
+      },
+      "diluted_shares": {
+        "low": 1100000000.0,
+        "base": 1130000000.0,
+        "high": 1160000000.0,
+        "unit": "share",
+        "posture": "synthetic",
+        "methodology": "Illustrative MU diluted share count; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the MU diluted share count range.",
+        "falsifying_evidence": "A dated, scope-comparable source places MU diluted share count outside the range.",
+        "correlation_group": null
+      },
+      "consensus": {
+        "as_of_date": "2026-07-19",
+        "comparable_scope": "Synthetic same-quarter total revenue and diluted EPS comparator; not sell-side consensus.",
+        "revenue": {
+          "low": 12000000000.0,
+          "base": 14000000000.0,
+          "high": 16000000000.0,
+          "unit": "USD",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU same-quarter consensus revenue comparator; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU same-quarter consensus revenue comparator range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU same-quarter consensus revenue comparator outside the range.",
+          "correlation_group": null
+        },
+        "eps": {
+          "low": 2.8,
+          "base": 3.4,
+          "high": 4,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU same-quarter consensus EPS comparator; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU same-quarter consensus EPS comparator range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU same-quarter consensus EPS comparator outside the range.",
+          "correlation_group": null
+        }
+      },
+      "market_snapshot": {
+        "as_of_date": "2026-07-19",
+        "price": {
+          "low": 180,
+          "base": 205,
+          "high": 230,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU share price; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU share price range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU share price outside the range.",
+          "correlation_group": null
+        },
+        "next_twelve_month_eps": {
+          "low": 12,
+          "base": 15,
+          "high": 18,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU next-twelve-month EPS; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU next-twelve-month EPS range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU next-twelve-month EPS outside the range.",
+          "correlation_group": null
+        },
+        "market_cap": {
+          "low": 200000000000.0,
+          "base": 230000000000.0,
+          "high": 260000000000.0,
+          "unit": "USD",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU market capitalization; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU market capitalization range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU market capitalization outside the range.",
+          "correlation_group": null
+        },
+        "valuation_context": "Synthetic valuation fixture. No live price, multiple, positioning, or ownership data are included."
+      },
+      "opportunity": {
+        "catalyst_date": "2026-09-23",
+        "confidence": {
+          "low": 0.15,
+          "base": 0.25,
+          "high": 0.35,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU research confidence; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU research confidence range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU research confidence outside the range.",
+          "correlation_group": null
+        },
+        "evidence_readiness": {
+          "low": 0.05,
+          "base": 0.1,
+          "high": 0.15,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU evidence readiness; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU evidence readiness range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU evidence readiness outside the range.",
+          "correlation_group": null
+        },
+        "liquidity": {
+          "low": 0.8,
+          "base": 0.9,
+          "high": 0.95,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU liquidity factor; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU liquidity factor range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU liquidity factor outside the range.",
+          "correlation_group": null
+        },
+        "catalyst_proximity": {
+          "low": 0.55,
+          "base": 0.7,
+          "high": 0.85,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU catalyst proximity; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU catalyst proximity range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU catalyst proximity outside the range.",
+          "correlation_group": null
+        },
+        "downside_resilience": {
+          "low": 0.25,
+          "base": 0.4,
+          "high": 0.55,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative MU downside resilience; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the MU downside resilience range.",
+          "falsifying_evidence": "A dated, scope-comparable source places MU downside resilience outside the range.",
+          "correlation_group": null
+        },
+        "actionability": "Research queue only; physical, earnings, consensus, and market inputs remain synthetic.",
+        "variant_wedge": "Illustrative HBM mix and attribution could create a positive or negative EPS discrepancy.",
+        "what_is_priced_in": "Unknown. The market snapshot and consensus comparator are synthetic.",
+        "why_now": "HBM4 disclosures create directional evidence but do not validate the HBM3E quantity bridge.",
+        "catalyst": "Illustrative quarterly earnings, HBM mix, and capacity commentary.",
+        "first_rejection": "Source HBM3E supplier share, good-stack output, price, inventory, and comparable consensus.",
+        "investable_if": "Exact-scope physical output, supplier attribution, accounting bridge, current consensus, valuation, and downside are all sourced and the discrepancy survives review.",
+        "thesis_kill": "Supplier allocation or pricing evidence invalidates the HBM revenue bridge.",
+        "next_workflow": "Build supplier-specific HBM BOM, wafer allocation, packaging, price, and revenue-recognition evidence."
+      },
+      "notes": "Real security name with wholly synthetic economics and market data; not a Micron forecast."
+    },
+    {
+      "id": "tsmc-illustrative",
+      "name": "TSMC illustrative advanced-packaging bridge",
+      "ticker": "TSM",
+      "reporting_currency": "USD",
+      "line_items": [
+        {
+          "id": "tsmc-blackwell-packaging",
+          "name": "Illustrative advanced-package service revenue",
+          "source_metric": "package_attempts",
+          "source_unit": "package",
+          "component_unit": "package-service",
+          "currency": "USD",
+          "units_per_source_unit": {
+            "low": 1,
+            "base": 1,
+            "high": 1,
+            "unit": "package-service/package",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative advanced-package service revenue units per physical source unit; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative advanced-package service revenue units per physical source unit range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative advanced-package service revenue units per physical source unit outside the range.",
+            "correlation_group": null
+          },
+          "attributable_share": {
+            "low": 0.8,
+            "base": 0.9,
+            "high": 1,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative advanced-package service revenue supplier attribution; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative advanced-package service revenue supplier attribution range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative advanced-package service revenue supplier attribution outside the range.",
+            "correlation_group": null
+          },
+          "beginning_inventory_units": {
+            "low": 0,
+            "base": 0,
+            "high": 0,
+            "unit": "package-service",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative advanced-package service revenue beginning inventory; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative advanced-package service revenue beginning inventory range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative advanced-package service revenue beginning inventory outside the range.",
+            "correlation_group": null
+          },
+          "ending_inventory_units": {
+            "low": 0,
+            "base": 0,
+            "high": 0,
+            "unit": "package-service",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative advanced-package service revenue ending inventory; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative advanced-package service revenue ending inventory range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative advanced-package service revenue ending inventory outside the range.",
+            "correlation_group": null
+          },
+          "revenue_recognition_share": {
+            "low": 0.9,
+            "base": 0.97,
+            "high": 1,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative advanced-package service revenue current-quarter recognition share; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative advanced-package service revenue current-quarter recognition share range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative advanced-package service revenue current-quarter recognition share outside the range.",
+            "correlation_group": null
+          },
+          "unit_price_local": {
+            "low": 3500,
+            "base": 5500,
+            "high": 7500,
+            "unit": "USD/package-service",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative advanced-package service revenue unit price; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative advanced-package service revenue unit price range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative advanced-package service revenue unit price outside the range.",
+            "correlation_group": null
+          },
+          "fx_usd_per_local": {
+            "low": 1,
+            "base": 1,
+            "high": 1,
+            "unit": "USD/USD",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative advanced-package service revenue USD conversion; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative advanced-package service revenue USD conversion range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative advanced-package service revenue USD conversion outside the range.",
+            "correlation_group": null
+          },
+          "gross_margin": {
+            "low": 0.48,
+            "base": 0.55,
+            "high": 0.6,
+            "unit": "ratio",
+            "posture": "synthetic",
+            "methodology": "Illustrative Illustrative advanced-package service revenue gross margin; not a sourced company, consensus, or market estimate.",
+            "confidence": 0.3,
+            "last_updated": "2026-07-19",
+            "evidence_ids": [
+              "synthetic:earnings-economics"
+            ],
+            "confirming_evidence": "A dated, scope-comparable source supports the Illustrative advanced-package service revenue gross margin range.",
+            "falsifying_evidence": "A dated, scope-comparable source places Illustrative advanced-package service revenue gross margin outside the range.",
+            "correlation_group": null
+          },
+          "notes": "A zero-inventory service bridge is illustrative; package ownership, price, mix, yield accounting, and revenue timing are not sourced."
+        }
+      ],
+      "rest_of_company_revenue": {
+        "low": 27000000000.0,
+        "base": 31000000000.0,
+        "high": 35000000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative TSM rest-of-company quarterly revenue; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the TSM rest-of-company quarterly revenue range.",
+        "falsifying_evidence": "A dated, scope-comparable source places TSM rest-of-company quarterly revenue outside the range.",
+        "correlation_group": "tsm-company-demand"
+      },
+      "rest_of_company_gross_margin": {
+        "low": 0.52,
+        "base": 0.57,
+        "high": 0.61,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative TSM rest-of-company gross margin; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the TSM rest-of-company gross margin range.",
+        "falsifying_evidence": "A dated, scope-comparable source places TSM rest-of-company gross margin outside the range.",
+        "correlation_group": null
+      },
+      "operating_expenses": {
+        "low": 5000000000.0,
+        "base": 5800000000.0,
+        "high": 6600000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative TSM quarterly operating expenses; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the TSM quarterly operating expenses range.",
+        "falsifying_evidence": "A dated, scope-comparable source places TSM quarterly operating expenses outside the range.",
+        "correlation_group": null
+      },
+      "net_nonoperating_expense": {
+        "low": 0,
+        "base": 150000000.0,
+        "high": 350000000.0,
+        "unit": "USD",
+        "posture": "synthetic",
+        "methodology": "Illustrative TSM quarterly net nonoperating expense; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the TSM quarterly net nonoperating expense range.",
+        "falsifying_evidence": "A dated, scope-comparable source places TSM quarterly net nonoperating expense outside the range.",
+        "correlation_group": null
+      },
+      "tax_rate": {
+        "low": 0.16,
+        "base": 0.19,
+        "high": 0.22,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative TSM effective tax rate; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the TSM effective tax rate range.",
+        "falsifying_evidence": "A dated, scope-comparable source places TSM effective tax rate outside the range.",
+        "correlation_group": null
+      },
+      "diluted_shares": {
+        "low": 5150000000.0,
+        "base": 5200000000.0,
+        "high": 5250000000.0,
+        "unit": "share",
+        "posture": "synthetic",
+        "methodology": "Illustrative TSM diluted share count; not a sourced company, consensus, or market estimate.",
+        "confidence": 0.3,
+        "last_updated": "2026-07-19",
+        "evidence_ids": [
+          "synthetic:earnings-economics"
+        ],
+        "confirming_evidence": "A dated, scope-comparable source supports the TSM diluted share count range.",
+        "falsifying_evidence": "A dated, scope-comparable source places TSM diluted share count outside the range.",
+        "correlation_group": null
+      },
+      "consensus": {
+        "as_of_date": "2026-07-19",
+        "comparable_scope": "Synthetic same-quarter total revenue and diluted EPS comparator; not sell-side consensus.",
+        "revenue": {
+          "low": 31000000000.0,
+          "base": 34000000000.0,
+          "high": 37000000000.0,
+          "unit": "USD",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM same-quarter consensus revenue comparator; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM same-quarter consensus revenue comparator range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM same-quarter consensus revenue comparator outside the range.",
+          "correlation_group": null
+        },
+        "eps": {
+          "low": 2,
+          "base": 2.3,
+          "high": 2.6,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM same-quarter consensus EPS comparator; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM same-quarter consensus EPS comparator range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM same-quarter consensus EPS comparator outside the range.",
+          "correlation_group": null
+        }
+      },
+      "market_snapshot": {
+        "as_of_date": "2026-07-19",
+        "price": {
+          "low": 330,
+          "base": 365,
+          "high": 400,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM share price; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM share price range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM share price outside the range.",
+          "correlation_group": null
+        },
+        "next_twelve_month_eps": {
+          "low": 9,
+          "base": 10.5,
+          "high": 12,
+          "unit": "USD/share",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM next-twelve-month EPS; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM next-twelve-month EPS range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM next-twelve-month EPS outside the range.",
+          "correlation_group": null
+        },
+        "market_cap": {
+          "low": 850000000000.0,
+          "base": 950000000000.0,
+          "high": 1050000000000.0,
+          "unit": "USD",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM market capitalization; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:consensus-market"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM market capitalization range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM market capitalization outside the range.",
+          "correlation_group": null
+        },
+        "valuation_context": "Synthetic valuation fixture. No live price, multiple, positioning, or ownership data are included."
+      },
+      "opportunity": {
+        "catalyst_date": "2026-10-15",
+        "confidence": {
+          "low": 0.15,
+          "base": 0.25,
+          "high": 0.35,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM research confidence; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM research confidence range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM research confidence outside the range.",
+          "correlation_group": null
+        },
+        "evidence_readiness": {
+          "low": 0.05,
+          "base": 0.1,
+          "high": 0.15,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM evidence readiness; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM evidence readiness range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM evidence readiness outside the range.",
+          "correlation_group": null
+        },
+        "liquidity": {
+          "low": 0.75,
+          "base": 0.85,
+          "high": 0.92,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM liquidity factor; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM liquidity factor range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM liquidity factor outside the range.",
+          "correlation_group": null
+        },
+        "catalyst_proximity": {
+          "low": 0.45,
+          "base": 0.6,
+          "high": 0.75,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM catalyst proximity; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM catalyst proximity range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM catalyst proximity outside the range.",
+          "correlation_group": null
+        },
+        "downside_resilience": {
+          "low": 0.3,
+          "base": 0.45,
+          "high": 0.6,
+          "unit": "ratio",
+          "posture": "synthetic",
+          "methodology": "Illustrative TSM downside resilience; not a sourced company, consensus, or market estimate.",
+          "confidence": 0.3,
+          "last_updated": "2026-07-19",
+          "evidence_ids": [
+            "synthetic:opportunity"
+          ],
+          "confirming_evidence": "A dated, scope-comparable source supports the TSM downside resilience range.",
+          "falsifying_evidence": "A dated, scope-comparable source places TSM downside resilience outside the range.",
+          "correlation_group": null
+        },
+        "actionability": "Research queue only; physical, earnings, consensus, and market inputs remain synthetic.",
+        "variant_wedge": "Illustrative advanced-package revenue could differ from a synthetic company comparator.",
+        "what_is_priced_in": "Unknown. The market snapshot and consensus comparator are synthetic.",
+        "why_now": "Reported backend and tester shortages identify a bottleneck family without quantifying product throughput.",
+        "catalyst": "Illustrative quarterly results and advanced-packaging capacity commentary.",
+        "first_rejection": "Source product-specific package starts, service pricing, revenue timing, and comparable consensus.",
+        "investable_if": "Exact-scope physical output, supplier attribution, accounting bridge, current consensus, valuation, and downside are all sourced and the discrepancy survives review.",
+        "thesis_kill": "Exact package economics or broader company results remove the modeled EPS discrepancy.",
+        "next_workflow": "Map CoWoS technology mix, customer allocation, package pricing, and accounting recognition."
+      },
+      "notes": "Real security name with wholly synthetic economics and market data; not a TSMC forecast."
+    }
+  ],
+  "notes": "Physical output comes from the checked synthetic manufacturing release. Every company and market input remains synthetic."
+}

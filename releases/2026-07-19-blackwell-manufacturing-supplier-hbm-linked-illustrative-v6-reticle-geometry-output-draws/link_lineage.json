@@ -1,0 +1,120 @@
+{
+  "format": "ai-supply-hbm-manufacturing-lineage.v1",
+  "package_coverage": {
+    "absorbed_resource_kinds": [
+      "silicon_interposer",
+      "abf_substrate"
+    ],
+    "assembly_start_basis": "material_cleared_starts",
+    "confirming_evidence": "Production routing, material-issue, work-in-process, or supplier capacity records show that the reported assembly-start basis begins only after the required interposer and substrate are available.",
+    "falsifying_evidence": "The assembly-start source is a tool-slot or theoretical-throughput measure before interposer or substrate availability, requiring those material pools to remain separate constraints.",
+    "methodology": "Defines each synthetic package assembly start as a package slot for which the required silicon interposer and ABF substrate have already been issued. This prevents the same material availability from constraining output again downstream; it does not estimate either material pool independently.",
+    "notes": "Synthetic scope declaration used to expose and prevent potential double counting. Direct interposer and substrate capacity remain evidence gaps.",
+    "posture": "synthetic"
+  },
+  "quarter": "2026-Q3",
+  "replacement": {
+    "confirming_evidence": "The hash-pinned capacity-draw artifact reproduces the supplier result's aggregate and per-supplier distributions and conserves every stack-to-package conversion.",
+    "distribution_mapping": "source_capacity_draws_deterministic_permutation",
+    "double_count_guard": "The aggregate HBM wafer flow is not sampled or emitted; only the supplier result's customer-allocated stack pool enters package attempts.",
+    "falsifying_evidence": "A source correction changes supplier scope, topology, qualification, allocation, the customer-allocated stack distribution, or any pinned capacity-draw byte.",
+    "imported_metric": "customer_allocated_stacks",
+    "notes": "A deterministic permutation preserves the full HBM marginal and within-draw supplier allocation without asserting an unsupported draw-index relationship to logic or packaging.",
+    "removed_aggregate_hbm_wafer_flow_id": "hbm3e-memory-wafer",
+    "source_distribution": {
+      "maximum": 3283887.8072549477,
+      "mean": 2284389.72616004,
+      "minimum": 1504302.0329598992,
+      "p10": 1976823.4112589662,
+      "p50": 2275125.766786052,
+      "p90": 2608050.853684859
+    },
+    "source_unit": "stack",
+    "topology_checks": [
+      {
+        "field": "memory_dies_per_stack",
+        "hbm_supplier_result": [
+          8.0,
+          8.0,
+          8.0,
+          "die/stack"
+        ],
+        "manufacturing": [
+          8.0,
+          8.0,
+          8.0,
+          "die/stack"
+        ],
+        "match": true
+      },
+      {
+        "field": "stack_capacity_gb",
+        "hbm_supplier_result": [
+          24.0,
+          24.0,
+          24.0,
+          "GB/stack"
+        ],
+        "manufacturing": [
+          24.0,
+          24.0,
+          24.0,
+          "GB/stack"
+        ],
+        "match": true
+      },
+      {
+        "field": "stacks_per_accelerator",
+        "hbm_supplier_result": [
+          8.0,
+          8.0,
+          8.0,
+          "stack/accelerator"
+        ],
+        "manufacturing": [
+          8.0,
+          8.0,
+          8.0,
+          "stack/accelerator"
+        ],
+        "match": true
+      }
+    ]
+  },
+  "scenario_id": "blackwell-manufacturing-with-supplier-hbm-draws-material-cleared-illustrative-2026q3",
+  "sources": {
+    "hbm_supplier_result": {
+      "capacity_draw_count": 20000,
+      "capacity_draws_sha256": "ff5121657df8afe5c81531c7a900b12e01850e03be2c47d664880dba3df12f81",
+      "capacity_scope_ids": [
+        "sk-hynix-global-hbm3e-compatible-2026q3",
+        "micron-global-hbm3e-compatible-2026q3",
+        "samsung-global-hbm3e-compatible-2026q3"
+      ],
+      "format": "ai-supply-hbm-supplier-result.v1",
+      "minimum_input_confidence": 0.3,
+      "scenario_id": "blackwell-hbm-supplier-portfolio-illustrative-2026q3",
+      "scope": "The frozen supplier portfolio's Blackwell-qualified and customer-allocated HBM3E stacks across three non-overlapping declared capacity scopes, including every underlying capacity draw.",
+      "sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+      "supplier_ids": [
+        "sk-hynix",
+        "micron",
+        "samsung"
+      ],
+      "supplier_names": [
+        "SK hynix",
+        "Micron Technology",
+        "Samsung Electronics"
+      ],
+      "synthetic": true
+    },
+    "manufacturing_scenario": {
+      "format": "ai-supply-manufacturing.v1",
+      "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "scope": "The frozen Blackwell logic and advanced-package scenario with derived wafer format and bounded reticle-based die geometry, with its aggregate HBM wafer flow removed before reconciliation.",
+      "sha256": "c18df128472dd30ce692f7cde4fd9c14aa256779fdf5e9146d25ae615d0a95ef",
+      "synthetic": true
+    }
+  },
+  "synthetic": true
+}

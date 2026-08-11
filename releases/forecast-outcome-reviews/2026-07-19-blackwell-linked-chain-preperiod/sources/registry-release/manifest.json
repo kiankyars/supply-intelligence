@@ -1,0 +1,58 @@
+{
+  "as_of_date": "2026-07-19",
+  "draw_count": 20000,
+  "files": {
+    "README.md": {
+      "bytes": 804,
+      "sha256": "f302cc029a5d8f51cdcea016be747f106baa74313561291bf416e27d5fb0c1e6"
+    },
+    "dashboard.html": {
+      "bytes": 14575,
+      "sha256": "e78e8863cd56f62533ae53d163ebecb49868338c8b56b17f346584df82096dfb"
+    },
+    "forecasts.csv": {
+      "bytes": 2202,
+      "sha256": "73230077c19eac051dd4065e7e8175abe3f6c130eb22465dd1b698b61fc46dcf"
+    },
+    "outcome_contracts.csv": {
+      "bytes": 7246,
+      "sha256": "912ef99272ed886dca83914f917d2e1a48440bed706d20d1cc35e70f4ff0d634"
+    },
+    "registry.json": {
+      "bytes": 13235,
+      "sha256": "6e592fe17cc97587b4ba3e83587def66cf9ff793694ab31b86d90fd77250ae2a"
+    },
+    "replay-registry.json": {
+      "bytes": 13153,
+      "sha256": "e60eb6ba99820b9b7a9ca63fd85e2fd8cdf5a9c126372a881c6ad7aa97bebfbb"
+    },
+    "result.json": {
+      "bytes": 18950,
+      "sha256": "44047dc6fb696e846a1f54ad2232d3e77aaecd820c406e153f209bd2d405e8a2"
+    },
+    "sources/source-release/chain_draws.csv": {
+      "bytes": 7079178,
+      "sha256": "60b6fef761ea2f2386b26b423661786163ee4575f3316df0ff8dcb89388f0742"
+    },
+    "sources/source-release/manifest.json": {
+      "bytes": 4727,
+      "sha256": "268e00bf36a544887d8a7020ee4c3c60e73a2d8c46df50f91c79c6d22777ede5"
+    },
+    "sources/source-release/result.json": {
+      "bytes": 53834,
+      "sha256": "3ad80ed33e421529ba83ad6c5c31b4bdbb2ff0d730c28246a9fb49a0e6a37cac"
+    }
+  },
+  "forecast_count": 5,
+  "format": "ai-supply-forecast-registry-release.v1",
+  "native_model_forecast": true,
+  "outcome_count": 0,
+  "recorded_at": "2026-07-20T06:10:00Z",
+  "registry_id": "blackwell-linked-chain-native-vintage-2026q3",
+  "registry_sha256": "6e592fe17cc97587b4ba3e83587def66cf9ff793694ab31b86d90fd77250ae2a",
+  "score_count": 0,
+  "source_draws_sha256": "60b6fef761ea2f2386b26b423661786163ee4575f3316df0ff8dcb89388f0742",
+  "source_manifest_sha256": "268e00bf36a544887d8a7020ee4c3c60e73a2d8c46df50f91c79c6d22777ede5",
+  "source_result_sha256": "3ad80ed33e421529ba83ad6c5c31b4bdbb2ff0d730c28246a9fb49a0e6a37cac",
+  "source_synthetic": true
+}

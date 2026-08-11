@@ -1,0 +1,71 @@
+{
+  "as_of_date": "2026-07-19",
+  "base_scenario_sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787",
+  "files": {
+    "README.md": {
+      "bytes": 788,
+      "sha256": "e95033fc9db801fbd821ec308ed743f7a24ae861a1c99e394688706c8c9d9367"
+    },
+    "base_scenario.json": {
+      "bytes": 76236,
+      "sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787"
+    },
+    "bottlenecks.csv": {
+      "bytes": 3721,
+      "sha256": "33505cb7e4295d5d64eff71f9167b7ced962ee0320dd3f837b95dad7ba2c6a6c"
+    },
+    "customer_allocations.csv": {
+      "bytes": 55,
+      "sha256": "5efbeaaef80b291d3585fee4041ebdcc476c631bd049b59c820cffde76d80adb"
+    },
+    "dashboard.html": {
+      "bytes": 74712,
+      "sha256": "2acecf8bd9c3f1e821bb360bd1db5aa9901b0e0e6aa3c1d4052a3122a8740fd9"
+    },
+    "datacenter_operational_result.json": {
+      "bytes": 28737,
+      "sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e"
+    },
+    "evidence.csv": {
+      "bytes": 3679,
+      "sha256": "8b6b9b179d04924afab2a22b98c77088a1c54b5694ce472db9bee2a86bc4f2cf"
+    },
+    "input_estimates.csv": {
+      "bytes": 22474,
+      "sha256": "f89a8b93599cf88142a4b7d34941bdae836eeef91cf87cdd63719dbbcddd251d"
+    },
+    "link_lineage.json": {
+      "bytes": 3340,
+      "sha256": "5c2e87d1fc89c81b0932b0382d6c58ecd794f19d0f24adff2e7c6668fe68b4fd"
+    },
+    "link_recipe.json": {
+      "bytes": 6845,
+      "sha256": "3e4936eabb1b8c0f7ace68ee695039d5b2040283b8846b08e739bedaba70857c"
+    },
+    "manufacturing_result.json": {
+      "bytes": 80493,
+      "sha256": "c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d"
+    },
+    "result.json": {
+      "bytes": 80568,
+      "sha256": "110fc1835b3a4d9660e0621ad93a4d154280530262adec142a30cd97fbb16388"
+    },
+    "scenario.json": {
+      "bytes": 50705,
+      "sha256": "117183badfb92fd4024b746448c41dfb683f8e3d211401383633574b54e11fbf"
+    },
+    "stage_outputs.csv": {
+      "bytes": 906,
+      "sha256": "30131661666af09e9c87f352191d7dea58c3d16e7af86cb52e529c7e149ea86a"
+    }
+  },
+  "format": "ai-supply-linked-chain-release.v1",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-20T04:00:00Z",
+  "scenario_id": "gb200-to-abilene-material-cleared-supplier-hbm-linked-illustrative-2026q3",
+  "source_result_sha256": {
+    "datacenter_operational": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e",
+    "manufacturing": "c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d"
+  },
+  "synthetic": true
+}

@@ -1,0 +1,92 @@
+{
+  "alert_count": 1,
+  "alerts": [
+    {
+      "claim_key": "platform.nvidia.blackwell.logic_wafer_diameter_mm",
+      "current": {
+        "claim_key": "platform.nvidia.blackwell.logic_wafer_diameter_mm",
+        "confidence": 0.96,
+        "confirming_evidence": "A current NVIDIA or TSMC process-integration document explicitly identifies Blackwell 4NP as a 300mm wafer process.",
+        "dimensions": {
+          "capacity_basis": "physical_specification",
+          "customer": "NVIDIA",
+          "entity_scope": "product",
+          "geography": "global",
+          "period": "current_design",
+          "process_node": "TSMC 4NP",
+          "product": "NVIDIA Blackwell",
+          "quantity_semantics": "point_specification",
+          "stage": "logic_wafer_geometry",
+          "technology": "300mm silicon wafer"
+        },
+        "evidence": [
+          {
+            "byte_count": 1041,
+            "capture_kind": "normalized_observation",
+            "content_sha256": "31cc218b80cba4cc17a1a7c722dfd126ce2f9304a2331bb6ebb90c7447ed7746",
+            "evidence_role": "primary",
+            "independence_group": "tsmc-manufacturing-disclosures",
+            "license": "TSMC website terms",
+            "media_type": "application/json",
+            "published_at": null,
+            "publisher": "Taiwan Semiconductor Manufacturing Company",
+            "retrieved_at": "2026-07-19T20:20:00Z",
+            "snapshot_id": "snapshot:0b590bdda7bac062b987ed550d181499",
+            "source_family": "tsmc-manufacturing-website",
+            "source_url": "https://www.tsmc.com/english/dedicatedFoundry/manufacturing/gigafab"
+          },
+          {
+            "byte_count": 804,
+            "capture_kind": "normalized_observation",
+            "content_sha256": "b188f5033ffc645622449112eba4a3337e4ccf1094ec037cac03ac40874f8103",
+            "evidence_role": "primary",
+            "independence_group": "nvidia-blackwell-documentation",
+            "license": "NVIDIA website terms",
+            "media_type": "application/json",
+            "published_at": "2024-03-18",
+            "publisher": "NVIDIA",
+            "retrieved_at": "2026-07-19T20:20:00Z",
+            "snapshot_id": "snapshot:36f9f5ada639aa4320efe6383271195d",
+            "source_family": "nvidia-blackwell-documentation",
+            "source_url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing"
+          },
+          {
+            "byte_count": 803,
+            "capture_kind": "normalized_observation",
+            "content_sha256": "bcfd6959c26599305d14717b5dbb2b167f0e4baee1d2679fe7985a637e006faf",
+            "evidence_role": "primary",
+            "independence_group": "tsmc-manufacturing-disclosures",
+            "license": "TSMC website terms",
+            "media_type": "application/json",
+            "published_at": "2026-03-12",
+            "publisher": "Taiwan Semiconductor Manufacturing Company",
+            "retrieved_at": "2026-07-19T20:20:00Z",
+            "snapshot_id": "snapshot:3a52fa87274ef1434a926cde7f2cc172",
+            "source_family": "tsmc-annual-report",
+            "source_url": "https://investor.tsmc.com/static/annualReports/2025/english/index.html"
+          }
+        ],
+        "falsifying_evidence": "NVIDIA or TSMC identifies a non-300mm wafer format for Blackwell 4NP, or NVIDIA identifies a different foundry process for this design.",
+        "methodology": "Combine NVIDIA's reported Blackwell 4NP process with TSMC disclosures that its 4nm production uses a 12-inch fab and that TSMC labels the 12-inch GIGAFAB profile as 300mm capacity. Treat 300mm as the nominal semiconductor wafer format, not as an arithmetic conversion of 12 inches. This does not identify Blackwell's fab location, wafer starts, yield, or production volume.",
+        "posture": "derived",
+        "predicate": "nominal logic wafer diameter",
+        "recorded_at": "2026-07-19T20:30:00Z",
+        "revision_id": "claimrev:f5a22a4e3df41d9696eaa9ed4494bfb2",
+        "subject": "NVIDIA Blackwell",
+        "supersedes_revision_id": null,
+        "unit": "mm",
+        "valid_from": "2024-03-18",
+        "valid_to": null,
+        "value": 300
+      },
+      "id": "claim-alert:db51cc1a3bad1f52",
+      "previous": null,
+      "severity": "info",
+      "type": "claim_added"
+    }
+  ],
+  "current_known_at": "2026-07-19T20:30:00Z",
+  "format": "ai-supply-claim-diff.v1",
+  "previous_known_at": "2026-07-19T20:29:59Z",
+  "valid_at": "2026-07-19"
+}

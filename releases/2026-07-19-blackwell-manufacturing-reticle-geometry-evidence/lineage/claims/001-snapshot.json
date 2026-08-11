@@ -1,0 +1,140 @@
+{
+  "claim_count": 2,
+  "claims": [
+    {
+      "claim_key": "platform.nvidia.blackwell.logic_die_height_mm",
+      "confidence": 0.68,
+      "confirming_evidence": "A public Blackwell teardown, mask analysis, or floorplan measurement places the long die dimension within the derived interval.",
+      "dimensions": {
+        "capacity_basis": "physical_geometry_estimate",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "qualifier": "long-axis estimate from reticle-limit description",
+        "quantity_semantics": "modeled_interval_from_reticle_limit",
+        "stage": "logic_die_geometry",
+        "technology": "standard full-field lithography"
+      },
+      "evidence": [
+        {
+          "byte_count": 804,
+          "capture_kind": "normalized_observation",
+          "content_sha256": "b188f5033ffc645622449112eba4a3337e4ccf1094ec037cac03ac40874f8103",
+          "evidence_role": "primary",
+          "independence_group": "nvidia-blackwell-documentation",
+          "license": "NVIDIA website terms",
+          "media_type": "application/json",
+          "published_at": "2024-03-18",
+          "publisher": "NVIDIA",
+          "retrieved_at": "2026-07-19T20:20:00Z",
+          "snapshot_id": "snapshot:36f9f5ada639aa4320efe6383271195d",
+          "source_family": "nvidia-blackwell-documentation",
+          "source_url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing"
+        },
+        {
+          "byte_count": 870,
+          "capture_kind": "normalized_observation",
+          "content_sha256": "bd9a131e897a56b34d11bfd1c9db0a102526abb0288c9c6629d9ccf9b367c5c1",
+          "evidence_role": "primary",
+          "independence_group": "asml-lithography-specifications",
+          "license": "ASML website terms",
+          "media_type": "application/json",
+          "published_at": null,
+          "publisher": "ASML",
+          "retrieved_at": "2026-07-20T05:25:00Z",
+          "snapshot_id": "snapshot:e715fb7f3649cad3c181aeee1a611575",
+          "source_family": "asml-lithography-specifications",
+          "source_url": "https://www.asml.com/en/products/duv-lithography-systems/twinscan-nxt2050i"
+        }
+      ],
+      "falsifying_evidence": "A public die measurement places the Blackwell logic die's long axis outside 31mm to 33mm, or NVIDIA clarifies that reticle-limit refers to a different geometry.",
+      "methodology": "Interpret NVIDIA's description of each Blackwell logic die as reticle limit against ASML's reported 26mm by 33mm maximum standard full exposure field. Use the long field axis as the model's height coordinate and assign a 31mm to 33mm interval around a 32mm base to reflect that reticle-limit does not prove the design occupies the full field. This is a derived interval, not a reported or teardown-measured die dimension.",
+      "posture": "derived",
+      "predicate": "estimated logic die long-axis dimension",
+      "recorded_at": "2026-07-20T05:30:00Z",
+      "revision_id": "claimrev:3ad665e2983383cc8777b1d4bd549b82",
+      "subject": "NVIDIA Blackwell",
+      "supersedes_revision_id": null,
+      "unit": "mm",
+      "valid_from": "2024-03-18",
+      "valid_to": null,
+      "value": {
+        "base": 32,
+        "high": 33,
+        "low": 31
+      }
+    },
+    {
+      "claim_key": "platform.nvidia.blackwell.logic_die_width_mm",
+      "confidence": 0.72,
+      "confirming_evidence": "A public Blackwell teardown, mask analysis, or floorplan measurement places the short die dimension within the derived interval.",
+      "dimensions": {
+        "capacity_basis": "physical_geometry_estimate",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "qualifier": "short-axis estimate from reticle-limit description",
+        "quantity_semantics": "modeled_interval_from_reticle_limit",
+        "stage": "logic_die_geometry",
+        "technology": "standard full-field lithography"
+      },
+      "evidence": [
+        {
+          "byte_count": 804,
+          "capture_kind": "normalized_observation",
+          "content_sha256": "b188f5033ffc645622449112eba4a3337e4ccf1094ec037cac03ac40874f8103",
+          "evidence_role": "primary",
+          "independence_group": "nvidia-blackwell-documentation",
+          "license": "NVIDIA website terms",
+          "media_type": "application/json",
+          "published_at": "2024-03-18",
+          "publisher": "NVIDIA",
+          "retrieved_at": "2026-07-19T20:20:00Z",
+          "snapshot_id": "snapshot:36f9f5ada639aa4320efe6383271195d",
+          "source_family": "nvidia-blackwell-documentation",
+          "source_url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing"
+        },
+        {
+          "byte_count": 870,
+          "capture_kind": "normalized_observation",
+          "content_sha256": "bd9a131e897a56b34d11bfd1c9db0a102526abb0288c9c6629d9ccf9b367c5c1",
+          "evidence_role": "primary",
+          "independence_group": "asml-lithography-specifications",
+          "license": "ASML website terms",
+          "media_type": "application/json",
+          "published_at": null,
+          "publisher": "ASML",
+          "retrieved_at": "2026-07-20T05:25:00Z",
+          "snapshot_id": "snapshot:e715fb7f3649cad3c181aeee1a611575",
+          "source_family": "asml-lithography-specifications",
+          "source_url": "https://www.asml.com/en/products/duv-lithography-systems/twinscan-nxt2050i"
+        }
+      ],
+      "falsifying_evidence": "A public die measurement places the Blackwell logic die's short axis outside 25.5mm to 26mm, or NVIDIA clarifies that reticle-limit refers to a different geometry.",
+      "methodology": "Interpret NVIDIA's description of each Blackwell logic die as reticle limit against ASML's reported 26mm by 33mm maximum standard full exposure field. Use the short field axis as the model's width coordinate and retain a 0.5mm analyst allowance below the maximum. This is a derived interval, not a reported or teardown-measured die dimension.",
+      "posture": "derived",
+      "predicate": "estimated logic die short-axis dimension",
+      "recorded_at": "2026-07-20T05:30:00Z",
+      "revision_id": "claimrev:2cacc131bb18ed30f188fb0f847cb15f",
+      "subject": "NVIDIA Blackwell",
+      "supersedes_revision_id": null,
+      "unit": "mm",
+      "valid_from": "2024-03-18",
+      "valid_to": null,
+      "value": {
+        "base": 26,
+        "high": 26,
+        "low": 25.5
+      }
+    }
+  ],
+  "format": "ai-supply-claim-snapshot.v1",
+  "known_at": "2026-07-20T05:30:00Z",
+  "valid_at": "2026-07-19"
+}

@@ -1,0 +1,43 @@
+{
+  "format": "ai-supply-manufacturing-target-catalog.v1",
+  "quarter": "2026-Q3",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "targets": [
+    {
+      "dimensions": {
+        "capacity_basis": "physical_geometry_estimate",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "qualifier": "long-axis estimate from reticle-limit description",
+        "quantity_semantics": "modeled_interval_from_reticle_limit",
+        "stage": "logic_die_geometry",
+        "technology": "standard full-field lithography"
+      },
+      "input_path": "logic.wafer.die_height_mm",
+      "rationale": "The modeled input is the long-axis dimension used in gross-die geometry for one Blackwell logic die. It is an uncertainty-bearing physical estimate, not wafer starts, yield, or capacity.",
+      "unit": "mm"
+    },
+    {
+      "dimensions": {
+        "capacity_basis": "physical_geometry_estimate",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "qualifier": "short-axis estimate from reticle-limit description",
+        "quantity_semantics": "modeled_interval_from_reticle_limit",
+        "stage": "logic_die_geometry",
+        "technology": "standard full-field lithography"
+      },
+      "input_path": "logic.wafer.die_width_mm",
+      "rationale": "The modeled input is the short-axis dimension used in gross-die geometry for one Blackwell logic die. It is an uncertainty-bearing physical estimate, not wafer starts, yield, or capacity.",
+      "unit": "mm"
+    }
+  ]
+}

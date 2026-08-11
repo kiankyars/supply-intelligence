@@ -1,0 +1,156 @@
+{
+  "base_scenario": {
+    "expected_scenario_id": "gb200-nvl72-illustrative-2026q3",
+    "sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787"
+  },
+  "evidence": [
+    {
+      "content_hash": null,
+      "excerpt": "Synthetic allocation used only to make the complete-rack-to-site scope transition executable.",
+      "id": "synthetic:abilene-site-allocation",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": null,
+      "publisher": "AI Supply Intelligence demonstrator",
+      "retrieved_at": "2026-07-20T04:25:00Z",
+      "source_family": "synthetic-chain-link",
+      "source_url": "urn:synthetic:abilene-site-allocation",
+      "title": "Synthetic Abilene-target shipment allocation"
+    }
+  ],
+  "format": "ai-supply-chain-link.v1",
+  "links": [
+    {
+      "capacity_basis": "sellable_output",
+      "confirming_evidence": "A frozen manufacturing release with the same platform topology, quarter, and material-cleared package-start basis supports the complete-system range.",
+      "falsifying_evidence": "The source topology or package-start basis differs, the source result is revised, or observed package output falls outside the linked range.",
+      "id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+      "metric": "complete_system_equivalents",
+      "notes": "Replaces logic-die, aggregate-HBM, package-throughput, silicon-interposer, and ABF-substrate placeholders because the frozen manufacturing result reconciles logic and supplier HBM with package starts explicitly declared material-cleared.",
+      "platform_allocation": null,
+      "replace_constraint_ids": [
+        "blackwell-packages",
+        "blackwell-reticle-dies",
+        "hbm3e-capacity",
+        "silicon-interposers",
+        "abf-substrates"
+      ],
+      "require_source_coverage": [
+        "silicon_interposer",
+        "abf_substrate"
+      ],
+      "resource_kind": "accelerator_package",
+      "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents",
+      "source": "manufacturing",
+      "stage": "accelerator_package",
+      "units_per_system": 1.0
+    },
+    {
+      "capacity_basis": "allocated_output",
+      "confirming_evidence": "A frozen assembly release with matching rack topology, non-overlapping ODM scopes, and declared component-cleared output supports the complete-rack range.",
+      "falsifying_evidence": "The source topology, ODM scopes, component coverage, or output basis differs, or observed complete-rack output falls outside the linked range.",
+      "id": "linked-component-cleared-odm-complete-racks",
+      "metric": "complete_racks",
+      "notes": "Replaces server and rack assembly placeholders because the frozen source locally reconciles ODM compute-tray and rack-integration flows and consumes each declared NIC, DPU, switch-tray, management-switch, power-shelf, and cooling pool once. The scope and capacities remain synthetic.",
+      "platform_allocation": null,
+      "replace_constraint_ids": [
+        "compute-tray-assembly",
+        "connectx7-nics",
+        "bluefield3-dpus",
+        "nvlink-switch-trays",
+        "management-tor-switches",
+        "power-shelves",
+        "liquid-cooling-integration"
+      ],
+      "require_source_coverage_selectors": [
+        {"stage": "rack_integration", "resource_kind": "cooling"},
+        {"stage": "rack_integration", "resource_kind": "network_switch"},
+        {"stage": "rack_integration", "resource_kind": "power_delivery"},
+        {"stage": "rack_integration", "resource_kind": "rack_integration"},
+        {"stage": "server_assembly", "resource_kind": "network_switch"},
+        {"stage": "server_assembly", "resource_kind": "retimer"},
+        {"stage": "server_assembly", "resource_kind": "server_assembly"}
+      ],
+      "resource_kind": "rack_integration",
+      "resource_name": "Frozen component-cleared ODM complete-rack output",
+      "source": "system_assembly",
+      "stage": "rack_integration",
+      "units_per_system": 1.0
+    },
+    {
+      "capacity_basis": "allocated_output",
+      "confirming_evidence": "Customer allocation, purchase-order, logistics, or receiving records support this share of frozen complete-rack output moving to the selected site.",
+      "falsifying_evidence": "Allocation or receiving records show a materially different site share or that the assembly source covers a different supply scope.",
+      "id": "linked-abilene-complete-rack-allocation",
+      "metric": "complete_racks",
+      "notes": "Creates the explicit scope transition from component-cleared complete-rack output to a synthetic Abilene-target shipped subset. It is not an observed customer allocation.",
+      "platform_allocation": {
+        "base": 0.06,
+        "confidence": 0.1,
+        "confirming_evidence": "Dated customer allocation and site receiving records support a six-percent central share for the same complete-rack population.",
+        "correlation_group": "abilene-site-allocation",
+        "evidence_ids": ["synthetic:abilene-site-allocation"],
+        "falsifying_evidence": "Shipment destinations, purchase orders, or receiving logs put the selected site's share outside four to eight percent.",
+        "high": 0.08,
+        "last_updated": "2026-07-19",
+        "low": 0.04,
+        "methodology": "Synthetic share chosen only to exercise a customer-and-site allocation boundary after complete-rack assembly.",
+        "posture": "synthetic",
+        "unit": "ratio"
+      },
+      "replace_constraint_ids": [],
+      "resource_kind": "logistics",
+      "resource_name": "Synthetic Abilene-target complete-rack allocation",
+      "source": "system_assembly",
+      "stage": "shipped",
+      "units_per_system": 1.0
+    },
+    {
+      "capacity_basis": "energized_resource",
+      "confirming_evidence": "A frozen site-operational release for the same site, platform class, and quarter supports the operational-rack range.",
+      "falsifying_evidence": "The site scope or rack class differs, the source result is revised, or rack-level acceptance records fall outside the range.",
+      "id": "linked-abilene-operational-racks",
+      "metric": "operational_racks",
+      "notes": "Replaces separate illustrative power and commissioning constraints because the frozen operational result already takes their minimum after site deductions.",
+      "platform_allocation": null,
+      "replace_constraint_ids": [
+        "datacenter-commissioning",
+        "energized-datacenter-power"
+      ],
+      "resource_kind": "datacenter_commissioning",
+      "resource_name": "Frozen Abilene operational rack capacity",
+      "source": "datacenter_operational",
+      "stage": "operational",
+      "units_per_system": 1.0
+    }
+  ],
+  "preserve_market_views": false,
+  "scenario": {
+    "as_of_date": "2026-07-19",
+    "id": "gb200-to-abilene-odm-assembly-linked-illustrative-2026q3",
+    "name": "GB200 supplier-HBM, ODM-assembly, and Abilene chain demonstrator",
+    "notes": "Frozen material-cleared manufacturing, component-cleared system assembly, and site-operational results replace overlapping synthetic constraints. All throughput, component, site-share, and deployment inputs remain synthetic unless explicitly labeled otherwise.",
+    "quarter": "2026-Q3",
+    "recorded_at": "2026-07-20T04:25:00Z",
+    "samples": 20000,
+    "scope_notes": "Package output represents the selected illustrative Blackwell manufacturing flow. Component-cleared complete racks then represent three synthetic non-overlapping ODM scopes after exact server and rack resources are consumed once. A shipped-stage synthetic allocation narrows later output to the Abilene-target subset. Factory qualification, logistics, site installation, deployment infrastructure, supplier economics, consensus, and opportunity ranking remain separate or outside this run.",
+    "seed": 20260726
+  },
+  "sources": {
+    "datacenter_operational": {
+      "expected_scenario_id": "datacenter:openai-abilene-net-operational-illustrative-2026q3",
+      "scope": "One selected Abilene campus target-platform operational envelope.",
+      "sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e"
+    },
+    "manufacturing": {
+      "expected_scenario_id": "blackwell-manufacturing-with-supplier-hbm-draws-material-cleared-illustrative-2026q3",
+      "scope": "Illustrative Blackwell manufacturing flow with exact supplier HBM draws and synthetic material-cleared package starts.",
+      "sha256": "c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d"
+    },
+    "system_assembly": {
+      "expected_scenario_id": "gb200-nvl72-odm-assembly-illustrative-2026q3",
+      "scope": "Illustrative three-ODM GB200 assembly flow with exact capacity draws and synthetic component-cleared complete-rack output.",
+      "sha256": "f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6"
+    }
+  }
+}

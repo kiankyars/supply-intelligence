@@ -1,0 +1,1263 @@
+{
+  "bottlenecks": [
+    {
+      "constraints": [
+        {
+          "constraint_id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+          "probability": 1.0,
+          "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents"
+        }
+      ],
+      "stage": "accelerator_package"
+    },
+    {
+      "constraints": [
+        {
+          "constraint_id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+          "probability": 1.0,
+          "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents"
+        }
+      ],
+      "stage": "server_assembly"
+    },
+    {
+      "constraints": [
+        {
+          "constraint_id": "linked-component-cleared-odm-complete-racks",
+          "probability": 1.0,
+          "resource_name": "Frozen component-cleared ODM complete-rack output"
+        },
+        {
+          "constraint_id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+          "probability": 0.0,
+          "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents"
+        }
+      ],
+      "stage": "rack_integration"
+    },
+    {
+      "constraints": [
+        {
+          "constraint_id": "linked-abilene-complete-rack-allocation",
+          "probability": 1.0,
+          "resource_name": "Synthetic Abilene-target complete-rack allocation"
+        },
+        {
+          "constraint_id": "factory-qualification",
+          "probability": 0.0,
+          "resource_name": "Factory qualification slots"
+        },
+        {
+          "constraint_id": "linked-component-cleared-odm-complete-racks",
+          "probability": 0.0,
+          "resource_name": "Frozen component-cleared ODM complete-rack output"
+        },
+        {
+          "constraint_id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+          "probability": 0.0,
+          "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents"
+        },
+        {
+          "constraint_id": "rack-logistics",
+          "probability": 0.0,
+          "resource_name": "Qualified rack logistics slots"
+        }
+      ],
+      "stage": "shipped"
+    },
+    {
+      "constraints": [
+        {
+          "constraint_id": "linked-abilene-complete-rack-allocation",
+          "probability": 1.0,
+          "resource_name": "Synthetic Abilene-target complete-rack allocation"
+        },
+        {
+          "constraint_id": "factory-qualification",
+          "probability": 0.0,
+          "resource_name": "Factory qualification slots"
+        },
+        {
+          "constraint_id": "linked-component-cleared-odm-complete-racks",
+          "probability": 0.0,
+          "resource_name": "Frozen component-cleared ODM complete-rack output"
+        },
+        {
+          "constraint_id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+          "probability": 0.0,
+          "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents"
+        },
+        {
+          "constraint_id": "rack-logistics",
+          "probability": 0.0,
+          "resource_name": "Qualified rack logistics slots"
+        },
+        {
+          "constraint_id": "site-installation",
+          "probability": 0.0,
+          "resource_name": "Customer-site installation slots"
+        }
+      ],
+      "stage": "installed"
+    },
+    {
+      "constraints": [
+        {
+          "constraint_id": "linked-abilene-complete-rack-allocation",
+          "probability": 1.0,
+          "resource_name": "Synthetic Abilene-target complete-rack allocation"
+        },
+        {
+          "constraint_id": "factory-qualification",
+          "probability": 0.0,
+          "resource_name": "Factory qualification slots"
+        },
+        {
+          "constraint_id": "linked-abilene-operational-racks",
+          "probability": 0.0,
+          "resource_name": "Frozen Abilene operational rack capacity"
+        },
+        {
+          "constraint_id": "linked-component-cleared-odm-complete-racks",
+          "probability": 0.0,
+          "resource_name": "Frozen component-cleared ODM complete-rack output"
+        },
+        {
+          "constraint_id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+          "probability": 0.0,
+          "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents"
+        },
+        {
+          "constraint_id": "rack-logistics",
+          "probability": 0.0,
+          "resource_name": "Qualified rack logistics slots"
+        },
+        {
+          "constraint_id": "site-installation",
+          "probability": 0.0,
+          "resource_name": "Customer-site installation slots"
+        }
+      ],
+      "stage": "operational"
+    }
+  ],
+  "constraints": [
+    {
+      "bottleneck_probability": {
+        "accelerator_package": 1.0,
+        "installed": 0.0,
+        "operational": 0.0,
+        "rack_integration": 0.0,
+        "server_assembly": 1.0,
+        "shipped": 0.0
+      },
+      "equivalent_system_capacity": {
+        "maximum": 4245.368043760671,
+        "mean": 3731.648544530453,
+        "minimum": 3228.821024635805,
+        "p10": 3450.647065932006,
+        "p50": 3727.49490483945,
+        "p90": 4018.208605657757
+      },
+      "headroom_system_equivalents": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+      "resource_kind": "accelerator_package",
+      "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents",
+      "stage": "accelerator_package",
+      "utilization": {
+        "maximum": 1.0,
+        "mean": 1.0,
+        "minimum": 1.0,
+        "p10": 1.0,
+        "p50": 1.0,
+        "p90": 1.0
+      }
+    },
+    {
+      "bottleneck_probability": {
+        "installed": 0.0,
+        "operational": 0.0,
+        "rack_integration": 1.0,
+        "shipped": 0.0
+      },
+      "equivalent_system_capacity": {
+        "maximum": 327.7769922560611,
+        "mean": 299.17296944603345,
+        "minimum": 270.8633361272353,
+        "p10": 283.37291653189357,
+        "p50": 299.06720393931795,
+        "p90": 315.2970265278628
+      },
+      "headroom_system_equivalents": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "id": "linked-component-cleared-odm-complete-racks",
+      "resource_kind": "rack_integration",
+      "resource_name": "Frozen component-cleared ODM complete-rack output",
+      "stage": "rack_integration",
+      "utilization": {
+        "maximum": 1.0,
+        "mean": 1.0,
+        "minimum": 1.0,
+        "p10": 1.0,
+        "p50": 1.0,
+        "p90": 1.0
+      }
+    },
+    {
+      "bottleneck_probability": {
+        "installed": 0.0,
+        "operational": 0.0,
+        "shipped": 0.0
+      },
+      "equivalent_system_capacity": {
+        "maximum": 508.4773371392792,
+        "mean": 409.2430274671861,
+        "minimum": 316.18196056459936,
+        "p10": 356.24482966047174,
+        "p50": 408.5056529603231,
+        "p90": 463.13665188338325
+      },
+      "headroom_system_equivalents": {
+        "maximum": 493.2870086114903,
+        "mean": 391.2964639684415,
+        "minimum": 295.1183964200913,
+        "p10": 338.15067068491203,
+        "p50": 390.6425179889677,
+        "p90": 445.50270777325176
+      },
+      "id": "factory-qualification",
+      "resource_kind": "qualification",
+      "resource_name": "Factory qualification slots",
+      "stage": "shipped",
+      "utilization": {
+        "maximum": 0.07477249073655354,
+        "mean": 0.044269847679660905,
+        "minimum": 0.023956788412791623,
+        "p10": 0.034675403013859546,
+        "p50": 0.04388659366028459,
+        "p90": 0.05438435043798588
+      }
+    },
+    {
+      "bottleneck_probability": {
+        "installed": 0.0,
+        "operational": 0.0,
+        "shipped": 0.0
+      },
+      "equivalent_system_capacity": {
+        "maximum": 537.8769534880986,
+        "mean": 443.4061747316645,
+        "minimum": 351.0588096707878,
+        "p10": 391.7009960750099,
+        "p50": 442.97493614181064,
+        "p90": 495.98827415114715
+      },
+      "headroom_system_equivalents": {
+        "maximum": 522.3958155970216,
+        "mean": 425.45961123292,
+        "minimum": 328.87747193670515,
+        "p10": 373.8081684684224,
+        "p50": 425.1886521945694,
+        "p90": 478.1138051949001
+      },
+      "id": "rack-logistics",
+      "resource_kind": "logistics",
+      "resource_name": "Qualified rack logistics slots",
+      "stage": "shipped",
+      "utilization": {
+        "maximum": 0.06729967287770931,
+        "mean": 0.040783937072846325,
+        "minimum": 0.02337112985445209,
+        "p10": 0.03215598748811714,
+        "p50": 0.040499007912983345,
+        "p90": 0.04970725794677877
+      }
+    },
+    {
+      "bottleneck_probability": {
+        "installed": 0.0,
+        "operational": 0.0
+      },
+      "equivalent_system_capacity": {
+        "maximum": 494.151491546144,
+        "mean": 396.0463310773232,
+        "minimum": 304.44514911231647,
+        "p10": 343.9295263182387,
+        "p50": 395.07317049352025,
+        "p90": 450.24691340126094
+      },
+      "headroom_system_equivalents": {
+        "maximum": 478.76026823440424,
+        "mean": 378.0997675785786,
+        "minimum": 283.51163230664775,
+        "p10": 325.95413590690174,
+        "p50": 377.15852160175893,
+        "p90": 432.14057534500336
+      },
+      "id": "site-installation",
+      "resource_kind": "rack_integration",
+      "resource_name": "Customer-site installation slots",
+      "stage": "installed",
+      "utilization": {
+        "maximum": 0.07982031452706748,
+        "mean": 0.04576288281919292,
+        "minimum": 0.024857166125482742,
+        "p10": 0.03589992953279306,
+        "p50": 0.045352891815517875,
+        "p90": 0.056218994512293306
+      }
+    },
+    {
+      "bottleneck_probability": {
+        "operational": 0.0
+      },
+      "equivalent_system_capacity": {
+        "maximum": 601.5933297899686,
+        "mean": 368.9067488975175,
+        "minimum": 69.45627973288381,
+        "p10": 208.15182026221518,
+        "p50": 381.072994116381,
+        "p90": 508.0412004429884
+      },
+      "headroom_system_equivalents": {
+        "maximum": 588.2243430878821,
+        "mean": 350.9601853987729,
+        "minimum": 48.77893154175447,
+        "p10": 190.66308980171246,
+        "p50": 363.3961700231897,
+        "p90": 490.12138855920165
+      },
+      "id": "linked-abilene-operational-racks",
+      "resource_kind": "datacenter_commissioning",
+      "resource_name": "Frozen Abilene operational rack capacity",
+      "stage": "operational",
+      "utilization": {
+        "maximum": 0.33721092592632,
+        "mean": 0.05545900003226934,
+        "minimum": 0.02067959629887284,
+        "p10": 0.033359178369200465,
+        "p50": 0.04748816868375043,
+        "p90": 0.08699596959531361
+      }
+    },
+    {
+      "bottleneck_probability": {
+        "installed": 1.0,
+        "operational": 1.0,
+        "shipped": 1.0
+      },
+      "equivalent_system_capacity": {
+        "maximum": 25.440572465628282,
+        "mean": 17.946563498744613,
+        "minimum": 11.38611240714246,
+        "p10": 14.59421276282038,
+        "p50": 17.94052787268543,
+        "p90": 21.315524966296813
+      },
+      "headroom_system_equivalents": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "id": "linked-abilene-complete-rack-allocation",
+      "resource_kind": "logistics",
+      "resource_name": "Synthetic Abilene-target complete-rack allocation",
+      "stage": "shipped",
+      "utilization": {
+        "maximum": 1.0,
+        "mean": 1.0,
+        "minimum": 1.0,
+        "p10": 1.0,
+        "p50": 1.0,
+        "p90": 1.0
+      }
+    }
+  ],
+  "customer_allocations": [],
+  "evidence": [
+    {
+      "content_hash": null,
+      "excerpt": "NVIDIA reports 36 Grace CPUs, 72 Blackwell GPUs, 13.4 TB HBM3E, and liquid cooling for GB200 NVL72.",
+      "id": "nvidia:gb200-product",
+      "kind": "company_technical_document",
+      "license": "NVIDIA website terms",
+      "published_at": null,
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T01:49:33Z",
+      "source_family": "nvidia-gb200-documentation",
+      "source_url": "https://www.nvidia.com/en-us/data-center/gb200-nvl72/",
+      "title": "NVIDIA GB200 NVL72 product specifications"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "The guide reports 18 compute trays, 9 NVLink switch trays, 2 TOR switches, 4 ConnectX-7 NICs and 2 BlueField-3 DPUs per tray, eight power shelves, and approximately 120 kW rack consumption.",
+      "id": "nvidia:dgx-gb-hardware",
+      "kind": "company_technical_document",
+      "license": "NVIDIA documentation terms",
+      "published_at": null,
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T01:49:33Z",
+      "source_family": "nvidia-gb200-documentation",
+      "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html",
+      "title": "NVIDIA DGX GB Rack Scale Systems — Hardware"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "NVIDIA describes 72 Blackwell GPUs and two reticle-limited dies per Blackwell GPU on a custom TSMC 4NP process.",
+      "id": "nvidia:blackwell-tuning",
+      "kind": "company_technical_document",
+      "license": "NVIDIA documentation terms",
+      "published_at": "2025-04-21",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T01:49:33Z",
+      "source_family": "nvidia-gb200-documentation",
+      "source_url": "https://docs.nvidia.com/multi-node-nvlink-systems/multi-node-tuning-guide/overview.html",
+      "title": "NVIDIA GB200 NVL Multi-Node Tuning Guide — Grace Blackwell Superchip"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "All capacity, yield, and platform-share values linked here are deliberately synthetic.",
+      "id": "synthetic:capacity",
+      "kind": "synthetic",
+      "license": "CC0-1.0",
+      "published_at": "2026-07-17",
+      "publisher": "AI Supply Intelligence demo",
+      "retrieved_at": "2026-07-18T01:49:33Z",
+      "source_family": "synthetic-demo",
+      "source_url": "urn:synthetic:gb200-capacity-demo",
+      "title": "Illustrative capacity and yield assumptions"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "All customer shares and demand caps linked here are deliberately synthetic.",
+      "id": "synthetic:allocation",
+      "kind": "synthetic",
+      "license": "CC0-1.0",
+      "published_at": "2026-07-17",
+      "publisher": "AI Supply Intelligence demo",
+      "retrieved_at": "2026-07-18T01:49:33Z",
+      "source_family": "synthetic-demo",
+      "source_url": "urn:synthetic:gb200-allocation-demo",
+      "title": "Illustrative customer allocation assumptions"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "Revenue per system and gross margin are demonstration inputs, not company guidance or estimates.",
+      "id": "synthetic:economics",
+      "kind": "synthetic",
+      "license": "CC0-1.0",
+      "published_at": "2026-07-17",
+      "publisher": "AI Supply Intelligence demo",
+      "retrieved_at": "2026-07-18T01:49:33Z",
+      "source_family": "synthetic-demo",
+      "source_url": "urn:synthetic:gb200-economics-demo",
+      "title": "Illustrative supplier economics assumptions"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "The comparator and ranking factors are synthetic and must not be represented as sell-side consensus.",
+      "id": "synthetic:consensus",
+      "kind": "synthetic",
+      "license": "CC0-1.0",
+      "published_at": "2026-07-17",
+      "publisher": "AI Supply Intelligence demo",
+      "retrieved_at": "2026-07-18T01:49:33Z",
+      "source_family": "synthetic-demo",
+      "source_url": "urn:synthetic:gb200-consensus-demo",
+      "title": "Illustrative consensus comparator and opportunity factors"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "Synthetic allocation used only to make the complete-rack-to-site scope transition executable.",
+      "id": "synthetic:abilene-site-allocation",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": null,
+      "publisher": "AI Supply Intelligence demonstrator",
+      "retrieved_at": "2026-07-20T04:25:00Z",
+      "source_family": "synthetic-chain-link",
+      "source_url": "urn:synthetic:abilene-site-allocation",
+      "title": "Synthetic Abilene-target shipment allocation"
+    },
+    {
+      "content_hash": "c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d",
+      "excerpt": "Hash-pinned 2026-Q3 result for blackwell-manufacturing-with-supplier-hbm-draws-material-cleared-illustrative-2026q3; source scenario synthetic=true.",
+      "id": "linked-result:manufacturing:c5c9ca9dbff1",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": "2026-07-20T03:53:00Z",
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-20T04:25:00Z",
+      "source_family": "ai-supply-frozen-result",
+      "source_url": "urn:sha256:c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d",
+      "title": "Frozen manufacturing reconciliation result"
+    },
+    {
+      "content_hash": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e",
+      "excerpt": "Hash-pinned 2026-Q3 result for datacenter:openai-abilene-net-operational-illustrative-2026q3; source scenario synthetic=true.",
+      "id": "linked-result:datacenter_operational:000a0804e1b8",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": "2026-07-18T03:00:00Z",
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-20T04:25:00Z",
+      "source_family": "ai-supply-frozen-result",
+      "source_url": "urn:sha256:000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e",
+      "title": "Frozen datacenter operational reconciliation result"
+    },
+    {
+      "content_hash": "f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6",
+      "excerpt": "Hash-pinned 2026-Q3 result for gb200-nvl72-odm-assembly-illustrative-2026q3; source scenario synthetic=true.",
+      "id": "linked-result:system_assembly:f666d57c9673",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": "2026-07-20T04:15:00Z",
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-20T04:25:00Z",
+      "source_family": "ai-supply-frozen-result",
+      "source_url": "urn:sha256:f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6",
+      "title": "Frozen system assembly reconciliation result"
+    }
+  ],
+  "format": "ai-supply-reconciliation.v1",
+  "inputs": {
+    "allocations": [],
+    "consensus": [],
+    "constraints": [
+      {
+        "capacity": {
+          "base": 3718.269397320799,
+          "confidence": 0.3,
+          "confirming_evidence": "A frozen manufacturing release with the same platform topology, quarter, and material-cleared package-start basis supports the complete-system range.",
+          "correlation_group": "linked:manufacturing:c5c9ca9dbff1:complete_system_equivalents",
+          "evidence_ids": [
+            "linked-result:manufacturing:c5c9ca9dbff1"
+          ],
+          "falsifying_evidence": "The source topology or package-start basis differs, the source result is revised, or observed package output falls outside the linked range.",
+          "high": 4253.052632242979,
+          "last_updated": "2026-07-19",
+          "low": 3227.0710139075877,
+          "methodology": "Import manufacturing complete_system_equivalents from frozen result c5c9ca9dbff1355efc381c30b78d20e405a5e7aacccddcfebeb0886634221b8d. The source P10, P50, and P90 are used as triangular low, mode, and high parameters in the linked engine. This preserves the central range but does not preserve source tails, point masses, or joint dependence.",
+          "posture": "synthetic",
+          "unit": "system"
+        },
+        "capacity_basis": "sellable_output",
+        "effective_yield": {
+          "base": 1.0,
+          "confidence": 0.3,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:manufacturing:c5c9ca9dbff1"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-19",
+          "low": 1.0,
+          "methodology": "The frozen source output is already post-yield.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "id": "linked-material-cleared-supplier-hbm-manufacturing-output",
+        "notes": "Replaces logic-die, aggregate-HBM, package-throughput, silicon-interposer, and ABF-substrate placeholders because the frozen manufacturing result reconciles logic and supplier HBM with package starts explicitly declared material-cleared.",
+        "platform_allocation": {
+          "base": 1.0,
+          "confidence": 0.3,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:manufacturing:c5c9ca9dbff1"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-19",
+          "low": 1.0,
+          "methodology": "The frozen source output is already scoped to this linked constraint.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "resource_kind": "accelerator_package",
+        "resource_name": "Frozen material-cleared supplier-HBM manufacturing system equivalents",
+        "stage": "accelerator_package",
+        "units_per_system": {
+          "base": 1.0,
+          "confidence": 0.3,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:manufacturing:c5c9ca9dbff1"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-19",
+          "low": 1.0,
+          "methodology": "Convert the frozen source metric into scenario-system equivalents using 1 system per system.",
+          "posture": "derived",
+          "unit": "system"
+        }
+      },
+      {
+        "capacity": {
+          "base": 298.8618612699695,
+          "confidence": 0.15,
+          "confirming_evidence": "A frozen assembly release with matching rack topology, non-overlapping ODM scopes, and declared component-cleared output supports the complete-rack range.",
+          "correlation_group": "linked:system_assembly:f666d57c9673:complete_racks",
+          "evidence_ids": [
+            "linked-result:system_assembly:f666d57c9673"
+          ],
+          "falsifying_evidence": "The source topology, ODM scopes, component coverage, or output basis differs, or observed complete-rack output falls outside the linked range.",
+          "high": 328.27801142439046,
+          "last_updated": "2026-07-19",
+          "low": 270.6608944898074,
+          "methodology": "Import system_assembly complete_racks from frozen result f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6. The source P10, P50, and P90 are used as triangular low, mode, and high parameters in the linked engine. This preserves the central range but does not preserve source tails, point masses, or joint dependence.",
+          "posture": "synthetic",
+          "unit": "rack"
+        },
+        "capacity_basis": "allocated_output",
+        "effective_yield": {
+          "base": 1.0,
+          "confidence": 0.15,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:system_assembly:f666d57c9673"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-19",
+          "low": 1.0,
+          "methodology": "The frozen source output is already post-yield.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "id": "linked-component-cleared-odm-complete-racks",
+        "notes": "Replaces server and rack assembly placeholders because the frozen source locally reconciles ODM compute-tray and rack-integration flows and consumes each declared NIC, DPU, switch-tray, management-switch, power-shelf, and cooling pool once. The scope and capacities remain synthetic.",
+        "platform_allocation": {
+          "base": 1.0,
+          "confidence": 0.15,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:system_assembly:f666d57c9673"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-19",
+          "low": 1.0,
+          "methodology": "The frozen source output is already scoped to this linked constraint.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "resource_kind": "rack_integration",
+        "resource_name": "Frozen component-cleared ODM complete-rack output",
+        "stage": "rack_integration",
+        "units_per_system": {
+          "base": 1.0,
+          "confidence": 0.15,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:system_assembly:f666d57c9673"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-19",
+          "low": 1.0,
+          "methodology": "Convert the frozen source metric into scenario-system equivalents using 1 rack per system.",
+          "posture": "derived",
+          "unit": "rack"
+        }
+      },
+      {
+        "capacity": {
+          "base": 430.0,
+          "confidence": 0.35,
+          "confirming_evidence": "Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.",
+          "correlation_group": "system-qualification",
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Verified quarterly output or installed throughput falls outside this range.",
+          "high": 520.0,
+          "last_updated": "2026-07-17",
+          "low": 350.0,
+          "methodology": "Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.",
+          "posture": "synthetic",
+          "unit": "qualification_slot"
+        },
+        "capacity_basis": "sellable_output",
+        "effective_yield": {
+          "base": 0.95,
+          "confidence": 0.35,
+          "confirming_evidence": "Known-good-output and scrap data support the modeled conversion rate.",
+          "correlation_group": "system-qualification",
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Supplier or customer qualification data show a materially different effective yield.",
+          "high": 0.98,
+          "last_updated": "2026-07-17",
+          "low": 0.9,
+          "methodology": "Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.",
+          "posture": "synthetic",
+          "unit": "ratio"
+        },
+        "id": "factory-qualification",
+        "notes": "Qualification is separated from assembly to expose late-stage rack fallout.",
+        "platform_allocation": {
+          "base": 1.0,
+          "confidence": 1.0,
+          "confirming_evidence": "The capacity definition remains on the stated post-adjustment basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "The capacity input is redefined to a pre-yield or pre-allocation basis.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "Qualification capacity is already scoped to the platform.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "resource_kind": "qualification",
+        "resource_name": "Factory qualification slots",
+        "stage": "shipped",
+        "units_per_system": {
+          "base": 1.0,
+          "confidence": 0.35,
+          "confirming_evidence": "ODM test flow confirms one slot per rack.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Qualification requires materially different repeated or parallel slots.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "One end-to-end factory qualification slot per shipped system.",
+          "posture": "synthetic",
+          "unit": "qualification_slot"
+        }
+      },
+      {
+        "capacity": {
+          "base": 450.0,
+          "confidence": 0.35,
+          "confirming_evidence": "Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.",
+          "correlation_group": "logistics",
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Verified quarterly output or installed throughput falls outside this range.",
+          "high": 540.0,
+          "last_updated": "2026-07-17",
+          "low": 365.0,
+          "methodology": "Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.",
+          "posture": "synthetic",
+          "unit": "shipment_slot"
+        },
+        "capacity_basis": "sellable_output",
+        "effective_yield": {
+          "base": 0.985,
+          "confidence": 0.35,
+          "confirming_evidence": "Known-good-output and scrap data support the modeled conversion rate.",
+          "correlation_group": "logistics",
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Supplier or customer qualification data show a materially different effective yield.",
+          "high": 0.997,
+          "last_updated": "2026-07-17",
+          "low": 0.96,
+          "methodology": "Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.",
+          "posture": "synthetic",
+          "unit": "ratio"
+        },
+        "id": "rack-logistics",
+        "notes": "No real freight or customs data are used in this demonstration.",
+        "platform_allocation": {
+          "base": 1.0,
+          "confidence": 1.0,
+          "confirming_evidence": "The capacity definition remains on the stated post-adjustment basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "The capacity input is redefined to a pre-yield or pre-allocation basis.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "Shipment capacity is already scoped to qualified rack systems.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "resource_kind": "logistics",
+        "resource_name": "Qualified rack logistics slots",
+        "stage": "shipped",
+        "units_per_system": {
+          "base": 1.0,
+          "confidence": 0.35,
+          "confirming_evidence": "Freight bookings and delivery records support one slot per system.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Observed shipment topology requires materially different logistics units.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "One specialized shipment slot per rack-scale system.",
+          "posture": "synthetic",
+          "unit": "shipment_slot"
+        }
+      },
+      {
+        "capacity": {
+          "base": 410.0,
+          "confidence": 0.35,
+          "confirming_evidence": "Supplier output, tool throughput, utilization, inventory, and shipment evidence support this range.",
+          "correlation_group": "site-readiness",
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Verified quarterly output or installed throughput falls outside this range.",
+          "high": 500.0,
+          "last_updated": "2026-07-17",
+          "low": 330.0,
+          "methodology": "Illustrative quarterly range selected to exercise the reconciliation engine. It is not an estimate of actual supplier capacity.",
+          "posture": "synthetic",
+          "unit": "installation_slot"
+        },
+        "capacity_basis": "installed_resource",
+        "effective_yield": {
+          "base": 0.96,
+          "confidence": 0.35,
+          "confirming_evidence": "Known-good-output and scrap data support the modeled conversion rate.",
+          "correlation_group": "site-readiness",
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Supplier or customer qualification data show a materially different effective yield.",
+          "high": 0.99,
+          "last_updated": "2026-07-17",
+          "low": 0.92,
+          "methodology": "Illustrative effective yield after process, test, and quality loss; no actual yield claim is made.",
+          "posture": "synthetic",
+          "unit": "ratio"
+        },
+        "id": "site-installation",
+        "notes": "Separates shipped systems from installed systems.",
+        "platform_allocation": {
+          "base": 1.0,
+          "confidence": 1.0,
+          "confirming_evidence": "The capacity definition remains on the stated post-adjustment basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "The capacity input is redefined to a pre-yield or pre-allocation basis.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "Installation slots are already scoped to the modeled system.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "resource_kind": "rack_integration",
+        "resource_name": "Customer-site installation slots",
+        "stage": "installed",
+        "units_per_system": {
+          "base": 1.0,
+          "confidence": 0.35,
+          "confirming_evidence": "Site commissioning records support one slot per system.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "synthetic:capacity"
+          ],
+          "falsifying_evidence": "Observed installation flow requires materially different units.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "One physical installation and facility-integration slot per rack-scale system.",
+          "posture": "synthetic",
+          "unit": "installation_slot"
+        }
+      },
+      {
+        "capacity": {
+          "base": 433.4400086329962,
+          "confidence": 0.1,
+          "confirming_evidence": "A frozen site-operational release for the same site, platform class, and quarter supports the operational-rack range.",
+          "correlation_group": "linked:datacenter_operational:000a0804e1b8:operational_racks",
+          "evidence_ids": [
+            "linked-result:datacenter_operational:000a0804e1b8"
+          ],
+          "falsifying_evidence": "The site scope or rack class differs, the source result is revised, or rack-level acceptance records fall outside the range.",
+          "high": 602.8810012330047,
+          "last_updated": "2026-07-17",
+          "low": 68.22967239651236,
+          "methodology": "Import datacenter_operational operational_racks from frozen result 000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e. The source P10, P50, and P90 are used as triangular low, mode, and high parameters in the linked engine. This preserves the central range but does not preserve source tails, point masses, or joint dependence.",
+          "posture": "synthetic",
+          "unit": "rack"
+        },
+        "capacity_basis": "energized_resource",
+        "effective_yield": {
+          "base": 1.0,
+          "confidence": 0.1,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:datacenter_operational:000a0804e1b8"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "The frozen source output is already post-yield.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "id": "linked-abilene-operational-racks",
+        "notes": "Replaces separate illustrative power and commissioning constraints because the frozen operational result already takes their minimum after site deductions.",
+        "platform_allocation": {
+          "base": 1.0,
+          "confidence": 0.1,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:datacenter_operational:000a0804e1b8"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "The frozen source output is already scoped to this linked constraint.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "resource_kind": "datacenter_commissioning",
+        "resource_name": "Frozen Abilene operational rack capacity",
+        "stage": "operational",
+        "units_per_system": {
+          "base": 1.0,
+          "confidence": 0.1,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:datacenter_operational:000a0804e1b8"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-17",
+          "low": 1.0,
+          "methodology": "Convert the frozen source metric into scenario-system equivalents using 1 rack per system.",
+          "posture": "derived",
+          "unit": "rack"
+        }
+      },
+      {
+        "capacity": {
+          "base": 298.8618612699695,
+          "confidence": 0.15,
+          "confirming_evidence": "Customer allocation, purchase-order, logistics, or receiving records support this share of frozen complete-rack output moving to the selected site.",
+          "correlation_group": "linked:system_assembly:f666d57c9673:complete_racks",
+          "evidence_ids": [
+            "linked-result:system_assembly:f666d57c9673"
+          ],
+          "falsifying_evidence": "Allocation or receiving records show a materially different site share or that the assembly source covers a different supply scope.",
+          "high": 328.27801142439046,
+          "last_updated": "2026-07-19",
+          "low": 270.6608944898074,
+          "methodology": "Import system_assembly complete_racks from frozen result f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6. The source P10, P50, and P90 are used as triangular low, mode, and high parameters in the linked engine. This preserves the central range but does not preserve source tails, point masses, or joint dependence.",
+          "posture": "synthetic",
+          "unit": "rack"
+        },
+        "capacity_basis": "allocated_output",
+        "effective_yield": {
+          "base": 1.0,
+          "confidence": 0.15,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:system_assembly:f666d57c9673"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-19",
+          "low": 1.0,
+          "methodology": "The frozen source output is already post-yield.",
+          "posture": "derived",
+          "unit": "ratio"
+        },
+        "id": "linked-abilene-complete-rack-allocation",
+        "notes": "Creates the explicit scope transition from component-cleared complete-rack output to a synthetic Abilene-target shipped subset. It is not an observed customer allocation.",
+        "platform_allocation": {
+          "base": 0.06,
+          "confidence": 0.1,
+          "confirming_evidence": "Dated customer allocation and site receiving records support a six-percent central share for the same complete-rack population.",
+          "correlation_group": "abilene-site-allocation",
+          "evidence_ids": [
+            "synthetic:abilene-site-allocation"
+          ],
+          "falsifying_evidence": "Shipment destinations, purchase orders, or receiving logs put the selected site's share outside four to eight percent.",
+          "high": 0.08,
+          "last_updated": "2026-07-19",
+          "low": 0.04,
+          "methodology": "Synthetic share chosen only to exercise a customer-and-site allocation boundary after complete-rack assembly.",
+          "posture": "synthetic",
+          "unit": "ratio"
+        },
+        "resource_kind": "logistics",
+        "resource_name": "Synthetic Abilene-target complete-rack allocation",
+        "stage": "shipped",
+        "units_per_system": {
+          "base": 1.0,
+          "confidence": 0.15,
+          "confirming_evidence": "The frozen source metric remains on the stated post-conversion basis.",
+          "correlation_group": null,
+          "evidence_ids": [
+            "linked-result:system_assembly:f666d57c9673"
+          ],
+          "falsifying_evidence": "The source metric is redefined to require another yield or allocation conversion.",
+          "high": 1.0,
+          "last_updated": "2026-07-19",
+          "low": 1.0,
+          "methodology": "Convert the frozen source metric into scenario-system equivalents using 1 rack per system.",
+          "posture": "derived",
+          "unit": "rack"
+        }
+      }
+    ],
+    "opportunity_factors": [],
+    "platform": {
+      "accelerator_packages_per_system": {
+        "base": 72.0,
+        "confidence": 0.82,
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "nvidia:gb200-product"
+        ],
+        "falsifying_evidence": "A manufacturing BOM uses a different package or module definition.",
+        "high": 72.0,
+        "last_updated": "2026-07-17",
+        "low": 72.0,
+        "methodology": "Treats each disclosed Blackwell GPU as one accelerator package for the first-release output metric.",
+        "posture": "derived",
+        "unit": "package/system"
+      },
+      "id": "nvidia-gb200-nvl72",
+      "name": "NVIDIA GB200 NVL72",
+      "notes": "Actual disclosed rack configuration; manufacturing package semantics remain an explicit abstraction.",
+      "racks_per_system": {
+        "base": 1.0,
+        "confidence": 0.98,
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "nvidia:gb200-product"
+        ],
+        "falsifying_evidence": "The modeled system boundary changes from one rack.",
+        "high": 1.0,
+        "last_updated": "2026-07-17",
+        "low": 1.0,
+        "methodology": "The platform system unit is one NVL72 rack.",
+        "posture": "reported",
+        "unit": "rack/system"
+      },
+      "servers_per_system": {
+        "base": 18.0,
+        "confidence": 0.98,
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "correlation_group": null,
+        "evidence_ids": [
+          "nvidia:dgx-gb-hardware"
+        ],
+        "falsifying_evidence": "A current rack specification reports a different compute-node count.",
+        "high": 18.0,
+        "last_updated": "2026-07-17",
+        "low": 18.0,
+        "methodology": "Treats each of the 18 disclosed compute trays as one server node.",
+        "posture": "reported",
+        "unit": "server/system"
+      },
+      "system_unit": "rack-scale system",
+      "vendor": "NVIDIA"
+    },
+    "supplier_economics": []
+  },
+  "methodology": {
+    "bottleneck_probability": "Share of Monte Carlo draws in which a constraint is the stage minimum; exact ties split probability equally.",
+    "constraint_reconciliation": "For each draw and stage, output is the minimum system-equivalent capacity of all constraints required up to that stage.",
+    "customer_allocation": "Shipped systems are allocated by sampled share, capped by sampled demand, with residual supply redistributed proportionally.",
+    "distribution": "Independent triangular draws unless estimates share a correlation_group; reported ranges are not assumed normal.",
+    "opportunity_ranking": "Research-priority score equals absolute bottom-up revenue revision times confidence, liquidity, timing, and catalyst-strength factors. It is not an investment recommendation."
+  },
+  "opportunity_candidates": [],
+  "physical_outputs": {
+    "accelerator_packages_produced": {
+      "maximum": 305666.4991507683,
+      "mean": 268678.6952061926,
+      "minimum": 232475.11377377796,
+      "p10": 248446.58874710446,
+      "p50": 268379.6331484404,
+      "p90": 289311.0196073585
+    },
+    "complete_servers": {
+      "maximum": 76416.62478769207,
+      "mean": 67169.67380154815,
+      "minimum": 58118.77844344449,
+      "p10": 62111.647186776114,
+      "p50": 67094.9082871101,
+      "p90": 72327.75490183962
+    },
+    "integrated_racks": {
+      "maximum": 327.7769922560611,
+      "mean": 299.17296944603345,
+      "minimum": 270.8633361272353,
+      "p10": 283.37291653189357,
+      "p50": 299.06720393931795,
+      "p90": 315.2970265278628
+    },
+    "systems_installed": {
+      "maximum": 25.440572465628282,
+      "mean": 17.946563498744613,
+      "minimum": 11.38611240714246,
+      "p10": 14.59421276282038,
+      "p50": 17.94052787268543,
+      "p90": 21.315524966296813
+    },
+    "systems_operational": {
+      "maximum": 25.440572465628282,
+      "mean": 17.946563498744613,
+      "minimum": 11.38611240714246,
+      "p10": 14.59421276282038,
+      "p50": 17.94052787268543,
+      "p90": 21.315524966296813
+    },
+    "systems_shipped": {
+      "maximum": 25.440572465628282,
+      "mean": 17.946563498744613,
+      "minimum": 11.38611240714246,
+      "p10": 14.59421276282038,
+      "p50": 17.94052787268543,
+      "p90": 21.315524966296813
+    }
+  },
+  "platform": {
+    "id": "nvidia-gb200-nvl72",
+    "name": "NVIDIA GB200 NVL72",
+    "system_unit": "rack-scale system",
+    "vendor": "NVIDIA"
+  },
+  "scenario": {
+    "as_of_date": "2026-07-19",
+    "id": "gb200-to-abilene-odm-assembly-linked-illustrative-2026q3",
+    "name": "GB200 supplier-HBM, ODM-assembly, and Abilene chain demonstrator",
+    "notes": "Frozen material-cleared manufacturing, component-cleared system assembly, and site-operational results replace overlapping synthetic constraints. All throughput, component, site-share, and deployment inputs remain synthetic unless explicitly labeled otherwise.",
+    "quarter": "2026-Q3",
+    "recorded_at": "2026-07-20T04:25:00Z",
+    "samples": 20000,
+    "scope_notes": "Package output represents the selected illustrative Blackwell manufacturing flow. Component-cleared complete racks then represent three synthetic non-overlapping ODM scopes after exact server and rack resources are consumed once. A shipped-stage synthetic allocation narrows later output to the Abilene-target subset. Factory qualification, logistics, site installation, deployment infrastructure, supplier economics, consensus, and opportunity ranking remain separate or outside this run.",
+    "seed": 20260726,
+    "synthetic": true
+  },
+  "stage_outputs": [
+    {
+      "stage": "accelerator_package",
+      "system_equivalents": {
+        "maximum": 4245.368043760671,
+        "mean": 3731.648544530453,
+        "minimum": 3228.821024635805,
+        "p10": 3450.647065932006,
+        "p50": 3727.49490483945,
+        "p90": 4018.208605657757
+      },
+      "unit": "rack-scale system"
+    },
+    {
+      "stage": "server_assembly",
+      "system_equivalents": {
+        "maximum": 4245.368043760671,
+        "mean": 3731.648544530453,
+        "minimum": 3228.821024635805,
+        "p10": 3450.647065932006,
+        "p50": 3727.49490483945,
+        "p90": 4018.208605657757
+      },
+      "unit": "rack-scale system"
+    },
+    {
+      "stage": "rack_integration",
+      "system_equivalents": {
+        "maximum": 327.7769922560611,
+        "mean": 299.17296944603345,
+        "minimum": 270.8633361272353,
+        "p10": 283.37291653189357,
+        "p50": 299.06720393931795,
+        "p90": 315.2970265278628
+      },
+      "unit": "rack-scale system"
+    },
+    {
+      "stage": "shipped",
+      "system_equivalents": {
+        "maximum": 25.440572465628282,
+        "mean": 17.946563498744613,
+        "minimum": 11.38611240714246,
+        "p10": 14.59421276282038,
+        "p50": 17.94052787268543,
+        "p90": 21.315524966296813
+      },
+      "unit": "rack-scale system"
+    },
+    {
+      "stage": "installed",
+      "system_equivalents": {
+        "maximum": 25.440572465628282,
+        "mean": 17.946563498744613,
+        "minimum": 11.38611240714246,
+        "p10": 14.59421276282038,
+        "p50": 17.94052787268543,
+        "p90": 21.315524966296813
+      },
+      "unit": "rack-scale system"
+    },
+    {
+      "stage": "operational",
+      "system_equivalents": {
+        "maximum": 25.440572465628282,
+        "mean": 17.946563498744613,
+        "minimum": 11.38611240714246,
+        "p10": 14.59421276282038,
+        "p50": 17.94052787268543,
+        "p90": 21.315524966296813
+      },
+      "unit": "rack-scale system"
+    }
+  ],
+  "supplier_estimates": [],
+  "warnings": [
+    "Capacity, yield, allocation, economics, and consensus inputs marked synthetic are demonstration data, not market estimates.",
+    "Package output represents the selected illustrative Blackwell manufacturing flow. Component-cleared complete racks then represent three synthetic non-overlapping ODM scopes after exact server and rack resources are consumed once. A shipped-stage synthetic allocation narrows later output to the Abilene-target subset. Factory qualification, logistics, site installation, deployment infrastructure, supplier economics, consensus, and opportunity ranking remain separate or outside this run.",
+    "No customer allocation rules are present.",
+    "No sell-side consensus inputs are present; discrepancy ranking is unavailable."
+  ]
+}

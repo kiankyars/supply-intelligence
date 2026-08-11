@@ -1,0 +1,40 @@
+{
+  "accepted_for_usage": true,
+  "blocking_reasons": [],
+  "claim_dimensions": {
+    "capacity_basis": "projects_under_construction",
+    "customer": "all customers",
+    "entity_scope": "company",
+    "geography": "Taiwan",
+    "period": "multi_year_from_2026q2",
+    "process_node": "leading edge and unspecified",
+    "product": "logic wafers and advanced packaging combined",
+    "quantity_semantics": "point_in_time",
+    "stage": "facility_construction"
+  },
+  "claim_key": "company.tsmc.taiwan.leading_edge_backend_fabs_building_count",
+  "claim_posture": "reported",
+  "claim_unit": "fab",
+  "claim_value": 13,
+  "constraint_estimate": null,
+  "conversion": null,
+  "eligible_as_constraint": false,
+  "format": "ai-supply-manufacturing-claim-assessment.v1",
+  "lineage": {
+    "known_at": "2026-07-19T20:00:00Z",
+    "selection_path": "examples/claim-selections/tsmc-2026q2-fabs-under-construction-signal.json",
+    "selection_sha256": "102c3d776a15e1ff843ba10651f6df45f8f9830cd182a723a6adc5e258712226",
+    "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+    "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d",
+    "source_snapshot_ids": [
+      "snapshot:4b025304a605152244afbf523098b340"
+    ],
+    "valid_at": "2026-07-19"
+  },
+  "nonbinding_rationale": "A combined multi-year construction count does not identify fab type, completion quarter, qualified capacity, process output, product mix, or customer allocation.",
+  "normalized_estimate": null,
+  "revision_id": "claimrev:2af43fe79865071d33a60579379316ca",
+  "target_dimensions": {},
+  "target_input_path": "research.tsmc.taiwan_construction_pipeline",
+  "usage": "directional_signal"
+}

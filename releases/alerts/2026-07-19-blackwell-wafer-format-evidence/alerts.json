@@ -1,0 +1,30 @@
+{
+  "alert_count": 1,
+  "alerts": [
+    {
+      "current_posture": "derived",
+      "id": "alert:22b1c25600c6686c",
+      "path": "inputs.logic.wafer.wafer_diameter_mm",
+      "previous_posture": "synthetic",
+      "severity": "medium",
+      "type": "estimate_posture_changed"
+    }
+  ],
+  "current": {
+    "as_of_date": "2026-07-19",
+    "recorded_at": "2026-07-19T20:45:00Z",
+    "sha256": "980d8782f5fbf88cecd0a7d240b95dea197919d793796cc4128f638981d1fd72"
+  },
+  "format": "ai-supply-revision-alerts.v1",
+  "previous": {
+    "as_of_date": "2026-07-17",
+    "recorded_at": "2026-07-18T03:22:00Z",
+    "sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519"
+  },
+  "result_format": "ai-supply-manufacturing-result.v1",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "thresholds": {
+    "bottleneck_probability_change": 0.15,
+    "output_relative_change": 0.1
+  }
+}

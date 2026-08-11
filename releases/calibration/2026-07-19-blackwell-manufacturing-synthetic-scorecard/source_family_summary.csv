@@ -1,0 +1,2 @@
+source_family,count,units,p10_p90_coverage_rate,mean_signed_error,mean_absolute_error,mean_signed_error_ratio,mean_absolute_percentage_error,mean_normalized_pinball_loss,mean_brier_score,brier_event_count,proposal_status,eligible_for_application,minimum_group_size,additional_outcomes_needed,p50_multiplier,half_width_multiplier
+synthetic-calibration-fixture,6,die|package|stack|system,0.6666666666666666,,,0.01828708680348648,0.14535939720913024,0.04441368292091948,0.6130249646284763,6,diagnostic_only,False,10,,,

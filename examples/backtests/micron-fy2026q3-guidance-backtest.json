@@ -1,0 +1,34 @@
+{
+  "as_of_date": "2026-07-19",
+  "entity": {
+    "id": "micron-technology",
+    "name": "Micron Technology",
+    "ticker": "MU"
+  },
+  "format": "ai-supply-guidance-backtest-case.v1",
+  "guidance_observation": {
+    "path": "examples/backtests/micron-fy2026q3-guidance-observation.json",
+    "sha256": "0b5272bd1d8eec0b1b1eb975d59bb4d25d18925c9965471c39fa705c9c4e6623"
+  },
+  "id": "micron-fy2026q3-guidance-backtest",
+  "metric_ids": [
+    "revenue",
+    "gaap-gross-margin",
+    "non-gaap-gross-margin",
+    "gaap-operating-expenses",
+    "non-gaap-operating-expenses",
+    "gaap-diluted-eps",
+    "non-gaap-diluted-eps"
+  ],
+  "notes": "Evidence-backed reconstruction of Micron's pre-quarter-end FQ3 management guidance versus its later reported FQ3 results. This is an external baseline, not a native model forecast; the normalized artifact was captured after the outcome and is permanently ineligible for model calibration. Both observations share one company source family, and this financial benchmark does not validate physical AI-system production.",
+  "outcome_observation": {
+    "path": "examples/backtests/micron-fy2026q3-outcome-observation.json",
+    "sha256": "1def68dea4c12198aaae543e4d79f9fdfae428b63536d2e70b4775a90f64922d"
+  },
+  "period": {
+    "end": "2026-05-28",
+    "label": "FY2026-Q3",
+    "start": "2026-02-27"
+  },
+  "recorded_at": "2026-07-19T22:15:00Z"
+}

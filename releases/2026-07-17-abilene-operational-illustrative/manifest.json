@@ -1,0 +1,56 @@
+{
+  "as_of_date": "2026-07-17",
+  "files": {
+    "README.md": {
+      "bytes": 710,
+      "sha256": "bbe8936aeb8c859f85ea07bac030f3338c8f93e5eada7118c3553349c37c15b8"
+    },
+    "bottlenecks.csv": {
+      "bytes": 62,
+      "sha256": "642976476ce6d86d5b3b5227f011f5c693bd68c578a1ae8de05abf7b5df4715e"
+    },
+    "dashboard.html": {
+      "bytes": 25547,
+      "sha256": "932ac771fc58846dfe4fd917e18e33b8d20abee41c37a0662f93f7587fc7827e"
+    },
+    "evidence.csv": {
+      "bytes": 1110,
+      "sha256": "b1c515aa2603b269990994d71eab060ab5d3a4318fefdc43574db558b9ec5c51"
+    },
+    "evidence_gaps.csv": {
+      "bytes": 4388,
+      "sha256": "28ac5e52e4d49d1b4aba259a6b74f40a64d618fcc3a4c0990fec570310602333"
+    },
+    "gross_import.json": {
+      "bytes": 6103,
+      "sha256": "5817a973d960dfebb3f606ca5b10e45c68c2b9056ba5e7ef5c4e2762522d9b6e"
+    },
+    "input_estimates.csv": {
+      "bytes": 4873,
+      "sha256": "01c2440220767486782429d65fdfa82dc9640f7f1b2ff6af7234d8196f5ce95c"
+    },
+    "operational_outputs.csv": {
+      "bytes": 3157,
+      "sha256": "2b4d1b82c6fc1b29166406e3fbc0bb97331b042613654ca4db686d026217f137"
+    },
+    "result.json": {
+      "bytes": 28737,
+      "sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e"
+    },
+    "scenario.json": {
+      "bytes": 8583,
+      "sha256": "70938ff36558dbbf2a4fa32ac502b85099d5f31ec129c5f28737a06d7311bbae"
+    },
+    "selected_sites.csv": {
+      "bytes": 328,
+      "sha256": "c31f2d2ad59a5361e5b98f37b680f951004340cb6dfcfd6a84a542571c7f3f12"
+    }
+  },
+  "format": "ai-supply-datacenter-operational-release.v1",
+  "gross_import_sha256": "5817a973d960dfebb3f606ca5b10e45c68c2b9056ba5e7ef5c4e2762522d9b6e",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-18T03:00:00Z",
+  "scenario_id": "datacenter:openai-abilene-net-operational-illustrative-2026q3",
+  "synthetic": true,
+  "usable_as_operational_capacity": false
+}

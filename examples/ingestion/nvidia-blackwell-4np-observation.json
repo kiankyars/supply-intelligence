@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-07-19T20:20:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "NVIDIA identifies the foundry process but does not state wafer diameter, fab location, wafer starts, yield, or production volume.",
+    "The observation supports product-to-process scope only and cannot independently determine the wafer format."
+  ],
+  "observation_id": "nvidia-blackwell-tsmc-4np-process",
+  "product": "NVIDIA Blackwell",
+  "published_at": "2024-03-18",
+  "publisher": "NVIDIA",
+  "reported": {
+    "foundry": "Taiwan Semiconductor Manufacturing Company",
+    "process": "custom-built TSMC 4NP",
+    "topology": "two reticle-limit GPU dies"
+  },
+  "source_url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing"
+}

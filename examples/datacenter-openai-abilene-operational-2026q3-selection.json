@@ -1,0 +1,28 @@
+{
+  "format": "ai-supply-datacenter-selection.v1",
+  "target_quarter": "2026-Q3",
+  "stage": "operational",
+  "entity_ids": [
+    "2dd31763-2dd4-5cb5-927d-0d000dadf767"
+  ],
+  "aggregation_policy": "single_site",
+  "aggregation_rationale": "The selection contains one resolved campus and therefore cannot double count another campus row.",
+  "scope_name": "OpenAI Stargate Abilene site envelope",
+  "scope_description": "A checked bridge demonstration for one campus tagged OpenAI confident in the pinned atlas release. It is not a claim that all campus power is vacant or assigned to NVIDIA platforms.",
+  "expected_release_as_of": "2026-07-17",
+  "expected_release_recorded_at": "2026-07-18T02:00:00Z",
+  "minimum_capacity_as_of": "2026-01-01",
+  "confirming_evidence": "Metered critical IT load, energized capacity records, and tenant reservations support the campus range and identify unused headroom.",
+  "falsifying_evidence": "The campus estimate is gross facility power, duplicates another site, or current load and reservations leave no compatible headroom.",
+  "required_user_labels": [
+    "OpenAI #confident"
+  ],
+  "required_countries": [
+    "United States"
+  ],
+  "correlation_group": "abilene-site-power",
+  "metric": "critical_it_mw",
+  "unit": "MW",
+  "capacity_semantics": "gross_site_critical_it_envelope",
+  "availability_status": "not_net_incremental_capacity"
+}

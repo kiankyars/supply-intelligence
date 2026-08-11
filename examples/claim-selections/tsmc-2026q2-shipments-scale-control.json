@@ -1,0 +1,32 @@
+{
+  "allowed_postures": [
+    "reported",
+    "derived"
+  ],
+  "claim_key": "company.tsmc.wafer_shipments.2026q2_wafers",
+  "conversion": {
+    "multiplier": 1,
+    "source_unit": "12-inch-equivalent wafer",
+    "target_unit": "wafer"
+  },
+  "expected_claim_dimensions": {
+    "capacity_basis": "shipments",
+    "customer": "all customers",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "2026-Q2",
+    "process_node": "all process nodes",
+    "product": "all products",
+    "quantity_semantics": "quarter_total",
+    "stage": "wafer_shipment"
+  },
+  "expected_known_at": "2026-07-19T19:00:00Z",
+  "expected_revision_id": "claimrev:787a5271a7ede387fbb8e3b3c2e29d51",
+  "expected_valid_at": "2026-06-30",
+  "format": "ai-supply-manufacturing-claim-selection.v1",
+  "nonbinding_rationale": "Company-wide prior-quarter shipments check scale only and cannot constrain Blackwell wafer starts or package output.",
+  "snapshot_sha256": "e9ca94bd1d698c8203f2bdb7cf7909f9c3481e4abfdc3c2ba67b94e8e0a87e52",
+  "target_dimensions": {},
+  "target_input_path": "references.tsmc_total_wafer_shipments_2026q2",
+  "usage": "scale_control"
+}

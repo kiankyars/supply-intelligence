@@ -1,0 +1,92 @@
+{
+  "claims": [
+    {
+      "claim_key": "platform.nvidia.blackwell.logic_wafer_diameter_mm",
+      "confidence": 0.96,
+      "confirming_evidence": "A current NVIDIA or TSMC process-integration document explicitly identifies Blackwell 4NP as a 300mm wafer process.",
+      "dimensions": {
+        "capacity_basis": "physical_specification",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "quantity_semantics": "point_specification",
+        "stage": "logic_wafer_geometry",
+        "technology": "300mm silicon wafer"
+      },
+      "evidence": [
+        {
+          "independence_group": "nvidia-blackwell-documentation",
+          "role": "primary",
+          "source_id": "nvidia-blackwell-4np"
+        },
+        {
+          "independence_group": "tsmc-manufacturing-disclosures",
+          "role": "primary",
+          "source_id": "tsmc-4nm-12inch"
+        },
+        {
+          "independence_group": "tsmc-manufacturing-disclosures",
+          "role": "primary",
+          "source_id": "tsmc-gigafab-wafer-format"
+        }
+      ],
+      "falsifying_evidence": "NVIDIA or TSMC identifies a non-300mm wafer format for Blackwell 4NP, or NVIDIA identifies a different foundry process for this design.",
+      "methodology": "Combine NVIDIA's reported Blackwell 4NP process with TSMC disclosures that its 4nm production uses a 12-inch fab and that TSMC labels the 12-inch GIGAFAB profile as 300mm capacity. Treat 300mm as the nominal semiconductor wafer format, not as an arithmetic conversion of 12 inches. This does not identify Blackwell's fab location, wafer starts, yield, or production volume.",
+      "posture": "derived",
+      "predicate": "nominal logic wafer diameter",
+      "status": "asserted",
+      "subject": "NVIDIA Blackwell",
+      "supersedes_revision_id": null,
+      "unit": "mm",
+      "valid_from": "2024-03-18",
+      "valid_to": null,
+      "value": 300
+    }
+  ],
+  "format": "ai-supply-ingest-pack.v1",
+  "recorded_at": "2026-07-19T20:30:00Z",
+  "sources": [
+    {
+      "capture_kind": "normalized_observation",
+      "content_file": "nvidia-blackwell-4np-observation.json",
+      "expected_sha256": "b188f5033ffc645622449112eba4a3337e4ccf1094ec037cac03ac40874f8103",
+      "id": "nvidia-blackwell-4np",
+      "license": "NVIDIA website terms",
+      "media_type": "application/json",
+      "published_at": "2024-03-18",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-19T20:20:00Z",
+      "source_family": "nvidia-blackwell-documentation",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing"
+    },
+    {
+      "capture_kind": "normalized_observation",
+      "content_file": "tsmc-4nm-12inch-observation.json",
+      "expected_sha256": "bcfd6959c26599305d14717b5dbb2b167f0e4baee1d2679fe7985a637e006faf",
+      "id": "tsmc-4nm-12inch",
+      "license": "TSMC website terms",
+      "media_type": "application/json",
+      "published_at": "2026-03-12",
+      "publisher": "Taiwan Semiconductor Manufacturing Company",
+      "retrieved_at": "2026-07-19T20:20:00Z",
+      "source_family": "tsmc-annual-report",
+      "source_url": "https://investor.tsmc.com/static/annualReports/2025/english/index.html"
+    },
+    {
+      "capture_kind": "normalized_observation",
+      "content_file": "tsmc-gigafab-wafer-format-observation.json",
+      "expected_sha256": "31cc218b80cba4cc17a1a7c722dfd126ce2f9304a2331bb6ebb90c7447ed7746",
+      "id": "tsmc-gigafab-wafer-format",
+      "license": "TSMC website terms",
+      "media_type": "application/json",
+      "published_at": null,
+      "publisher": "Taiwan Semiconductor Manufacturing Company",
+      "retrieved_at": "2026-07-19T20:20:00Z",
+      "source_family": "tsmc-manufacturing-website",
+      "source_url": "https://www.tsmc.com/english/dedicatedFoundry/manufacturing/gigafab"
+    }
+  ]
+}

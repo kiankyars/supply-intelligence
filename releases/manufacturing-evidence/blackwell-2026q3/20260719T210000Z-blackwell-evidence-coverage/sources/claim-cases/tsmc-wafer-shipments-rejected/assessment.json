@@ -1,0 +1,96 @@
+{
+  "accepted_for_usage": false,
+  "blocking_reasons": [
+    {
+      "code": "dimension_mismatch:capacity_basis",
+      "message": "claim capacity_basis is 'shipments'; target requires 'wafer_starts'"
+    },
+    {
+      "code": "dimension_mismatch:customer",
+      "message": "claim customer is 'all customers'; target requires 'NVIDIA'"
+    },
+    {
+      "code": "dimension_mismatch:entity_scope",
+      "message": "claim entity_scope is 'company'; target requires 'product'"
+    },
+    {
+      "code": "dimension_mismatch:period",
+      "message": "claim period is '2026-Q2'; target requires '2026-Q3'"
+    },
+    {
+      "code": "dimension_mismatch:process_node",
+      "message": "claim process_node is 'all process nodes'; target requires 'TSMC 4NP'"
+    },
+    {
+      "code": "dimension_mismatch:product",
+      "message": "claim product is 'all products'; target requires 'NVIDIA Blackwell'"
+    },
+    {
+      "code": "dimension_mismatch:stage",
+      "message": "claim stage is 'wafer_shipment'; target requires 'logic_wafer_start'"
+    }
+  ],
+  "claim_dimensions": {
+    "capacity_basis": "shipments",
+    "customer": "all customers",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "2026-Q2",
+    "process_node": "all process nodes",
+    "product": "all products",
+    "quantity_semantics": "quarter_total",
+    "stage": "wafer_shipment"
+  },
+  "claim_key": "company.tsmc.wafer_shipments.2026q2_wafers",
+  "claim_posture": "derived",
+  "claim_unit": "12-inch-equivalent wafer",
+  "claim_value": 4336000,
+  "constraint_estimate": null,
+  "conversion": {
+    "multiplier": 1.0,
+    "source_unit": "12-inch-equivalent wafer",
+    "target_unit": "wafer"
+  },
+  "eligible_as_constraint": false,
+  "format": "ai-supply-manufacturing-claim-assessment.v1",
+  "lineage": {
+    "known_at": "2026-07-19T19:00:00Z",
+    "selection_path": "examples/claim-selections/tsmc-2026q2-shipments-as-blackwell-wafer-starts.json",
+    "selection_sha256": "0bbf4e858583c4f03e905bd95e8965ffa400dd8f0d1d2e745873be83249c6933",
+    "snapshot_path": "releases/claim-cycles/official-controls/20260719T190000Z-official-controls-9784ceec7b/current_snapshot.json",
+    "snapshot_sha256": "e9ca94bd1d698c8203f2bdb7cf7909f9c3481e4abfdc3c2ba67b94e8e0a87e52",
+    "source_snapshot_ids": [
+      "snapshot:b3fbb0c860915022b2e634a40b318cc9"
+    ],
+    "valid_at": "2026-06-30"
+  },
+  "nonbinding_rationale": null,
+  "normalized_estimate": {
+    "base": 4336000.0,
+    "confidence": 0.98,
+    "high": 4336000.0,
+    "last_updated": "2026-07-19",
+    "low": 4336000.0,
+    "methodology": "Claim gate conversion: Multiply TSMC's reported 4,336 thousand 12-inch-equivalent wafer shipments by 1,000. This company-wide shipment total cannot be allocated to 4NP, NVIDIA, or Blackwell. Applied multiplier 1 from 12-inch-equivalent wafer to wafer.",
+    "posture": "derived",
+    "source_posture": "derived",
+    "source_snapshot_ids": [
+      "snapshot:b3fbb0c860915022b2e634a40b318cc9"
+    ],
+    "unit": "wafer"
+  },
+  "revision_id": "claimrev:787a5271a7ede387fbb8e3b3c2e29d51",
+  "target_dimensions": {
+    "capacity_basis": "wafer_starts",
+    "customer": "NVIDIA",
+    "entity_scope": "product",
+    "geography": "global",
+    "period": "2026-Q3",
+    "process_node": "TSMC 4NP",
+    "product": "NVIDIA Blackwell",
+    "quantity_semantics": "quarter_total",
+    "stage": "logic_wafer_start"
+  },
+  "target_input_path": "logic.wafer.wafer_starts",
+  "usage": "constraint_input"
+}

@@ -1,0 +1,62 @@
+stage,constraint_id,resource_name,probability
+accelerator_package,silicon-interposers,Silicon interposer equivalents,0.9417
+accelerator_package,abf-substrates,ABF substrate equivalents,0.0583
+accelerator_package,linked-manufacturing-system-output,Frozen Blackwell manufacturing system equivalents,0.0
+server_assembly,silicon-interposers,Silicon interposer equivalents,0.58015
+server_assembly,compute-tray-assembly,GB200 compute-tray assembly,0.32995
+server_assembly,connectx7-nics,ConnectX-7 400G NICs,0.0756
+server_assembly,abf-substrates,ABF substrate equivalents,0.0143
+server_assembly,bluefield3-dpus,BlueField-3 DPUs,0.0
+server_assembly,linked-manufacturing-system-output,Frozen Blackwell manufacturing system equivalents,0.0
+rack_integration,silicon-interposers,Silicon interposer equivalents,0.49925
+rack_integration,compute-tray-assembly,GB200 compute-tray assembly,0.25825
+rack_integration,liquid-cooling-integration,Liquid-cooling rack integration,0.11355
+rack_integration,nvlink-switch-trays,NVLink switch trays,0.11025
+rack_integration,abf-substrates,ABF substrate equivalents,0.00935
+rack_integration,power-shelves,Rack power shelves,0.00935
+rack_integration,bluefield3-dpus,BlueField-3 DPUs,0.0
+rack_integration,connectx7-nics,ConnectX-7 400G NICs,0.0
+rack_integration,linked-manufacturing-system-output,Frozen Blackwell manufacturing system equivalents,0.0
+rack_integration,management-tor-switches,Management top-of-rack switches,0.0
+shipped,linked-abilene-shipment-allocation,Synthetic Abilene-target shipment allocation,0.8231
+shipped,silicon-interposers,Silicon interposer equivalents,0.0962
+shipped,factory-qualification,Factory qualification slots,0.03235
+shipped,compute-tray-assembly,GB200 compute-tray assembly,0.0275
+shipped,liquid-cooling-integration,Liquid-cooling rack integration,0.0091
+shipped,nvlink-switch-trays,NVLink switch trays,0.0074
+shipped,rack-logistics,Qualified rack logistics slots,0.0038
+shipped,abf-substrates,ABF substrate equivalents,0.0003
+shipped,power-shelves,Rack power shelves,0.00025
+shipped,bluefield3-dpus,BlueField-3 DPUs,0.0
+shipped,connectx7-nics,ConnectX-7 400G NICs,0.0
+shipped,linked-manufacturing-system-output,Frozen Blackwell manufacturing system equivalents,0.0
+shipped,management-tor-switches,Management top-of-rack switches,0.0
+installed,linked-abilene-shipment-allocation,Synthetic Abilene-target shipment allocation,0.79675
+installed,silicon-interposers,Silicon interposer equivalents,0.0882
+installed,site-installation,Customer-site installation slots,0.04975
+installed,factory-qualification,Factory qualification slots,0.02685
+installed,compute-tray-assembly,GB200 compute-tray assembly,0.0232
+installed,liquid-cooling-integration,Liquid-cooling rack integration,0.00665
+installed,nvlink-switch-trays,NVLink switch trays,0.00575
+installed,rack-logistics,Qualified rack logistics slots,0.0025
+installed,abf-substrates,ABF substrate equivalents,0.0003
+installed,power-shelves,Rack power shelves,5e-05
+installed,bluefield3-dpus,BlueField-3 DPUs,0.0
+installed,connectx7-nics,ConnectX-7 400G NICs,0.0
+installed,linked-manufacturing-system-output,Frozen Blackwell manufacturing system equivalents,0.0
+installed,management-tor-switches,Management top-of-rack switches,0.0
+operational,linked-abilene-shipment-allocation,Synthetic Abilene-target shipment allocation,0.5855
+operational,linked-abilene-operational-racks,Frozen Abilene operational rack capacity,0.28745
+operational,silicon-interposers,Silicon interposer equivalents,0.0573
+operational,site-installation,Customer-site installation slots,0.03145
+operational,factory-qualification,Factory qualification slots,0.0163
+operational,compute-tray-assembly,GB200 compute-tray assembly,0.0133
+operational,liquid-cooling-integration,Liquid-cooling rack integration,0.004
+operational,nvlink-switch-trays,NVLink switch trays,0.00325
+operational,rack-logistics,Qualified rack logistics slots,0.0013
+operational,abf-substrates,ABF substrate equivalents,0.0001
+operational,power-shelves,Rack power shelves,5e-05
+operational,bluefield3-dpus,BlueField-3 DPUs,0.0
+operational,connectx7-nics,ConnectX-7 400G NICs,0.0
+operational,linked-manufacturing-system-output,Frozen Blackwell manufacturing system equivalents,0.0
+operational,management-tor-switches,Management top-of-rack switches,0.0

@@ -1,0 +1,41 @@
+{
+  "captured_at": "2026-07-19T19:50:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "The capital-spending percentage combines advanced packaging with testing, mask making, and other items.",
+    "The fab count combines leading-edge wafer fabs and advanced-packaging fabs and has no throughput or completion schedule.",
+    "The shortage statements are qualitative and do not disclose CoWoS units, customer allocation, or Blackwell throughput.",
+    "The transcript is hosted by TSMC but prepared under LSEG terms; this file is a paraphrased observation, not a transcript copy."
+  ],
+  "observation_id": "tsmc-2026q2-manufacturing-capacity-signals",
+  "observations": [
+    {
+      "metric": "2026 capital budget guidance",
+      "unit": "USD billion",
+      "value_high": 64,
+      "value_low": 60
+    },
+    {
+      "metric": "share of 2026 capital budget for advanced packaging, testing, mask making, and other items",
+      "unit": "ratio",
+      "value_high": 0.2,
+      "value_low": 0.1
+    },
+    {
+      "metric": "leading-edge and advanced-packaging fabs under multi-year construction in Taiwan",
+      "unit": "fab",
+      "value": 13
+    },
+    {
+      "metric": "backend capacity condition",
+      "value": "shortage_mode"
+    },
+    {
+      "metric": "tester availability condition",
+      "value": "shortage"
+    }
+  ],
+  "published_at": "2026-07-16",
+  "publisher": "Taiwan Semiconductor Manufacturing Company",
+  "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/547d1696765e05ce3adb81c108ce1c8c1682b80c/TSMC%202Q26%20Transcript.pdf"
+}

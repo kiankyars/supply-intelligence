@@ -1,0 +1,1370 @@
+{
+  "format": "ai-supply-portfolio.v1",
+  "scenario": {
+    "id": "gb200-gb300-shared-illustrative-2026q3",
+    "name": "GB200 and GB300 shared-resource reconciliation",
+    "quarter": "2026-Q3",
+    "as_of_date": "2026-07-17",
+    "recorded_at": "2026-07-18T02:07:24Z",
+    "synthetic": true,
+    "samples": 20000,
+    "seed": 20260718,
+    "notes": "NVIDIA rack requirements are source-backed where disclosed. Shared capacity, demand, allocation priority, yield, qualification, logistics, installation, and commissioning inputs are synthetic."
+  },
+  "evidence": [
+    {
+      "id": "nvidia:gb200-product",
+      "kind": "company_technical_document",
+      "title": "NVIDIA GB200 NVL72 product specifications",
+      "source_url": "https://www.nvidia.com/en-us/data-center/gb200-nvl72/",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T02:07:24Z",
+      "published_at": null,
+      "source_family": "nvidia-nvl72-documentation",
+      "license": "NVIDIA website terms",
+      "excerpt": "NVIDIA reports 72 Blackwell GPUs, 36 Grace CPUs, 13.4 TB HBM3E, and a liquid-cooled rack-scale design.",
+      "content_hash": null
+    },
+    {
+      "id": "nvidia:gb200-hardware",
+      "kind": "company_technical_document",
+      "title": "NVIDIA DGX GB Rack Scale Systems hardware guide",
+      "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T02:07:24Z",
+      "published_at": null,
+      "source_family": "nvidia-nvl72-documentation",
+      "license": "NVIDIA documentation terms",
+      "excerpt": "The guide reports 18 compute trays, 9 NVLink switch trays, 8 power shelves, and approximately 120 kW rack consumption.",
+      "content_hash": null
+    },
+    {
+      "id": "nvidia:gb300-product",
+      "kind": "company_technical_document",
+      "title": "NVIDIA GB300 NVL72 product specifications",
+      "source_url": "https://www.nvidia.com/en-us/data-center/gb300-nvl72/",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T02:07:24Z",
+      "published_at": null,
+      "source_family": "nvidia-nvl72-documentation",
+      "license": "NVIDIA website terms",
+      "excerpt": "NVIDIA reports 72 Blackwell Ultra GPUs, 36 Grace CPUs, and 20 TB of GPU memory in a liquid-cooled rack-scale platform.",
+      "content_hash": null
+    },
+    {
+      "id": "nvidia:gb300-components",
+      "kind": "company_technical_document",
+      "title": "NVIDIA NVL72 AI Factory system hardware and components",
+      "source_url": "https://docs.nvidia.com/enterprise-reference-architectures/nvl72-ai-factory/latest/components.html",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-18T02:07:24Z",
+      "published_at": "2026-03-01",
+      "source_family": "nvidia-nvl72-documentation",
+      "license": "NVIDIA documentation terms",
+      "excerpt": "NVIDIA reports 4 B300 GPUs and 2 Grace CPUs per compute tray, 9 NVSwitch trays, 8 power shelves, and up to 142 kW per rack.",
+      "content_hash": null
+    },
+    {
+      "id": "synthetic:shared-capacity",
+      "kind": "synthetic",
+      "title": "Illustrative shared capacity, yield, and stage throughput",
+      "source_url": "urn:synthetic:gb200-gb300-shared-capacity",
+      "publisher": "AI Supply Intelligence demo",
+      "retrieved_at": "2026-07-18T02:07:24Z",
+      "published_at": "2026-07-17",
+      "source_family": "synthetic-portfolio-demo",
+      "license": "CC0-1.0",
+      "excerpt": "All shared capacity, yield, qualification, logistics, installation, and commissioning ranges linked here are synthetic.",
+      "content_hash": null
+    },
+    {
+      "id": "synthetic:portfolio-policy",
+      "kind": "synthetic",
+      "title": "Illustrative platform demand and allocation weights",
+      "source_url": "urn:synthetic:gb200-gb300-portfolio-policy",
+      "publisher": "AI Supply Intelligence demo",
+      "retrieved_at": "2026-07-18T02:07:24Z",
+      "published_at": "2026-07-17",
+      "source_family": "synthetic-portfolio-demo",
+      "license": "CC0-1.0",
+      "excerpt": "Demand ranges and priority weights are synthetic and do not represent orders or reserved capacity.",
+      "content_hash": null
+    }
+  ],
+  "platforms": [
+    {
+      "platform": {
+        "id": "nvidia-gb200-nvl72",
+        "name": "NVIDIA GB200 NVL72",
+        "vendor": "NVIDIA",
+        "system_unit": "rack-scale system",
+        "accelerator_packages_per_system": {
+          "low": 72,
+          "base": 72,
+          "high": 72,
+          "unit": "package/system",
+          "posture": "derived",
+          "methodology": "Treats each of the 72 disclosed GPUs as one accelerator package for the portfolio output metric.",
+          "confidence": 0.82,
+          "last_updated": "2026-07-17",
+          "evidence_ids": [
+            "nvidia:gb200-product"
+          ],
+          "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+          "falsifying_evidence": "A manufacturing BOM uses a different package or module definition.",
+          "correlation_group": null
+        },
+        "servers_per_system": {
+          "low": 18,
+          "base": 18,
+          "high": 18,
+          "unit": "server/system",
+          "posture": "derived",
+          "methodology": "Uses 18 compute trays as 18 complete server nodes per rack.",
+          "confidence": 0.95,
+          "last_updated": "2026-07-17",
+          "evidence_ids": [
+            "nvidia:gb200-hardware"
+          ],
+          "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+          "falsifying_evidence": "A current rack specification reports a different compute-node count.",
+          "correlation_group": null
+        },
+        "racks_per_system": {
+          "low": 1,
+          "base": 1,
+          "high": 1,
+          "unit": "rack/system",
+          "posture": "reported",
+          "methodology": "The platform boundary is one NVL72 rack-scale system.",
+          "confidence": 0.98,
+          "last_updated": "2026-07-17",
+          "evidence_ids": [
+            "nvidia:gb200-product"
+          ],
+          "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+          "falsifying_evidence": "The modeled system boundary changes from one rack.",
+          "correlation_group": null
+        },
+        "notes": "Product configuration is source-backed; manufacturing package semantics remain a derived abstraction."
+      },
+      "demand": {
+        "low": 320,
+        "base": 400,
+        "high": 480,
+        "unit": "system",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly platform demand ceiling; not an order-book estimate.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:portfolio-policy"
+        ],
+        "confirming_evidence": "Customer commitments and delivery schedules support the demand range.",
+        "falsifying_evidence": "Cancellations, substitutions, or order evidence place demand outside the range.",
+        "correlation_group": "portfolio-demand"
+      },
+      "priority_weight": {
+        "low": 0.72,
+        "base": 0.85,
+        "high": 1.0,
+        "unit": "weight",
+        "posture": "synthetic",
+        "methodology": "Illustrative progressive-allocation weight; not an inferred contract priority.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:portfolio-policy"
+        ],
+        "confirming_evidence": "Reserved capacity, prepayments, and supplier allocation records support the weight.",
+        "falsifying_evidence": "Observed product mix or contractual priority conflicts with the weight.",
+        "correlation_group": "portfolio-priority"
+      }
+    },
+    {
+      "platform": {
+        "id": "nvidia-gb300-nvl72",
+        "name": "NVIDIA GB300 NVL72",
+        "vendor": "NVIDIA",
+        "system_unit": "rack-scale system",
+        "accelerator_packages_per_system": {
+          "low": 72,
+          "base": 72,
+          "high": 72,
+          "unit": "package/system",
+          "posture": "derived",
+          "methodology": "Treats each of the 72 disclosed GPUs as one accelerator package for the portfolio output metric.",
+          "confidence": 0.82,
+          "last_updated": "2026-07-17",
+          "evidence_ids": [
+            "nvidia:gb300-product"
+          ],
+          "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+          "falsifying_evidence": "A manufacturing BOM uses a different package or module definition.",
+          "correlation_group": null
+        },
+        "servers_per_system": {
+          "low": 18,
+          "base": 18,
+          "high": 18,
+          "unit": "server/system",
+          "posture": "derived",
+          "methodology": "Uses 18 compute trays as 18 complete server nodes per rack.",
+          "confidence": 0.95,
+          "last_updated": "2026-07-17",
+          "evidence_ids": [
+            "nvidia:gb300-components"
+          ],
+          "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+          "falsifying_evidence": "A current rack specification reports a different compute-node count.",
+          "correlation_group": null
+        },
+        "racks_per_system": {
+          "low": 1,
+          "base": 1,
+          "high": 1,
+          "unit": "rack/system",
+          "posture": "reported",
+          "methodology": "The platform boundary is one NVL72 rack-scale system.",
+          "confidence": 0.98,
+          "last_updated": "2026-07-17",
+          "evidence_ids": [
+            "nvidia:gb300-product"
+          ],
+          "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+          "falsifying_evidence": "The modeled system boundary changes from one rack.",
+          "correlation_group": null
+        },
+        "notes": "Product configuration is source-backed; manufacturing package semantics remain a derived abstraction."
+      },
+      "demand": {
+        "low": 390,
+        "base": 500,
+        "high": 610,
+        "unit": "system",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly platform demand ceiling; not an order-book estimate.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:portfolio-policy"
+        ],
+        "confirming_evidence": "Customer commitments and delivery schedules support the demand range.",
+        "falsifying_evidence": "Cancellations, substitutions, or order evidence place demand outside the range.",
+        "correlation_group": "portfolio-demand"
+      },
+      "priority_weight": {
+        "low": 1.05,
+        "base": 1.25,
+        "high": 1.48,
+        "unit": "weight",
+        "posture": "synthetic",
+        "methodology": "Illustrative progressive-allocation weight; not an inferred contract priority.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:portfolio-policy"
+        ],
+        "confirming_evidence": "Reserved capacity, prepayments, and supplier allocation records support the weight.",
+        "falsifying_evidence": "Observed product mix or contractual priority conflicts with the weight.",
+        "correlation_group": "portfolio-priority"
+      }
+    }
+  ],
+  "resource_pools": [
+    {
+      "id": "shared-advanced-packaging",
+      "resource_kind": "advanced_packaging",
+      "resource_name": "Shared advanced-package output",
+      "stage": "accelerator_package",
+      "capacity_basis": "known_good_output",
+      "capacity": {
+        "low": 45000,
+        "base": 55000,
+        "high": 66000,
+        "unit": "package",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "packaging"
+      },
+      "effective_yield": {
+        "low": 0.88,
+        "base": 0.93,
+        "high": 0.97,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "packaging"
+      },
+      "notes": "One pool is consumed by both platforms."
+    },
+    {
+      "id": "shared-hbm3e",
+      "resource_kind": "hbm_capacity",
+      "resource_name": "Shared HBM3E output",
+      "stage": "accelerator_package",
+      "capacity_basis": "known_good_output",
+      "capacity": {
+        "low": 6900,
+        "base": 8500,
+        "high": 10300,
+        "unit": "TB",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "memory"
+      },
+      "effective_yield": {
+        "low": 0.91,
+        "base": 0.95,
+        "high": 0.98,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "memory"
+      },
+      "notes": "Aggregate HBM terabytes remain a placeholder for a later stack-level pool."
+    },
+    {
+      "id": "shared-interposers",
+      "resource_kind": "silicon_interposer",
+      "resource_name": "Shared silicon interposer output",
+      "stage": "accelerator_package",
+      "capacity_basis": "known_good_output",
+      "capacity": {
+        "low": 44000,
+        "base": 53500,
+        "high": 64000,
+        "unit": "interposer",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "packaging"
+      },
+      "effective_yield": {
+        "low": 0.91,
+        "base": 0.95,
+        "high": 0.98,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "packaging"
+      },
+      "notes": "Per-package interposer requirements are synthetic until manufacturing BOM evidence is added."
+    },
+    {
+      "id": "shared-abf-substrates",
+      "resource_kind": "abf_substrate",
+      "resource_name": "Shared ABF substrate output",
+      "stage": "accelerator_package",
+      "capacity_basis": "known_good_output",
+      "capacity": {
+        "low": 50000,
+        "base": 61500,
+        "high": 73500,
+        "unit": "substrate",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "substrates"
+      },
+      "effective_yield": {
+        "low": 0.93,
+        "base": 0.97,
+        "high": 0.99,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "substrates"
+      },
+      "notes": "Substrate dimensions and technology variants remain unmodeled."
+    },
+    {
+      "id": "shared-compute-tray-assembly",
+      "resource_kind": "server_assembly",
+      "resource_name": "Shared compute-tray assembly",
+      "stage": "server_assembly",
+      "capacity_basis": "sellable_output",
+      "capacity": {
+        "low": 9000,
+        "base": 11000,
+        "high": 13200,
+        "unit": "tray",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "odm"
+      },
+      "effective_yield": {
+        "low": 0.9,
+        "base": 0.94,
+        "high": 0.98,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "odm"
+      },
+      "notes": "The pool tests shared ODM labor and line capacity."
+    },
+    {
+      "id": "shared-nvlink-switch-trays",
+      "resource_kind": "network_switch",
+      "resource_name": "Shared NVLink switch-tray output",
+      "stage": "rack_integration",
+      "capacity_basis": "sellable_output",
+      "capacity": {
+        "low": 4800,
+        "base": 6000,
+        "high": 7200,
+        "unit": "switch_tray",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "networking"
+      },
+      "effective_yield": {
+        "low": 0.94,
+        "base": 0.97,
+        "high": 0.99,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "networking"
+      },
+      "notes": "Both rack configurations consume nine switch trays."
+    },
+    {
+      "id": "shared-power-shelves",
+      "resource_kind": "power_delivery",
+      "resource_name": "Shared rack power-shelf output",
+      "stage": "rack_integration",
+      "capacity_basis": "sellable_output",
+      "capacity": {
+        "low": 4100,
+        "base": 5050,
+        "high": 6050,
+        "unit": "power_shelf",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "power-components"
+      },
+      "effective_yield": {
+        "low": 0.95,
+        "base": 0.98,
+        "high": 0.995,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "power-components"
+      },
+      "notes": "Both disclosed racks consume eight power shelves."
+    },
+    {
+      "id": "shared-liquid-cooling",
+      "resource_kind": "cooling",
+      "resource_name": "Shared liquid-cooling integration",
+      "stage": "rack_integration",
+      "capacity_basis": "sellable_output",
+      "capacity": {
+        "low": 400,
+        "base": 500,
+        "high": 600,
+        "unit": "rack_cooling_set",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "rack-integration"
+      },
+      "effective_yield": {
+        "low": 0.9,
+        "base": 0.95,
+        "high": 0.98,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "rack-integration"
+      },
+      "notes": "Facility-side cooling remains a later installation constraint."
+    },
+    {
+      "id": "shared-qualification",
+      "resource_kind": "qualification",
+      "resource_name": "Shared rack qualification",
+      "stage": "shipped",
+      "capacity_basis": "sellable_output",
+      "capacity": {
+        "low": 360,
+        "base": 445,
+        "high": 535,
+        "unit": "qualification_slot",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "qualification"
+      },
+      "effective_yield": {
+        "low": 0.91,
+        "base": 0.96,
+        "high": 0.99,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "qualification"
+      },
+      "notes": "Qualification remains separate from tray assembly."
+    },
+    {
+      "id": "shared-logistics",
+      "resource_kind": "logistics",
+      "resource_name": "Shared rack logistics",
+      "stage": "shipped",
+      "capacity_basis": "sellable_output",
+      "capacity": {
+        "low": 350,
+        "base": 430,
+        "high": 520,
+        "unit": "shipment_slot",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "logistics"
+      },
+      "effective_yield": {
+        "low": 0.96,
+        "base": 0.985,
+        "high": 0.997,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "logistics"
+      },
+      "notes": "No real freight or customs data are used."
+    },
+    {
+      "id": "shared-installation",
+      "resource_kind": "rack_integration",
+      "resource_name": "Shared customer-site installation",
+      "stage": "installed",
+      "capacity_basis": "installed_resource",
+      "capacity": {
+        "low": 315,
+        "base": 395,
+        "high": 480,
+        "unit": "installation_slot",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "site-readiness"
+      },
+      "effective_yield": {
+        "low": 0.93,
+        "base": 0.97,
+        "high": 0.99,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "site-readiness"
+      },
+      "notes": "Separates shipped systems from installed systems."
+    },
+    {
+      "id": "shared-energized-power",
+      "resource_kind": "datacenter_power",
+      "resource_name": "Shared energized critical IT power",
+      "stage": "operational",
+      "capacity_basis": "energized_resource",
+      "capacity": {
+        "low": 40,
+        "base": 50,
+        "high": 62,
+        "unit": "MW",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "site-readiness"
+      },
+      "effective_yield": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "ratio",
+        "posture": "derived",
+        "methodology": "Capacity is already defined as energized critical IT MW.",
+        "confidence": 1.0,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The capacity definition remains on the stated post-adjustment basis.",
+        "falsifying_evidence": "The capacity input is redefined to a pre-yield or pre-allocation basis.",
+        "correlation_group": null
+      },
+      "notes": "Power requirements use disclosed rack values while regional availability remains synthetic."
+    },
+    {
+      "id": "shared-commissioning",
+      "resource_kind": "datacenter_commissioning",
+      "resource_name": "Shared data-center commissioning",
+      "stage": "operational",
+      "capacity_basis": "installed_resource",
+      "capacity": {
+        "low": 280,
+        "base": 345,
+        "high": 420,
+        "unit": "commissioning_slot",
+        "posture": "synthetic",
+        "methodology": "Illustrative quarterly shared-pool range selected to test cross-platform conservation. It is not an estimate of actual supplier capacity.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier output, installed tool throughput, utilization, and inventory evidence support the pool range.",
+        "falsifying_evidence": "Verified shared-pool output falls outside the range.",
+        "correlation_group": "site-readiness"
+      },
+      "effective_yield": {
+        "low": 0.92,
+        "base": 0.97,
+        "high": 0.99,
+        "unit": "ratio",
+        "posture": "synthetic",
+        "methodology": "Illustrative effective yield applied once to the shared pool.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Known-good-output and scrap evidence support the yield range.",
+        "falsifying_evidence": "Qualification or output data show a materially different yield.",
+        "correlation_group": "site-readiness"
+      },
+      "notes": "Keeps installed hardware distinct from operational hardware."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "nvidia-gb200-nvl72:packages",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-advanced-packaging",
+      "units_per_system": {
+        "low": 72,
+        "base": 72,
+        "high": 72,
+        "unit": "package",
+        "posture": "derived",
+        "methodology": "Uses 72 disclosed GPUs as 72 package equivalents per system.",
+        "confidence": 0.82,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb200-product"
+        ],
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "falsifying_evidence": "A manufacturing BOM uses a different package count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:interposers",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-interposers",
+      "units_per_system": {
+        "low": 66,
+        "base": 72,
+        "high": 78,
+        "unit": "interposer",
+        "posture": "synthetic",
+        "methodology": "Illustrative one-interposer-per-package abstraction.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Package cross-sections support the count.",
+        "falsifying_evidence": "A manufacturing BOM shows a different topology.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:substrates",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-abf-substrates",
+      "units_per_system": {
+        "low": 66,
+        "base": 72,
+        "high": 78,
+        "unit": "substrate",
+        "posture": "synthetic",
+        "methodology": "Illustrative one-substrate-per-package abstraction.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier BOM evidence supports the count.",
+        "falsifying_evidence": "Package construction uses a different substrate count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:trays",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-compute-tray-assembly",
+      "units_per_system": {
+        "low": 18,
+        "base": 18,
+        "high": 18,
+        "unit": "tray",
+        "posture": "derived",
+        "methodology": "Uses 18 compute trays per rack.",
+        "confidence": 0.95,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb200-hardware"
+        ],
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "falsifying_evidence": "A current rack BOM reports a different tray count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:switch-trays",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-nvlink-switch-trays",
+      "units_per_system": {
+        "low": 9,
+        "base": 9,
+        "high": 9,
+        "unit": "switch_tray",
+        "posture": "reported",
+        "methodology": "Uses nine disclosed NVLink switch trays per rack.",
+        "confidence": 0.98,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb200-hardware"
+        ],
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "falsifying_evidence": "A current rack BOM reports a different switch-tray count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:power-shelves",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-power-shelves",
+      "units_per_system": {
+        "low": 8,
+        "base": 8,
+        "high": 8,
+        "unit": "power_shelf",
+        "posture": "reported",
+        "methodology": "Uses eight disclosed power shelves per rack.",
+        "confidence": 0.98,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb200-hardware"
+        ],
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "falsifying_evidence": "A current rack BOM reports a different power-shelf count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:cooling",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-liquid-cooling",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "rack_cooling_set",
+        "posture": "derived",
+        "methodology": "Uses one complete liquid-cooling integration set per liquid-cooled rack.",
+        "confidence": 0.85,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb200-product"
+        ],
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "falsifying_evidence": "The rack design needs a different cooling-set count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:qualification",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-qualification",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "qualification_slot",
+        "posture": "synthetic",
+        "methodology": "One end-to-end qualification slot per rack-scale system.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The operating workflow confirms one resource unit per rack-scale system.",
+        "falsifying_evidence": "The workflow requires a different unit count per system.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:logistics",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-logistics",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "shipment_slot",
+        "posture": "synthetic",
+        "methodology": "One specialized shipment slot per rack-scale system.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The operating workflow confirms one resource unit per rack-scale system.",
+        "falsifying_evidence": "The workflow requires a different unit count per system.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:installation",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-installation",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "installation_slot",
+        "posture": "synthetic",
+        "methodology": "One customer-site installation slot per rack-scale system.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The operating workflow confirms one resource unit per rack-scale system.",
+        "falsifying_evidence": "The workflow requires a different unit count per system.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:commissioning",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-commissioning",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "commissioning_slot",
+        "posture": "synthetic",
+        "methodology": "One acceptance commissioning slot per installed rack-scale system.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The operating workflow confirms one resource unit per rack-scale system.",
+        "falsifying_evidence": "The workflow requires a different unit count per system.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:packages",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-advanced-packaging",
+      "units_per_system": {
+        "low": 72,
+        "base": 72,
+        "high": 72,
+        "unit": "package",
+        "posture": "derived",
+        "methodology": "Uses 72 disclosed GPUs as 72 package equivalents per system.",
+        "confidence": 0.82,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb300-product"
+        ],
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "falsifying_evidence": "A manufacturing BOM uses a different package count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:interposers",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-interposers",
+      "units_per_system": {
+        "low": 66,
+        "base": 72,
+        "high": 78,
+        "unit": "interposer",
+        "posture": "synthetic",
+        "methodology": "Illustrative one-interposer-per-package abstraction.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Package cross-sections support the count.",
+        "falsifying_evidence": "A manufacturing BOM shows a different topology.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:substrates",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-abf-substrates",
+      "units_per_system": {
+        "low": 66,
+        "base": 72,
+        "high": 78,
+        "unit": "substrate",
+        "posture": "synthetic",
+        "methodology": "Illustrative one-substrate-per-package abstraction.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "Supplier BOM evidence supports the count.",
+        "falsifying_evidence": "Package construction uses a different substrate count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:trays",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-compute-tray-assembly",
+      "units_per_system": {
+        "low": 18,
+        "base": 18,
+        "high": 18,
+        "unit": "tray",
+        "posture": "derived",
+        "methodology": "Uses 18 compute trays per rack.",
+        "confidence": 0.95,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb300-components"
+        ],
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "falsifying_evidence": "A current rack BOM reports a different tray count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:switch-trays",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-nvlink-switch-trays",
+      "units_per_system": {
+        "low": 9,
+        "base": 9,
+        "high": 9,
+        "unit": "switch_tray",
+        "posture": "reported",
+        "methodology": "Uses nine disclosed NVLink switch trays per rack.",
+        "confidence": 0.98,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb300-components"
+        ],
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "falsifying_evidence": "A current rack BOM reports a different switch-tray count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:power-shelves",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-power-shelves",
+      "units_per_system": {
+        "low": 8,
+        "base": 8,
+        "high": 8,
+        "unit": "power_shelf",
+        "posture": "reported",
+        "methodology": "Uses eight disclosed power shelves per rack.",
+        "confidence": 0.98,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb300-components"
+        ],
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "falsifying_evidence": "A current rack BOM reports a different power-shelf count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:cooling",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-liquid-cooling",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "rack_cooling_set",
+        "posture": "derived",
+        "methodology": "Uses one complete liquid-cooling integration set per liquid-cooled rack.",
+        "confidence": 0.85,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb300-product"
+        ],
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "falsifying_evidence": "The rack design needs a different cooling-set count.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:qualification",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-qualification",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "qualification_slot",
+        "posture": "synthetic",
+        "methodology": "One end-to-end qualification slot per rack-scale system.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The operating workflow confirms one resource unit per rack-scale system.",
+        "falsifying_evidence": "The workflow requires a different unit count per system.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:logistics",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-logistics",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "shipment_slot",
+        "posture": "synthetic",
+        "methodology": "One specialized shipment slot per rack-scale system.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The operating workflow confirms one resource unit per rack-scale system.",
+        "falsifying_evidence": "The workflow requires a different unit count per system.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:installation",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-installation",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "installation_slot",
+        "posture": "synthetic",
+        "methodology": "One customer-site installation slot per rack-scale system.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The operating workflow confirms one resource unit per rack-scale system.",
+        "falsifying_evidence": "The workflow requires a different unit count per system.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:commissioning",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-commissioning",
+      "units_per_system": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "commissioning_slot",
+        "posture": "synthetic",
+        "methodology": "One acceptance commissioning slot per installed rack-scale system.",
+        "confidence": 0.35,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "synthetic:shared-capacity"
+        ],
+        "confirming_evidence": "The operating workflow confirms one resource unit per rack-scale system.",
+        "falsifying_evidence": "The workflow requires a different unit count per system.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:hbm",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-hbm3e",
+      "units_per_system": {
+        "low": 13.4,
+        "base": 13.4,
+        "high": 13.4,
+        "unit": "TB",
+        "posture": "reported",
+        "methodology": "Uses NVIDIA's aggregate HBM3E specification per GB200 NVL72.",
+        "confidence": 0.98,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb200-product"
+        ],
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "falsifying_evidence": "A current NVIDIA specification reports a different aggregate HBM capacity.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:hbm",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-hbm3e",
+      "units_per_system": {
+        "low": 20,
+        "base": 20,
+        "high": 20,
+        "unit": "TB",
+        "posture": "reported",
+        "methodology": "Uses NVIDIA's aggregate GPU-memory specification per GB300 NVL72.",
+        "confidence": 0.98,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb300-product"
+        ],
+        "confirming_evidence": "A current NVIDIA BOM or service manual reports the same configuration.",
+        "falsifying_evidence": "A current NVIDIA specification reports a different aggregate GPU-memory capacity.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb200-nvl72:power",
+      "platform_id": "nvidia-gb200-nvl72",
+      "resource_pool_id": "shared-energized-power",
+      "units_per_system": {
+        "low": 0.11,
+        "base": 0.12,
+        "high": 0.13,
+        "unit": "MW",
+        "posture": "derived",
+        "methodology": "Converts approximately 120 kW rack consumption into a 0.12 MW base range.",
+        "confidence": 0.88,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb200-hardware"
+        ],
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "falsifying_evidence": "Metered rack demand falls outside 110–130 kW.",
+        "correlation_group": null
+      },
+      "notes": ""
+    },
+    {
+      "id": "nvidia-gb300-nvl72:power",
+      "platform_id": "nvidia-gb300-nvl72",
+      "resource_pool_id": "shared-energized-power",
+      "units_per_system": {
+        "low": 0.13,
+        "base": 0.142,
+        "high": 0.15,
+        "unit": "MW",
+        "posture": "derived",
+        "methodology": "Converts NVIDIA's up-to-142 kW rack requirement into a narrow deployment range.",
+        "confidence": 0.88,
+        "last_updated": "2026-07-17",
+        "evidence_ids": [
+          "nvidia:gb300-components"
+        ],
+        "confirming_evidence": "A manufacturing BOM or current NVIDIA system specification supports the conversion.",
+        "falsifying_evidence": "Metered rack demand falls outside 130–150 kW.",
+        "correlation_group": null
+      },
+      "notes": ""
+    }
+  ]
+}

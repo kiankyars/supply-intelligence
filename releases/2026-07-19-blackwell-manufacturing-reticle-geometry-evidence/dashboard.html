@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Blackwell wafer, HBM, and package conversion</title>
+  <style>
+    :root { color-scheme:light dark; --bg:#f2efe8; --paper:#fbfaf6; --ink:#171a18; --muted:#62675f; --line:#d4cfc3; --soft:#e7e2d8; --green:#006b5d; --green-soft:#cfe4df; --orange:#b45b2d; --warning:#7b4717; --warning-bg:#fff0d8; }
+    @media (prefers-color-scheme:dark) { :root { --bg:#151816; --paper:#202421; --ink:#f1efe8; --muted:#adb3aa; --line:#3d443e; --soft:#303630; --green:#68c7b4; --green-soft:#294a43; --orange:#e59a70; --warning:#ffd29a; --warning-bg:#3a2c1d; } }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.48 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:var(--green); overflow-wrap:anywhere; }
+    header,main { width:min(1420px,calc(100% - 40px)); margin-inline:auto; }
+    header { display:flex; justify-content:space-between; align-items:end; gap:28px; padding:34px 0 22px; border-bottom:1px solid var(--line); }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:500; }
+    h1 { margin:7px 0 5px; font-size:clamp(34px,5vw,64px); line-height:.98; letter-spacing:-.035em; }
+    h2 { margin:4px 0 0; font-size:28px; }
+    h3 { margin:0 0 4px; font-size:21px; }
+    p { margin:0; }
+    .kicker,.section-label { color:var(--green); font:700 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.09em; text-transform:uppercase; }
+    .muted,.section-head p,small,td span,summary span,.stamp span { color:var(--muted); }
+    .stamp { text-align:right; } .stamp strong,.stamp span { display:block; } .stamp strong { font-size:20px; }
+    main { padding:24px 0 70px; }
+    .notice { display:grid; grid-template-columns:210px minmax(0,1fr); gap:20px; padding:14px 16px; margin-bottom:20px; background:var(--warning-bg); border-left:4px solid var(--orange); }
+    .notice strong { color:var(--warning); } .notice ul { margin:0; padding-left:18px; }
+    .summary-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .summary-card,.topology-card { min-width:0; background:var(--paper); border:1px solid var(--line); padding:18px; }
+    .summary-card span,.summary-card small,.topology-card span,.topology-card small { display:block; color:var(--muted); }
+    .summary-card strong { display:block; margin:5px 0; font:500 36px/1.05 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin:34px 0 12px; }
+    .section-head p { max-width:560px; text-align:right; }
+    .topology-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .topology-card strong { display:inline-block; margin:5px 6px 0 0; font:500 28px/1 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .topology-card small { display:inline; } .topology-card p { margin-top:10px; color:var(--muted); }
+    .flow { min-width:0; }
+    .flow-lane { display:grid; grid-template-columns:110px repeat(4,minmax(0,1fr)); gap:12px; align-items:stretch; margin-bottom:12px; }
+    .lane-label { display:flex; align-items:center; color:var(--green); font-weight:700; border-top:3px solid var(--green); }
+    .flow-lane.hbm .lane-label { color:var(--orange); border-color:var(--orange); }
+    .flow-node { min-width:0; position:relative; padding:13px; background:var(--paper); border-top:3px solid var(--green); }
+    .hbm .flow-node { border-color:var(--orange); }
+    .flow-node:not(:last-child)::after { content:"→"; position:absolute; right:-10px; top:50%; z-index:2; color:var(--muted); transform:translate(50%,-50%); }
+    .flow-node span,.flow-node small { display:block; } .flow-node span { min-height:42px; }
+    .flow-node strong { display:block; margin:3px 0; font:500 23px/1.08 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .convergence { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:16px 0 0 122px; padding-top:18px; border-top:1px solid var(--line); }
+    .convergence .flow-node { border-color:var(--ink); }
+    .two-column { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:22px; }
+    .panel { min-width:0; background:var(--paper); padding:18px; border:1px solid var(--line); }
+    .bar-chart { margin-top:18px; }
+    .bar-row { display:grid; grid-template-columns:minmax(145px,1.1fr) 1.6fr 58px; gap:10px; align-items:center; margin:13px 0; }
+    .bar-track { height:13px; background:var(--soft); overflow:hidden; } .bar-track i { display:block; height:100%; background:var(--green); }
+    .yield-chart .bar-track i { background:var(--orange); } .bar-row strong { text-align:right; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .table-wrap { min-width:0; max-width:100%; overflow-x:auto; background:var(--paper); border:1px solid var(--line); }
+    table { width:100%; border-collapse:collapse; min-width:640px; }
+    th,td { padding:12px 14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } th { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; } tbody tr:last-child td { border-bottom:0; }
+    td span { display:block; max-width:660px; margin-top:3px; font-size:12px; } .mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-variant-numeric:tabular-nums; }
+    details { border-top:1px solid var(--line); } details:last-child { border-bottom:1px solid var(--line); }
+    summary { display:flex; justify-content:space-between; gap:16px; padding:14px 5px; cursor:pointer; } details .table-wrap { margin-bottom:14px; } .audit-table { min-width:900px; }
+    footer { margin-top:36px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); }
+    @media (max-width:960px) { .flow-lane { grid-template-columns:90px repeat(2,minmax(0,1fr)); } .lane-label { grid-row:1/3; } .flow-node:nth-of-type(3)::after { content:none; } .convergence { margin-left:102px; } }
+    @media (max-width:760px) { .summary-grid,.topology-grid,.two-column { grid-template-columns:minmax(0,1fr); } .section-head { display:block; } .section-head p { margin-top:6px; text-align:left; } }
+    @media (max-width:560px) { header,main { width:min(1420px,calc(100% - 24px)); } header { display:block; } .stamp { margin-top:16px; text-align:left; } .notice { grid-template-columns:minmax(0,1fr); gap:5px; } .flow-lane { grid-template-columns:minmax(0,1fr); } .lane-label { grid-row:auto; min-height:30px; } .flow-node:not(:last-child)::after { content:"↓"; right:50%; top:auto; bottom:-14px; transform:translate(50%,50%); } .convergence { grid-template-columns:minmax(0,1fr); margin-left:0; } .convergence .flow-node:not(:last-child)::after { content:"↓"; } .bar-row { grid-template-columns:minmax(0,1fr) 52px; } .bar-track { grid-column:1/-1; grid-row:2; } summary { display:block; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div><div class="kicker">Wafer to finished package · 2026-Q3</div><h1>Blackwell wafer, HBM, and package conversion</h1><p class="muted">Physical conversion of logic wafers, HBM memory dies, stacks, and advanced-package starts.</p></div>
+    <div class="stamp"><span>As of</span><strong>2026-07-19</strong><span>20,000 draws · seed 20260719</span></div>
+  </header>
+  <main>
+    <aside class="notice"><strong>Illustrative manufacturing run</strong><ul><li>Gross dies per wafer use an area and edge-loss approximation. Reticle stepping, partial dies, and layout phase are not modeled.</li><li>Inputs marked synthetic test the conversion chain and are not supplier capacity or yield estimates.</li><li>External reference controls are scale checks only and do not replace product-specific capacity or allocation inputs.</li></ul></aside>
+    <section class="summary-grid" aria-label="Manufacturing output summary">
+      <article class="summary-card"><span>Finished accelerator packages</span><strong>373,729</strong><small>P10 to P90 308,513 to 438,479</small></article>
+      <article class="summary-card"><span>Complete system equivalents</span><strong>5,191</strong><small>P10 to P90 4,285 to 6,090</small></article>
+      <article class="summary-card"><span>Most frequent bottleneck</span><strong>68.7%</strong><small>Binned logic dies</small></article>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Product topology</div><h2>Audited conversion factors</h2></div><p>Reported and derived product structure is kept separate from synthetic manufacturing assumptions.</p></div>
+      <div class="topology-grid">
+        
+      <article class="topology-card">
+        <span>Logic dies per accelerator</span>
+        <strong>2</strong>
+        <small>die/accelerator</small>
+        <p>NVIDIA reports two reticle-limit dies in one Blackwell GPU.</p>
+      </article>
+    
+        
+      <article class="topology-card">
+        <span>HBM placements per accelerator</span>
+        <strong>8</strong>
+        <small>stack/accelerator</small>
+        <p>24 GB per reference placement, 192 GB total.</p>
+      </article>
+    
+        
+      <article class="topology-card">
+        <span>Accelerators per complete system</span>
+        <strong>72</strong>
+        <small>accelerator/system</small>
+        <p>The system unit is one GB200 NVL72 rack-scale system.</p>
+      </article>
+    
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Physical flow</div><h2>Two upstream branches converge at package assembly</h2></div><p>Every node shows the median and P10 to P90 output for the quarter.</p></div>
+      <div class="flow" aria-label="Logic and HBM manufacturing flow">
+        <div class="flow-lane logic"><div class="lane-label">Logic</div>
+      <div class="flow-node">
+        <span>Gross logic dies</span>
+        <strong>2.08M</strong>
+        <small>die · P10 to P90 1.75M to 2.41M</small>
+      </div>
+    
+      <div class="flow-node">
+        <span>Known-good logic dies</span>
+        <strong>1.06M</strong>
+        <small>die · P10 to P90 864,477 to 1.29M</small>
+      </div>
+    
+      <div class="flow-node">
+        <span>Binned logic dies</span>
+        <strong>819,286</strong>
+        <small>die · P10 to P90 654,833 to 1.01M</small>
+      </div>
+    
+      <div class="flow-node">
+        <span>Logic package equivalents</span>
+        <strong>409,643</strong>
+        <small>package · P10 to P90 327,417 to 504,499</small>
+      </div>
+    </div>
+        <div class="flow-lane hbm"><div class="lane-label">HBM</div>
+      <div class="flow-node">
+        <span>Gross HBM memory dies</span>
+        <strong>65.98M</strong>
+        <small>die · P10 to P90 56.44M to 75.78M</small>
+      </div>
+    
+      <div class="flow-node">
+        <span>Known-good HBM dies</span>
+        <strong>58.71M</strong>
+        <small>die · P10 to P90 49.98M to 67.78M</small>
+      </div>
+    
+      <div class="flow-node">
+        <span>Good HBM stacks</span>
+        <strong>6.64M</strong>
+        <small>stack · P10 to P90 5.63M to 7.71M</small>
+      </div>
+    
+      <div class="flow-node">
+        <span>HBM package equivalents</span>
+        <strong>830,381</strong>
+        <small>package · P10 to P90 703,361 to 963,755</small>
+      </div>
+    </div>
+        <div class="convergence">
+      <div class="flow-node">
+        <span>Attempted packages</span>
+        <strong>397,904</strong>
+        <small>package · P10 to P90 327,417 to 459,541</small>
+      </div>
+    
+      <div class="flow-node">
+        <span>Finished accelerator packages</span>
+        <strong>373,729</strong>
+        <small>package · P10 to P90 308,513 to 438,479</small>
+      </div>
+    
+      <div class="flow-node">
+        <span>Complete system equivalents</span>
+        <strong>5,191</strong>
+        <small>system · P10 to P90 4,285 to 6,090</small>
+      </div>
+    </div>
+      </div>
+    </section>
+
+    <section class="two-column">
+      <div><div class="section-head"><div><div class="section-label">Constraint risk</div><h2>Binding probability</h2></div></div><div class="panel"><p class="muted">Share of Monte Carlo draws in which each upstream branch sets package attempts.</p><div class="bar-chart" role="img" aria-label="Bottleneck probability: Binned logic dies 68.7%, Package assembly starts 31.3%">
+            <div class="bar-row">
+              <span>Binned logic dies</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:68.6900%"></i></div>
+              <strong>68.7%</strong>
+            </div>
+            
+            <div class="bar-row">
+              <span>Package assembly starts</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:31.3100%"></i></div>
+              <strong>31.3%</strong>
+            </div>
+            </div></div></div>
+      <div><div class="section-head"><div><div class="section-label">Process retention</div><h2>Yields and utilization</h2></div></div><div class="panel"><p class="muted">Median sampled yield and utilization. These values do not measure source confidence.</p><div class="bar-chart yield-chart" role="img" aria-label="Median yields and utilization: Logic defect yield 54.1%, Logic known-good yield 51.7%, Logic binned yield 39.7%, Package assembly yield 94.5%, Binned logic die utilization 100.0%, Good HBM stack utilization 47.7%, Assembly start utilization 91.2%">
+            <div class="bar-row">
+              <span>Logic defect yield</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:54.0846%"></i></div>
+              <strong>54.1%</strong>
+            </div>
+            
+            <div class="bar-row">
+              <span>Logic known-good yield</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:51.7093%"></i></div>
+              <strong>51.7%</strong>
+            </div>
+            
+            <div class="bar-row">
+              <span>Logic binned yield</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:39.6705%"></i></div>
+              <strong>39.7%</strong>
+            </div>
+            
+            <div class="bar-row">
+              <span>Package assembly yield</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:94.4749%"></i></div>
+              <strong>94.5%</strong>
+            </div>
+            
+            <div class="bar-row">
+              <span>Binned logic die utilization</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:100.0000%"></i></div>
+              <strong>100.0%</strong>
+            </div>
+            
+            <div class="bar-row">
+              <span>Good HBM stack utilization</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:47.7496%"></i></div>
+              <strong>47.7%</strong>
+            </div>
+            
+            <div class="bar-row">
+              <span>Assembly start utilization</span>
+              <div class="bar-track" aria-hidden="true"><i style="width:91.1764%"></i></div>
+              <strong>91.2%</strong>
+            </div>
+            </div></div></div>
+    </section>
+
+    
+    <section>
+      <div class="section-head"><div><div class="section-label">External scale controls</div><h2>Reported totals bound, but do not allocate, product supply</h2></div><p>A company-wide or prior-period total cannot be substituted for product-specific wafer starts.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Reference</th><th>Reported total</th><th>Modeled target</th><th>Target share</th></tr></thead><tbody>
+            <tr>
+              <td><strong>TSMC total 12-inch-equivalent wafer shipments</strong><span>2026-Q2 · Scale control only</span><span>This prior-quarter company total checks scale only. It cannot allocate wafers by node, customer, or product and does not replace synthetic Blackwell wafer starts.</span></td>
+              <td class="mono"><strong>4.34M</strong><span>4.34M to 4.34M wafer</span></td>
+              <td class="mono"><strong>34,979</strong><span>29,456 to 40,527 wafer</span></td>
+              <td class="mono"><strong>0.8%</strong><span>0.7% to 0.9%</span></td>
+            </tr>
+            </tbody></table></div>
+    </section>
+    
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Evidence replacement queue</div><h2>Source the assumptions that can move output first</h2></div><p>Priority equals current-run influence multiplied by one minus input confidence. It is conditional on this scenario.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Synthetic input</th><th>Output path</th><th>Influence</th><th>Confidence</th><th>Priority</th></tr></thead><tbody>
+        <tr>
+          <td><strong>assembly_yield</strong><span>package · advanced-package-assembly</span></td>
+          <td>Package assembly starts<span>Applied to every attempted package</span></td>
+          <td class="mono">100.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.650</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>clustering_alpha</strong><span>logic_process · logic-yield-and-binning</span></td>
+          <td>Binned logic dies<span>Current branch binding probability</span></td>
+          <td class="mono">68.7%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.446</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>defect_density_per_cm2</strong><span>logic_process · logic-yield-and-binning</span></td>
+          <td>Binned logic dies<span>Current branch binding probability</span></td>
+          <td class="mono">68.7%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.446</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>performance_bin_share</strong><span>logic_process · logic-yield-and-binning</span></td>
+          <td>Binned logic dies<span>Current branch binding probability</span></td>
+          <td class="mono">68.7%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.446</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>wafer_sort_yield</strong><span>logic_process · logic-yield-and-binning</span></td>
+          <td>Binned logic dies<span>Current branch binding probability</span></td>
+          <td class="mono">68.7%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.446</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>edge_exclusion_mm</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+          <td>Binned logic dies<span>Current branch binding probability</span></td>
+          <td class="mono">68.7%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.446</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>scribe_width_mm</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+          <td>Binned logic dies<span>Current branch binding probability</span></td>
+          <td class="mono">68.7%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.446</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>wafer_starts</strong><span>logic_wafer · blackwell-logic-wafer</span></td>
+          <td>Binned logic dies<span>Current branch binding probability</span></td>
+          <td class="mono">68.7%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.446</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>assembly_starts</strong><span>package · advanced-package-assembly</span></td>
+          <td>Package assembly starts<span>Current branch binding probability</span></td>
+          <td class="mono">31.3%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.204</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>known_good_die_yield</strong><span>hbm_process · hbm-die-and-stack</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>stack_assembly_yield</strong><span>hbm_process · hbm-die-and-stack</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>stack_final_test_yield</strong><span>hbm_process · hbm-die-and-stack</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>die_height_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>die_width_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>edge_exclusion_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>scribe_width_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>wafer_diameter_mm</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        
+        <tr>
+          <td><strong>wafer_starts</strong><span>hbm_wafer · hbm3e-memory-wafer</span></td>
+          <td>Good HBM stacks<span>Current branch binding probability</span></td>
+          <td class="mono">0.0%</td>
+          <td class="mono">35.0%</td>
+          <td class="mono"><strong>0.000</strong></td>
+        </tr>
+        </tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Shadow capacity</div><h2>Usable upstream inventory held back</h2></div><p>Surplus is measured after the binding package-attempt limit, before final package yield.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Inventory</th><th>P50</th><th>P10 to P90</th><th>Unit</th></tr></thead><tbody>
+        <tr>
+          <td>Surplus binned logic dies</td>
+          <td class="mono"><strong>0</strong></td>
+          <td class="mono">0 to 135,585</td>
+          <td>die</td>
+        </tr>
+        
+        <tr>
+          <td>Surplus good HBM stacks</td>
+          <td class="mono"><strong>3.47M</strong></td>
+          <td class="mono">2.35M to 4.65M</td>
+          <td>stack</td>
+        </tr>
+        </tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Input audit</div><h2>Ranges, methods, posture, and evidence</h2></div><p>Open a group to trace each numerical assumption to its source record and falsification method.</p></div>
+      
+            <details id="input-logic_wafer">
+              <summary><strong>Illustrative Blackwell logic wafer flow</strong><span>6 estimates</span></summary>
+              <div class="table-wrap"><table class="audit-table"><thead><tr><th>Parameter and method</th><th>Low / base / high</th><th>Posture</th><th>Evidence</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>wafer_starts</strong><span>Illustrative quarterly Blackwell logic wafer starts. NVIDIA and TSMC do not disclose this range in the cited documents.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">25,000.000 / 35,000.000 / 45,000.000 wafer</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>wafer_diameter_mm</strong><span>Claim gate conversion: Combine NVIDIA&#x27;s reported Blackwell 4NP process with TSMC disclosures that its 4nm production uses a 12-inch fab and that TSMC labels the 12-inch GIGAFAB profile as 300mm capacity. Treat 300mm as the nominal semiconductor wafer format, not as an arithmetic conversion of 12 inches. This does not identify Blackwell&#x27;s fab location, wafer starts, yield, or production volume. Applied multiplier 1 from mm to mm.</span><span><b>Confirms:</b> A current NVIDIA or TSMC process-integration document explicitly identifies Blackwell 4NP as a 300mm wafer process.</span><span><b>Falsifies:</b> NVIDIA or TSMC identifies a non-300mm wafer format for Blackwell 4NP, or NVIDIA identifies a different foundry process for this design.</span></td>
+                  <td class="mono">300.000 / 300.000 / 300.000 mm</td>
+                  <td>derived<span>confidence 96%</span><span>updated 2026-07-19</span></td>
+                  <td><a href="#source-snapshot-0b590bdda7bac062b987ed550d181499">snapshot:0b590bdda7bac062b987ed550d181499</a> <a href="#source-snapshot-36f9f5ada639aa4320efe6383271195d">snapshot:36f9f5ada639aa4320efe6383271195d</a> <a href="#source-snapshot-3a52fa87274ef1434a926cde7f2cc172">snapshot:3a52fa87274ef1434a926cde7f2cc172</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>edge_exclusion_mm</strong><span>Illustrative unusable wafer edge used by the gross-die approximation.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">2.000 / 2.500 / 3.000 mm</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>die_width_mm</strong><span>Claim gate conversion: Interpret NVIDIA&#x27;s description of each Blackwell logic die as reticle limit against ASML&#x27;s reported 26mm by 33mm maximum standard full exposure field. Use the short field axis as the model&#x27;s width coordinate and retain a 0.5mm analyst allowance below the maximum. This is a derived interval, not a reported or teardown-measured die dimension. Applied multiplier 1 from mm to mm.</span><span><b>Confirms:</b> A public Blackwell teardown, mask analysis, or floorplan measurement places the short die dimension within the derived interval.</span><span><b>Falsifies:</b> A public die measurement places the Blackwell logic die&#x27;s short axis outside 25.5mm to 26mm, or NVIDIA clarifies that reticle-limit refers to a different geometry.</span></td>
+                  <td class="mono">25.500 / 26.000 / 26.000 mm</td>
+                  <td>derived<span>confidence 72%</span><span>updated 2026-07-20</span></td>
+                  <td><a href="#source-snapshot-36f9f5ada639aa4320efe6383271195d">snapshot:36f9f5ada639aa4320efe6383271195d</a> <a href="#source-snapshot-e715fb7f3649cad3c181aeee1a611575">snapshot:e715fb7f3649cad3c181aeee1a611575</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>die_height_mm</strong><span>Claim gate conversion: Interpret NVIDIA&#x27;s description of each Blackwell logic die as reticle limit against ASML&#x27;s reported 26mm by 33mm maximum standard full exposure field. Use the long field axis as the model&#x27;s height coordinate and assign a 31mm to 33mm interval around a 32mm base to reflect that reticle-limit does not prove the design occupies the full field. This is a derived interval, not a reported or teardown-measured die dimension. Applied multiplier 1 from mm to mm.</span><span><b>Confirms:</b> A public Blackwell teardown, mask analysis, or floorplan measurement places the long die dimension within the derived interval.</span><span><b>Falsifies:</b> A public die measurement places the Blackwell logic die&#x27;s long axis outside 31mm to 33mm, or NVIDIA clarifies that reticle-limit refers to a different geometry.</span></td>
+                  <td class="mono">31.000 / 32.000 / 33.000 mm</td>
+                  <td>derived<span>confidence 68%</span><span>updated 2026-07-20</span></td>
+                  <td><a href="#source-snapshot-36f9f5ada639aa4320efe6383271195d">snapshot:36f9f5ada639aa4320efe6383271195d</a> <a href="#source-snapshot-e715fb7f3649cad3c181aeee1a611575">snapshot:e715fb7f3649cad3c181aeee1a611575</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>scribe_width_mm</strong><span>Illustrative scribe width added to both die dimensions.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.070 / 0.100 / 0.130 mm</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                </tbody></table></div>
+            </details>
+            
+            <details id="input-logic_yield">
+              <summary><strong>Logic yield and binning</strong><span>4 estimates</span></summary>
+              <div class="table-wrap"><table class="audit-table"><thead><tr><th>Parameter and method</th><th>Low / base / high</th><th>Posture</th><th>Evidence</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>defect_density_per_cm2</strong><span>Illustrative random-defect density for the negative-binomial yield model.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.050 / 0.080 / 0.120 defects/cm2</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>clustering_alpha</strong><span>Illustrative negative-binomial defect-clustering parameter.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">2.000 / 3.000 / 4.000 alpha</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>wafer_sort_yield</strong><span>Illustrative post-defect wafer-sort pass rate.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.920 / 0.960 / 0.985 ratio</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>performance_bin_share</strong><span>Illustrative share of known-good logic dies that meet the modeled accelerator bin.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.650 / 0.780 / 0.880 ratio</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                </tbody></table></div>
+            </details>
+            
+            <details id="input-hbm_wafer">
+              <summary><strong>Illustrative HBM3E memory-die wafer flow</strong><span>6 estimates</span></summary>
+              <div class="table-wrap"><table class="audit-table"><thead><tr><th>Parameter and method</th><th>Low / base / high</th><th>Posture</th><th>Evidence</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>wafer_starts</strong><span>Illustrative combined HBM3E memory wafer starts before supplier and product allocation.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">90,000.000 / 120,000.000 / 150,000.000 wafer</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>wafer_diameter_mm</strong><span>Reference 300 mm DRAM wafer diameter; the cited product page does not disclose fab geometry.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">300.000 / 300.000 / 300.000 mm</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>edge_exclusion_mm</strong><span>Illustrative HBM wafer edge exclusion.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">2.000 / 2.500 / 3.000 mm</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>die_width_mm</strong><span>Illustrative HBM3E memory-die width; no supplier die dimension is asserted.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">9.500 / 10.000 / 10.500 mm</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>die_height_mm</strong><span>Illustrative HBM3E memory-die height; no supplier die dimension is asserted.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">10.500 / 11.000 / 11.500 mm</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>scribe_width_mm</strong><span>Illustrative HBM scribe width.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.050 / 0.080 / 0.110 mm</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                </tbody></table></div>
+            </details>
+            
+            <details id="input-hbm_stack">
+              <summary><strong>HBM die and stack flow</strong><span>6 estimates</span></summary>
+              <div class="table-wrap"><table class="audit-table"><thead><tr><th>Parameter and method</th><th>Low / base / high</th><th>Posture</th><th>Evidence</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>known_good_die_yield</strong><span>Illustrative HBM known-good memory-die yield after repair and test.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.820 / 0.900 / 0.950 ratio</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>memory_dies_per_stack</strong><span>Uses Micron&#x27;s disclosed 24 GB 8-high HBM3E product as a reference stack. It does not assert Micron supply to GB200.</span><span><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</span><span><b>Falsifies:</b> A GB200 manufacturing BOM uses a different HBM layer count or capacity per placement.</span></td>
+                  <td class="mono">8.000 / 8.000 / 8.000 die/stack</td>
+                  <td>reported<span>confidence 98%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-micron-hbm3e-reference">micron:hbm3e-reference</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>stack_assembly_yield</strong><span>Illustrative TSV stack-assembly yield.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.880 / 0.940 / 0.980 ratio</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>stack_final_test_yield</strong><span>Illustrative final HBM stack test yield.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.940 / 0.975 / 0.995 ratio</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>stack_capacity_gb</strong><span>Uses Micron&#x27;s disclosed 24 GB 8-high HBM3E product as a reference placement.</span><span><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</span><span><b>Falsifies:</b> The selected GB200 configuration uses a different capacity per HBM placement.</span></td>
+                  <td class="mono">24.000 / 24.000 / 24.000 GB/stack</td>
+                  <td>reported<span>confidence 98%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-micron-hbm3e-reference">micron:hbm3e-reference</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>stacks_per_accelerator</strong><span>Divides NVIDIA&#x27;s 192 GB per GB200 GPU by the 24 GB reference HBM3E placement. This derives eight placements and does not identify the memory supplier.</span><span><b>Confirms:</b> A current product BOM reports the same physical topology.</span><span><b>Falsifies:</b> A product BOM reports a different placement count or stack capacity.</span></td>
+                  <td class="mono">8.000 / 8.000 / 8.000 stack/accelerator</td>
+                  <td>derived<span>confidence 82%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-nvidia-gb200-memory">nvidia:gb200-memory</a> <a href="#source-micron-hbm3e-reference">micron:hbm3e-reference</a></td>
+                </tr>
+                </tbody></table></div>
+            </details>
+            
+            <details id="input-package">
+              <summary><strong>Advanced package assembly</strong><span>4 estimates</span></summary>
+              <div class="table-wrap"><table class="audit-table"><thead><tr><th>Parameter and method</th><th>Low / base / high</th><th>Posture</th><th>Evidence</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>assembly_starts</strong><span>Illustrative quarterly advanced-package assembly starts allocated to the modeled accelerator.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">350,000.000 / 450,000.000 / 550,000.000 package</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>assembly_yield</strong><span>Illustrative final advanced-package assembly and test yield.</span><span><b>Confirms:</b> Supplier wafer starts, process-control, yield, binning, or assembly records support the range.</span><span><b>Falsifies:</b> Verified production or process data place the input outside the range.</span></td>
+                  <td class="mono">0.900 / 0.950 / 0.980 ratio</td>
+                  <td>synthetic<span>confidence 35%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-synthetic-manufacturing-process">synthetic:manufacturing-process</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>logic_dies_per_accelerator</strong><span>Uses NVIDIA&#x27;s disclosure of two reticle-limit GPU dies in one Blackwell GPU.</span><span><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</span><span><b>Falsifies:</b> A product teardown or manufacturing BOM reports a different logic-die count.</span></td>
+                  <td class="mono">2.000 / 2.000 / 2.000 die/accelerator</td>
+                  <td>reported<span>confidence 98%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-nvidia-blackwell-launch">nvidia:blackwell-launch</a></td>
+                </tr>
+                
+                <tr>
+                  <td><strong>accelerators_per_system</strong><span>Uses NVIDIA&#x27;s disclosure of 72 Blackwell GPUs per GB200 NVL72.</span><span><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</span><span><b>Falsifies:</b> A current NVIDIA rack BOM reports a different GPU count.</span></td>
+                  <td class="mono">72.000 / 72.000 / 72.000 accelerator/system</td>
+                  <td>reported<span>confidence 98%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-nvidia-gb200-product">nvidia:gb200-product</a></td>
+                </tr>
+                </tbody></table></div>
+            </details>
+            
+            <details id="input-reference">
+              <summary><strong>External scale controls</strong><span>1 estimates</span></summary>
+              <div class="table-wrap"><table class="audit-table"><thead><tr><th>Parameter and method</th><th>Low / base / high</th><th>Posture</th><th>Evidence</th></tr></thead><tbody>
+                <tr>
+                  <td><strong>tsmc-total-wafer-shipments-2026q2</strong><span>Uses TSMC&#x27;s reported 2Q26 company-wide 12-inch-equivalent wafer shipments as a prior-quarter scale control. It does not isolate 4NP, NVIDIA, or Blackwell.</span><span><b>Confirms:</b> A current NVIDIA BOM or service manual reports the same configuration.</span><span><b>Falsifies:</b> TSMC revises the reported 2Q26 shipment total or changes its unit basis.</span></td>
+                  <td class="mono">4.34M / 4.34M / 4.34M wafer</td>
+                  <td>reported<span>confidence 98%</span><span>updated 2026-07-17</span></td>
+                  <td><a href="#source-tsmc-2026q2-management-report">tsmc:2026q2-management-report</a></td>
+                </tr>
+                </tbody></table></div>
+            </details>
+            
+    </section>
+
+    <section>
+      <div class="section-head"><div><div class="section-label">Source ledger</div><h2>Evidence used by this run</h2></div><p>The Micron HBM3E record is a generic stack reference. It does not identify the GB200 memory supplier.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Evidence ID</th><th>Source</th><th>Kind</th><th>Published</th><th>Retrieved</th></tr></thead><tbody>
+        <tr id="source-nvidia-blackwell-launch">
+          <td class="mono">nvidia:blackwell-launch</td>
+          <td><a href="https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing" target="_blank" rel="noreferrer">NVIDIA Blackwell Platform Arrives to Power a New Era of Computing</a><span>NVIDIA</span></td>
+          <td>company_technical_document</td>
+          <td class="mono">2024-03-18</td>
+          <td class="mono">2026-07-18T03:22:00Z</td>
+        </tr>
+        
+        <tr id="source-nvidia-gb200-memory">
+          <td class="mono">nvidia:gb200-memory</td>
+          <td><a href="https://docs.nvidia.com/deeplearning/transformer-engine-releases/release-2.15/user-guide/features/other_optimizations/cpu_offloading/cpu_offloading.html" target="_blank" rel="noreferrer">NVIDIA Transformer Engine CPU offloading documentation</a><span>NVIDIA</span></td>
+          <td>company_technical_document</td>
+          <td class="mono">Not supplied</td>
+          <td class="mono">2026-07-18T03:22:00Z</td>
+        </tr>
+        
+        <tr id="source-micron-hbm3e-reference">
+          <td class="mono">micron:hbm3e-reference</td>
+          <td><a href="https://www.micron.com/products/memory/hbm/hbm3e" target="_blank" rel="noreferrer">Micron HBM3E product specifications</a><span>Micron Technology</span></td>
+          <td>company_technical_document</td>
+          <td class="mono">Not supplied</td>
+          <td class="mono">2026-07-18T03:22:00Z</td>
+        </tr>
+        
+        <tr id="source-nvidia-gb200-product">
+          <td class="mono">nvidia:gb200-product</td>
+          <td><a href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/" target="_blank" rel="noreferrer">NVIDIA GB200 NVL72 product specifications</a><span>NVIDIA</span></td>
+          <td>company_technical_document</td>
+          <td class="mono">Not supplied</td>
+          <td class="mono">2026-07-18T03:22:00Z</td>
+        </tr>
+        
+        <tr id="source-tsmc-2026q2-management-report">
+          <td class="mono">tsmc:2026q2-management-report</td>
+          <td><a href="https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf" target="_blank" rel="noreferrer">TSMC second-quarter 2026 management report</a><span>Taiwan Semiconductor Manufacturing Company</span></td>
+          <td>company_disclosure</td>
+          <td class="mono">2026-07-16</td>
+          <td class="mono">2026-07-18T03:22:00Z</td>
+        </tr>
+        
+        <tr id="source-synthetic-manufacturing-process">
+          <td class="mono">synthetic:manufacturing-process</td>
+          <td><a href="urn:synthetic:blackwell-manufacturing-process" target="_blank" rel="noreferrer">Illustrative wafer, yield, binning, and assembly assumptions</a><span>AI Supply Intelligence demo</span></td>
+          <td>synthetic</td>
+          <td class="mono">2026-07-17</td>
+          <td class="mono">2026-07-18T03:22:00Z</td>
+        </tr>
+        
+        <tr id="source-snapshot-0b590bdda7bac062b987ed550d181499">
+          <td class="mono">snapshot:0b590bdda7bac062b987ed550d181499</td>
+          <td><a href="https://www.tsmc.com/english/dedicatedFoundry/manufacturing/gigafab" target="_blank" rel="noreferrer">TSMC GIGAFAB facilities and wafer-format profile</a><span>Taiwan Semiconductor Manufacturing Company</span></td>
+          <td>company_technical_document</td>
+          <td class="mono">Not supplied</td>
+          <td class="mono">2026-07-19T20:20:00Z</td>
+        </tr>
+        
+        <tr id="source-snapshot-36f9f5ada639aa4320efe6383271195d">
+          <td class="mono">snapshot:36f9f5ada639aa4320efe6383271195d</td>
+          <td><a href="https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing" target="_blank" rel="noreferrer">NVIDIA Blackwell platform launch</a><span>NVIDIA</span></td>
+          <td>company_technical_document</td>
+          <td class="mono">2024-03-18</td>
+          <td class="mono">2026-07-19T20:20:00Z</td>
+        </tr>
+        
+        <tr id="source-snapshot-3a52fa87274ef1434a926cde7f2cc172">
+          <td class="mono">snapshot:3a52fa87274ef1434a926cde7f2cc172</td>
+          <td><a href="https://investor.tsmc.com/static/annualReports/2025/english/index.html" target="_blank" rel="noreferrer">TSMC 2025 annual report</a><span>Taiwan Semiconductor Manufacturing Company</span></td>
+          <td>company_disclosure</td>
+          <td class="mono">2026-03-12</td>
+          <td class="mono">2026-07-19T20:20:00Z</td>
+        </tr>
+        
+        <tr id="source-snapshot-e715fb7f3649cad3c181aeee1a611575">
+          <td class="mono">snapshot:e715fb7f3649cad3c181aeee1a611575</td>
+          <td><a href="https://www.asml.com/en/products/duv-lithography-systems/twinscan-nxt2050i" target="_blank" rel="noreferrer">ASML TWINSCAN full-field exposure specification</a><span>ASML</span></td>
+          <td>company_technical_document</td>
+          <td class="mono">Not supplied</td>
+          <td class="mono">2026-07-20T05:25:00Z</td>
+        </tr>
+        </tbody></table></div>
+    </section>
+
+    <footer>Circular wafer area divided by effective die and scribe area, less an analytical edge-loss term. The minimum of logic-die, HBM-stack, and assembly-start package equivalents, multiplied by final assembly yield.</footer>
+  </main>
+</body>
+</html>

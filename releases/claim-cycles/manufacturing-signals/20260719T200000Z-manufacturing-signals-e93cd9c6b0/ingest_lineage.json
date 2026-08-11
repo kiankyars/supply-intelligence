@@ -1,0 +1,14 @@
+{
+  "format": "ai-supply-claim-cycle-ingest-lineage.v1",
+  "packs": [
+    {
+      "claim_count": 9,
+      "job_relative_path": "2026-07-19-manufacturing-signals-pack.json",
+      "pack_sha256": "ee4729856a55378cffccc2724ffe05dce0c2da4423e216c106ebe8927f11ef0c",
+      "recorded_at": "2026-07-19T20:00:00Z",
+      "run_id": "ingest:b65b7ec4dd067ed52ef8d1aa5017f42e",
+      "sequence": 0,
+      "source_count": 2
+    }
+  ]
+}

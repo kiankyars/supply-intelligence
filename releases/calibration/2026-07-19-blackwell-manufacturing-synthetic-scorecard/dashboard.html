@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blackwell-manufacturing-synthetic-scorecard-2026-07-19</title>
+  <style>
+    :root { --ink:#14231d; --paper:#f4f2ea; --card:#fffdf8; --line:#d8d7ce; --muted:#66736d; --green:#0f6b4b; --green-soft:#dceee5; --red:#a13d33; --red-soft:#f5ddd9; --amber:#98600a; --amber-soft:#f7e9c6; --shadow:0 18px 50px rgba(20,35,29,.08); }
+    * { box-sizing:border-box; } body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { width:min(1500px,calc(100% - 40px)); margin:auto; padding:42px 0 72px; }
+    header { display:flex; flex-direction:column; gap:18px; padding:36px; border-radius:24px; color:#fffdf8; background:var(--ink); box-shadow:var(--shadow); }
+    .eyebrow { color:#9fd0bd; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { max-width:1100px; margin:0; font:700 clamp(34px,5vw,62px)/1.02 Georgia,serif; letter-spacing:-.035em; } header p { max-width:960px; margin:0; color:#d2ddd7; font-size:17px; }
+    .warning { width:100%; padding:14px 16px; border:1px solid #6c756f; border-radius:14px; color:#fff4cf; background:rgba(255,255,255,.04); }
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:20px 0 34px; }
+    .card,section { border:1px solid var(--line); border-radius:18px; background:var(--card); box-shadow:var(--shadow); } .card { padding:20px; }
+    .card span { display:block; color:var(--muted); font-size:12px; font-weight:750; letter-spacing:.07em; text-transform:uppercase; } .card strong { display:block; margin:6px 0 2px; font:700 32px/1 Georgia,serif; } .card small { color:var(--muted); }
+    section { margin-top:20px; padding:26px; overflow:hidden; } .section-head { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:18px; } h2 { margin:3px 0 0; font:700 29px/1.1 Georgia,serif; } .section-head p { max-width:640px; margin:0; color:var(--muted); }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:14px; } table { width:100%; min-width:0; table-layout:fixed; border-collapse:collapse; } th { padding:11px 13px; background:#ecebe4; color:#58665f; font-size:11px; letter-spacing:.08em; text-align:left; text-transform:uppercase; } td { padding:13px; border-top:1px solid var(--line); vertical-align:top; } th,td { overflow-wrap:anywhere; } td strong,td span { display:block; } td span { margin-top:3px; color:var(--muted); font-size:12px; }
+    .mono { font-variant-numeric:tabular-nums; } .pill { display:inline-block; width:fit-content; padding:4px 8px; border-radius:999px; font-size:11px; font-weight:800; } .pill.pass { color:var(--green); background:var(--green-soft); } .pill.fail { color:var(--red); background:var(--red-soft); } .pill.neutral { color:var(--amber); background:var(--amber-soft); } .positive-text { color:var(--green); } .negative-text { color:var(--red); }
+    footer { margin-top:24px; color:var(--muted); font-size:12px; } @media(max-width:950px) { .cards { grid-template-columns:1fr 1fr; } .section-head { display:block; } table { min-width:1120px; } } @media(max-width:600px) { main { width:calc(100% - 20px); padding-top:10px; } header,section { padding:20px; border-radius:14px; } .cards { grid-template-columns:1fr; } }
+  </style>
+</head><body><main>
+  <header><div class="eyebrow">Forecast calibration · 2026-07-19</div><h1>Score frozen forecasts before changing their ranges.</h1><p>Coverage, bias, quantile loss, event probability, and source-family error stay separate. Recalibration parameters require enough history and a holdout before use.</p><div class="warning"><strong>Boundary:</strong> this checked dataset is synthetic. It validates the scoring and release contract; it is not evidence about historical Blackwell forecast accuracy.</div></header>
+  <div class="cards">
+    <article class="card"><span>Scored outcomes</span><strong>6</strong><small>1 frozen forecast vintage(s)</small></article>
+    <article class="card"><span>P10–P90 coverage</span><strong>66.7%</strong><small>target interpretation: nominal 80%</small></article>
+    <article class="card"><span>Mean signed bias</span><strong>+1.8%</strong><small>positive means overforecast</small></article>
+    <article class="card"><span>Mean Brier</span><strong>0.613</strong><small>6 scored event(s)</small></article>
+  </div>
+  <section><div class="section-head"><div><div class="eyebrow">Outcome-level audit</div><h2>Every realized value stays tied to one prior forecast</h2></div><p>Signed error is forecast P50 minus actual. Pinball loss tests quantile placement; Brier scores test threshold-event probabilities under the documented triangular approximation.</p></div><div class="table-wrap"><table><thead><tr><th>Metric</th><th>Class / source</th><th>Forecast P10 / P50 / P90</th><th>Outcome</th><th>Coverage</th><th>Bias</th><th>Normalized pinball</th><th>Event score</th></tr></thead><tbody>
+            <tr>
+              <td><strong>logic_<wbr>gross_<wbr>dies</strong><span>blackwell-<wbr>manufacturing-<wbr>2026q3-<wbr>v1 · 2026-Q3</span></td>
+              <td>logic_<wbr>conversion<span>synthetic-<wbr>calibration-<wbr>fixture</span></td>
+              <td class="mono">1.73M / <strong>2.06M</strong> / 2.39M<span>die</span></td>
+              <td class="mono"><strong>1.90M</strong><span>synthetic · 2026-07-19</span></td>
+              <td><span class="pill pass">Inside</span><span>miss 0</span></td>
+              <td class="mono negative-text">164,910<span>+8.7% of actual</span></td>
+              <td class="mono">0.0260</td>
+              <td><span>p=0.77</span><span>realized=false</span><span>Brier=0.587</span></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic_<wbr>known_<wbr>good_<wbr>dies</strong><span>blackwell-<wbr>manufacturing-<wbr>2026q3-<wbr>v1 · 2026-Q3</span></td>
+              <td>logic_<wbr>conversion<span>synthetic-<wbr>calibration-<wbr>fixture</span></td>
+              <td class="mono">854,916 / <strong>1.05M</strong> / 1.27M<span>die</span></td>
+              <td class="mono"><strong>1.14M</strong><span>synthetic · 2026-07-19</span></td>
+              <td><span class="pill pass">Inside</span><span>miss 0</span></td>
+              <td class="mono positive-text">-84,235<span>-7.4% of actual</span></td>
+              <td class="mono">0.0247</td>
+              <td><span>p=0.53</span><span>realized=true</span><span>Brier=0.222</span></td>
+            </tr>
+            
+            <tr>
+              <td><strong>logic_<wbr>binned_<wbr>dies</strong><span>blackwell-<wbr>manufacturing-<wbr>2026q3-<wbr>v1 · 2026-Q3</span></td>
+              <td>logic_<wbr>conversion<span>synthetic-<wbr>calibration-<wbr>fixture</span></td>
+              <td class="mono">647,778 / <strong>810,330</strong> / 997,420<span>die</span></td>
+              <td class="mono"><strong>599,644</strong><span>synthetic · 2026-07-19</span></td>
+              <td><span class="pill fail">Outside</span><span>miss 48,135</span></td>
+              <td class="mono negative-text">210,686<span>+35.1% of actual</span></td>
+              <td class="mono">0.1048</td>
+              <td><span>p=1.00</span><span>realized=false</span><span>Brier=1.000</span></td>
+            </tr>
+            
+            <tr>
+              <td><strong>hbm_<wbr>good_<wbr>stacks</strong><span>blackwell-<wbr>manufacturing-<wbr>2026q3-<wbr>v1 · 2026-Q3</span></td>
+              <td>memory_<wbr>output<span>synthetic-<wbr>calibration-<wbr>fixture</span></td>
+              <td class="mono">5.63M / <strong>6.64M</strong> / 7.71M<span>stack</span></td>
+              <td class="mono"><strong>7.44M</strong><span>synthetic · 2026-07-19</span></td>
+              <td><span class="pill pass">Inside</span><span>miss 0</span></td>
+              <td class="mono positive-text">-797,165<span>-10.7% of actual</span></td>
+              <td class="mono">0.0272</td>
+              <td><span>p=0.07</span><span>realized=true</span><span>Brier=0.859</span></td>
+            </tr>
+            
+            <tr>
+              <td><strong>finished_<wbr>accelerator_<wbr>packages</strong><span>blackwell-<wbr>manufacturing-<wbr>2026q3-<wbr>v1 · 2026-Q3</span></td>
+              <td>packaging_<wbr>output<span>synthetic-<wbr>calibration-<wbr>fixture</span></td>
+              <td class="mono">305,293 / <strong>370,880</strong> / 435,767<span>package</span></td>
+              <td class="mono"><strong>352,336</strong><span>synthetic · 2026-07-19</span></td>
+              <td><span class="pill pass">Inside</span><span>miss 0</span></td>
+              <td class="mono negative-text">18,544<span>+5.3% of actual</span></td>
+              <td class="mono">0.0211</td>
+              <td><span>p=0.09</span><span>realized=false</span><span>Brier=0.009</span></td>
+            </tr>
+            
+            <tr>
+              <td><strong>complete_<wbr>system_<wbr>equivalents</strong><span>blackwell-<wbr>manufacturing-<wbr>2026q3-<wbr>v1 · 2026-Q3</span></td>
+              <td>system_<wbr>conversion<span>synthetic-<wbr>calibration-<wbr>fixture</span></td>
+              <td class="mono">4,240 / <strong>5,151</strong> / 6,052<span>system</span></td>
+              <td class="mono"><strong>6,439</strong><span>synthetic · 2026-07-19</span></td>
+              <td><span class="pill fail">Outside</span><span>miss 387</span></td>
+              <td class="mono positive-text">-1,288<span>-20.0% of actual</span></td>
+              <td class="mono">0.0627</td>
+              <td><span>p=0.00</span><span>realized=true</span><span>Brier=1.000</span></td>
+            </tr>
+            </tbody></table></div></section>
+  <section><div class="section-head"><div><div class="eyebrow">Metric-class calibration</div><h2>Do not tune on thin history</h2></div><p>Proposed P50 and width multipliers remain ineligible until the group reaches its minimum and passes holdout validation.</p></div><div class="table-wrap"><table><thead><tr><th>Metric class</th><th>N</th><th>Coverage</th><th>Bias</th><th>Pinball</th><th>Brier</th><th>Proposal</th></tr></thead><tbody>
+            <tr>
+              <td><strong>logic_<wbr>conversion</strong></td>
+              <td class="mono">3</td>
+              <td class="mono">66.7%</td>
+              <td class="mono">+12.1%</td>
+              <td class="mono">0.0518</td>
+              <td class="mono">0.6032</td>
+              <td><span class="pill neutral">insufficient history</span><span>Not estimated · never auto-applied</span></td>
+            </tr>
+            
+            <tr>
+              <td><strong>memory_<wbr>output</strong></td>
+              <td class="mono">1</td>
+              <td class="mono">100.0%</td>
+              <td class="mono">-10.7%</td>
+              <td class="mono">0.0272</td>
+              <td class="mono">0.8594</td>
+              <td><span class="pill neutral">insufficient history</span><span>Not estimated · never auto-applied</span></td>
+            </tr>
+            
+            <tr>
+              <td><strong>packaging_<wbr>output</strong></td>
+              <td class="mono">1</td>
+              <td class="mono">100.0%</td>
+              <td class="mono">+5.3%</td>
+              <td class="mono">0.0211</td>
+              <td class="mono">0.0090</td>
+              <td><span class="pill neutral">insufficient history</span><span>Not estimated · never auto-applied</span></td>
+            </tr>
+            
+            <tr>
+              <td><strong>system_<wbr>conversion</strong></td>
+              <td class="mono">1</td>
+              <td class="mono">0.0%</td>
+              <td class="mono">-20.0%</td>
+              <td class="mono">0.0627</td>
+              <td class="mono">1.0000</td>
+              <td><span class="pill neutral">insufficient history</span><span>Not estimated · never auto-applied</span></td>
+            </tr>
+            </tbody></table></div></section>
+  <section><div class="section-head"><div><div class="eyebrow">Source-family error</div><h2>Find systematic evidence bias</h2></div><p>Syndicated or shared-source observations should retain one family so correlated errors are visible rather than counted as independent confirmation. These aggregates never emit shared parameters.</p></div><div class="table-wrap"><table><thead><tr><th>Source family</th><th>N</th><th>Coverage</th><th>Bias</th><th>Pinball</th><th>Brier</th><th>Treatment</th></tr></thead><tbody>
+            <tr>
+              <td><strong>synthetic-<wbr>calibration-<wbr>fixture</strong></td>
+              <td class="mono">6</td>
+              <td class="mono">66.7%</td>
+              <td class="mono">+1.8%</td>
+              <td class="mono">0.0444</td>
+              <td class="mono">0.6130</td>
+              <td><span class="pill neutral">diagnostic only</span><span>Not estimated · never auto-applied</span></td>
+            </tr>
+            </tbody></table></div></section>
+  <footer>Recorded 2026-07-19T23:15:00Z. Calibration proposals never mutate a forecast automatically and are not investment signals.</footer>
+</main></body></html>

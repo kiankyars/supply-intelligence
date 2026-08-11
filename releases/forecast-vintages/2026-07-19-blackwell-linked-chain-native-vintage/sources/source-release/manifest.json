@@ -1,0 +1,120 @@
+{
+  "as_of_date": "2026-07-19",
+  "base_scenario_sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787",
+  "chain_draw_count": 20000,
+  "chain_draw_fields": [
+    "draw_index",
+    "constraint.linked-material-cleared-supplier-hbm-manufacturing-output.system_equivalents",
+    "constraint.linked-component-cleared-odm-complete-racks.system_equivalents",
+    "constraint.factory-qualification.system_equivalents",
+    "constraint.rack-logistics.system_equivalents",
+    "constraint.site-installation.system_equivalents",
+    "constraint.linked-abilene-operational-racks.system_equivalents",
+    "constraint.linked-abilene-complete-rack-allocation.system_equivalents",
+    "stage.accelerator_package.system_equivalents",
+    "stage.server_assembly.system_equivalents",
+    "stage.rack_integration.system_equivalents",
+    "stage.shipped.system_equivalents",
+    "stage.installed.system_equivalents",
+    "stage.operational.system_equivalents",
+    "physical.accelerator_packages_produced",
+    "physical.complete_servers",
+    "physical.integrated_racks",
+    "physical.systems_shipped",
+    "physical.systems_installed",
+    "physical.systems_operational"
+  ],
+  "files": {
+    "README.md": {
+      "bytes": 748,
+      "sha256": "1338e1d64d2d3a10ab7e4cebb020a5cbeb7eaacd7e9c399659b2a4417e35290d"
+    },
+    "base_scenario.json": {
+      "bytes": 76236,
+      "sha256": "afd570bf7eae0b395b0038fc745b80ce90192d6def7445ed201e2f194d41f787"
+    },
+    "bottlenecks.csv": {
+      "bytes": 2295,
+      "sha256": "f43cac382c304f28bd62e00600188fe753f8781da53264a914726c9cf600aa84"
+    },
+    "chain_draws.csv": {
+      "bytes": 7079178,
+      "sha256": "60b6fef761ea2f2386b26b423661786163ee4575f3316df0ff8dcb89388f0742"
+    },
+    "customer_allocations.csv": {
+      "bytes": 55,
+      "sha256": "5efbeaaef80b291d3585fee4041ebdcc476c631bd049b59c820cffde76d80adb"
+    },
+    "dashboard.html": {
+      "bytes": 53483,
+      "sha256": "6f1ea232a80f1553578809e0835e9be0a64af185f0c4afed49c8d07066207552"
+    },
+    "datacenter_operational_draws.csv": {
+      "bytes": 6494073,
+      "sha256": "4b48c75596f5c3b74a4b461bede31c89357e5220eadad9e266b079fe4a51c76b"
+    },
+    "datacenter_operational_result.json": {
+      "bytes": 28737,
+      "sha256": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e"
+    },
+    "evidence.csv": {
+      "bytes": 4125,
+      "sha256": "f2d0f17f25c5a0aa68cf0edeb40fd10de4ae259dede0018fe7e1f086da1e81b1"
+    },
+    "input_estimates.csv": {
+      "bytes": 13766,
+      "sha256": "1c12fd55a585ddcd58c8a839e2c5b5e7cd08057ae83409805b5e891f3a8768d4"
+    },
+    "link_lineage.json": {
+      "bytes": 6170,
+      "sha256": "72b491f18d477266e72e6964b9a35869197e4505d91cfa9120a610a94365e0e7"
+    },
+    "link_recipe.json": {
+      "bytes": 10572,
+      "sha256": "a53e78b9c9cc78c778f448b698c3f6d5c148992b5b9f47863406fed591c6b208"
+    },
+    "manufacturing_draws.csv": {
+      "bytes": 3194948,
+      "sha256": "052f8ed5715875a78b8ebf064741edcf7f937a9fd2c3302f2ac488e4d7835a51"
+    },
+    "manufacturing_result.json": {
+      "bytes": 80700,
+      "sha256": "9f11428aa87f83eecc5066c0b91759371d56fdb64db3b8109b4c3c29b418759a"
+    },
+    "result.json": {
+      "bytes": 53834,
+      "sha256": "3ad80ed33e421529ba83ad6c5c31b4bdbb2ff0d730c28246a9fb49a0e6a37cac"
+    },
+    "scenario.json": {
+      "bytes": 34521,
+      "sha256": "886719e898f528747b922f039b7cb694f73a29adb45b5191fe03ca40d146b071"
+    },
+    "stage_outputs.csv": {
+      "bytes": 890,
+      "sha256": "2df376e6499831ae57e042b6033e5a37c3283a881cac23dee11056b273542c15"
+    },
+    "system_assembly_draws.csv": {
+      "bytes": 10919221,
+      "sha256": "897d619a3659a392e405cbffb063fbefb2a00a91854b68da16f0c57f04896759"
+    },
+    "system_assembly_result.json": {
+      "bytes": 112349,
+      "sha256": "f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6"
+    }
+  },
+  "format": "ai-supply-linked-chain-release.v2",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-20T06:00:00Z",
+  "scenario_id": "gb200-to-abilene-odm-assembly-draw-linked-illustrative-2026q3",
+  "source_capacity_draws_sha256": {
+    "datacenter_operational": "4b48c75596f5c3b74a4b461bede31c89357e5220eadad9e266b079fe4a51c76b",
+    "manufacturing": "052f8ed5715875a78b8ebf064741edcf7f937a9fd2c3302f2ac488e4d7835a51",
+    "system_assembly": "897d619a3659a392e405cbffb063fbefb2a00a91854b68da16f0c57f04896759"
+  },
+  "source_result_sha256": {
+    "datacenter_operational": "000a0804e1b8076de18afec1a1cd3de029abd62c1bdaf200ff09fa7e3717568e",
+    "manufacturing": "9f11428aa87f83eecc5066c0b91759371d56fdb64db3b8109b4c3c29b418759a",
+    "system_assembly": "f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6"
+  },
+  "synthetic": true
+}

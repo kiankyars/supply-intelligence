@@ -1,0 +1,30 @@
+{
+  "alert_count": 2,
+  "current_recorded_at": "2026-07-20T05:40:00Z",
+  "files": {
+    "README.md": {
+      "bytes": 345,
+      "sha256": "e4e3daf737ff7faf7b45a0d97559ebdbdd769d91187be0f989096b55f2683db7"
+    },
+    "alerts.csv": {
+      "bytes": 355,
+      "sha256": "cf4f0d1acfa2eec248559bf1317a99cb566591a6ac501dfe430535c4f180f95b"
+    },
+    "alerts.json": {
+      "bytes": 1143,
+      "sha256": "68efd3a1d6024f497fbced4907ea7824df873273074abad92cffc69d68952060"
+    },
+    "dashboard.html": {
+      "bytes": 5261,
+      "sha256": "8906cf38eb25c75ae102360ab7e6265217d02cbaaa85d652c3c49dcb433a993f"
+    },
+    "lineage.json": {
+      "bytes": 595,
+      "sha256": "9db6f083611334c9c3b500267259161fdacc247dbbed18eb44d69fb958122031"
+    }
+  },
+  "format": "ai-supply-revision-alert-release.v1",
+  "previous_recorded_at": "2026-07-19T20:45:00Z",
+  "result_format": "ai-supply-manufacturing-result.v1",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3"
+}

@@ -1,0 +1,27 @@
+{
+  "allowed_postures": [
+    "reported"
+  ],
+  "claim_key": "company.tsmc.backend.capacity_status.2026q2",
+  "conversion": null,
+  "expected_claim_dimensions": {
+    "capacity_basis": "supply_demand_status",
+    "customer": "all customers",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "current_as_of_2026-07-16",
+    "process_node": "all applicable nodes",
+    "product": "backend services",
+    "quantity_semantics": "point_in_time_status",
+    "stage": "advanced_packaging"
+  },
+  "expected_known_at": "2026-07-19T20:00:00Z",
+  "expected_revision_id": "claimrev:dd45197127c42f3e4010bfd9c4f408eb",
+  "expected_valid_at": "2026-07-19",
+  "format": "ai-supply-manufacturing-claim-selection.v1",
+  "nonbinding_rationale": "A company-wide shortage status identifies a likely bottleneck family but contains no package starts, product mix, technology split, yield, or customer allocation.",
+  "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d",
+  "target_dimensions": {},
+  "target_input_path": "research.advanced_packaging.supply_demand_status",
+  "usage": "directional_signal"
+}

@@ -1,0 +1,12 @@
+{
+  "alert_count": 2,
+  "claim_count": 2,
+  "current_known_at": "2026-07-20T05:30:00Z",
+  "cycle_id": "claim-cycle:79f4f6c1f4de7e93ff15d953368ee939",
+  "format": "ai-supply-claim-cycle-run.v1",
+  "job_id": "blackwell-reticle-geometry",
+  "job_sha256": "8e279a0d3bc6d97847e9ca8de574f6a1f59a719f5f7b8d0765c54dff9239842e",
+  "pack_count": 1,
+  "previous_known_at": "2026-07-20T05:29:59Z",
+  "run_at": "2026-07-20T05:30:00Z"
+}

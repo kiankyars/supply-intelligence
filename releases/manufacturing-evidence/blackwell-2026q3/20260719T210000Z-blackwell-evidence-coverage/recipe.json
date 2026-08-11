@@ -1,0 +1,86 @@
+{
+  "as_of_date": "2026-07-19",
+  "claim_cases": [
+    {
+      "id": "tsmc-wafer-shipments-rejected",
+      "selection_path": "examples/claim-selections/tsmc-2026q2-shipments-as-blackwell-wafer-starts.json",
+      "selection_sha256": "0bbf4e858583c4f03e905bd95e8965ffa400dd8f0d1d2e745873be83249c6933",
+      "snapshot_path": "releases/claim-cycles/official-controls/20260719T190000Z-official-controls-9784ceec7b/current_snapshot.json",
+      "snapshot_sha256": "e9ca94bd1d698c8203f2bdb7cf7909f9c3481e4abfdc3c2ba67b94e8e0a87e52"
+    },
+    {
+      "id": "tsmc-wafer-shipments-scale-control",
+      "selection_path": "examples/claim-selections/tsmc-2026q2-shipments-scale-control.json",
+      "selection_sha256": "935490c05fc2a04ec9935c6a66b8b39e9b965ea226849dde460efefd74b2f4fa",
+      "snapshot_path": "releases/claim-cycles/official-controls/20260719T190000Z-official-controls-9784ceec7b/current_snapshot.json",
+      "snapshot_sha256": "e9ca94bd1d698c8203f2bdb7cf7909f9c3481e4abfdc3c2ba67b94e8e0a87e52"
+    },
+    {
+      "id": "tsmc-backend-shortage-signal",
+      "selection_path": "examples/claim-selections/tsmc-2026q2-backend-shortage-signal.json",
+      "selection_sha256": "fe1f3ce7278d6f8c8ff462c7bc4141446aaf1857e090ac5c77180c738ec58039",
+      "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+      "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    {
+      "id": "tsmc-tester-shortage-signal",
+      "selection_path": "examples/claim-selections/tsmc-2026q2-tester-shortage-signal.json",
+      "selection_sha256": "7d53f1f2017f57986de120e6838f0f63d52153e392801a73baeeca161258e313",
+      "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+      "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    {
+      "id": "tsmc-fabs-under-construction-signal",
+      "selection_path": "examples/claim-selections/tsmc-2026q2-fabs-under-construction-signal.json",
+      "selection_sha256": "102c3d776a15e1ff843ba10651f6df45f8f9830cd182a723a6adc5e258712226",
+      "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+      "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    {
+      "id": "tsmc-capex-guidance-signal",
+      "selection_path": "examples/claim-selections/tsmc-2026-capex-guidance-signal.json",
+      "selection_sha256": "7c4709defc56858b4124c0ec5dfc6e318031135c03c8accc4a2443e9a37c85e6",
+      "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+      "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    {
+      "id": "tsmc-backend-capex-share-signal",
+      "selection_path": "examples/claim-selections/tsmc-2026-backend-capex-share-signal.json",
+      "selection_sha256": "9cd66059620ec5b0c55c3d2e72725ddbcd5fa7e77a5e4dc45e625c13aaec766e",
+      "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+      "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    {
+      "id": "micron-hbm4-ramp-speed-signal",
+      "selection_path": "examples/claim-selections/micron-fq3-2026-hbm4-ramp-speed-signal.json",
+      "selection_sha256": "20039db9508bdf4936804ac4460f5ecd7630a5bdf2901d4b49350240440562cf",
+      "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+      "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    {
+      "id": "micron-hbm4-revenue-lower-bound-signal",
+      "selection_path": "examples/claim-selections/micron-fq3-2026-hbm4-revenue-lower-bound-signal.json",
+      "selection_sha256": "e47b881ca5776c66bacd6b3925563e502a7e2183a60848dd0fe6925de2171317",
+      "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+      "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    {
+      "id": "micron-hbm4-shipment-status-signal",
+      "selection_path": "examples/claim-selections/micron-fq3-2026-hbm4-shipment-status-signal.json",
+      "selection_sha256": "e9d7005ff657d7a23cc4c48c537ecb87cb78eccd28e77ebd1568c7d87144c523",
+      "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+      "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    }
+  ],
+  "constraint_target_catalog": {
+    "path": "examples/coverage/blackwell-manufacturing-targets-2026q3.json",
+    "sha256": "1b8d27786c4a39ff576c28c2896a3192dee3817255a0058a0b94a0fa2578af0a"
+  },
+  "format": "ai-supply-manufacturing-evidence-coverage-recipe.v1",
+  "id": "blackwell-manufacturing-evidence-coverage-2026-07-19",
+  "manufacturing_release": {
+    "manifest_sha256": "7a1881a9f498b073aac8e677072f152cd52ba1371faf81adca9e6c23fdc3b91f",
+    "path": "releases/2026-07-17-blackwell-manufacturing-illustrative"
+  },
+  "recorded_at": "2026-07-19T21:00:00Z"
+}

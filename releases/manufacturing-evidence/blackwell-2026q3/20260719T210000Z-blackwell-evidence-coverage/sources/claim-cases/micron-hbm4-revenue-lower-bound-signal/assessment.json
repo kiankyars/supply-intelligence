@@ -1,0 +1,41 @@
+{
+  "accepted_for_usage": true,
+  "blocking_reasons": [],
+  "claim_dimensions": {
+    "capacity_basis": "shipment_revenue",
+    "customer": "lead platform customer and other qualified customers not allocated",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "cumulative_through_fq3_2026",
+    "process_node": "1-beta DRAM",
+    "product": "HBM4 12-high",
+    "qualifier": "strict lower bound",
+    "quantity_semantics": "cumulative_lower_bound",
+    "stage": "hbm_shipment"
+  },
+  "claim_key": "company.micron.hbm4.cumulative_revenue_lower_bound_fq3_2026",
+  "claim_posture": "reported",
+  "claim_unit": "USD billion",
+  "claim_value": 1,
+  "constraint_estimate": null,
+  "conversion": null,
+  "eligible_as_constraint": false,
+  "format": "ai-supply-manufacturing-claim-assessment.v1",
+  "lineage": {
+    "known_at": "2026-07-19T20:00:00Z",
+    "selection_path": "examples/claim-selections/micron-fq3-2026-hbm4-revenue-lower-bound-signal.json",
+    "selection_sha256": "e47b881ca5776c66bacd6b3925563e502a7e2183a60848dd0fe6925de2171317",
+    "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+    "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d",
+    "source_snapshot_ids": [
+      "snapshot:2a0a2b2f47785af675afbef8bcc29300"
+    ],
+    "valid_at": "2026-07-19"
+  },
+  "nonbinding_rationale": "Revenue confirms commercial HBM4 shipments but cannot be converted into HBM stack counts without price, mix, timing, and customer allocation evidence.",
+  "normalized_estimate": null,
+  "revision_id": "claimrev:447d272ce642b20b543d641e174ac0a8",
+  "target_dimensions": {},
+  "target_input_path": "research.hbm4.cumulative_revenue_lower_bound",
+  "usage": "directional_signal"
+}

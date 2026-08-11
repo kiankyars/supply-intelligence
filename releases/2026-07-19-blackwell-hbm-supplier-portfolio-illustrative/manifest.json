@@ -1,0 +1,69 @@
+{
+  "as_of_date": "2026-07-19",
+  "capacity_scope_ids": [
+    "micron-global-hbm3e-compatible-2026q3",
+    "samsung-global-hbm3e-compatible-2026q3",
+    "sk-hynix-global-hbm3e-compatible-2026q3"
+  ],
+  "files": {
+    "README.md": {
+      "bytes": 563,
+      "sha256": "268f55acda25a3a1248ca3baa97bee2260c8753281f443ff2b770867e5dc24ed"
+    },
+    "dashboard.html": {
+      "bytes": 20511,
+      "sha256": "912721f003ea88061d9461e385e3c183d00fa07ef4fdc869e474f77c751771a6"
+    },
+    "evidence.csv": {
+      "bytes": 2081,
+      "sha256": "84b631f69998f229b55fe11b11cbc4c0b4e64ff9e03613e980ebbc82c30f06da"
+    },
+    "evidence_gaps.csv": {
+      "bytes": 12460,
+      "sha256": "240b8117dba607e1449774e6777e153b679030411d2c3dbfdafeec7c85e3229e"
+    },
+    "input_estimates.csv": {
+      "bytes": 14043,
+      "sha256": "e45068bb65d941bc4bb015708592acbfe7e607188c3e645920eb9f20cba99bf1"
+    },
+    "result.json": {
+      "bytes": 78644,
+      "sha256": "776f64dca97b7f9adc1a2271dfdb9b31ac247d2e975c1b7fdc803e3f78902f30"
+    },
+    "scenario.json": {
+      "bytes": 33808,
+      "sha256": "7445b25b3564244ea850276ac9be4afa67ae4f0448ebe212c5f839f8ae81772f"
+    },
+    "sources/00-nvidia-blackwell-hbm-capacity-observation.json": {
+      "bytes": 827,
+      "sha256": "e2bf925a6e6072aa43253c76c25a11556ee9e87ae7b6a40502a50d2e5278b120"
+    },
+    "sources/01-nvidia-blackwell-hbm-height-observation.json": {
+      "bytes": 872,
+      "sha256": "096731e2ed8889776e1e29ef97c53d4c1cbb2d1b0ebaca058230abf15b473308"
+    },
+    "sources/02-micron-hbm3e-reference-observation.json": {
+      "bytes": 774,
+      "sha256": "e3e8c2ccf11393618c394caac98c888c343496315b9d1388ebdfe10163905735"
+    },
+    "sources/03-micron-2025-10k-hbm-wafer-observation.json": {
+      "bytes": 902,
+      "sha256": "1de51e30a1fcacca775ea0253ec99556e100e9fceb2f09854dc862945599f19f"
+    },
+    "supplier_outputs.csv": {
+      "bytes": 8130,
+      "sha256": "ec1d59ad16153a5d972f2a8af538284628322332ad6028f00c6a606443378c74"
+    },
+    "totals.csv": {
+      "bytes": 1630,
+      "sha256": "01f6eec29b454123948911893842f19b9196b4394315bc9f3c24c1e5f271ab43"
+    }
+  },
+  "format": "ai-supply-hbm-supplier-release.v1",
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-19T23:20:00Z",
+  "scenario_id": "blackwell-hbm-supplier-portfolio-illustrative-2026q3",
+  "source_document_count": 4,
+  "supplier_count": 3,
+  "synthetic": true
+}

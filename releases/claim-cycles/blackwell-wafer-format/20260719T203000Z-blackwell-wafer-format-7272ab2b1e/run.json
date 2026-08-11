@@ -1,0 +1,12 @@
+{
+  "alert_count": 1,
+  "claim_count": 1,
+  "current_known_at": "2026-07-19T20:30:00Z",
+  "cycle_id": "claim-cycle:7272ab2b1e80ce418a6cb14660b9ea81",
+  "format": "ai-supply-claim-cycle-run.v1",
+  "job_id": "blackwell-wafer-format",
+  "job_sha256": "ddfa6525d98e94f2b28d9074c93d185257bd177523d6f5f3d74cb06da10d3b3b",
+  "pack_count": 1,
+  "previous_known_at": "2026-07-19T20:29:59Z",
+  "run_at": "2026-07-19T20:30:00Z"
+}

@@ -1,0 +1,40 @@
+{
+  "cycle_id": "claim-cycle:e93cd9c6b09b6b7f3c338cbc5f8111d4",
+  "files": {
+    "claim_diff.json": {
+      "bytes": 20357,
+      "sha256": "75272442ed5b33265cb39d9b13209c49e634e6d6af47c9bbdbe76fe002a32da1"
+    },
+    "current_snapshot.json": {
+      "bytes": 21814,
+      "sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d"
+    },
+    "ingest_lineage.json": {
+      "bytes": 423,
+      "sha256": "c2a2b62747a45f361d31c7cbb1a27bf472c7d04e9fac5c6f8bd0a9910a8c79e5"
+    },
+    "job.json": {
+      "bytes": 395,
+      "sha256": "5d99f7c3641c805e1cd305f60c6153da2c3d436902e4c92deec2fb71d1c9454e"
+    },
+    "notification_lineage.json": {
+      "bytes": 537,
+      "sha256": "ab8bbbd797b315335079fad7b726f771ca12dc655a44f15393260dbb963849af"
+    },
+    "packs/000-2026-07-19-manufacturing-signals-pack.json": {
+      "bytes": 14824,
+      "sha256": "ee4729856a55378cffccc2724ffe05dce0c2da4423e216c106ebe8927f11ef0c"
+    },
+    "previous_snapshot.json": {
+      "bytes": 4144,
+      "sha256": "f0fb439881d4ebaeff90b250a6e68608ed6b4a0fec2725db75b3fa6737f8d1f1"
+    },
+    "run.json": {
+      "bytes": 419,
+      "sha256": "4a91103f6921739e935271f5ac9ef3060ac4f01c0a540594b0e6a7dd57803b9e"
+    }
+  },
+  "format": "ai-supply-claim-cycle-release.v1",
+  "job_id": "manufacturing-signals",
+  "run_at": "2026-07-19T20:00:00Z"
+}

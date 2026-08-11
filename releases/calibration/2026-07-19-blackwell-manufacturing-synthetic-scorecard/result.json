@@ -1,0 +1,467 @@
+{
+  "by_metric_class": {
+    "logic_conversion": {
+      "brier_event_count": 3,
+      "calibration_proposal": {
+        "additional_outcomes_needed": 7,
+        "eligible_for_application": false,
+        "half_width_multiplier": null,
+        "minimum_group_size": 10,
+        "p50_multiplier": null,
+        "status": "insufficient_history"
+      },
+      "count": 3,
+      "mean_absolute_error": 153276.74046003132,
+      "mean_absolute_percentage_error": 0.1707939823881853,
+      "mean_brier_score": 0.6032439153305266,
+      "mean_normalized_pinball_loss": 0.05181657918233612,
+      "mean_signed_error": 97120.26046254342,
+      "mean_signed_error_ratio": 0.12141126633880256,
+      "p10_p90_coverage_rate": 0.6666666666666666,
+      "units": [
+        "die"
+      ]
+    },
+    "memory_output": {
+      "brier_event_count": 1,
+      "calibration_proposal": {
+        "additional_outcomes_needed": 9,
+        "eligible_for_application": false,
+        "half_width_multiplier": null,
+        "minimum_group_size": 10,
+        "p50_multiplier": null,
+        "status": "insufficient_history"
+      },
+      "count": 1,
+      "mean_absolute_error": 797165.3807513248,
+      "mean_absolute_percentage_error": 0.10714285714285718,
+      "mean_brier_score": 0.8594096552574801,
+      "mean_normalized_pinball_loss": 0.027190002344063584,
+      "mean_signed_error": -797165.3807513248,
+      "mean_signed_error_ratio": -0.10714285714285718,
+      "p10_p90_coverage_rate": 1.0,
+      "units": [
+        "stack"
+      ]
+    },
+    "packaging_output": {
+      "brier_event_count": 1,
+      "calibration_proposal": {
+        "additional_outcomes_needed": 9,
+        "eligible_for_application": false,
+        "half_width_multiplier": null,
+        "minimum_group_size": 10,
+        "p50_multiplier": null,
+        "status": "insufficient_history"
+      },
+      "count": 1,
+      "mean_absolute_error": 18544.00893276866,
+      "mean_absolute_percentage_error": 0.052631578947368404,
+      "mean_brier_score": 0.009008386521798339,
+      "mean_normalized_pinball_loss": 0.021115689616557673,
+      "mean_signed_error": 18544.00893276866,
+      "mean_signed_error_ratio": 0.052631578947368404,
+      "p10_p90_coverage_rate": 1.0,
+      "units": [
+        "package"
+      ]
+    },
+    "system_conversion": {
+      "brier_event_count": 1,
+      "calibration_proposal": {
+        "additional_outcomes_needed": 9,
+        "eligible_for_application": false,
+        "half_width_multiplier": null,
+        "minimum_group_size": 10,
+        "p50_multiplier": null,
+        "status": "insufficient_history"
+      },
+      "count": 1,
+      "mean_absolute_error": 1287.778398108935,
+      "mean_absolute_percentage_error": 0.2,
+      "mean_brier_score": 1.0,
+      "mean_normalized_pinball_loss": 0.06272666801788726,
+      "mean_signed_error": -1287.778398108935,
+      "mean_signed_error_ratio": -0.2,
+      "p10_p90_coverage_rate": 0.0,
+      "units": [
+        "system"
+      ]
+    }
+  },
+  "by_source_family": {
+    "synthetic-calibration-fixture": {
+      "brier_event_count": 6,
+      "calibration_proposal": {
+        "additional_outcomes_needed": null,
+        "eligible_for_application": false,
+        "half_width_multiplier": null,
+        "minimum_group_size": 10,
+        "p50_multiplier": null,
+        "status": "diagnostic_only"
+      },
+      "count": 6,
+      "mean_absolute_error": null,
+      "mean_absolute_percentage_error": 0.14535939720913024,
+      "mean_brier_score": 0.6130249646284763,
+      "mean_normalized_pinball_loss": 0.04441368292091948,
+      "mean_signed_error": null,
+      "mean_signed_error_ratio": 0.01828708680348648,
+      "p10_p90_coverage_rate": 0.6666666666666666,
+      "units": [
+        "die",
+        "package",
+        "stack",
+        "system"
+      ]
+    }
+  },
+  "dataset": {
+    "as_of_date": "2026-07-19",
+    "format": "ai-supply-calibration-dataset.v1",
+    "id": "blackwell-manufacturing-synthetic-scorecard-2026-07-19",
+    "minimum_group_size": 10,
+    "notes": "Contract fixture for coverage, bias, pinball, Brier, grouping, and replay tests. It must never be presented as measured Blackwell output.",
+    "path": "examples/calibration/blackwell-manufacturing-calibration-synthetic-2026-07-19.json",
+    "recorded_at": "2026-07-19T23:15:00Z",
+    "sha256": "5adf199e3b647b06ad47dd026629e57f37db1ca71bc35bf6e1acf2087db7336c",
+    "synthetic": true
+  },
+  "evidence": [
+    {
+      "content_hash": null,
+      "excerpt": "Six deliberately varied synthetic outcomes; not historical production, shipment, or deployment observations.",
+      "id": "synthetic:blackwell-calibration-outcomes",
+      "kind": "synthetic",
+      "license": "Internal demonstration",
+      "published_at": null,
+      "publisher": "AI Supply Intelligence",
+      "retrieved_at": "2026-07-19T23:00:00Z",
+      "source_family": "synthetic-calibration-fixture",
+      "source_url": "urn:synthetic:blackwell-calibration-outcomes",
+      "title": "Synthetic Blackwell calibration outcome fixtures"
+    }
+  ],
+  "forecast_lineage": [
+    {
+      "as_of_date": "2026-07-17",
+      "format": "ai-supply-manufacturing-result.v1",
+      "id": "blackwell-manufacturing-2026q3-v1",
+      "path": "releases/2026-07-17-blackwell-manufacturing-illustrative/result.json",
+      "quarter": "2026-Q3",
+      "recorded_at": "2026-07-18T03:22:00Z",
+      "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "sha256": "2e8c84fe2e385389aea1995bf6d0325cc88601c0ddc460c48070d64ead8cc519",
+      "synthetic": true
+    }
+  ],
+  "format": "ai-supply-calibration-result.v1",
+  "methodology": {
+    "bias": "Signed error is forecast P50 minus actual; positive values are overforecasts.",
+    "brier": "Event probabilities use a triangular approximation with forecast P10/P50/P90 as low/mode/high.",
+    "coverage": "Whether the realized outcome falls inside the frozen forecast P10-to-P90 interval.",
+    "normalization": "Absolute error is normalized by max(P10-to-P90 half-width, 1% of absolute P50, epsilon); mean pinball loss is normalized by max(absolute actual, epsilon).",
+    "outcome_provenance": "Evidence-backed outcomes accept reported or derived posture only and require publication-dated, content-hashed evidence from the declared source family.",
+    "pinball": "Quantile loss is scored at P10, P50, and P90.",
+    "proposal": "Metric classes meeting the minimum expose a median actual/P50 multiplier and a non-narrowing P80 normalized-error width multiplier; overall and source-family aggregates are diagnostic only, and no proposal is eligible before holdout validation.",
+    "transaction_time": "Every forecast must be hash-pinned and frozen on an earlier date than its outcome; evidence must be retrieved by the dataset recording time.",
+    "unit_aggregation": "Raw signed and absolute errors are aggregated only when every outcome in a group shares one unit; normalized metrics remain comparable across units."
+  },
+  "scores": [
+    {
+      "absolute_error": 164909.82049148437,
+      "actual_posture": "synthetic",
+      "actual_to_forecast_p50_ratio": 0.92,
+      "actual_value": 1896462.9356520725,
+      "event_score": {
+        "brier_score": 0.5874944879803822,
+        "forecast_probability": 0.7664818901842249,
+        "operator": "at_least",
+        "realized": false,
+        "threshold": 1958304.118336379,
+        "unit": "die"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "logic_gross_dies",
+      "forecast_p10": 1734305.4468499569,
+      "forecast_p50": 2061372.756143557,
+      "forecast_p90": 2391256.7529388857,
+      "forecast_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "id": "synthetic-logic-gross-dies",
+      "inside_p10_p90": true,
+      "interval_miss": 0.0,
+      "mean_pinball_loss": 49383.34695154502,
+      "methodology": "Synthetic outcome set to 0.92 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "logic_conversion",
+      "normalization_half_width": 328475.6530444644,
+      "normalized_absolute_error": 0.5020457953672481,
+      "normalized_mean_pinball_loss": 0.026039711097525477,
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "pinball_loss": {
+        "p10": 16215.748880211568,
+        "p50": 82454.91024574218,
+        "p90": 49479.38172868131
+      },
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "signed_error": 164909.82049148437,
+      "signed_error_ratio": 0.08695652173913032,
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "die"
+    },
+    {
+      "absolute_error": 84234.71999623184,
+      "actual_posture": "synthetic",
+      "actual_to_forecast_p50_ratio": 1.08,
+      "actual_value": 1137168.7199491297,
+      "event_score": {
+        "brier_score": 0.22224554036747904,
+        "forecast_probability": 0.5285707472297895,
+        "operator": "at_least",
+        "realized": true,
+        "threshold": 1052933.999952898,
+        "unit": "die"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "logic_known_good_dies",
+      "forecast_p10": 854915.9854397407,
+      "forecast_p50": 1052933.999952898,
+      "forecast_p90": 1274953.590975597,
+      "forecast_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "id": "synthetic-logic-known-good-dies",
+      "inside_p10_p90": true,
+      "interval_miss": 0.0,
+      "mean_pinball_loss": 28040.37351723385,
+      "methodology": "Synthetic outcome set to 1.08 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "logic_conversion",
+      "normalization_half_width": 210018.80276792817,
+      "normalized_absolute_error": 0.40108180261036736,
+      "normalized_mean_pinball_loss": 0.02465805911236128,
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "pinball_loss": {
+        "p10": 28225.273450938905,
+        "p50": 42117.35999811592,
+        "p90": 13778.487102646726
+      },
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "signed_error": -84234.71999623184,
+      "signed_error_ratio": -0.07407407407407408,
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "die"
+    },
+    {
+      "absolute_error": 210685.68089237774,
+      "actual_posture": "synthetic",
+      "actual_to_forecast_p50_ratio": 0.74,
+      "actual_value": 599643.8610013827,
+      "event_score": {
+        "brier_score": 0.9999917176437185,
+        "forecast_probability": 0.9999958588132846,
+        "operator": "at_least",
+        "realized": false,
+        "threshold": 648263.6335150084,
+        "unit": "die"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "logic_binned_dies",
+      "forecast_p10": 647778.4916069547,
+      "forecast_p50": 810329.5418937604,
+      "forecast_p90": 997420.0053350161,
+      "forecast_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "id": "synthetic-logic-binned-dies",
+      "inside_p10_p90": false,
+      "interval_miss": 48134.63060557202,
+      "mean_pinball_loss": 62813.874141522334,
+      "methodology": "Synthetic outcome set to 0.74 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "logic_conversion",
+      "normalization_half_width": 174820.75686403067,
+      "normalized_absolute_error": 1.2051525497984288,
+      "normalized_mean_pinball_loss": 0.10475196733712161,
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "pinball_loss": {
+        "p10": 43321.16754501482,
+        "p50": 105342.84044618887,
+        "p90": 39777.61443336333
+      },
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "signed_error": 210685.68089237774,
+      "signed_error_ratio": 0.3513513513513514,
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "die"
+    },
+    {
+      "absolute_error": 797165.3807513248,
+      "actual_posture": "synthetic",
+      "actual_to_forecast_p50_ratio": 1.12,
+      "actual_value": 7440210.2203456955,
+      "event_score": {
+        "brier_score": 0.8594096552574801,
+        "forecast_probability": 0.0729564976456174,
+        "operator": "at_least",
+        "realized": true,
+        "threshold": 7307349.323553808,
+        "unit": "stack"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "hbm_good_stacks",
+      "forecast_p10": 5626889.45606913,
+      "forecast_p50": 6643044.839594371,
+      "forecast_p90": 7710042.552258265,
+      "forecast_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "id": "synthetic-hbm-good-stacks",
+      "inside_p10_p90": true,
+      "interval_miss": 0.0,
+      "mean_pinball_loss": 202299.3333315253,
+      "methodology": "Synthetic outcome set to 1.12 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "memory_output",
+      "normalization_half_width": 1041576.5480945674,
+      "normalized_absolute_error": 0.7653449784460279,
+      "normalized_mean_pinball_loss": 0.027190002344063584,
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "pinball_loss": {
+        "p10": 181332.07642765652,
+        "p50": 398582.6903756624,
+        "p90": 26983.233191256964
+      },
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "signed_error": -797165.3807513248,
+      "signed_error_ratio": -0.10714285714285718,
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "stack"
+    },
+    {
+      "absolute_error": 18544.00893276866,
+      "actual_posture": "synthetic",
+      "actual_to_forecast_p50_ratio": 0.9500000000000001,
+      "actual_value": 352336.1697226046,
+      "event_score": {
+        "brier_score": 0.009008386521798339,
+        "forecast_probability": 0.09491252036374516,
+        "operator": "at_most",
+        "realized": false,
+        "threshold": 333792.16078983597,
+        "unit": "package"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "finished_accelerator_packages",
+      "forecast_p10": 305292.8215302774,
+      "forecast_p50": 370880.1786553733,
+      "forecast_p90": 435767.41288291325,
+      "forecast_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "id": "synthetic-finished-accelerator-packages",
+      "inside_p10_p90": true,
+      "interval_miss": 0.0,
+      "mean_pinball_loss": 7439.821200549304,
+      "methodology": "Synthetic outcome set to 0.95 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "packaging_output",
+      "normalization_half_width": 65237.29567631794,
+      "normalized_absolute_error": 0.2842547156580005,
+      "normalized_mean_pinball_loss": 0.021115689616557673,
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "pinball_loss": {
+        "p10": 4704.334819232725,
+        "p50": 9272.00446638433,
+        "p90": 8343.12431603086
+      },
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "signed_error": 18544.00893276866,
+      "signed_error_ratio": 0.052631578947368404,
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "package"
+    },
+    {
+      "absolute_error": 1287.778398108935,
+      "actual_posture": "synthetic",
+      "actual_to_forecast_p50_ratio": 1.25,
+      "actual_value": 6438.8919905446755,
+      "event_score": {
+        "brier_score": 1.0,
+        "forecast_probability": 0.0,
+        "operator": "at_least",
+        "realized": true,
+        "threshold": 6181.3363109228885,
+        "unit": "system"
+      },
+      "evidence_ids": [
+        "synthetic:blackwell-calibration-outcomes"
+      ],
+      "forecast_id": "blackwell-manufacturing-2026q3-v1",
+      "forecast_metric": "complete_system_equivalents",
+      "forecast_p10": 4240.178076809408,
+      "forecast_p50": 5151.11359243574,
+      "forecast_p90": 6052.32517892935,
+      "forecast_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+      "id": "synthetic-complete-system-equivalents",
+      "inside_p10_p90": false,
+      "interval_miss": 386.5668116153256,
+      "mean_pinball_loss": 403.89024029392914,
+      "methodology": "Synthetic outcome set to 1.25 times the frozen forecast P50 solely to exercise calibration scoring.",
+      "metric_class": "system_conversion",
+      "normalization_half_width": 906.0735510599711,
+      "normalized_absolute_error": 1.4212735782900032,
+      "normalized_mean_pinball_loss": 0.06272666801788726,
+      "observed_at": "2026-07-19",
+      "period": "2026-Q3",
+      "pinball_loss": {
+        "p10": 219.8713913735268,
+        "p50": 643.8891990544676,
+        "p90": 347.91013045379304
+      },
+      "revision_risk": "Not a realized production observation; replace the full record with a dated, scope-matched outcome before interpretation.",
+      "signed_error": -1287.778398108935,
+      "signed_error_ratio": -0.2,
+      "source_family": "synthetic-calibration-fixture",
+      "unit": "system"
+    }
+  ],
+  "summary": {
+    "brier_event_count": 6,
+    "calibration_proposal": {
+      "additional_outcomes_needed": null,
+      "eligible_for_application": false,
+      "half_width_multiplier": null,
+      "minimum_group_size": 10,
+      "p50_multiplier": null,
+      "status": "diagnostic_only"
+    },
+    "count": 6,
+    "mean_absolute_error": null,
+    "mean_absolute_percentage_error": 0.14535939720913024,
+    "mean_brier_score": 0.6130249646284763,
+    "mean_normalized_pinball_loss": 0.04441368292091948,
+    "mean_signed_error": null,
+    "mean_signed_error_ratio": 0.01828708680348648,
+    "p10_p90_coverage_rate": 0.6666666666666666,
+    "units": [
+      "die",
+      "package",
+      "stack",
+      "system"
+    ]
+  },
+  "warnings": [
+    "P10 and P90 are treated as triangular support endpoints for event scoring, so tail probability and cross-metric dependence are not preserved.",
+    "Calibration proposals are diagnostics only and never mutate a forecast or narrow an interval automatically.",
+    "Overall and source-family aggregates never emit shared recalibration parameters; only explicit metric classes can do so.",
+    "This checked dataset and its outcomes are synthetic fixtures, not historical realized production."
+  ]
+}

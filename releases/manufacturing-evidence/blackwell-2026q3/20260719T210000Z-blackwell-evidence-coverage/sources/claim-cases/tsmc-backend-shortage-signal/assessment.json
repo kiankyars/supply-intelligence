@@ -1,0 +1,40 @@
+{
+  "accepted_for_usage": true,
+  "blocking_reasons": [],
+  "claim_dimensions": {
+    "capacity_basis": "supply_demand_status",
+    "customer": "all customers",
+    "entity_scope": "company",
+    "geography": "global",
+    "period": "current_as_of_2026-07-16",
+    "process_node": "all applicable nodes",
+    "product": "backend services",
+    "quantity_semantics": "point_in_time_status",
+    "stage": "advanced_packaging"
+  },
+  "claim_key": "company.tsmc.backend.capacity_status.2026q2",
+  "claim_posture": "reported",
+  "claim_unit": "status",
+  "claim_value": "shortage_mode",
+  "constraint_estimate": null,
+  "conversion": null,
+  "eligible_as_constraint": false,
+  "format": "ai-supply-manufacturing-claim-assessment.v1",
+  "lineage": {
+    "known_at": "2026-07-19T20:00:00Z",
+    "selection_path": "examples/claim-selections/tsmc-2026q2-backend-shortage-signal.json",
+    "selection_sha256": "fe1f3ce7278d6f8c8ff462c7bc4141446aaf1857e090ac5c77180c738ec58039",
+    "snapshot_path": "releases/claim-cycles/manufacturing-signals/20260719T200000Z-manufacturing-signals-e93cd9c6b0/current_snapshot.json",
+    "snapshot_sha256": "16210c0f4a1f6318222f38bb5e1efc059ccd13eb8c0ef5118ce8d8098955dc4d",
+    "source_snapshot_ids": [
+      "snapshot:4b025304a605152244afbf523098b340"
+    ],
+    "valid_at": "2026-07-19"
+  },
+  "nonbinding_rationale": "A company-wide shortage status identifies a likely bottleneck family but contains no package starts, product mix, technology split, yield, or customer allocation.",
+  "normalized_estimate": null,
+  "revision_id": "claimrev:dd45197127c42f3e4010bfd9c4f408eb",
+  "target_dimensions": {},
+  "target_input_path": "research.advanced_packaging.supply_demand_status",
+  "usage": "directional_signal"
+}

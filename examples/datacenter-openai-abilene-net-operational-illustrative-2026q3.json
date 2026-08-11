@@ -1,0 +1,181 @@
+{
+  "commissioning_completion_ratio": {
+    "base": 0.82,
+    "confidence": 0.1,
+    "confirming_evidence": "Dated rack-level handoff records show that roughly this share of scheduled slots reaches operational acceptance within the quarter.",
+    "correlation_group": "abilene-commissioning",
+    "evidence_ids": [
+      "synthetic:abilene-operational-assumptions"
+    ],
+    "falsifying_evidence": "Acceptance logs show materially different completion rates or that delayed racks roll into another quarter.",
+    "high": 0.92,
+    "last_updated": "2026-07-17",
+    "low": 0.7,
+    "methodology": "Synthetic target-quarter completion ratio used only to exercise the commissioning branch.",
+    "posture": "synthetic",
+    "unit": "ratio"
+  },
+  "commissioning_slots": {
+    "base": 600.0,
+    "confidence": 0.1,
+    "confirming_evidence": "A site commissioning schedule identifies this many distinct NVL72 rack acceptance slots in the target quarter.",
+    "correlation_group": "abilene-commissioning",
+    "evidence_ids": [
+      "synthetic:abilene-operational-assumptions"
+    ],
+    "falsifying_evidence": "Rack delivery, coolant-loop, electrical, network, burn-in, or acceptance records support materially different throughput.",
+    "high": 850.0,
+    "last_updated": "2026-07-17",
+    "low": 400.0,
+    "methodology": "Synthetic count of rack commissioning slots available during 2026-Q3; it is not a site forecast.",
+    "posture": "synthetic",
+    "unit": "rack"
+  },
+  "deductions": {
+    "contracted_reservations": {
+      "base": 60.0,
+      "confidence": 0.1,
+      "confirming_evidence": "Executed capacity reservations identify committed MW that is not already present in metered current load.",
+      "correlation_group": "abilene-unavailable-power",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Reservation ledgers show a materially different total or show that these MW are already counted in current load.",
+      "high": 90.0,
+      "last_updated": "2026-07-17",
+      "low": 35.0,
+      "methodology": "Synthetic incremental reservation range, excluding capacity already counted in current critical IT load.",
+      "posture": "synthetic",
+      "unit": "MW"
+    },
+    "current_critical_it_load": {
+      "base": 200.0,
+      "confidence": 0.15,
+      "confirming_evidence": "Metered site critical IT load over the target-quarter planning window supports this range.",
+      "correlation_group": "abilene-unavailable-power",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Revenue-grade meters or operator load reports show materially different energized IT load.",
+      "high": 240.0,
+      "last_updated": "2026-07-17",
+      "low": 170.0,
+      "methodology": "Synthetic current-load range used to demonstrate subtraction from the imported gross critical-IT envelope.",
+      "posture": "synthetic",
+      "unit": "MW"
+    },
+    "non_overlap_rationale": "Current load covers energized consumption only. Reservations cover contracted but not yet energized capacity. Other-platform commitments exclude both current load and reservations. Rack-incompatible capacity is the remaining otherwise-uncommitted MW that fails NVL72 density or liquid-cooling requirements. This partition is a scenario contract, not an observed fact.",
+    "other_platform_commitments": {
+      "base": 35.0,
+      "confidence": 0.1,
+      "confirming_evidence": "Platform allocation schedules identify committed MW not present in current load or the reservation ledger.",
+      "correlation_group": "abilene-unavailable-power",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Allocation schedules show a materially different total or overlap with current load or contracted reservations.",
+      "high": 60.0,
+      "last_updated": "2026-07-17",
+      "low": 15.0,
+      "methodology": "Synthetic MW committed to non-target compute platforms after excluding load and reservations.",
+      "posture": "synthetic",
+      "unit": "MW"
+    },
+    "rack_incompatible_capacity": {
+      "base": 25.0,
+      "confidence": 0.1,
+      "confirming_evidence": "Electrical one-lines, cooling-loop capacity, and hall density maps identify residual MW that cannot host NVL72 racks.",
+      "correlation_group": "abilene-unavailable-power",
+      "evidence_ids": [
+        "synthetic:abilene-operational-assumptions"
+      ],
+      "falsifying_evidence": "Engineering records show materially different liquid-cooling or rack-density-compatible residual capacity.",
+      "high": 50.0,
+      "last_updated": "2026-07-17",
+      "low": 10.0,
+      "methodology": "Synthetic residual MW that is neither loaded nor committed but lacks target-rack power-density or liquid-cooling compatibility.",
+      "posture": "synthetic",
+      "unit": "MW"
+    }
+  },
+  "evidence": [
+    {
+      "content_hash": null,
+      "excerpt": "The guide reports approximate full-rack power of 120 kW for an NVL72 rack.",
+      "id": "nvidia:dgx-gb-rack-power",
+      "kind": "company_technical_document",
+      "license": null,
+      "published_at": "2026-03-03",
+      "publisher": "NVIDIA",
+      "retrieved_at": "2026-07-17T20:00:00-07:00",
+      "source_family": "nvidia-dgx-gb-rack-guide",
+      "source_url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html",
+      "title": "Hardware — NVIDIA DGX GB Rack Scale Systems User Guide"
+    },
+    {
+      "content_hash": null,
+      "excerpt": "Synthetic values exist only to exercise the subtraction, allocation, and commissioning equations.",
+      "id": "synthetic:abilene-operational-assumptions",
+      "kind": "synthetic",
+      "license": null,
+      "published_at": null,
+      "publisher": "AI Supply Intelligence demonstrator",
+      "retrieved_at": "2026-07-17T20:00:00-07:00",
+      "source_family": "synthetic-operational-demo",
+      "source_url": "urn:synthetic:abilene-operational-assumptions",
+      "title": "Synthetic Abilene operational assumptions"
+    }
+  ],
+  "format": "ai-supply-datacenter-operational.v1",
+  "gross_power": {
+    "expected_datacenter_manifest_sha256": "eb6b58f32ca70374c2a3329a787312ed6c41b2721d8027e3c41cc6bc18d36570",
+    "expected_entity_ids": [
+      "2dd31763-2dd4-5cb5-927d-0d000dadf767"
+    ],
+    "sha256": "5817a973d960dfebb3f606ca5b10e45c68c2b9056ba5e7ef5c4e2762522d9b6e"
+  },
+  "rack_it_load": {
+    "base": 0.12,
+    "confidence": 0.95,
+    "confirming_evidence": "A current NVIDIA rack guide or measured critical-IT telemetry supports approximately 120 kW at full rack load.",
+    "correlation_group": null,
+    "evidence_ids": [
+      "nvidia:dgx-gb-rack-power"
+    ],
+    "falsifying_evidence": "A platform-specific NVIDIA revision or metered rack data establishes a materially different full-load critical-IT requirement.",
+    "high": 0.12,
+    "last_updated": "2026-07-17",
+    "low": 0.12,
+    "methodology": "Convert NVIDIA's approximate 120 kW full-rack load to 0.12 MW per NVL72 rack. This is critical-IT rack power, not total facility power with PUE.",
+    "posture": "reported",
+    "unit": "MW/rack"
+  },
+  "scenario": {
+    "as_of_date": "2026-07-17",
+    "id": "datacenter:openai-abilene-net-operational-illustrative-2026q3",
+    "name": "Abilene gross-to-net operational rack demonstrator",
+    "notes": "The imported gross envelope is live and hash-pinned. Every site-specific deduction, target allocation, and commissioning value is synthetic.",
+    "quarter": "2026-Q3",
+    "recorded_at": "2026-07-18T03:00:00Z",
+    "samples": 20000,
+    "scope_description": "A checked method demonstration for one Data Center Atlas campus. It does not estimate actual OpenAI, Oracle, NVIDIA, or site-operator capacity or deployments.",
+    "seed": 211,
+    "synthetic": true
+  },
+  "target_platform_share": {
+    "base": 0.75,
+    "confidence": 0.1,
+    "confirming_evidence": "A dated customer and platform allocation schedule assigns this share of residual compatible MW to the target rack platform.",
+    "correlation_group": null,
+    "evidence_ids": [
+      "synthetic:abilene-operational-assumptions"
+    ],
+    "falsifying_evidence": "Customer or platform allocation schedules assign a materially different share or no capacity to the target platform.",
+    "high": 0.9,
+    "last_updated": "2026-07-17",
+    "low": 0.6,
+    "methodology": "Synthetic share of residual compatible MW allocated to the target NVL72 rack platform.",
+    "posture": "synthetic",
+    "unit": "ratio"
+  }
+}

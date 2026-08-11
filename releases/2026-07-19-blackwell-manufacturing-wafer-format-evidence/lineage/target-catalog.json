@@ -1,0 +1,24 @@
+{
+  "format": "ai-supply-manufacturing-target-catalog.v1",
+  "quarter": "2026-Q3",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "targets": [
+    {
+      "dimensions": {
+        "capacity_basis": "physical_specification",
+        "customer": "NVIDIA",
+        "entity_scope": "product",
+        "geography": "global",
+        "period": "current_design",
+        "process_node": "TSMC 4NP",
+        "product": "NVIDIA Blackwell",
+        "quantity_semantics": "point_specification",
+        "stage": "logic_wafer_geometry",
+        "technology": "300mm silicon wafer"
+      },
+      "input_path": "logic.wafer.wafer_diameter_mm",
+      "rationale": "The modeled input is the nominal diameter of the silicon wafer carrying Blackwell logic dies on TSMC 4NP. It is a physical specification, not wafer starts, yield, allocation, or capacity.",
+      "unit": "mm"
+    }
+  ]
+}

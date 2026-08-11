@@ -1,0 +1,45 @@
+{
+  "format": "ai-supply-hbm-manufacturing-link.v3",
+  "scenario": {
+    "id": "blackwell-manufacturing-with-supplier-hbm-draws-material-cleared-illustrative-2026q3",
+    "name": "Blackwell reticle-geometry manufacturing with supplier HBM draws and material-cleared package starts",
+    "quarter": "2026-Q3",
+    "as_of_date": "2026-07-19",
+    "recorded_at": "2026-07-20T05:50:00Z",
+    "samples": 20000,
+    "seed": 20260724,
+    "notes": "Illustrative integration that carries the derived wafer format and bounded reticle-based die geometry, replaces aggregate HBM once, preserves every HBM capacity draw, and defines package assembly starts as material-cleared. Wafer starts, process yield, package throughput, material coverage, HBM capacity, allocation, and demand remain synthetic."
+  },
+  "manufacturing_scenario": {
+    "sha256": "c18df128472dd30ce692f7cde4fd9c14aa256779fdf5e9146d25ae615d0a95ef",
+    "expected_scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+    "replace_hbm_wafer_flow_id": "hbm3e-memory-wafer",
+    "scope": "The frozen Blackwell logic and advanced-package scenario with derived wafer format and bounded reticle-based die geometry, with its aggregate HBM wafer flow removed before reconciliation."
+  },
+  "hbm_supplier_result": {
+    "sha256": "a6b2f7061c41ab7235af4912b028f1777ad7b524caf60f67e0257f9fb64de7ea",
+    "expected_scenario_id": "blackwell-hbm-supplier-portfolio-illustrative-2026q3",
+    "capacity_metric": "customer_allocated_stacks",
+    "capacity_draws_sha256": "ff5121657df8afe5c81531c7a900b12e01850e03be2c47d664880dba3df12f81",
+    "expected_draw_count": 20000,
+    "scope": "The frozen supplier portfolio's Blackwell-qualified and customer-allocated HBM3E stacks across three non-overlapping declared capacity scopes, including every underlying capacity draw."
+  },
+  "mapping": {
+    "distribution_mapping": "source_capacity_draws_deterministic_permutation",
+    "confirming_evidence": "The hash-pinned capacity-draw artifact reproduces the supplier result's aggregate and per-supplier distributions and conserves every stack-to-package conversion.",
+    "falsifying_evidence": "A source correction changes supplier scope, topology, qualification, allocation, the customer-allocated stack distribution, or any pinned capacity-draw byte.",
+    "notes": "A deterministic permutation preserves the full HBM marginal and within-draw supplier allocation without asserting an unsupported draw-index relationship to logic or packaging."
+  },
+  "package_coverage": {
+    "assembly_start_basis": "material_cleared_starts",
+    "absorbed_resource_kinds": [
+      "silicon_interposer",
+      "abf_substrate"
+    ],
+    "posture": "synthetic",
+    "methodology": "Defines each synthetic package assembly start as a package slot for which the required silicon interposer and ABF substrate have already been issued. This prevents the same material availability from constraining output again downstream; it does not estimate either material pool independently.",
+    "confirming_evidence": "Production routing, material-issue, work-in-process, or supplier capacity records show that the reported assembly-start basis begins only after the required interposer and substrate are available.",
+    "falsifying_evidence": "The assembly-start source is a tool-slot or theoretical-throughput measure before interposer or substrate availability, requiring those material pools to remain separate constraints.",
+    "notes": "Synthetic scope declaration used to expose and prevent potential double counting. Direct interposer and substrate capacity remain evidence gaps."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "entities": [
+    {
+      "cik": "0001045810",
+      "id": "nvidia"
+    },
+    {
+      "cik": "0000723125",
+      "id": "micron"
+    }
+  ],
+  "filing_date_from": "2026-01-01",
+  "filing_date_to": "2026-07-19",
+  "format": "ai-supply-sec-filings-watch.v1",
+  "forms": [
+    "10-K",
+    "10-K/A",
+    "10-Q",
+    "10-Q/A",
+    "8-K",
+    "8-K/A"
+  ],
+  "id": "ai-supply-nvidia-micron-filings-2026"
+}

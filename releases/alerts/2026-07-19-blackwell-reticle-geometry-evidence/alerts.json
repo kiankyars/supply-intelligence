@@ -1,0 +1,38 @@
+{
+  "alert_count": 2,
+  "alerts": [
+    {
+      "current_posture": "derived",
+      "id": "alert:5c6dd97df186b820",
+      "path": "inputs.logic.wafer.die_height_mm",
+      "previous_posture": "synthetic",
+      "severity": "medium",
+      "type": "estimate_posture_changed"
+    },
+    {
+      "current_posture": "derived",
+      "id": "alert:8bfed7b1fbe1f894",
+      "path": "inputs.logic.wafer.die_width_mm",
+      "previous_posture": "synthetic",
+      "severity": "medium",
+      "type": "estimate_posture_changed"
+    }
+  ],
+  "current": {
+    "as_of_date": "2026-07-19",
+    "recorded_at": "2026-07-20T05:40:00Z",
+    "sha256": "93c9f86fac3e9a85f4e3f8590992fbf228a9f90ebeda6cc8d0821afdd4db73d3"
+  },
+  "format": "ai-supply-revision-alerts.v1",
+  "previous": {
+    "as_of_date": "2026-07-19",
+    "recorded_at": "2026-07-19T20:45:00Z",
+    "sha256": "980d8782f5fbf88cecd0a7d240b95dea197919d793796cc4128f638981d1fd72"
+  },
+  "result_format": "ai-supply-manufacturing-result.v1",
+  "scenario_id": "blackwell-wafer-hbm-illustrative-2026q3",
+  "thresholds": {
+    "bottleneck_probability_change": 0.15,
+    "output_relative_change": 0.1
+  }
+}

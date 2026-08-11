@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-07-19T20:20:00Z",
+  "format": "ai-supply-normalized-observation.v1",
+  "limitations": [
+    "The page describes TSMC's manufacturing platform and equates its 12-inch GIGAFAB profile with 300mm capacity; it does not identify a Blackwell production site.",
+    "The process span is portfolio-level and cannot establish wafer starts, yield, customer allocation, or product volume."
+  ],
+  "normalization": {
+    "nominal_diameter_mm": 300,
+    "reported_format": "12-inch",
+    "treatment": "Use TSMC's own 300mm label for its 12-inch fab profile; do not arithmetically convert 12 inches to 304.8mm."
+  },
+  "observation_id": "tsmc-12inch-300mm-gigafab-format",
+  "published_at": null,
+  "publisher": "Taiwan Semiconductor Manufacturing Company",
+  "reported": {
+    "facility_profile": "12-inch GIGAFAB",
+    "process_span": "0.13 micrometers through 2 nanometers",
+    "table_capacity_label": "Monthly 300mm capacity (pcs)"
+  },
+  "source_url": "https://www.tsmc.com/english/dedicatedFoundry/manufacturing/gigafab"
+}

@@ -1,0 +1,143 @@
+{
+  "absorbed_constraints": [
+    {
+      "resource_kind": "cooling",
+      "stage": "rack_integration"
+    },
+    {
+      "resource_kind": "network_switch",
+      "stage": "rack_integration"
+    },
+    {
+      "resource_kind": "power_delivery",
+      "stage": "rack_integration"
+    },
+    {
+      "resource_kind": "rack_integration",
+      "stage": "rack_integration"
+    },
+    {
+      "resource_kind": "network_switch",
+      "stage": "server_assembly"
+    },
+    {
+      "resource_kind": "retimer",
+      "stage": "server_assembly"
+    },
+    {
+      "resource_kind": "server_assembly",
+      "stage": "server_assembly"
+    }
+  ],
+  "as_of_date": "2026-07-19",
+  "capacity_draw_count": 20000,
+  "capacity_draw_fields": [
+    "draw_index",
+    "odm_assembly_capacity_racks",
+    "component_cleared_rack_capacity",
+    "rack_demand",
+    "complete_racks",
+    "unfilled_rack_demand",
+    "shadow_assembly_racks",
+    "accelerator_package_equivalents",
+    "odm_concentration_hhi",
+    "largest_odm_share",
+    "odm.illustrative-odm-a.customer_allocated_compute_trays",
+    "odm.illustrative-odm-a.customer_allocated_integrated_racks",
+    "odm.illustrative-odm-a.assembly_supported_racks",
+    "odm.illustrative-odm-b.customer_allocated_compute_trays",
+    "odm.illustrative-odm-b.customer_allocated_integrated_racks",
+    "odm.illustrative-odm-b.assembly_supported_racks",
+    "odm.illustrative-odm-c.customer_allocated_compute_trays",
+    "odm.illustrative-odm-c.customer_allocated_integrated_racks",
+    "odm.illustrative-odm-c.assembly_supported_racks",
+    "component.connectx7-nics.customer_allocated_output",
+    "component.connectx7-nics.rack_equivalents",
+    "component.bluefield3-dpus.customer_allocated_output",
+    "component.bluefield3-dpus.rack_equivalents",
+    "component.nvlink-switch-trays.customer_allocated_output",
+    "component.nvlink-switch-trays.rack_equivalents",
+    "component.management-tor-switches.customer_allocated_output",
+    "component.management-tor-switches.rack_equivalents",
+    "component.power-shelves.customer_allocated_output",
+    "component.power-shelves.rack_equivalents",
+    "component.liquid-cooling-integration.customer_allocated_output",
+    "component.liquid-cooling-integration.rack_equivalents"
+  ],
+  "capacity_scope_ids": [
+    "gb200-bluefield3-pool-2026q3",
+    "gb200-connectx7-pool-2026q3",
+    "gb200-cooling-integration-pool-2026q3",
+    "gb200-management-tor-pool-2026q3",
+    "gb200-nvlink-switch-tray-pool-2026q3",
+    "gb200-power-shelf-pool-2026q3",
+    "odm-a-gb200-rack-line-2026q3",
+    "odm-a-gb200-tray-line-2026q3",
+    "odm-b-gb200-rack-line-2026q3",
+    "odm-b-gb200-tray-line-2026q3",
+    "odm-c-gb200-rack-line-2026q3",
+    "odm-c-gb200-tray-line-2026q3"
+  ],
+  "complete_rack_output_basis": "component_cleared_complete_racks",
+  "component_pool_count": 6,
+  "files": {
+    "README.md": {
+      "bytes": 659,
+      "sha256": "7cb28feb55c42665030b5a9eee9c1b4ad6f2c4bcbf30c6449dbc79ba8698be5a"
+    },
+    "bottlenecks.csv": {
+      "bytes": 127,
+      "sha256": "f4427048a949f570ccde4439faf28b03e82861e49193e70df218aa8b233cc435"
+    },
+    "capacity_draws.csv": {
+      "bytes": 10919221,
+      "sha256": "897d619a3659a392e405cbffb063fbefb2a00a91854b68da16f0c57f04896759"
+    },
+    "component_outputs.csv": {
+      "bytes": 12159,
+      "sha256": "398a8b4e6eec4b4a42a4ffb2a0a4029144ea9cd9283dc42d667b3932f66f3c39"
+    },
+    "conversion_outputs.csv": {
+      "bytes": 1248,
+      "sha256": "1abaeca760d5f0b48a32eb9e59171306d5906c3c9bd628b15f0b2ab22e23c279"
+    },
+    "dashboard.html": {
+      "bytes": 20807,
+      "sha256": "21acc1d39d9355a9baecadf24972dd3836cf2dc4e0458291aed5e6708c32bb2c"
+    },
+    "evidence.csv": {
+      "bytes": 1097,
+      "sha256": "91e66094ee5efed9279acf10a0a1923fa6d1cd0031a5265805f64c17a69d9dfe"
+    },
+    "evidence_gaps.csv": {
+      "bytes": 15625,
+      "sha256": "da61f9b9556290e718b512ebd325afa3b731d08949309c3365743466f1034afe"
+    },
+    "input_estimates.csv": {
+      "bytes": 18028,
+      "sha256": "b783e65ecd6043c8892371712292e9791d6c33437c3c581b0a832dd89e3d41fe"
+    },
+    "odm_outputs.csv": {
+      "bytes": 10303,
+      "sha256": "052874ce357eae67da754206a9925622d386184c6f9170b118b6e9b19c63031e"
+    },
+    "result.json": {
+      "bytes": 112349,
+      "sha256": "f666d57c9673848d5bb97b28d59ef3c1069236656528c2751105e3b09bbf71a6"
+    },
+    "scenario.json": {
+      "bytes": 38223,
+      "sha256": "fa6e9c4249ad77cb292a8c39182c19674c61d0f5217a086210ebbda4869b3acb"
+    },
+    "sources/00-nvidia-gb200-rack-topology-observation.json": {
+      "bytes": 1184,
+      "sha256": "0f0a38d435b951e6d1a35e6c9ce497c510c358eb790e35171e1fd7c9475108f6"
+    }
+  },
+  "format": "ai-supply-system-assembly-release.v1",
+  "odm_count": 3,
+  "quarter": "2026-Q3",
+  "recorded_at": "2026-07-20T04:15:00Z",
+  "scenario_id": "gb200-nvl72-odm-assembly-illustrative-2026q3",
+  "synthetic": true
+}

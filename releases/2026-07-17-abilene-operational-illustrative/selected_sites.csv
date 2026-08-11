@@ -1,0 +1,2 @@
+entity_id,name,country,owner,operator,users,status,status_as_of,gross_low_mw,gross_base_mw,gross_high_mw,capacity_evidence_id
+2dd31763-2dd4-5cb5-927d-0d000dadf767,OpenAI Stargate Abilene,United States,Oracle #confident,,OpenAI #confident,expansion,2026-07-17,300.7142857142857,421.0,589.4,b760a63b-bde3-559b-96fb-6bf562a29a08

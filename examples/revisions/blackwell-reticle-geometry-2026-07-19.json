@@ -1,0 +1,65 @@
+{
+  "as_of_date": "2026-07-19",
+  "format": "ai-supply-manufacturing-revision-recipe.v1",
+  "id": "blackwell-reticle-geometry-2026-07-19",
+  "notes": "Replace the remaining synthetic Blackwell logic-die width and height with bounded derived estimates from NVIDIA's reticle-limit description and ASML's standard 26mm by 33mm maximum exposure field. These are not teardown measurements. Wafer starts, defect/yield/binning, scribe/edge, HBM conversion, and package throughput remain synthetic.",
+  "recorded_at": "2026-07-20T05:40:00Z",
+  "replacements": [
+    {
+      "evidence_metadata": [
+        {
+          "excerpt": "NVIDIA identifies Blackwell as manufactured on a custom TSMC 4NP process with two reticle-limit dies.",
+          "kind": "company_technical_document",
+          "snapshot_id": "snapshot:36f9f5ada639aa4320efe6383271195d",
+          "title": "NVIDIA Blackwell platform launch"
+        },
+        {
+          "excerpt": "ASML specifies a full 26mm by 33mm exposure field for its standard full-field TWINSCAN lithography platform.",
+          "kind": "company_technical_document",
+          "snapshot_id": "snapshot:e715fb7f3649cad3c181aeee1a611575",
+          "title": "ASML TWINSCAN full-field exposure specification"
+        }
+      ],
+      "selection": {
+        "path": "examples/claim-selections/nvidia-blackwell-logic-die-height.json",
+        "sha256": "eda96d6738b6f8c846766f7fa7ff66e7c112a2a660d0eb49fe3f3ea0388858c3"
+      },
+      "snapshot": {
+        "path": "releases/claim-cycles/blackwell-reticle-geometry/20260720T053000Z-blackwell-reticle-geometry-79f4f6c1f4/current_snapshot.json",
+        "sha256": "5abd5cfe9f03d0de87f1d2e19898cb14f9053792b63dd3a14bee51fbffad71f3"
+      }
+    },
+    {
+      "evidence_metadata": [
+        {
+          "excerpt": "NVIDIA identifies Blackwell as manufactured on a custom TSMC 4NP process with two reticle-limit dies.",
+          "kind": "company_technical_document",
+          "snapshot_id": "snapshot:36f9f5ada639aa4320efe6383271195d",
+          "title": "NVIDIA Blackwell platform launch"
+        },
+        {
+          "excerpt": "ASML specifies a full 26mm by 33mm exposure field for its standard full-field TWINSCAN lithography platform.",
+          "kind": "company_technical_document",
+          "snapshot_id": "snapshot:e715fb7f3649cad3c181aeee1a611575",
+          "title": "ASML TWINSCAN full-field exposure specification"
+        }
+      ],
+      "selection": {
+        "path": "examples/claim-selections/nvidia-blackwell-logic-die-width.json",
+        "sha256": "fb829c02f5b2750bc7600b107051ad2be28a6760b6be50c8c70a7cb9a0d844d8"
+      },
+      "snapshot": {
+        "path": "releases/claim-cycles/blackwell-reticle-geometry/20260720T053000Z-blackwell-reticle-geometry-79f4f6c1f4/current_snapshot.json",
+        "sha256": "5abd5cfe9f03d0de87f1d2e19898cb14f9053792b63dd3a14bee51fbffad71f3"
+      }
+    }
+  ],
+  "source_scenario": {
+    "path": "releases/2026-07-19-blackwell-manufacturing-wafer-format-evidence/scenario.json",
+    "sha256": "1826b8dd8dc7d13ea51cb4c3a0827395e402d78d34af7bd1018c0be76a3f12ec"
+  },
+  "target_catalog": {
+    "path": "examples/coverage/blackwell-manufacturing-targets-2026q3-reticle-geometry.json",
+    "sha256": "8f13a0cc2f70368fc8e14860e568594c0344982724367f21b7bfc5393e552b22"
+  }
+}

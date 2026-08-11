@@ -1,0 +1,40 @@
+{
+  "cycle_id": "claim-cycle:9784ceec7b6f1a3c6096f87eb16eff84",
+  "files": {
+    "claim_diff.json": {
+      "bytes": 9818,
+      "sha256": "f9c2d1cc517403fd8376b6e3fcee9f6c36e9086e12d917e14c93357b4bb6fc0f"
+    },
+    "current_snapshot.json": {
+      "bytes": 8567,
+      "sha256": "e9ca94bd1d698c8203f2bdb7cf7909f9c3481e4abfdc3c2ba67b94e8e0a87e52"
+    },
+    "ingest_lineage.json": {
+      "bytes": 419,
+      "sha256": "f01937d2cdc55e3c1b0c410e6c6809a75c9415e3b73d185d6df7e49221c6d0bd"
+    },
+    "job.json": {
+      "bytes": 387,
+      "sha256": "11b0dc6fe5b2d241504abae87a007456e14c163c3d4797cb894c3c390ed9d20c"
+    },
+    "notification_lineage.json": {
+      "bytes": 341,
+      "sha256": "b785ad43c756cb46ea1567ccdd44027cefc702f01a2c6e249d31b3a592349e0e"
+    },
+    "packs/000-2026-07-19-official-controls-pack.json": {
+      "bytes": 7022,
+      "sha256": "1abfe4d64ce4781857364fbd6d6b7b59bdb06a04055b34ee4bbeac3c8e49c1bc"
+    },
+    "previous_snapshot.json": {
+      "bytes": 148,
+      "sha256": "5e5a9deb7aa35e606c9bb309e3487c63dd89e2e81827a0ae54b89e9c47b10237"
+    },
+    "run.json": {
+      "bytes": 414,
+      "sha256": "7063bfb9d0e4f22a377acae7ee9816635bbf4492b9b77f284e4e6909f8f5f89f"
+    }
+  },
+  "format": "ai-supply-claim-cycle-release.v1",
+  "job_id": "official-controls",
+  "run_at": "2026-07-19T19:00:00Z"
+}

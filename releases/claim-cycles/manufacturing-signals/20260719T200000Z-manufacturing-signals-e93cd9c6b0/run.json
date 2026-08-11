@@ -1,0 +1,12 @@
+{
+  "alert_count": 8,
+  "claim_count": 10,
+  "current_known_at": "2026-07-19T20:00:00Z",
+  "cycle_id": "claim-cycle:e93cd9c6b09b6b7f3c338cbc5f8111d4",
+  "format": "ai-supply-claim-cycle-run.v1",
+  "job_id": "manufacturing-signals",
+  "job_sha256": "5d99f7c3641c805e1cd305f60c6153da2c3d436902e4c92deec2fb71d1c9454e",
+  "pack_count": 1,
+  "previous_known_at": "2026-07-19T19:59:59Z",
+  "run_at": "2026-07-19T20:00:00Z"
+}
