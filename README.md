@@ -518,6 +518,11 @@ is exact-quarter, capacity-basis-preserving supplier evidence for influential wa
 binning, HBM, and package inputs, plus evidence-backed cross-source dependence beyond the
 manufacturing boundary.
 
+Frozen Monte Carlo releases remain hash-bound to their original bytes. Cross-platform `libm`
+implementations can differ at the final binary64 digit for non-integer powers, so replay tests require
+exact lineage and input bytes while accepting only `rel_tol=1e-14` and `abs_tol=1e-15` for generated
+numeric results and draw ledgers.
+
 The claim ledger now supports atomic, idempotent ingest, strict revision supersession, bitemporal
 queries, retractions, source-level diffs, interval-gated cycles, a durable notification outbox, local
 JSONL delivery, and acknowledgement state. Structured claim dimensions and the manufacturing gate

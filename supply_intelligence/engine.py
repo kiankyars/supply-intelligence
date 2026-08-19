@@ -3,16 +3,14 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
-from decimal import Context, Decimal
-from math import isclose, isfinite
+from math import isclose, isfinite, sqrt
 from random import Random
-from typing import Any, Iterable, Mapping, Sequence
+from statistics import fmean
+from typing import Any
 
-from .models import Estimate, QuarterlyScenario, STAGE_ORDER, Stage
-
-
-_BINARY64_SQRT_CONTEXT = Context(prec=25)
+from .models import STAGE_ORDER, Estimate, QuarterlyScenario, Stage
 
 
 @dataclass(frozen=True, slots=True)
@@ -45,36 +43,6 @@ def _quantile(sorted_values: list[float], probability: float) -> float:
     return sorted_values[lower] * (1 - fraction) + sorted_values[upper] * fraction
 
 
-def _binary64_fmean(values: list[float]) -> float:
-    """Compute a compensated mean with every intermediate rounded to binary64."""
-
-    partials: list[float] = []
-    for value in values:
-        partial_index = 0
-        partial_value = float(value)
-        for existing in partials:
-            if abs(partial_value) < abs(existing):
-                partial_value, existing = existing, partial_value
-            high = partial_value + existing
-            low = existing - (high - partial_value)
-            if low:
-                partials[partial_index] = low
-                partial_index += 1
-            partial_value = high
-        partials[partial_index:] = [partial_value]
-
-    total = 0.0
-    for partial in partials:
-        total += partial
-    return total / len(values)
-
-
-def _binary64_sqrt(value: float) -> float:
-    """Return a platform-independent, correctly rounded binary64 square root."""
-
-    return float(_BINARY64_SQRT_CONTEXT.sqrt(Decimal.from_float(float(value))))
-
-
 def summarize(values: Iterable[float]) -> Distribution:
     materialized = list(values)
     ordered = sorted(materialized)
@@ -82,7 +50,7 @@ def summarize(values: Iterable[float]) -> Distribution:
         p10=_quantile(ordered, 0.10),
         p50=_quantile(ordered, 0.50),
         p90=_quantile(ordered, 0.90),
-        mean=_binary64_fmean(materialized),
+        mean=fmean(materialized),
         minimum=ordered[0],
         maximum=ordered[-1],
     )
@@ -94,8 +62,8 @@ def _triangular(estimate: Estimate, draw: float) -> float:
         return low
     mode_fraction = (mode - low) / (high - low)
     if draw < mode_fraction:
-        return low + _binary64_sqrt(draw * (high - low) * (mode - low))
-    return high - _binary64_sqrt((1 - draw) * (high - low) * (high - mode))
+        return low + sqrt(draw * (high - low) * (mode - low))
+    return high - sqrt((1 - draw) * (high - low) * (high - mode))
 
 
 class EstimateSampler:

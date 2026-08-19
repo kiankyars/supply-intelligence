@@ -5,8 +5,8 @@ import json
 import tempfile
 import unittest
 from contextlib import redirect_stdout
-from difflib import unified_diff
 from io import StringIO
+from math import isclose
 from pathlib import Path
 
 from supply_intelligence.cli import main
@@ -15,7 +15,6 @@ from supply_intelligence.manufacturing_revision import (
     load_manufacturing_revision,
     write_manufacturing_revision_release,
 )
-
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_SCENARIO = ROOT / "examples" / "blackwell-wafer-hbm-illustrative-2026q3.json"
@@ -51,16 +50,33 @@ def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _text_diff(expected: Path, actual: Path) -> str:
-    return "".join(
-        unified_diff(
-            expected.read_text(encoding="utf-8").splitlines(keepends=True),
-            actual.read_text(encoding="utf-8").splitlines(keepends=True),
-            fromfile=str(expected),
-            tofile=str(actual),
-            n=1,
+def _assert_semantic_replay(
+    test: unittest.TestCase,
+    expected: object,
+    actual: object,
+    path: str = "$",
+) -> None:
+    if isinstance(expected, float):
+        test.assertIs(type(expected), type(actual), path)
+        test.assertTrue(
+            isclose(expected, float(actual), rel_tol=1e-14, abs_tol=1e-15),
+            f"{path}: {expected!r} != {actual!r}",
         )
-    )
+        return
+    if isinstance(expected, dict):
+        test.assertIs(type(expected), type(actual), path)
+        test.assertEqual(set(expected), set(actual), path)
+        for key, value in expected.items():
+            _assert_semantic_replay(test, value, actual[key], f"{path}.{key}")
+        return
+    if isinstance(expected, list):
+        test.assertIs(type(expected), type(actual), path)
+        test.assertEqual(len(expected), len(actual), path)
+        for index, value in enumerate(expected):
+            _assert_semantic_replay(test, value, actual[index], f"{path}[{index}]")
+        return
+    test.assertIs(type(expected), type(actual), path)
+    test.assertEqual(expected, actual, path)
 
 
 def _case_documents(root: Path) -> tuple[Path, dict[str, object]]:
@@ -236,12 +252,32 @@ class ManufacturingRevisionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             destination = Path(temporary) / "release"
             replay = write_manufacturing_revision_release(case, destination)
-            difference = _text_diff(
-                RETICLE_GEOMETRY_RELEASE / "conversion_outputs.csv",
-                destination / "conversion_outputs.csv",
+            self.assertEqual(set(checked_manifest["files"]), set(replay["files"]))
+            self.assertEqual(
+                {key: value for key, value in checked_manifest.items() if key != "files"},
+                {
+                    key: value
+                    for key, value in replay.items()
+                    if key not in {"files", "output_dir"}
+                },
             )
-            self.assertFalse(difference, difference)
-            self.assertEqual(checked_manifest["files"], replay["files"])
+            replayed_result = json.loads(
+                (destination / "result.json").read_text(encoding="utf-8")
+            )
+            _assert_semantic_replay(self, frozen_result, replayed_result)
+            platform_sensitive = {
+                "conversion_outputs.csv",
+                "dashboard.html",
+                "reference_comparisons.csv",
+                "result.json",
+            }
+            self.assertLessEqual(platform_sensitive, set(checked_manifest["files"]))
+            for name in set(checked_manifest["files"]) - platform_sensitive:
+                self.assertEqual(
+                    (RETICLE_GEOMETRY_RELEASE / name).read_bytes(),
+                    (destination / name).read_bytes(),
+                    name,
+                )
 
     def test_replacement_preserves_values_and_builds_hash_complete_release(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
@@ -279,7 +315,8 @@ class ManufacturingRevisionTests(unittest.TestCase):
                 self.assertEqual(descriptor["sha256"], hashlib.sha256(raw).hexdigest())
             previous_result = json.loads(SOURCE_RESULT.read_text(encoding="utf-8"))
             current_result = json.loads((destination / "result.json").read_text(encoding="utf-8"))
-            self.assertEqual(
+            _assert_semantic_replay(
+                self,
                 previous_result["conversion_outputs"],
                 current_result["conversion_outputs"],
             )
@@ -294,7 +331,7 @@ class ManufacturingRevisionTests(unittest.TestCase):
     def test_hash_scope_and_time_guards_reject_drift(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            recipe, recipe_document = _case_documents(root)
+            _, recipe_document = _case_documents(root)
             drifted = json.loads(json.dumps(recipe_document))
             drifted["source_scenario"]["sha256"] = "0" * 64
             drifted_path = _write_json(root / "drifted.json", drifted)

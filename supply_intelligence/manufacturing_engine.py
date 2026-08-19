@@ -3,14 +3,13 @@
 from __future__ import annotations
 
 from collections import defaultdict
-from math import isclose, pi
+from math import isclose, pi, sqrt
 from random import Random
 from typing import Any
 
-from .engine import EstimateSampler, _binary64_sqrt, _input_estimate, summarize
+from .engine import EstimateSampler, _input_estimate, summarize
 from .manufacturing_models import ManufacturingScenario, WaferFlow
 from .manufacturing_research import build_manufacturing_research_queue
-
 
 OUTPUT_UNITS = {
     "logic_gross_dies_per_wafer": "die/wafer",
@@ -63,7 +62,7 @@ def gross_dies_per_wafer(
         die_height_mm + scribe_width_mm
     )
     area_term = pi * (usable_diameter / 2) ** 2 / effective_area
-    edge_term = pi * usable_diameter / _binary64_sqrt(2 * effective_area)
+    edge_term = pi * usable_diameter / sqrt(2 * effective_area)
     return max(0.0, area_term - edge_term)
 
 
