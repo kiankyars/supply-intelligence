@@ -1,5 +1,8 @@
 # AI Supply Intelligence
 
+**Rights:** This repository has no project-wide license. See
+[Rights and attribution](RIGHTS.md) before reuse or redistribution.
+
 This package reconciles quarterly AI-system output against the resources needed to produce, ship,
 install, and commission complete platforms. A single-platform engine converts every resource into
 system-equivalent capacity and takes the binding minimum. A portfolio engine allocates shared pools
