@@ -82,3 +82,6 @@ linked-chain metrics and exact-draw event probabilities.
 The separate [forecast outcome review](forecast-outcomes.md) now enforces that later lifecycle. It
 requires one disposition per frozen metric and forbids scores for pending, scope-mismatched, or
 unobservable rows.
+
+The [canonical forecast release index](forecast-release-index.md) identifies the accepted v2 vintage,
+its exact-draw source, the retained historical predecessor, and the immutable pre-period review.

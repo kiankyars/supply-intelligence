@@ -1,0 +1,2 @@
+evidence_id,kind,title,source_url,publisher,source_family,license,attribution,published_at,retrieved_at,content_hash
+b760a63b-bde3-559b-96fb-6bf562a29a08,third_party_dataset,Epoch AI data center record: OpenAI Stargate Abilene,https://epoch.ai/data/ai-data-centers,Epoch AI,epoch_ai_data_centers,CC-BY-4.0,"Epoch AI, ""AI Data Centers"" (2026)",,2026-07-18T00:59:24Z,279ace3f8e2ae875e2a6bb21beb122554ed3378bb90755dab7284571d1a8c795

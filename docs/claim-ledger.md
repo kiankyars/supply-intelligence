@@ -68,7 +68,7 @@ transaction. A bad hash, invalid predecessor, or other validation failure leaves
 rows committed. Deterministic snapshot, revision, run, and alert IDs make exact replay idempotent.
 
 These guarantees are enforced through the package API. Direct writes to the SQLite file can bypass
-them, so production deployment still needs file permissions, backups, and integrity monitoring.
+them, so production deployment still needs file permissions and independent integrity monitoring.
 
 ## Bitemporal queries
 

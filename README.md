@@ -336,7 +336,8 @@ to inspect five Q3 forecasts, their 20,000 exact source draws, pre-registered ev
 and future evidence contracts. All forecasts remain `pending_period_end`, with zero outcomes and
 zero scores. This is a real pre-outcome native-model freeze, but its source remains synthetic and is
 not a market estimate or evidence of model skill. See the
-[native forecast contract](docs/forecast-vintages.md).
+[native forecast contract](docs/forecast-vintages.md) and
+[canonical forecast release index](docs/forecast-release-index.md).
 
 Freeze the checked pre-period outcome review:
 
@@ -486,17 +487,20 @@ preserves every draw, and its stage-scoped coverage prevents those modeled resou
 in the three-source chain. Only the NVIDIA topology is sourced; all assembly capacities and generic
 ODM identities remain synthetic.
 
-The [data-center atlas](../datacenter_atlas/) remains the source for downstream power and
-commissioning evidence. The [data-center power bridge](docs/datacenter-adapter.md) now imports pinned
-site-level critical IT MW and readiness evidence. It refuses to treat gross campus capacity as vacant
-or platform-allocated power. The separate
+The [data-center atlas](https://github.com/kiankyars/datacenter-atlas) remains the source for
+downstream power and commissioning evidence. The
+[data-center power bridge](docs/datacenter-adapter.md) now imports pinned site-level critical IT MW
+and readiness evidence. It refuses to treat gross campus capacity as vacant or platform-allocated
+power. Its checked command uses a directly versioned selected-row fixture, so it runs from a clean
+clone without assuming that a sibling Atlas payload exists. The fixture retains the historical
+source manifest hash but is not a complete or current Atlas release. The separate
 [operational conversion](docs/datacenter-operational.md) now performs the required deductions and
 reconciles power-supported racks with commissioning throughput. Its checked site-specific inputs are
 synthetic, so it is not yet eligible to replace the portfolio's energized-power or commissioning
 pools.
 
-The [semiconductor atlas](../semiconductor_atlas/) stores upstream facility, project, capability,
-capacity-basis, and constraint claims. The strict
+The [semiconductor atlas](https://github.com/kiankyars/semiconductor-atlas) stores upstream facility,
+project, capability, capacity-basis, and constraint claims. The strict
 [atlas adapter](docs/atlas-adapter.md) imports only explicitly selected, hashed, quarter-total
 capacity slices without collapsing announced, installed, qualified, and economically usable bases.
 The current open atlas seed has no capacity claims, so the checked portfolio still uses synthetic
@@ -552,6 +556,7 @@ calibration.
 - [Supplier-resolved system assembly](docs/system-assembly.md)
 - [Supplier earnings and consensus bridge](docs/earnings-bridge.md)
 - [Native forecast vintages](docs/forecast-vintages.md)
+- [Canonical forecast release index](docs/forecast-release-index.md)
 - [Forecast outcome reviews](docs/forecast-outcomes.md)
 - [Forecast calibration and backtesting](docs/calibration.md)
 - [Reported-guidance historical benchmark](docs/guidance-backtest.md)

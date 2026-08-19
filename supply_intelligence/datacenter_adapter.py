@@ -6,6 +6,7 @@ import csv
 import hashlib
 import io
 import json
+import re
 from dataclasses import dataclass
 from datetime import date, datetime
 from enum import StrEnum
@@ -16,8 +17,10 @@ from .models import Evidence, EvidenceKind, Estimate, EstimatePosture, QUARTER_P
 
 
 DATACENTER_RELEASE_FORMAT = "datacenter-atlas-release-v1"
+DATACENTER_FIXTURE_FORMAT = "ai-supply-datacenter-adapter-fixture.v1"
 DATACENTER_SELECTION_FORMAT = "ai-supply-datacenter-selection.v1"
 DATACENTER_IMPORT_FORMAT = "ai-supply-datacenter-power-import.v1"
+SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 
 
 class DatacenterCapacityStage(StrEnum):
@@ -325,6 +328,51 @@ def _verified_file(
     return raw
 
 
+def _source_release_contract(
+    manifest: Mapping[str, Any],
+    *,
+    manifest_sha256: str,
+) -> tuple[Mapping[str, Any], str]:
+    manifest_format = manifest.get("format")
+    if manifest_format == DATACENTER_RELEASE_FORMAT:
+        return manifest, manifest_sha256
+    if manifest_format != DATACENTER_FIXTURE_FORMAT:
+        raise ValueError(
+            "data-center format must be "
+            f"{DATACENTER_RELEASE_FORMAT} or {DATACENTER_FIXTURE_FORMAT}"
+        )
+    if set(manifest) != {"files", "format", "scope", "source_release"}:
+        raise ValueError("data-center adapter fixture manifest fields are invalid")
+    if manifest.get("scope") != "selected_rows_only":
+        raise ValueError(
+            "data-center adapter fixture must declare selected_rows_only scope"
+        )
+    source_release = manifest.get("source_release")
+    if not isinstance(source_release, dict) or set(source_release) != {
+        "as_of",
+        "format",
+        "manifest_sha256",
+        "recorded_at",
+    }:
+        raise ValueError("data-center adapter fixture source_release is invalid")
+    if source_release.get("format") != DATACENTER_RELEASE_FORMAT:
+        raise ValueError(
+            f"data-center fixture source format must be {DATACENTER_RELEASE_FORMAT}"
+        )
+    source_manifest_sha256 = source_release.get("manifest_sha256")
+    if not isinstance(source_manifest_sha256, str) or not SHA256_PATTERN.fullmatch(
+        source_manifest_sha256
+    ):
+        raise ValueError("data-center fixture source manifest hash is invalid")
+    as_of = source_release.get("as_of")
+    recorded_at = source_release.get("recorded_at")
+    if not isinstance(as_of, str) or not isinstance(recorded_at, str):
+        raise ValueError("data-center fixture source timestamps are invalid")
+    _iso_date(as_of, "source_release.as_of")
+    _iso_timestamp(recorded_at, "source_release.recorded_at")
+    return source_release, source_manifest_sha256
+
+
 def _csv_rows(raw: bytes, name: str) -> list[dict[str, str]]:
     try:
         text = raw.decode("utf-8")
@@ -371,15 +419,17 @@ def load_datacenter_power(
         raise ValueError("data-center manifest is invalid JSON") from exc
     if not isinstance(manifest, dict):
         raise ValueError("data-center manifest must be an object")
-    if manifest.get("format") != DATACENTER_RELEASE_FORMAT:
-        raise ValueError(f"data-center format must be {DATACENTER_RELEASE_FORMAT}")
-    if manifest.get("as_of") != selection.expected_release_as_of:
+    manifest_digest = hashlib.sha256(manifest_raw).hexdigest()
+    source_release, source_manifest_digest = _source_release_contract(
+        manifest,
+        manifest_sha256=manifest_digest,
+    )
+    if source_release.get("as_of") != selection.expected_release_as_of:
         raise ValueError("data-center release as_of does not match the pinned selection")
-    if manifest.get("recorded_at") != selection.expected_release_recorded_at:
+    if source_release.get("recorded_at") != selection.expected_release_recorded_at:
         raise ValueError(
             "data-center release recorded_at does not match the pinned selection"
         )
-    manifest_digest = hashlib.sha256(manifest_raw).hexdigest()
     capacity_rows = _csv_rows(
         _verified_file(root, manifest, "capacity_estimates.csv"),
         "capacity_estimates.csv",
@@ -490,7 +540,7 @@ def load_datacenter_power(
     evidence_id_map = {}
     for evidence_id in sorted(all_evidence_ids):
         row = evidence_by_id[evidence_id]
-        imported_id = f"datacenter:{manifest_digest[:12]}:{evidence_id}"
+        imported_id = f"datacenter:{source_manifest_digest[:12]}:{evidence_id}"
         evidence_id_map[evidence_id] = imported_id
         evidence.append(
             Evidence(
@@ -548,9 +598,9 @@ def load_datacenter_power(
     lineage = {
         "datacenter_release": {
             "format": DATACENTER_RELEASE_FORMAT,
-            "manifest_sha256": manifest_digest,
-            "as_of": manifest["as_of"],
-            "recorded_at": manifest["recorded_at"],
+            "manifest_sha256": source_manifest_digest,
+            "as_of": source_release["as_of"],
+            "recorded_at": source_release["recorded_at"],
         },
         "selection": selection.as_dict(),
         "selected_capacity_rows": selected_capacity,

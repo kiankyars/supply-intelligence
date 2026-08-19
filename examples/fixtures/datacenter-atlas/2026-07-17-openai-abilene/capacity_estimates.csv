@@ -1,0 +1,2 @@
+entity_id,entity_kind,name,metric,stage,unit,low,base,high,method,confidence,as_of_date,target_date,evidence_id,notes,source_url,source_publisher,source_license,source_retrieved_at
+2dd31763-2dd4-5cb5-927d-0d000dadf767,campus,OpenAI Stargate Abilene,critical_it_mw,operational,MW,300.7142857142857,421.0,589.4,modeled,0.8,2026-05-23,,b760a63b-bde3-559b-96fb-6bf562a29a08,Epoch AI modeled current capacity; 80% interval is base divided/multiplied by 1.4.,https://epoch.ai/data/ai-data-centers,Epoch AI,CC-BY-4.0,2026-07-18T00:59:24Z

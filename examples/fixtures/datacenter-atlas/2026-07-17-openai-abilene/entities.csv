@@ -1,0 +1,2 @@
+entity_id,entity_kind,stable_key,name,country,owner,operator,users,status,status_as_of,status_confidence,status_method,status_evidence_id
+2dd31763-2dd4-5cb5-927d-0d000dadf767,campus,epoch-ai:openai-stargate-abilene,OpenAI Stargate Abilene,United States,Oracle #confident,,OpenAI #confident,expansion,2026-07-17,0.7,epoch_positive_power_with_future_growth,b760a63b-bde3-559b-96fb-6bf562a29a08
