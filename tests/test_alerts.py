@@ -26,6 +26,11 @@ from tests.manufacturing_helpers import (
 )
 
 
+ROOT = Path(__file__).resolve().parents[1]
+RELEASES = ROOT / "releases"
+ALERT_RELEASES = RELEASES / "alerts"
+
+
 def revision_pair() -> tuple[dict[str, object], dict[str, object]]:
     scenario = deterministic_manufacturing()
     previous = reconcile_manufacturing(scenario)
@@ -128,6 +133,19 @@ class RevisionAlertTests(unittest.TestCase):
             self.assertGreater(metadata["alert_count"], 0)
             self.assertIn("dashboard.html", manifest["files"])
             self.assertIn("lineage.json", manifest["files"])
+            lineage = json.loads(
+                (destination / "lineage.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual("../previous.json", lineage["previous"]["path"])
+            self.assertEqual("../current.json", lineage["current"]["path"])
+            for source in ("previous", "current"):
+                recorded_path = Path(lineage[source]["path"])
+                self.assertFalse(recorded_path.is_absolute())
+                expected_path = previous_path if source == "previous" else current_path
+                self.assertEqual(
+                    expected_path.resolve(),
+                    (destination / recorded_path).resolve(),
+                )
             for name, expected in manifest["files"].items():
                 content = (destination / name).read_bytes()
                 self.assertEqual(expected["bytes"], len(content))
@@ -161,6 +179,56 @@ class RevisionAlertTests(unittest.TestCase):
             payload = json.loads(output.getvalue())
             self.assertGreater(payload["alert_count"], 0)
             self.assertEqual("ai-supply-revision-alert-release.v1", payload["format"])
+
+    def test_checked_alert_releases_replay_byte_for_byte(self) -> None:
+        cases = (
+            (
+                RELEASES
+                / "2026-07-17-blackwell-manufacturing-illustrative"
+                / "result.json",
+                RELEASES
+                / "2026-07-19-blackwell-manufacturing-wafer-format-evidence"
+                / "result.json",
+                ALERT_RELEASES
+                / "2026-07-19-blackwell-wafer-format-evidence",
+            ),
+            (
+                RELEASES
+                / "2026-07-19-blackwell-manufacturing-wafer-format-evidence"
+                / "result.json",
+                RELEASES
+                / "2026-07-19-blackwell-manufacturing-reticle-geometry-evidence"
+                / "result.json",
+                ALERT_RELEASES
+                / "2026-07-19-blackwell-reticle-geometry-evidence",
+            ),
+            (
+                RELEASES
+                / "2026-07-19-gb200-supplier-hbm-odm-assembly-to-abilene-draw-linked-illustrative"
+                / "result.json",
+                RELEASES
+                / "2026-07-19-gb200-reticle-geometry-supplier-hbm-odm-assembly-to-abilene-draw-linked-illustrative"
+                / "result.json",
+                ALERT_RELEASES
+                / "2026-07-19-gb200-reticle-geometry-full-chain",
+            ),
+        )
+        for previous, current, checked in cases:
+            with self.subTest(checked=checked):
+                with tempfile.TemporaryDirectory(dir=ALERT_RELEASES) as temporary:
+                    replay = Path(temporary)
+                    write_revision_alert_release(previous, current, replay)
+                    expected_files = {
+                        path.name: path.read_bytes()
+                        for path in checked.iterdir()
+                        if path.is_file()
+                    }
+                    replayed_files = {
+                        path.name: path.read_bytes()
+                        for path in replay.iterdir()
+                        if path.is_file()
+                    }
+                    self.assertEqual(expected_files, replayed_files)
 
 
 if __name__ == "__main__":

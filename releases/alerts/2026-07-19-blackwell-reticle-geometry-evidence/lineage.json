@@ -1,13 +1,13 @@
 {
   "current": {
     "bytes": 56895,
-    "path": "/Users/kian/Developer/semiconductors/supply_intelligence/releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/result.json",
+    "path": "../../2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/result.json",
     "sha256": "93c9f86fac3e9a85f4e3f8590992fbf228a9f90ebeda6cc8d0821afdd4db73d3"
   },
   "format": "ai-supply-revision-lineage.v1",
   "previous": {
     "bytes": 56601,
-    "path": "/Users/kian/Developer/semiconductors/supply_intelligence/releases/2026-07-19-blackwell-manufacturing-wafer-format-evidence/result.json",
+    "path": "../../2026-07-19-blackwell-manufacturing-wafer-format-evidence/result.json",
     "sha256": "980d8782f5fbf88cecd0a7d240b95dea197919d793796cc4128f638981d1fd72"
   }
 }

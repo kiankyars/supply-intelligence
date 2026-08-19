@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RELEASES = ROOT / "releases"
+ATLAS_ADAPTER_DOC = ROOT / "docs" / "atlas-adapter.md"
 DATACENTER_FIXTURE = (
     ROOT
     / "examples"
@@ -63,6 +64,20 @@ class RepositoryIntegrityTests(unittest.TestCase):
             path for path in DATACENTER_FIXTURE.rglob("*") if path.is_file()
         }
         self.assertEqual(fixture_files, verified)
+
+    def test_checked_releases_do_not_expose_personal_absolute_paths(self) -> None:
+        for path in RELEASES.rglob("*"):
+            if path.is_file():
+                self.assertNotIn(
+                    b"/Users/",
+                    path.read_bytes(),
+                    f"personal absolute path in checked release: {path}",
+                )
+
+    def test_atlas_adapter_docs_do_not_require_a_sibling_checkout(self) -> None:
+        text = ATLAS_ADAPTER_DOC.read_text(encoding="utf-8")
+        self.assertNotIn("../semiconductor_atlas", text)
+        self.assertNotIn("PINNED_RELEASE", text)
 
 
 if __name__ == "__main__":

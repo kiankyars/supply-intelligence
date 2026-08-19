@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -21,6 +22,12 @@ def _load_result(path: Path) -> tuple[dict[str, Any], str, int]:
     if not isinstance(value, dict):
         raise ValueError(f"result in {path} must be an object")
     return value, hashlib.sha256(content).hexdigest(), len(content)
+
+
+def _portable_source_path(path: Path, release_directory: Path) -> str:
+    return Path(
+        os.path.relpath(path.resolve(), start=release_directory.resolve())
+    ).as_posix()
 
 
 def build_alert_release_documents(
@@ -92,6 +99,7 @@ def write_revision_alert_release(
 ) -> dict[str, Any]:
     previous_path = Path(previous_result)
     current_path = Path(current_result)
+    destination = Path(output_dir)
     previous, previous_hash, previous_bytes = _load_result(previous_path)
     current, current_hash, current_bytes = _load_result(current_path)
     report = detect_revision_alerts(
@@ -105,18 +113,17 @@ def write_revision_alert_release(
     lineage = {
         "format": "ai-supply-revision-lineage.v1",
         "previous": {
-            "path": str(previous_path.resolve()),
+            "path": _portable_source_path(previous_path, destination),
             "bytes": previous_bytes,
             "sha256": previous_hash,
         },
         "current": {
-            "path": str(current_path.resolve()),
+            "path": _portable_source_path(current_path, destination),
             "bytes": current_bytes,
             "sha256": current_hash,
         },
     }
     documents = build_alert_release_documents(report, lineage)
-    destination = Path(output_dir)
     destination.mkdir(parents=True, exist_ok=True)
     for name, text in documents.items():
         (destination / name).write_text(text, encoding="utf-8")

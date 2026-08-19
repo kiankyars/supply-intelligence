@@ -1,13 +1,13 @@
 {
   "current": {
     "bytes": 53834,
-    "path": "/Users/kian/Developer/semiconductors/supply_intelligence/releases/2026-07-19-gb200-reticle-geometry-supplier-hbm-odm-assembly-to-abilene-draw-linked-illustrative/result.json",
+    "path": "../../2026-07-19-gb200-reticle-geometry-supplier-hbm-odm-assembly-to-abilene-draw-linked-illustrative/result.json",
     "sha256": "3ad80ed33e421529ba83ad6c5c31b4bdbb2ff0d730c28246a9fb49a0e6a37cac"
   },
   "format": "ai-supply-revision-lineage.v1",
   "previous": {
     "bytes": 53497,
-    "path": "/Users/kian/Developer/semiconductors/supply_intelligence/releases/2026-07-19-gb200-supplier-hbm-odm-assembly-to-abilene-draw-linked-illustrative/result.json",
+    "path": "../../2026-07-19-gb200-supplier-hbm-odm-assembly-to-abilene-draw-linked-illustrative/result.json",
     "sha256": "a467084709140df98090c59be42557f1eb0e8f7dc23b091f2cc7b14d01d033fe"
   }
 }
