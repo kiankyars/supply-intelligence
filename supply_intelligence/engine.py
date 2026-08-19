@@ -6,7 +6,6 @@ from collections import defaultdict
 from dataclasses import dataclass
 from math import isclose, isfinite, sqrt
 from random import Random
-from statistics import fmean
 from typing import Any, Iterable, Mapping, Sequence
 
 from .models import Estimate, QuarterlyScenario, STAGE_ORDER, Stage
@@ -42,6 +41,30 @@ def _quantile(sorted_values: list[float], probability: float) -> float:
     return sorted_values[lower] * (1 - fraction) + sorted_values[upper] * fraction
 
 
+def _binary64_fmean(values: list[float]) -> float:
+    """Compute a compensated mean with every intermediate rounded to binary64."""
+
+    partials: list[float] = []
+    for value in values:
+        partial_index = 0
+        partial_value = float(value)
+        for existing in partials:
+            if abs(partial_value) < abs(existing):
+                partial_value, existing = existing, partial_value
+            high = partial_value + existing
+            low = existing - (high - partial_value)
+            if low:
+                partials[partial_index] = low
+                partial_index += 1
+            partial_value = high
+        partials[partial_index:] = [partial_value]
+
+    total = 0.0
+    for partial in partials:
+        total += partial
+    return total / len(values)
+
+
 def summarize(values: Iterable[float]) -> Distribution:
     materialized = list(values)
     ordered = sorted(materialized)
@@ -49,7 +72,7 @@ def summarize(values: Iterable[float]) -> Distribution:
         p10=_quantile(ordered, 0.10),
         p50=_quantile(ordered, 0.50),
         p90=_quantile(ordered, 0.90),
-        mean=fmean(materialized),
+        mean=_binary64_fmean(materialized),
         minimum=ordered[0],
         maximum=ordered[-1],
     )
