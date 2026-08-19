@@ -5,6 +5,7 @@ import json
 import tempfile
 import unittest
 from contextlib import redirect_stdout
+from difflib import unified_diff
 from io import StringIO
 from pathlib import Path
 
@@ -48,6 +49,18 @@ def _write_json(path: Path, value: object) -> Path:
 
 def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _text_diff(expected: Path, actual: Path) -> str:
+    return "".join(
+        unified_diff(
+            expected.read_text(encoding="utf-8").splitlines(keepends=True),
+            actual.read_text(encoding="utf-8").splitlines(keepends=True),
+            fromfile=str(expected),
+            tofile=str(actual),
+            n=1,
+        )
+    )
 
 
 def _case_documents(root: Path) -> tuple[Path, dict[str, object]]:
@@ -217,12 +230,18 @@ class ManufacturingRevisionTests(unittest.TestCase):
             ],
             frozen_result["bottlenecks"],
         )
-        with tempfile.TemporaryDirectory() as temporary:
-            replay = write_manufacturing_revision_release(case, Path(temporary) / "release")
         checked_manifest = json.loads(
             (RETICLE_GEOMETRY_RELEASE / "manifest.json").read_text(encoding="utf-8")
         )
-        self.assertEqual(checked_manifest["files"], replay["files"])
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "release"
+            replay = write_manufacturing_revision_release(case, destination)
+            difference = _text_diff(
+                RETICLE_GEOMETRY_RELEASE / "conversion_outputs.csv",
+                destination / "conversion_outputs.csv",
+            )
+            self.assertFalse(difference, difference)
+            self.assertEqual(checked_manifest["files"], replay["files"])
 
     def test_replacement_preserves_values_and_builds_hash_complete_release(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
