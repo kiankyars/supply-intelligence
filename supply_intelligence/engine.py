@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from math import isclose, isfinite, sqrt
 from random import Random
 from statistics import fmean
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any
 
-from .models import Estimate, QuarterlyScenario, STAGE_ORDER, Stage
+from .models import STAGE_ORDER, Estimate, QuarterlyScenario, Stage
 
 
 @dataclass(frozen=True, slots=True)

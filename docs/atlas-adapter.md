@@ -44,17 +44,18 @@ Example:
 }
 ```
 
-Run the import with:
+The checked contract is self-contained in
+[`tests/test_atlas_adapter.py`](../tests/test_atlas_adapter.py). The tests build a minimal temporary
+release containing manifest-pinned capacity, claim, evidence, and source-input files, then exercise
+the public `import-atlas-capacity` command against that fixture. They require no sibling checkout or
+ignored local payload.
 
-```sh
-python3 -m supply_intelligence import-atlas-capacity \
-  --release-dir ../semiconductor_atlas/releases/PINNED_RELEASE \
-  --selection path/to/selection.json
-```
-
-The command emits an `Estimate`, evidence records suitable for a scenario or portfolio pack, and a
-lineage block containing the atlas manifest hash, selected claim IDs, recursive dependency closure,
-and selected source rows.
+This repository does not currently distribute a reusable Semiconductor Atlas release fixture, so it
+does not present a copy-and-paste production import command. A real import requires an explicitly
+selected release directory whose complete payload is available directly to the caller, plus a
+selection document following the contract below. The command emits an `Estimate`, evidence records
+suitable for a scenario or portfolio pack, and a lineage block containing the atlas manifest hash,
+selected claim IDs, recursive dependency closure, and selected source rows.
 
 ## Canonical capacity mode
 

@@ -12,6 +12,7 @@ from pathlib import Path
 
 from supply_intelligence.cli import main
 from supply_intelligence.datacenter_adapter import (
+    DATACENTER_FIXTURE_FORMAT,
     DATACENTER_RELEASE_FORMAT,
     DatacenterAggregationPolicy,
     DatacenterCapacityStage,
@@ -21,6 +22,20 @@ from supply_intelligence.datacenter_adapter import (
 )
 
 
+ROOT = Path(__file__).resolve().parents[1]
+CHECKED_FIXTURE = (
+    ROOT
+    / "examples"
+    / "fixtures"
+    / "datacenter-atlas"
+    / "2026-07-17-openai-abilene"
+)
+CHECKED_SELECTION = (
+    ROOT / "examples" / "datacenter-openai-abilene-operational-2026q3-selection.json"
+)
+CHECKED_IMPORT = (
+    ROOT / "examples" / "datacenter-openai-abilene-operational-2026q3-import.json"
+)
 RECORDED_AT = "2026-07-18T02:00:00Z"
 CAPACITY_FIELDS = (
     "entity_id",
@@ -201,6 +216,24 @@ def _selection(
 
 
 class DatacenterAdapterTests(unittest.TestCase):
+    def test_checked_fixture_replays_without_a_sibling_repository(self) -> None:
+        result = load_datacenter_power(
+            CHECKED_FIXTURE,
+            load_datacenter_selection(CHECKED_SELECTION),
+        ).as_dict()
+        expected = json.loads(CHECKED_IMPORT.read_text(encoding="utf-8"))
+        self.assertEqual(expected, result)
+        self.assertEqual(
+            DATACENTER_FIXTURE_FORMAT,
+            json.loads(
+                (CHECKED_FIXTURE / "manifest.json").read_text(encoding="utf-8")
+            )["format"],
+        )
+        self.assertEqual(
+            "eb6b58f32ca70374c2a3329a787312ed6c41b2721d8027e3c41cc6bc18d36570",
+            result["lineage"]["datacenter_release"]["manifest_sha256"],
+        )
+
     def test_import_preserves_gross_envelope_and_blocks_incremental_use(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             release = _build_release(Path(temporary))

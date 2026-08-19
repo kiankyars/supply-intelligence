@@ -11,7 +11,6 @@ from .engine import EstimateSampler, _input_estimate, summarize
 from .manufacturing_models import ManufacturingScenario, WaferFlow
 from .manufacturing_research import build_manufacturing_research_queue
 
-
 OUTPUT_UNITS = {
     "logic_gross_dies_per_wafer": "die/wafer",
     "logic_defect_yield": "ratio",

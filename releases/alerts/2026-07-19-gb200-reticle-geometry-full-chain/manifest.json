@@ -19,8 +19,8 @@
       "sha256": "b7cf0a6a9c5eb4b7138fe291538dbfcea90662042c69b7dec941c46c94bdc188"
     },
     "lineage.json": {
-      "bytes": 652,
-      "sha256": "bb9263afee84a02d9fd974f8de47a6f5778e9c83e672fd1fa2fae924c105b168"
+      "bytes": 532,
+      "sha256": "a278babeb93eba9bcd4bf0d9ab9ac3314940805cc7c3b1a7f6d9dfd686ebc414"
     }
   },
   "format": "ai-supply-revision-alert-release.v1",

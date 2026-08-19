@@ -7,6 +7,7 @@ import tempfile
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
+from math import isclose
 from pathlib import Path
 
 from supply_intelligence.cli import main
@@ -25,7 +26,6 @@ from supply_intelligence.hbm_manufacturing_release import (
     HBM_MANUFACTURING_OUTPUT_DRAW_RELEASE_FORMAT,
     write_hbm_manufacturing_link_release,
 )
-
 
 ROOT = Path(__file__).parents[1]
 MANUFACTURING = ROOT / "releases/2026-07-19-blackwell-manufacturing-wafer-format-evidence/scenario.json"
@@ -51,6 +51,67 @@ RETICLE_OUTPUT_DRAW_RELEASE = (
     / "releases"
     / "2026-07-19-blackwell-manufacturing-supplier-hbm-linked-illustrative-v6-reticle-geometry-output-draws"
 )
+
+
+def _assert_semantic_replay(
+    test: unittest.TestCase,
+    expected: object,
+    actual: object,
+    path: str = "$",
+) -> None:
+    if isinstance(expected, float):
+        test.assertIs(type(expected), type(actual), path)
+        test.assertTrue(
+            isclose(expected, float(actual), rel_tol=1e-14, abs_tol=1e-15),
+            f"{path}: {expected!r} != {actual!r}",
+        )
+        return
+    if isinstance(expected, dict):
+        test.assertIs(type(expected), type(actual), path)
+        test.assertEqual(set(expected), set(actual), path)
+        for key, value in expected.items():
+            _assert_semantic_replay(test, value, actual[key], f"{path}.{key}")
+        return
+    if isinstance(expected, list):
+        test.assertIs(type(expected), type(actual), path)
+        test.assertEqual(len(expected), len(actual), path)
+        for index, value in enumerate(expected):
+            _assert_semantic_replay(test, value, actual[index], f"{path}[{index}]")
+        return
+    test.assertIs(type(expected), type(actual), path)
+    test.assertEqual(expected, actual, path)
+
+
+def _assert_draw_replay(
+    test: unittest.TestCase,
+    expected_path: Path,
+    actual_path: Path,
+) -> None:
+    with expected_path.open(encoding="utf-8", newline="") as expected_handle:
+        expected_reader = csv.DictReader(expected_handle)
+        expected_rows = list(expected_reader)
+    with actual_path.open(encoding="utf-8", newline="") as actual_handle:
+        actual_reader = csv.DictReader(actual_handle)
+        actual_rows = list(actual_reader)
+    test.assertEqual(expected_reader.fieldnames, actual_reader.fieldnames)
+    test.assertEqual(len(expected_rows), len(actual_rows))
+    for row_index, (expected, actual) in enumerate(zip(expected_rows, actual_rows)):
+        test.assertEqual(expected["draw_index"], actual["draw_index"], row_index)
+        test.assertEqual(
+            expected["source_hbm_draw_index"],
+            actual["source_hbm_draw_index"],
+            row_index,
+        )
+        for field in expected.keys() - {"draw_index", "source_hbm_draw_index"}:
+            test.assertTrue(
+                isclose(
+                    float(expected[field]),
+                    float(actual[field]),
+                    rel_tol=1e-14,
+                    abs_tol=1e-15,
+                ),
+                f"row {row_index} {field}: {expected[field]} != {actual[field]}",
+            )
 
 
 def _json_bytes(value: object) -> bytes:
@@ -103,22 +164,53 @@ class HbmManufacturingLinkTests(unittest.TestCase):
         self.assertEqual("derived", case.manufacturing.logic.wafer.die_height_mm.posture.value)
         self.assertEqual("derived", case.manufacturing.logic.wafer.die_width_mm.posture.value)
         with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "release"
             replay = write_hbm_manufacturing_link_release(
                 case,
-                Path(temporary) / "release",
+                destination,
                 include_output_draws=True,
             )
-        checked_manifest = json.loads(
-            (RETICLE_OUTPUT_DRAW_RELEASE / "manifest.json").read_text(encoding="utf-8")
-        )
-        self.assertEqual(checked_manifest["files"], replay["files"])
-        frozen = json.loads(
-            (RETICLE_OUTPUT_DRAW_RELEASE / "result.json").read_text(encoding="utf-8")
-        )
-        self.assertEqual(
-            3719.1216147203795,
-            frozen["conversion_outputs"]["complete_system_equivalents"]["p50"],
-        )
+            checked_manifest = json.loads(
+                (RETICLE_OUTPUT_DRAW_RELEASE / "manifest.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(set(checked_manifest["files"]), set(replay["files"]))
+            self.assertEqual(
+                {key: value for key, value in checked_manifest.items() if key != "files"},
+                {
+                    key: value
+                    for key, value in replay.items()
+                    if key not in {"files", "output_dir"}
+                },
+            )
+            frozen = json.loads(
+                (RETICLE_OUTPUT_DRAW_RELEASE / "result.json").read_text(encoding="utf-8")
+            )
+            replayed = json.loads(
+                (destination / "result.json").read_text(encoding="utf-8")
+            )
+            _assert_semantic_replay(self, frozen, replayed)
+            _assert_draw_replay(
+                self,
+                RETICLE_OUTPUT_DRAW_RELEASE / "manufacturing_draws.csv",
+                destination / "manufacturing_draws.csv",
+            )
+            platform_sensitive = {
+                "conversion_outputs.csv",
+                "dashboard.html",
+                "manufacturing_draws.csv",
+                "result.json",
+            }
+            self.assertLessEqual(platform_sensitive, set(checked_manifest["files"]))
+            for name in set(checked_manifest["files"]) - platform_sensitive:
+                self.assertEqual(
+                    (RETICLE_OUTPUT_DRAW_RELEASE / name).read_bytes(),
+                    (destination / name).read_bytes(),
+                    name,
+                )
+            self.assertEqual(
+                3719.1216147203795,
+                frozen["conversion_outputs"]["complete_system_equivalents"]["p50"],
+            )
 
     def test_output_draw_release_reproduces_result_and_is_replay_safe(self) -> None:
         case = load_hbm_manufacturing_link_case(

@@ -1,0 +1,28 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 1142,
+      "sha256": "131453d6b5b7b47579c4539e53ecf30d377036e8dfbb36e49be9261d4f78f5cb"
+    },
+    "capacity_estimates.csv": {
+      "bytes": 531,
+      "sha256": "3aea3165f3714dbc040dc9ebd4aee27129cb9cb5e1de6514c169e11fbe3b9cb8"
+    },
+    "entities.csv": {
+      "bytes": 392,
+      "sha256": "6d3fcc3ff1c0a2a75764af41016d9a7fd68700353cf53e935c27957d083b6873"
+    },
+    "evidence.csv": {
+      "bytes": 432,
+      "sha256": "1f1b3ab948349441bb586386a2ea1bda3c65f97b2d8d6483bc8348bef31a16a2"
+    }
+  },
+  "format": "ai-supply-datacenter-adapter-fixture.v1",
+  "scope": "selected_rows_only",
+  "source_release": {
+    "as_of": "2026-07-17",
+    "format": "datacenter-atlas-release-v1",
+    "manifest_sha256": "eb6b58f32ca70374c2a3329a787312ed6c41b2721d8027e3c41cc6bc18d36570",
+    "recorded_at": "2026-07-18T02:00:00Z"
+  }
+}

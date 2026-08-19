@@ -1,5 +1,8 @@
 # AI Supply Intelligence
 
+**Rights:** This repository has no project-wide license. See
+[Rights and attribution](RIGHTS.md) before reuse or redistribution.
+
 This package reconciles quarterly AI-system output against the resources needed to produce, ship,
 install, and commission complete platforms. A single-platform engine converts every resource into
 system-equivalent capacity and takes the binding minimum. A portfolio engine allocates shared pools
@@ -336,7 +339,8 @@ to inspect five Q3 forecasts, their 20,000 exact source draws, pre-registered ev
 and future evidence contracts. All forecasts remain `pending_period_end`, with zero outcomes and
 zero scores. This is a real pre-outcome native-model freeze, but its source remains synthetic and is
 not a market estimate or evidence of model skill. See the
-[native forecast contract](docs/forecast-vintages.md).
+[native forecast contract](docs/forecast-vintages.md) and
+[canonical forecast release index](docs/forecast-release-index.md).
 
 Freeze the checked pre-period outcome review:
 
@@ -486,17 +490,20 @@ preserves every draw, and its stage-scoped coverage prevents those modeled resou
 in the three-source chain. Only the NVIDIA topology is sourced; all assembly capacities and generic
 ODM identities remain synthetic.
 
-The [data-center atlas](../datacenter_atlas/) remains the source for downstream power and
-commissioning evidence. The [data-center power bridge](docs/datacenter-adapter.md) now imports pinned
-site-level critical IT MW and readiness evidence. It refuses to treat gross campus capacity as vacant
-or platform-allocated power. The separate
+The [data-center atlas](https://github.com/kiankyars/datacenter-atlas) remains the source for
+downstream power and commissioning evidence. The
+[data-center power bridge](docs/datacenter-adapter.md) now imports pinned site-level critical IT MW
+and readiness evidence. It refuses to treat gross campus capacity as vacant or platform-allocated
+power. Its checked command uses a directly versioned selected-row fixture, so it runs from a clean
+clone without assuming that a sibling Atlas payload exists. The fixture retains the historical
+source manifest hash but is not a complete or current Atlas release. The separate
 [operational conversion](docs/datacenter-operational.md) now performs the required deductions and
 reconciles power-supported racks with commissioning throughput. Its checked site-specific inputs are
 synthetic, so it is not yet eligible to replace the portfolio's energized-power or commissioning
 pools.
 
-The [semiconductor atlas](../semiconductor_atlas/) stores upstream facility, project, capability,
-capacity-basis, and constraint claims. The strict
+The [semiconductor atlas](https://github.com/kiankyars/semiconductor-atlas) stores upstream facility,
+project, capability, capacity-basis, and constraint claims. The strict
 [atlas adapter](docs/atlas-adapter.md) imports only explicitly selected, hashed, quarter-total
 capacity slices without collapsing announced, installed, qualified, and economically usable bases.
 The current open atlas seed has no capacity claims, so the checked portfolio still uses synthetic
@@ -510,6 +517,11 @@ reticle-geometry intervals, leaving 18 process and capacity inputs synthetic. Th
 is exact-quarter, capacity-basis-preserving supplier evidence for influential wafer-start, yield,
 binning, HBM, and package inputs, plus evidence-backed cross-source dependence beyond the
 manufacturing boundary.
+
+Frozen Monte Carlo releases remain hash-bound to their original bytes. Cross-platform `libm`
+implementations can differ at the final binary64 digit for non-integer powers, so replay tests require
+exact lineage and input bytes while accepting only `rel_tol=1e-14` and `abs_tol=1e-15` for generated
+numeric results and draw ledgers.
 
 The claim ledger now supports atomic, idempotent ingest, strict revision supersession, bitemporal
 queries, retractions, source-level diffs, interval-gated cycles, a durable notification outbox, local
@@ -552,6 +564,7 @@ calibration.
 - [Supplier-resolved system assembly](docs/system-assembly.md)
 - [Supplier earnings and consensus bridge](docs/earnings-bridge.md)
 - [Native forecast vintages](docs/forecast-vintages.md)
+- [Canonical forecast release index](docs/forecast-release-index.md)
 - [Forecast outcome reviews](docs/forecast-outcomes.md)
 - [Forecast calibration and backtesting](docs/calibration.md)
 - [Reported-guidance historical benchmark](docs/guidance-backtest.md)
