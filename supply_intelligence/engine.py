@@ -4,11 +4,15 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass
-from math import isclose, isfinite, sqrt
+from decimal import Context, Decimal
+from math import isclose, isfinite
 from random import Random
 from typing import Any, Iterable, Mapping, Sequence
 
 from .models import Estimate, QuarterlyScenario, STAGE_ORDER, Stage
+
+
+_BINARY64_SQRT_CONTEXT = Context(prec=25)
 
 
 @dataclass(frozen=True, slots=True)
@@ -65,6 +69,12 @@ def _binary64_fmean(values: list[float]) -> float:
     return total / len(values)
 
 
+def _binary64_sqrt(value: float) -> float:
+    """Return a platform-independent, correctly rounded binary64 square root."""
+
+    return float(_BINARY64_SQRT_CONTEXT.sqrt(Decimal.from_float(float(value))))
+
+
 def summarize(values: Iterable[float]) -> Distribution:
     materialized = list(values)
     ordered = sorted(materialized)
@@ -84,8 +94,8 @@ def _triangular(estimate: Estimate, draw: float) -> float:
         return low
     mode_fraction = (mode - low) / (high - low)
     if draw < mode_fraction:
-        return low + sqrt(draw * (high - low) * (mode - low))
-    return high - sqrt((1 - draw) * (high - low) * (high - mode))
+        return low + _binary64_sqrt(draw * (high - low) * (mode - low))
+    return high - _binary64_sqrt((1 - draw) * (high - low) * (high - mode))
 
 
 class EstimateSampler:
