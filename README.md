@@ -36,6 +36,40 @@ The checked examples use NVIDIA documentation for disclosed GB200 and GB300 rack
 Capacity, yield, demand, allocation, economics, and consensus inputs remain synthetic. All checked
 dashboards label those values as demonstration data.
 
+## Blackwell Constraint Pulse v1
+
+The [Blackwell Constraint Pulse contract](docs/blackwell-constraint-pulse.md) adds a weekly 2026-Q4
+evidence product above the existing illustrative models. Its production path accepts only exact
+GitHub release pins from Data Center Atlas and Semiconductor Atlas, verifies those assets into a
+content-addressed cache, and builds offline from the verified cache. It never treats an Atlas sibling
+working directory as an input.
+
+The checked [upstream lock](contracts/blackwell-constraint-pulse-v1/upstream-releases.lock.json) is
+intentionally empty until compatible immutable public assets exist. The checked
+[synthetic-input audit](contracts/blackwell-constraint-pulse-v1/synthetic-input-audit.json) freezes
+107 active transitive inputs plus one diagnostic input as synthetic; evidence can make a row an
+eligible replacement candidate but cannot silently promote it to fact. Fetch locked releases with:
+
+```sh
+ai-supply fetch-upstream-releases \
+  --lockfile contracts/blackwell-constraint-pulse-v1/upstream-releases.lock.json \
+  --cache-dir .cache/blackwell-pulse
+```
+
+After freezing a Sunday Q4 pulse configuration, build the byte-stable release offline with:
+
+```sh
+ai-supply build-blackwell-pulse \
+  --config <frozen-week-config.json> \
+  --lockfile contracts/blackwell-constraint-pulse-v1/upstream-releases.lock.json \
+  --cache-dir .cache/blackwell-pulse \
+  --synthetic-audit contracts/blackwell-constraint-pulse-v1/synthetic-input-audit.json \
+  --output-dir <immutable-release-directory>
+```
+
+Unless every manufacture, shipment, energization, scope, and cross-source evidence gate passes, the
+supply-to-site field is exactly `no evidence-backed estimate.`
+
 ## Run the checked scenario
 
 From this directory:
@@ -568,4 +602,5 @@ calibration.
 - [Forecast outcome reviews](docs/forecast-outcomes.md)
 - [Forecast calibration and backtesting](docs/calibration.md)
 - [Reported-guidance historical benchmark](docs/guidance-backtest.md)
+- [Blackwell Constraint Pulse v1](docs/blackwell-constraint-pulse.md)
 - [Build order and coverage gaps](docs/roadmap.md)

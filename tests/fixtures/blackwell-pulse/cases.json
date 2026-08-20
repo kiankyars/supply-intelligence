@@ -1,0 +1,30 @@
+{
+  "format": "ai-supply-blackwell-pulse-test-fixture-cases.v1",
+  "notice": "TEST-ONLY -- NOT PRODUCTION EVIDENCE",
+  "cases": [
+    {
+      "id": "incompatible",
+      "production_evidence": false,
+      "modeled_state": "A generated claim has an incompatible unit or attribution basis.",
+      "expected_outcome": "no evidence-backed estimate."
+    },
+    {
+      "id": "missing",
+      "production_evidence": false,
+      "modeled_state": "A required generated claim is absent.",
+      "expected_outcome": "no evidence-backed estimate."
+    },
+    {
+      "id": "tampered",
+      "production_evidence": false,
+      "modeled_state": "A cached generated release asset no longer matches its locked SHA-256.",
+      "expected_outcome": "Abort without writing or overwriting a pulse release."
+    },
+    {
+      "id": "valid",
+      "production_evidence": false,
+      "modeled_state": "All generated test-only claim, scope, lineage, and categorical gates pass.",
+      "expected_outcome": "A numerical system range is permitted for this test only."
+    }
+  ]
+}

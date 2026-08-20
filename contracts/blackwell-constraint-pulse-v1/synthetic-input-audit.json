@@ -1,0 +1,3601 @@
+{
+  "format": "ai-supply-blackwell-synthetic-input-audit.v1",
+  "product": "blackwell-constraint-pulse",
+  "target_quarter": "2026-Q4",
+  "required_upstreams": [
+    "datacenter_atlas",
+    "semiconductor_atlas"
+  ],
+  "baseline": {
+    "source_commit": "6d287e9bae400a54d05f8f8ae15687eb80dedbfb",
+    "source_quarter": "2026-Q3",
+    "active_numeric_input_count": 107,
+    "diagnostic_numeric_input_count": 1,
+    "active_input_ids_sha256": "4e4291d3e5fba63b6bf92a448fa4a576ef86e00cf09eb137acb25f47670ce5c2",
+    "notes": "The current ranges are a frozen audit of explicitly synthetic 2026-Q3 demonstration inputs only. They are not production evidence, must not be relabelled as 2026-Q4 facts, and cannot be used as fallback values when an upstream release or claim is missing, incompatible, or incomplete. Linked wrapper estimates are excluded to avoid double counting their transitive leaves."
+  },
+  "inputs": [
+    {
+      "id": "base_chain:factory-qualification.capacity",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=factory-qualification].capacity",
+      "current_range": {
+        "low": 350,
+        "base": 430,
+        "high": 520,
+        "unit": "qualification_slot"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "qualification_slot",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage shipped; capacity basis sellable_output; Factory qualification slots quarter-total throughput",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Factory qualification slots quarter-total throughput for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "base_chain:factory-qualification.effective_yield",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=factory-qualification].effective_yield",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.95,
+        "high": 0.98,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage shipped; capacity basis sellable_output; Factory qualification slots successful-output ratio",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived claim must quantify Factory qualification slots successful-output ratio for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "base_chain:factory-qualification.units_per_system",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=factory-qualification].units_per_system",
+      "current_range": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "qualification_slot"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "conversion",
+      "stage": "shipment",
+      "unit": "qualification_slot",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage shipped; capacity basis sellable_output; Factory qualification slots units required per DGX GB200 NVL72 system",
+      "time_basis": "current_product_configuration",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived claim must quantify Factory qualification slots units required per DGX GB200 NVL72 system for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "base_chain:rack-logistics.capacity",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=rack-logistics].capacity",
+      "current_range": {
+        "low": 365,
+        "base": 450,
+        "high": 540,
+        "unit": "shipment_slot"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "shipment_slot",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage shipped; capacity basis sellable_output; Qualified rack logistics slots quarter-total throughput",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Qualified rack logistics slots quarter-total throughput for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "base_chain:rack-logistics.effective_yield",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=rack-logistics].effective_yield",
+      "current_range": {
+        "low": 0.96,
+        "base": 0.985,
+        "high": 0.997,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage shipped; capacity basis sellable_output; Qualified rack logistics slots successful-output ratio",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived claim must quantify Qualified rack logistics slots successful-output ratio for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "base_chain:rack-logistics.units_per_system",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=rack-logistics].units_per_system",
+      "current_range": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "shipment_slot"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "conversion",
+      "stage": "shipment",
+      "unit": "shipment_slot",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage shipped; capacity basis sellable_output; Qualified rack logistics slots units required per DGX GB200 NVL72 system",
+      "time_basis": "current_product_configuration",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived claim must quantify Qualified rack logistics slots units required per DGX GB200 NVL72 system for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "base_chain:site-installation.capacity",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=site-installation].capacity",
+      "current_range": {
+        "low": 330,
+        "base": 410,
+        "high": 500,
+        "unit": "installation_slot"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "energization",
+      "unit": "installation_slot",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage installed; capacity basis installed_resource; Customer-site installation slots quarter-total throughput",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Customer-site installation slots quarter-total throughput for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "base_chain:site-installation.effective_yield",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=site-installation].effective_yield",
+      "current_range": {
+        "low": 0.92,
+        "base": 0.96,
+        "high": 0.99,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "energization",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage installed; capacity basis installed_resource; Customer-site installation slots successful-output ratio",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived claim must quantify Customer-site installation slots successful-output ratio for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "base_chain:site-installation.units_per_system",
+      "current_source": "examples/gb200-nvl72-illustrative-2026q3.json#constraints[id=site-installation].units_per_system",
+      "current_range": {
+        "low": 1,
+        "base": 1,
+        "high": 1,
+        "unit": "installation_slot"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "conversion",
+      "stage": "energization",
+      "unit": "installation_slot",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA DGX GB200 NVL72 systems; stage installed; capacity basis installed_resource; Customer-site installation slots units required per DGX GB200 NVL72 system",
+      "time_basis": "current_product_configuration",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived claim must quantify Customer-site installation slots units required per DGX GB200 NVL72 system for the same NVL72 system population, stage, capacity basis, and source unit; adjacent-stage throughput cannot pass."
+      }
+    },
+    {
+      "id": "chain_link:linked-abilene-complete-rack-allocation.platform_allocation",
+      "current_source": "examples/gb200-to-abilene-odm-assembly-draw-linked-reticle-geometry-illustrative-2026q3.json#links[id=linked-abilene-complete-rack-allocation].platform_allocation",
+      "current_range": {
+        "low": 0.04,
+        "base": 0.06,
+        "high": 0.08,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Share of the same component-cleared DGX GB200 NVL72 complete-rack population shipped to and received by OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived Q4 site claim must quantify the Abilene share using destination shipment or receiving records and the identical complete-rack denominator from the semiconductor release; an unmatched numerator cannot pass."
+      }
+    },
+    {
+      "id": "datacenter_operational:commissioning_completion_ratio",
+      "current_source": "examples/datacenter-openai-abilene-net-operational-illustrative-2026q3.json#commissioning_completion_ratio",
+      "current_range": {
+        "low": 0.7,
+        "base": 0.82,
+        "high": 0.92,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "energization",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "DGX GB200 NVL72 commissioning slots at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767 reaching operational acceptance",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived Q4 site claim must quantify the share of scheduled NVL72 commissioning slots reaching operational acceptance within the quarter, using the same slot cohort."
+      }
+    },
+    {
+      "id": "datacenter_operational:commissioning_slots",
+      "current_source": "examples/datacenter-openai-abilene-net-operational-illustrative-2026q3.json#commissioning_slots",
+      "current_range": {
+        "low": 400,
+        "base": 600,
+        "high": 850,
+        "unit": "rack"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "throughput",
+      "stage": "energization",
+      "unit": "rack",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Distinct DGX GB200 NVL72 rack commissioning and acceptance slots at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 site claim must quantify distinct NVL72 rack commissioning slots at the exact selected campus, excluding duplicated or rolled-quarter slots."
+      }
+    },
+    {
+      "id": "datacenter_operational:deductions.contracted_reservations",
+      "current_source": "examples/datacenter-openai-abilene-net-operational-illustrative-2026q3.json#deductions.contracted_reservations",
+      "current_range": {
+        "low": 35,
+        "base": 60,
+        "high": 90,
+        "unit": "MW"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "energization",
+      "unit": "MW",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Outstanding contracted critical-IT reservations at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767, excluding already energized load",
+      "time_basis": "week_end_point_in_time",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived week-end claim must quantify outstanding contracted reservations at the exact campus and prove they exclude current energized load and other commitment buckets."
+      }
+    },
+    {
+      "id": "datacenter_operational:deductions.current_critical_it_load",
+      "current_source": "examples/datacenter-openai-abilene-net-operational-illustrative-2026q3.json#deductions.current_critical_it_load",
+      "current_range": {
+        "low": 170,
+        "base": 200,
+        "high": 240,
+        "unit": "MW"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "utilization",
+      "stage": "energization",
+      "unit": "MW",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Metered current critical-IT load at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767",
+      "time_basis": "week_end_point_in_time",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived week-end claim must quantify metered critical-IT load at the exact campus, with a fresh measurement window and no gross-facility or PUE substitution."
+      }
+    },
+    {
+      "id": "datacenter_operational:deductions.other_platform_commitments",
+      "current_source": "examples/datacenter-openai-abilene-net-operational-illustrative-2026q3.json#deductions.other_platform_commitments",
+      "current_range": {
+        "low": 15,
+        "base": 35,
+        "high": 60,
+        "unit": "MW"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "energization",
+      "unit": "MW",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Critical-IT MW committed to non-target platforms at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767, excluding current load and reservations",
+      "time_basis": "week_end_point_in_time",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived week-end claim must quantify other-platform commitments at the exact campus and prove they exclude both current load and contracted reservations."
+      }
+    },
+    {
+      "id": "datacenter_operational:deductions.rack_incompatible_capacity",
+      "current_source": "examples/datacenter-openai-abilene-net-operational-illustrative-2026q3.json#deductions.rack_incompatible_capacity",
+      "current_range": {
+        "low": 10,
+        "base": 25,
+        "high": 50,
+        "unit": "MW"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "energization",
+      "unit": "MW",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Otherwise uncommitted critical-IT MW at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767 that fails DGX GB200 NVL72 density or liquid-cooling compatibility",
+      "time_basis": "week_end_point_in_time",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived week-end engineering claim must quantify residual campus MW incompatible with NVL72 electrical density or liquid cooling after excluding load and commitments."
+      }
+    },
+    {
+      "id": "datacenter_operational:target_platform_share",
+      "current_source": "examples/datacenter-openai-abilene-net-operational-illustrative-2026q3.json#target_platform_share",
+      "current_range": {
+        "low": 0.6,
+        "base": 0.75,
+        "high": 0.9,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "energization",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Share of residual compatible critical-IT MW at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767 allocated to DGX GB200 NVL72",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived Q4 allocation schedule must quantify the share of residual compatible campus MW assigned to the exact NVL72 platform and customer scope."
+      }
+    },
+    {
+      "id": "hbm_supplier:platform.accelerator_package_demand",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#platform.accelerator_package_demand",
+      "current_range": {
+        "low": 300000,
+        "base": 400000,
+        "high": 500000,
+        "unit": "package"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": false,
+      "parameter_class": "demand",
+      "stage": "manufacture",
+      "unit": "package",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA Blackwell accelerator-package demand served by the modeled supplier HBM3E pool",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": false,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "This diagnostic demand cap may be replaced only by direct reported or derived 2026-Q4 order, allocation, or accepted-demand evidence for the same Blackwell package scope; it is not required for the pre-demand stack capacity imported by the supply-to-site chain."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.customer_allocation_share",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].customer_allocation_share",
+      "current_range": {
+        "low": 0.45,
+        "base": 0.55,
+        "high": 0.65,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; share of Blackwell-qualified stacks allocated to NVIDIA Blackwell",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Micron Technology's share of Blackwell-qualified stacks allocated to NVIDIA Blackwell for capacity scope micron-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.known_good_die_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].known_good_die_yield",
+      "current_range": {
+        "low": 0.84,
+        "base": 0.91,
+        "high": 0.96,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; known-good memory-die yield after repair and test",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Micron Technology's known-good memory-die yield after repair and test for capacity scope micron-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.platform_qualified_share",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].platform_qualified_share",
+      "current_range": {
+        "low": 0.7,
+        "base": 0.8,
+        "high": 0.9,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; share of good 24GB 8-high-compatible HBM3E stacks qualified for Blackwell",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Micron Technology's share of good 24GB 8-high-compatible HBM3E stacks qualified for Blackwell for capacity scope micron-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.stack_assembly_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].stack_assembly_yield",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.95,
+        "high": 0.985,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; HBM3E stack-assembly yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Micron Technology's HBM3E stack-assembly yield for capacity scope micron-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.stack_final_test_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].stack_final_test_yield",
+      "current_range": {
+        "low": 0.95,
+        "base": 0.98,
+        "high": 0.997,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; HBM3E final stack-test yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Micron Technology's HBM3E final stack-test yield for capacity scope micron-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.wafer.die_height_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].wafer.die_height_mm",
+      "current_range": {
+        "low": 10.5,
+        "base": 11,
+        "high": 11.5,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; HBM3E memory-die height",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Micron Technology's HBM3E memory-die height for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.wafer.die_width_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].wafer.die_width_mm",
+      "current_range": {
+        "low": 9.5,
+        "base": 10,
+        "high": 10.5,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; HBM3E memory-die width",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Micron Technology's HBM3E memory-die width for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.wafer.edge_exclusion_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].wafer.edge_exclusion_mm",
+      "current_range": {
+        "low": 2,
+        "base": 2.5,
+        "high": 3,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; HBM3E wafer edge exclusion",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Micron Technology's HBM3E wafer edge exclusion for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.wafer.scribe_width_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].wafer.scribe_width_mm",
+      "current_range": {
+        "low": 0.05,
+        "base": 0.08,
+        "high": 0.11,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; HBM3E wafer scribe width",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Micron Technology's HBM3E wafer scribe width for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.micron.wafer.wafer_starts",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=micron].wafer.wafer_starts",
+      "current_range": {
+        "low": 25000,
+        "base": 35000,
+        "high": 45000,
+        "unit": "wafer"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "manufacture",
+      "unit": "wafer",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Micron Technology Illustrative 24GB 8-high-compatible HBM3E; process 1-beta; non-overlapping capacity scope micron-global-hbm3e-compatible-2026q3; quarter-total HBM3E-compatible wafer starts before Blackwell qualification and NVIDIA allocation",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Micron Technology's quarter-total HBM3E-compatible wafer starts before Blackwell qualification and NVIDIA allocation for capacity scope micron-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.customer_allocation_share",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].customer_allocation_share",
+      "current_range": {
+        "low": 0.15,
+        "base": 0.25,
+        "high": 0.4,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; share of Blackwell-qualified stacks allocated to NVIDIA Blackwell",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Samsung Electronics's share of Blackwell-qualified stacks allocated to NVIDIA Blackwell for capacity scope samsung-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.known_good_die_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].known_good_die_yield",
+      "current_range": {
+        "low": 0.78,
+        "base": 0.87,
+        "high": 0.94,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; known-good memory-die yield after repair and test",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Samsung Electronics's known-good memory-die yield after repair and test for capacity scope samsung-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.platform_qualified_share",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].platform_qualified_share",
+      "current_range": {
+        "low": 0.4,
+        "base": 0.6,
+        "high": 0.8,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; share of good 24GB 8-high-compatible HBM3E stacks qualified for Blackwell",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Samsung Electronics's share of good 24GB 8-high-compatible HBM3E stacks qualified for Blackwell for capacity scope samsung-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.stack_assembly_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].stack_assembly_yield",
+      "current_range": {
+        "low": 0.84,
+        "base": 0.91,
+        "high": 0.97,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; HBM3E stack-assembly yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Samsung Electronics's HBM3E stack-assembly yield for capacity scope samsung-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.stack_final_test_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].stack_final_test_yield",
+      "current_range": {
+        "low": 0.92,
+        "base": 0.965,
+        "high": 0.992,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; HBM3E final stack-test yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Samsung Electronics's HBM3E final stack-test yield for capacity scope samsung-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.wafer.die_height_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].wafer.die_height_mm",
+      "current_range": {
+        "low": 10.5,
+        "base": 11,
+        "high": 11.5,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; HBM3E memory-die height",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Samsung Electronics's HBM3E memory-die height for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.wafer.die_width_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].wafer.die_width_mm",
+      "current_range": {
+        "low": 9.5,
+        "base": 10,
+        "high": 10.5,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; HBM3E memory-die width",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Samsung Electronics's HBM3E memory-die width for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.wafer.edge_exclusion_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].wafer.edge_exclusion_mm",
+      "current_range": {
+        "low": 2,
+        "base": 2.5,
+        "high": 3,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; HBM3E wafer edge exclusion",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Samsung Electronics's HBM3E wafer edge exclusion for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.wafer.scribe_width_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].wafer.scribe_width_mm",
+      "current_range": {
+        "low": 0.05,
+        "base": 0.08,
+        "high": 0.11,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; HBM3E wafer scribe width",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Samsung Electronics's HBM3E wafer scribe width for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.wafer.wafer_diameter_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].wafer.wafer_diameter_mm",
+      "current_range": {
+        "low": 300,
+        "base": 300,
+        "high": 300,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; HBM3E wafer diameter",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify Samsung Electronics's HBM3E wafer diameter for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.samsung.wafer.wafer_starts",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=samsung].wafer.wafer_starts",
+      "current_range": {
+        "low": 20000,
+        "base": 30000,
+        "high": 40000,
+        "unit": "wafer"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "manufacture",
+      "unit": "wafer",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Samsung Electronics Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope samsung-global-hbm3e-compatible-2026q3; quarter-total HBM3E-compatible wafer starts before Blackwell qualification and NVIDIA allocation",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify Samsung Electronics's quarter-total HBM3E-compatible wafer starts before Blackwell qualification and NVIDIA allocation for capacity scope samsung-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.customer_allocation_share",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].customer_allocation_share",
+      "current_range": {
+        "low": 0.35,
+        "base": 0.45,
+        "high": 0.55,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; share of Blackwell-qualified stacks allocated to NVIDIA Blackwell",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify SK hynix's share of Blackwell-qualified stacks allocated to NVIDIA Blackwell for capacity scope sk-hynix-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.known_good_die_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].known_good_die_yield",
+      "current_range": {
+        "low": 0.82,
+        "base": 0.9,
+        "high": 0.95,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; known-good memory-die yield after repair and test",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify SK hynix's known-good memory-die yield after repair and test for capacity scope sk-hynix-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.platform_qualified_share",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].platform_qualified_share",
+      "current_range": {
+        "low": 0.75,
+        "base": 0.85,
+        "high": 0.92,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; share of good 24GB 8-high-compatible HBM3E stacks qualified for Blackwell",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify SK hynix's share of good 24GB 8-high-compatible HBM3E stacks qualified for Blackwell for capacity scope sk-hynix-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.stack_assembly_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].stack_assembly_yield",
+      "current_range": {
+        "low": 0.88,
+        "base": 0.94,
+        "high": 0.98,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; HBM3E stack-assembly yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify SK hynix's HBM3E stack-assembly yield for capacity scope sk-hynix-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.stack_final_test_yield",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].stack_final_test_yield",
+      "current_range": {
+        "low": 0.94,
+        "base": 0.975,
+        "high": 0.995,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; HBM3E final stack-test yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify SK hynix's HBM3E final stack-test yield for capacity scope sk-hynix-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.wafer.die_height_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].wafer.die_height_mm",
+      "current_range": {
+        "low": 10.5,
+        "base": 11,
+        "high": 11.5,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; HBM3E memory-die height",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify SK hynix's HBM3E memory-die height for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.wafer.die_width_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].wafer.die_width_mm",
+      "current_range": {
+        "low": 9.5,
+        "base": 10,
+        "high": 10.5,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; HBM3E memory-die width",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify SK hynix's HBM3E memory-die width for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.wafer.edge_exclusion_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].wafer.edge_exclusion_mm",
+      "current_range": {
+        "low": 2,
+        "base": 2.5,
+        "high": 3,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; HBM3E wafer edge exclusion",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify SK hynix's HBM3E wafer edge exclusion for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.wafer.scribe_width_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].wafer.scribe_width_mm",
+      "current_range": {
+        "low": 0.05,
+        "base": 0.08,
+        "high": 0.11,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; HBM3E wafer scribe width",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify SK hynix's HBM3E wafer scribe width for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.wafer.wafer_diameter_mm",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].wafer.wafer_diameter_mm",
+      "current_range": {
+        "low": 300,
+        "base": 300,
+        "high": 300,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; HBM3E wafer diameter",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived supplier-specific claim must quantify SK hynix's HBM3E wafer diameter for the exact compatible HBM3E product and process; another supplier's geometry cannot pass."
+      }
+    },
+    {
+      "id": "hbm_supplier:supplier.sk-hynix.wafer.wafer_starts",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers[id=sk-hynix].wafer.wafer_starts",
+      "current_range": {
+        "low": 40000,
+        "base": 55000,
+        "high": 70000,
+        "unit": "wafer"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "manufacture",
+      "unit": "wafer",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "SK hynix Illustrative 24GB 8-high-compatible HBM3E; process supplier HBM3E process not source-verified; non-overlapping capacity scope sk-hynix-global-hbm3e-compatible-2026q3; quarter-total HBM3E-compatible wafer starts before Blackwell qualification and NVIDIA allocation",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 supplier-specific claim must quantify SK hynix's quarter-total HBM3E-compatible wafer starts before Blackwell qualification and NVIDIA allocation for capacity scope sk-hynix-global-hbm3e-compatible-2026q3, with the same product, cohort, numerator, denominator, and capacity basis."
+      }
+    },
+    {
+      "id": "manufacturing:logic.clustering_alpha",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#logic.clustering_alpha",
+      "current_range": {
+        "low": 2,
+        "base": 3,
+        "high": 4,
+        "unit": "alpha"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "alpha",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA Blackwell logic dies on TSMC 4NP using the same production cohort and negative-binomial defect-yield model",
+      "time_basis": "target_quarter_process_parameter",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived Q4 Blackwell 4NP claim must quantify the negative-binomial defect-clustering alpha for the same production cohort and model definition; a generic node parameter cannot pass."
+      }
+    },
+    {
+      "id": "manufacturing:logic.defect_density_per_cm2",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#logic.defect_density_per_cm2",
+      "current_range": {
+        "low": 0.05,
+        "base": 0.08,
+        "high": 0.12,
+        "unit": "defects/cm2"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "defects/cm2",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA Blackwell logic dies on TSMC 4NP for the exact production cohort used by the defect-yield conversion",
+      "time_basis": "target_quarter_process_parameter",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived Q4 Blackwell 4NP claim must quantify random-defect density for the exact modeled die and production cohort in defects per square centimetre."
+      }
+    },
+    {
+      "id": "manufacturing:logic.performance_bin_share",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#logic.performance_bin_share",
+      "current_range": {
+        "low": 0.65,
+        "base": 0.78,
+        "high": 0.88,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Known-good NVIDIA Blackwell logic dies that meet the modeled accelerator performance bin after wafer sort",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived Q4 claim must give the share of known-good Blackwell dies meeting the exact modeled accelerator bin, with numerator, denominator, and bin definition."
+      }
+    },
+    {
+      "id": "manufacturing:logic.wafer_sort_yield",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#logic.wafer_sort_yield",
+      "current_range": {
+        "low": 0.92,
+        "base": 0.96,
+        "high": 0.985,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA Blackwell 4NP logic dies surviving the modeled post-defect wafer-sort gate",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived Q4 claim must quantify the post-defect wafer-sort pass ratio for the same Blackwell 4NP cohort and test stage."
+      }
+    },
+    {
+      "id": "manufacturing:logic.wafer.edge_exclusion_mm",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#logic.wafer.edge_exclusion_mm",
+      "current_range": {
+        "low": 2,
+        "base": 2.5,
+        "high": 3,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA Blackwell logic-wafer flow on TSMC 4NP for the current compatible process design",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived process-integration claim must quantify usable-wafer edge exclusion for the Blackwell-compatible TSMC 4NP flow; another node or generic fab rule cannot pass."
+      }
+    },
+    {
+      "id": "manufacturing:logic.wafer.scribe_width_mm",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#logic.wafer.scribe_width_mm",
+      "current_range": {
+        "low": 0.07,
+        "base": 0.1,
+        "high": 0.13,
+        "unit": "mm"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "geometry",
+      "stage": "manufacture",
+      "unit": "mm",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVIDIA Blackwell logic-wafer flow on TSMC 4NP for the current compatible mask and process design",
+      "time_basis": "current_product_design",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived process-integration claim must quantify scribe width for the Blackwell-compatible TSMC 4NP mask and wafer flow."
+      }
+    },
+    {
+      "id": "manufacturing:logic.wafer.wafer_starts",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#logic.wafer.wafer_starts",
+      "current_range": {
+        "low": 25000,
+        "base": 35000,
+        "high": 45000,
+        "unit": "wafer"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "manufacture",
+      "unit": "wafer",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Global NVIDIA Blackwell logic-wafer starts on TSMC 4NP allocated to NVIDIA, excluding other nodes, products, customers, and shipment measures",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify quarter-total Blackwell 4NP logic-wafer starts allocated to NVIDIA; company-wide shipments, installed capacity, and run-rates cannot pass."
+      }
+    },
+    {
+      "id": "manufacturing:package.assembly_starts",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#package.assembly_starts",
+      "current_range": {
+        "low": 350000,
+        "base": 450000,
+        "high": 550000,
+        "unit": "package"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "throughput",
+      "stage": "manufacture",
+      "unit": "package",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Advanced-package assembly starts allocated to NVIDIA Blackwell after the declared material-issue boundary",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify quarter-total Blackwell-allocated advanced-package starts and state whether starts are material-cleared for interposers and substrates."
+      }
+    },
+    {
+      "id": "manufacturing:package.assembly_yield",
+      "current_source": "releases/2026-07-19-blackwell-manufacturing-reticle-geometry-evidence/scenario.json#package.assembly_yield",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.95,
+        "high": 0.98,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "manufacture",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Attempted NVIDIA Blackwell advanced packages through final assembly and test on the same start cohort",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived Q4 claim must quantify final Blackwell package assembly-and-test yield for the same attempted-package cohort and exact start/end stages."
+      }
+    },
+    {
+      "id": "system_assembly:component.bluefield3-dpus.capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=bluefield3-dpus].capacity",
+      "current_range": {
+        "low": 15500,
+        "base": 19000,
+        "high": 23000,
+        "unit": "DPU"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "DPU",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "BlueField-3 DPUs; stage server_assembly; resource kind network_switch; non-overlapping customer-addressable scope gb200-bluefield3-pool-2026q3; capacity basis nameplate_input; quarter-total component input capacity",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify BlueField-3 DPUs quarter-total component input capacity for exact scope gb200-bluefield3-pool-2026q3, stage server_assembly, and source unit DPU. The current model's network-switch resource-kind abstraction must be explicitly reconciled to an upstream DPU claim."
+      }
+    },
+    {
+      "id": "system_assembly:component.bluefield3-dpus.customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=bluefield3-dpus].customer_allocation_share",
+      "current_range": {
+        "low": 0.82,
+        "base": 0.89,
+        "high": 0.95,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "BlueField-3 DPUs; stage server_assembly; resource kind network_switch; non-overlapping customer-addressable scope gb200-bluefield3-pool-2026q3; capacity basis nameplate_input; selected-platform and customer allocation share",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify BlueField-3 DPUs selected-platform and customer allocation share for exact scope gb200-bluefield3-pool-2026q3, stage server_assembly, and source unit ratio. The current model's network-switch resource-kind abstraction must be explicitly reconciled to an upstream DPU claim."
+      }
+    },
+    {
+      "id": "system_assembly:component.bluefield3-dpus.effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=bluefield3-dpus].effective_yield",
+      "current_range": {
+        "low": 0.96,
+        "base": 0.985,
+        "high": 0.997,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "BlueField-3 DPUs; stage server_assembly; resource kind network_switch; non-overlapping customer-addressable scope gb200-bluefield3-pool-2026q3; capacity basis nameplate_input; final-test effective yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify BlueField-3 DPUs final-test effective yield for exact scope gb200-bluefield3-pool-2026q3, stage server_assembly, and source unit ratio. The current model's network-switch resource-kind abstraction must be explicitly reconciled to an upstream DPU claim."
+      }
+    },
+    {
+      "id": "system_assembly:component.bluefield3-dpus.platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=bluefield3-dpus].platform_qualified_share",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.96,
+        "high": 0.99,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "BlueField-3 DPUs; stage server_assembly; resource kind network_switch; non-overlapping customer-addressable scope gb200-bluefield3-pool-2026q3; capacity basis nameplate_input; DGX GB200 NVL72-compatible qualified share",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify BlueField-3 DPUs DGX GB200 NVL72-compatible qualified share for exact scope gb200-bluefield3-pool-2026q3, stage server_assembly, and source unit ratio. The current model's network-switch resource-kind abstraction must be explicitly reconciled to an upstream DPU claim."
+      }
+    },
+    {
+      "id": "system_assembly:component.connectx7-nics.capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=connectx7-nics].capacity",
+      "current_range": {
+        "low": 30000,
+        "base": 37000,
+        "high": 45000,
+        "unit": "NIC"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "NIC",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "ConnectX-7 400G NICs; stage server_assembly; resource kind retimer; non-overlapping customer-addressable scope gb200-connectx7-pool-2026q3; capacity basis nameplate_input; quarter-total component input capacity",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify ConnectX-7 400G NICs quarter-total component input capacity for exact scope gb200-connectx7-pool-2026q3, stage server_assembly, and source unit NIC. The current model's retimer resource-kind abstraction must be explicitly reconciled to an upstream NIC claim."
+      }
+    },
+    {
+      "id": "system_assembly:component.connectx7-nics.customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=connectx7-nics].customer_allocation_share",
+      "current_range": {
+        "low": 0.82,
+        "base": 0.89,
+        "high": 0.95,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "ConnectX-7 400G NICs; stage server_assembly; resource kind retimer; non-overlapping customer-addressable scope gb200-connectx7-pool-2026q3; capacity basis nameplate_input; selected-platform and customer allocation share",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify ConnectX-7 400G NICs selected-platform and customer allocation share for exact scope gb200-connectx7-pool-2026q3, stage server_assembly, and source unit ratio. The current model's retimer resource-kind abstraction must be explicitly reconciled to an upstream NIC claim."
+      }
+    },
+    {
+      "id": "system_assembly:component.connectx7-nics.effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=connectx7-nics].effective_yield",
+      "current_range": {
+        "low": 0.96,
+        "base": 0.98,
+        "high": 0.995,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "ConnectX-7 400G NICs; stage server_assembly; resource kind retimer; non-overlapping customer-addressable scope gb200-connectx7-pool-2026q3; capacity basis nameplate_input; final-test effective yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify ConnectX-7 400G NICs final-test effective yield for exact scope gb200-connectx7-pool-2026q3, stage server_assembly, and source unit ratio. The current model's retimer resource-kind abstraction must be explicitly reconciled to an upstream NIC claim."
+      }
+    },
+    {
+      "id": "system_assembly:component.connectx7-nics.platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=connectx7-nics].platform_qualified_share",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.96,
+        "high": 0.99,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "ConnectX-7 400G NICs; stage server_assembly; resource kind retimer; non-overlapping customer-addressable scope gb200-connectx7-pool-2026q3; capacity basis nameplate_input; DGX GB200 NVL72-compatible qualified share",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify ConnectX-7 400G NICs DGX GB200 NVL72-compatible qualified share for exact scope gb200-connectx7-pool-2026q3, stage server_assembly, and source unit ratio. The current model's retimer resource-kind abstraction must be explicitly reconciled to an upstream NIC claim."
+      }
+    },
+    {
+      "id": "system_assembly:component.liquid-cooling-integration.capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=liquid-cooling-integration].capacity",
+      "current_range": {
+        "low": 380,
+        "base": 465,
+        "high": 560,
+        "unit": "rack_cooling_set"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "rack_cooling_set",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Liquid-cooling rack integration sets; stage rack_integration; resource kind cooling; non-overlapping customer-addressable scope gb200-cooling-integration-pool-2026q3; capacity basis nameplate_input; quarter-total component input capacity",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Liquid-cooling rack integration sets quarter-total component input capacity for exact scope gb200-cooling-integration-pool-2026q3, stage rack_integration, and source unit rack_cooling_set."
+      }
+    },
+    {
+      "id": "system_assembly:component.liquid-cooling-integration.customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=liquid-cooling-integration].customer_allocation_share",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.97,
+        "high": 1,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Liquid-cooling rack integration sets; stage rack_integration; resource kind cooling; non-overlapping customer-addressable scope gb200-cooling-integration-pool-2026q3; capacity basis nameplate_input; selected-platform and customer allocation share",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Liquid-cooling rack integration sets selected-platform and customer allocation share for exact scope gb200-cooling-integration-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.liquid-cooling-integration.effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=liquid-cooling-integration].effective_yield",
+      "current_range": {
+        "low": 0.88,
+        "base": 0.94,
+        "high": 0.98,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Liquid-cooling rack integration sets; stage rack_integration; resource kind cooling; non-overlapping customer-addressable scope gb200-cooling-integration-pool-2026q3; capacity basis nameplate_input; final-test effective yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Liquid-cooling rack integration sets final-test effective yield for exact scope gb200-cooling-integration-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.liquid-cooling-integration.platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=liquid-cooling-integration].platform_qualified_share",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.96,
+        "high": 0.99,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Liquid-cooling rack integration sets; stage rack_integration; resource kind cooling; non-overlapping customer-addressable scope gb200-cooling-integration-pool-2026q3; capacity basis nameplate_input; DGX GB200 NVL72-compatible qualified share",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Liquid-cooling rack integration sets DGX GB200 NVL72-compatible qualified share for exact scope gb200-cooling-integration-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.management-tor-switches.capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=management-tor-switches].capacity",
+      "current_range": {
+        "low": 900,
+        "base": 1150,
+        "high": 1400,
+        "unit": "switch"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "switch",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Management top-of-rack switches; stage rack_integration; resource kind network_switch; non-overlapping customer-addressable scope gb200-management-tor-pool-2026q3; capacity basis nameplate_input; quarter-total component input capacity",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Management top-of-rack switches quarter-total component input capacity for exact scope gb200-management-tor-pool-2026q3, stage rack_integration, and source unit switch."
+      }
+    },
+    {
+      "id": "system_assembly:component.management-tor-switches.customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=management-tor-switches].customer_allocation_share",
+      "current_range": {
+        "low": 0.86,
+        "base": 0.92,
+        "high": 0.97,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Management top-of-rack switches; stage rack_integration; resource kind network_switch; non-overlapping customer-addressable scope gb200-management-tor-pool-2026q3; capacity basis nameplate_input; selected-platform and customer allocation share",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Management top-of-rack switches selected-platform and customer allocation share for exact scope gb200-management-tor-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.management-tor-switches.effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=management-tor-switches].effective_yield",
+      "current_range": {
+        "low": 0.97,
+        "base": 0.99,
+        "high": 0.999,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Management top-of-rack switches; stage rack_integration; resource kind network_switch; non-overlapping customer-addressable scope gb200-management-tor-pool-2026q3; capacity basis nameplate_input; final-test effective yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Management top-of-rack switches final-test effective yield for exact scope gb200-management-tor-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.management-tor-switches.platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=management-tor-switches].platform_qualified_share",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.96,
+        "high": 0.99,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Management top-of-rack switches; stage rack_integration; resource kind network_switch; non-overlapping customer-addressable scope gb200-management-tor-pool-2026q3; capacity basis nameplate_input; DGX GB200 NVL72-compatible qualified share",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Management top-of-rack switches DGX GB200 NVL72-compatible qualified share for exact scope gb200-management-tor-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.nvlink-switch-trays.capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=nvlink-switch-trays].capacity",
+      "current_range": {
+        "low": 3600,
+        "base": 4400,
+        "high": 5200,
+        "unit": "switch_tray"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "switch_tray",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVLink switch trays; stage rack_integration; resource kind network_switch; non-overlapping customer-addressable scope gb200-nvlink-switch-tray-pool-2026q3; capacity basis nameplate_input; quarter-total component input capacity",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify NVLink switch trays quarter-total component input capacity for exact scope gb200-nvlink-switch-tray-pool-2026q3, stage rack_integration, and source unit switch_tray."
+      }
+    },
+    {
+      "id": "system_assembly:component.nvlink-switch-trays.customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=nvlink-switch-trays].customer_allocation_share",
+      "current_range": {
+        "low": 0.86,
+        "base": 0.92,
+        "high": 0.97,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVLink switch trays; stage rack_integration; resource kind network_switch; non-overlapping customer-addressable scope gb200-nvlink-switch-tray-pool-2026q3; capacity basis nameplate_input; selected-platform and customer allocation share",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify NVLink switch trays selected-platform and customer allocation share for exact scope gb200-nvlink-switch-tray-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.nvlink-switch-trays.effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=nvlink-switch-trays].effective_yield",
+      "current_range": {
+        "low": 0.93,
+        "base": 0.97,
+        "high": 0.99,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVLink switch trays; stage rack_integration; resource kind network_switch; non-overlapping customer-addressable scope gb200-nvlink-switch-tray-pool-2026q3; capacity basis nameplate_input; final-test effective yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify NVLink switch trays final-test effective yield for exact scope gb200-nvlink-switch-tray-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.nvlink-switch-trays.platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=nvlink-switch-trays].platform_qualified_share",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.96,
+        "high": 0.99,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "NVLink switch trays; stage rack_integration; resource kind network_switch; non-overlapping customer-addressable scope gb200-nvlink-switch-tray-pool-2026q3; capacity basis nameplate_input; DGX GB200 NVL72-compatible qualified share",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify NVLink switch trays DGX GB200 NVL72-compatible qualified share for exact scope gb200-nvlink-switch-tray-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.power-shelves.capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=power-shelves].capacity",
+      "current_range": {
+        "low": 3500,
+        "base": 4200,
+        "high": 5000,
+        "unit": "power_shelf"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "power_shelf",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Rack power shelves; stage rack_integration; resource kind power_delivery; non-overlapping customer-addressable scope gb200-power-shelf-pool-2026q3; capacity basis nameplate_input; quarter-total component input capacity",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Rack power shelves quarter-total component input capacity for exact scope gb200-power-shelf-pool-2026q3, stage rack_integration, and source unit power_shelf."
+      }
+    },
+    {
+      "id": "system_assembly:component.power-shelves.customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=power-shelves].customer_allocation_share",
+      "current_range": {
+        "low": 0.86,
+        "base": 0.92,
+        "high": 0.97,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Rack power shelves; stage rack_integration; resource kind power_delivery; non-overlapping customer-addressable scope gb200-power-shelf-pool-2026q3; capacity basis nameplate_input; selected-platform and customer allocation share",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Rack power shelves selected-platform and customer allocation share for exact scope gb200-power-shelf-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.power-shelves.effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=power-shelves].effective_yield",
+      "current_range": {
+        "low": 0.96,
+        "base": 0.985,
+        "high": 0.997,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Rack power shelves; stage rack_integration; resource kind power_delivery; non-overlapping customer-addressable scope gb200-power-shelf-pool-2026q3; capacity basis nameplate_input; final-test effective yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Rack power shelves final-test effective yield for exact scope gb200-power-shelf-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:component.power-shelves.platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components[id=power-shelves].platform_qualified_share",
+      "current_range": {
+        "low": 0.9,
+        "base": 0.96,
+        "high": 0.99,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Rack power shelves; stage rack_integration; resource kind power_delivery; non-overlapping customer-addressable scope gb200-power-shelf-pool-2026q3; capacity basis nameplate_input; DGX GB200 NVL72-compatible qualified share",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify Rack power shelves DGX GB200 NVL72-compatible qualified share for exact scope gb200-power-shelf-pool-2026q3, stage rack_integration, and source unit ratio."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-a.compute_tray_capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-a].compute_tray_capacity",
+      "current_range": {
+        "low": 3500,
+        "base": 4300,
+        "high": 5200,
+        "unit": "tray"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "tray",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-a; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-a-gb200-tray-line-2026q3; capacity basis nameplate_input; gross compute-tray starts",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-a to one named ODM and quantify gross compute-tray starts for exact non-overlapping scope odm-a-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-a.compute_tray_customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-a].compute_tray_customer_allocation_share",
+      "current_range": {
+        "low": 0.76,
+        "base": 0.85,
+        "high": 0.93,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-a; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-a-gb200-tray-line-2026q3; capacity basis nameplate_input; share of qualified compute trays allocated to the selected customer scope",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-a to one named ODM and quantify share of qualified compute trays allocated to the selected customer scope for exact non-overlapping scope odm-a-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-a.compute_tray_effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-a].compute_tray_effective_yield",
+      "current_range": {
+        "low": 0.88,
+        "base": 0.93,
+        "high": 0.97,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-a; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-a-gb200-tray-line-2026q3; capacity basis nameplate_input; post-assembly and functional-test compute-tray yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-a to one named ODM and quantify post-assembly and functional-test compute-tray yield for exact non-overlapping scope odm-a-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-a.compute_tray_platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-a].compute_tray_platform_qualified_share",
+      "current_range": {
+        "low": 0.72,
+        "base": 0.82,
+        "high": 0.91,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-a; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-a-gb200-tray-line-2026q3; capacity basis nameplate_input; share of good compute trays qualified for DGX GB200 NVL72",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-a to one named ODM and quantify share of good compute trays qualified for DGX GB200 NVL72 for exact non-overlapping scope odm-a-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-a.rack_customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-a].rack_customer_allocation_share",
+      "current_range": {
+        "low": 0.77,
+        "base": 0.86,
+        "high": 0.94,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-a; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-a-gb200-rack-line-2026q3; capacity basis nameplate_input; share of qualified racks allocated to the selected customer scope",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-a to one named ODM and quantify share of qualified racks allocated to the selected customer scope for exact non-overlapping scope odm-a-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-a.rack_integration_capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-a].rack_integration_capacity",
+      "current_range": {
+        "low": 185,
+        "base": 240,
+        "high": 305,
+        "unit": "rack"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "rack",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-a; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-a-gb200-rack-line-2026q3; capacity basis nameplate_input; gross rack-integration starts",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-a to one named ODM and quantify gross rack-integration starts for exact non-overlapping scope odm-a-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-a.rack_integration_effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-a].rack_integration_effective_yield",
+      "current_range": {
+        "low": 0.88,
+        "base": 0.94,
+        "high": 0.98,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-a; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-a-gb200-rack-line-2026q3; capacity basis nameplate_input; rack integration and factory-test completion yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-a to one named ODM and quantify rack integration and factory-test completion yield for exact non-overlapping scope odm-a-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-a.rack_platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-a].rack_platform_qualified_share",
+      "current_range": {
+        "low": 0.75,
+        "base": 0.84,
+        "high": 0.92,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-a; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-a-gb200-rack-line-2026q3; capacity basis nameplate_input; share of completed racks passing the DGX GB200 NVL72 configuration gate",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-a to one named ODM and quantify share of completed racks passing the DGX GB200 NVL72 configuration gate for exact non-overlapping scope odm-a-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-b.compute_tray_capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-b].compute_tray_capacity",
+      "current_range": {
+        "low": 2500,
+        "base": 3200,
+        "high": 4050,
+        "unit": "tray"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "tray",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-b; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-b-gb200-tray-line-2026q3; capacity basis nameplate_input; gross compute-tray starts",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-b to one named ODM and quantify gross compute-tray starts for exact non-overlapping scope odm-b-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-b.compute_tray_customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-b].compute_tray_customer_allocation_share",
+      "current_range": {
+        "low": 0.72,
+        "base": 0.82,
+        "high": 0.92,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-b; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-b-gb200-tray-line-2026q3; capacity basis nameplate_input; share of qualified compute trays allocated to the selected customer scope",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-b to one named ODM and quantify share of qualified compute trays allocated to the selected customer scope for exact non-overlapping scope odm-b-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-b.compute_tray_effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-b].compute_tray_effective_yield",
+      "current_range": {
+        "low": 0.86,
+        "base": 0.92,
+        "high": 0.97,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-b; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-b-gb200-tray-line-2026q3; capacity basis nameplate_input; post-assembly and functional-test compute-tray yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-b to one named ODM and quantify post-assembly and functional-test compute-tray yield for exact non-overlapping scope odm-b-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-b.compute_tray_platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-b].compute_tray_platform_qualified_share",
+      "current_range": {
+        "low": 0.68,
+        "base": 0.78,
+        "high": 0.89,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-b; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-b-gb200-tray-line-2026q3; capacity basis nameplate_input; share of good compute trays qualified for DGX GB200 NVL72",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-b to one named ODM and quantify share of good compute trays qualified for DGX GB200 NVL72 for exact non-overlapping scope odm-b-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-b.rack_customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-b].rack_customer_allocation_share",
+      "current_range": {
+        "low": 0.73,
+        "base": 0.83,
+        "high": 0.93,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-b; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-b-gb200-rack-line-2026q3; capacity basis nameplate_input; share of qualified racks allocated to the selected customer scope",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-b to one named ODM and quantify share of qualified racks allocated to the selected customer scope for exact non-overlapping scope odm-b-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-b.rack_integration_capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-b].rack_integration_capacity",
+      "current_range": {
+        "low": 125,
+        "base": 170,
+        "high": 225,
+        "unit": "rack"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "rack",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-b; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-b-gb200-rack-line-2026q3; capacity basis nameplate_input; gross rack-integration starts",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-b to one named ODM and quantify gross rack-integration starts for exact non-overlapping scope odm-b-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-b.rack_integration_effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-b].rack_integration_effective_yield",
+      "current_range": {
+        "low": 0.86,
+        "base": 0.93,
+        "high": 0.98,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-b; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-b-gb200-rack-line-2026q3; capacity basis nameplate_input; rack integration and factory-test completion yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-b to one named ODM and quantify rack integration and factory-test completion yield for exact non-overlapping scope odm-b-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-b.rack_platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-b].rack_platform_qualified_share",
+      "current_range": {
+        "low": 0.7,
+        "base": 0.8,
+        "high": 0.9,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-b; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-b-gb200-rack-line-2026q3; capacity basis nameplate_input; share of completed racks passing the DGX GB200 NVL72 configuration gate",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-b to one named ODM and quantify share of completed racks passing the DGX GB200 NVL72 configuration gate for exact non-overlapping scope odm-b-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-c.compute_tray_capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-c].compute_tray_capacity",
+      "current_range": {
+        "low": 1450,
+        "base": 1950,
+        "high": 2550,
+        "unit": "tray"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "tray",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-c; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-c-gb200-tray-line-2026q3; capacity basis nameplate_input; gross compute-tray starts",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-c to one named ODM and quantify gross compute-tray starts for exact non-overlapping scope odm-c-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-c.compute_tray_customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-c].compute_tray_customer_allocation_share",
+      "current_range": {
+        "low": 0.68,
+        "base": 0.79,
+        "high": 0.9,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-c; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-c-gb200-tray-line-2026q3; capacity basis nameplate_input; share of qualified compute trays allocated to the selected customer scope",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-c to one named ODM and quantify share of qualified compute trays allocated to the selected customer scope for exact non-overlapping scope odm-c-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-c.compute_tray_effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-c].compute_tray_effective_yield",
+      "current_range": {
+        "low": 0.84,
+        "base": 0.91,
+        "high": 0.96,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-c; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-c-gb200-tray-line-2026q3; capacity basis nameplate_input; post-assembly and functional-test compute-tray yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-c to one named ODM and quantify post-assembly and functional-test compute-tray yield for exact non-overlapping scope odm-c-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-c.compute_tray_platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-c].compute_tray_platform_qualified_share",
+      "current_range": {
+        "low": 0.62,
+        "base": 0.74,
+        "high": 0.86,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-c; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-c-gb200-tray-line-2026q3; capacity basis nameplate_input; share of good compute trays qualified for DGX GB200 NVL72",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-c to one named ODM and quantify share of good compute trays qualified for DGX GB200 NVL72 for exact non-overlapping scope odm-c-gb200-tray-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-c.rack_customer_allocation_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-c].rack_customer_allocation_share",
+      "current_range": {
+        "low": 0.69,
+        "base": 0.8,
+        "high": 0.91,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "allocation",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-c; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-c-gb200-rack-line-2026q3; capacity basis nameplate_input; share of qualified racks allocated to the selected customer scope",
+      "time_basis": "target_quarter_allocation_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-c to one named ODM and quantify share of qualified racks allocated to the selected customer scope for exact non-overlapping scope odm-c-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-c.rack_integration_capacity",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-c].rack_integration_capacity",
+      "current_range": {
+        "low": 70,
+        "base": 105,
+        "high": 145,
+        "unit": "rack"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "capacity",
+      "stage": "shipment",
+      "unit": "rack",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-c; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-c-gb200-rack-line-2026q3; capacity basis nameplate_input; gross rack-integration starts",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-c to one named ODM and quantify gross rack-integration starts for exact non-overlapping scope odm-c-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-c.rack_integration_effective_yield",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-c].rack_integration_effective_yield",
+      "current_range": {
+        "low": 0.83,
+        "base": 0.91,
+        "high": 0.97,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-c; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-c-gb200-rack-line-2026q3; capacity basis nameplate_input; rack integration and factory-test completion yield",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-c to one named ODM and quantify rack integration and factory-test completion yield for exact non-overlapping scope odm-c-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:odm.illustrative-odm-c.rack_platform_qualified_share",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms[id=illustrative-odm-c].rack_platform_qualified_share",
+      "current_range": {
+        "low": 0.64,
+        "base": 0.76,
+        "high": 0.88,
+        "unit": "ratio"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "yield",
+      "stage": "shipment",
+      "unit": "ratio",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "A resolved real ODM replacing illustrative-odm-c; NVIDIA DGX GB200 NVL72; non-overlapping scope odm-c-gb200-rack-line-2026q3; capacity basis nameplate_input; share of completed racks passing the DGX GB200 NVL72 configuration gate",
+      "time_basis": "target_quarter_cohort_ratio",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must resolve illustrative-odm-c to one named ODM and quantify share of completed racks passing the DGX GB200 NVL72 configuration gate for exact non-overlapping scope odm-c-gb200-rack-line-2026q3; generic ODM or company-wide figures cannot pass."
+      }
+    },
+    {
+      "id": "system_assembly:platform.rack_demand",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#platform.rack_demand",
+      "current_range": {
+        "low": 480,
+        "base": 620,
+        "high": 800,
+        "unit": "rack"
+      },
+      "current_posture": "synthetic",
+      "active_for_supply_to_site": true,
+      "parameter_class": "demand",
+      "stage": "shipment",
+      "unit": "rack",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Selected global NVIDIA DGX GB200 NVL72 rack demand that caps component-cleared complete-rack output",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A direct reported or derived 2026-Q4 claim must quantify accepted DGX GB200 NVL72 rack demand for the same global customer scope; orders, cancellations, and allocation basis must be explicit because this value actively caps complete racks."
+      }
+    }
+  ],
+  "gate_targets": [
+    {
+      "id": "gate:energization.q4-operational-nvl72-systems",
+      "description": "Direct evidence of quarter-total DGX GB200 NVL72 systems energized, commissioned, and accepted as operational at the selected site.",
+      "stage": "energization",
+      "unit": "system",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Accepted operational DGX GB200 NVL72 systems at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767, after site power, compatibility, installation, commissioning, and acceptance",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A reported or derived Q4 site-operator claim must directly count distinct NVL72 systems energized and accepted as operational at the exact selected campus; announced MW, construction status, or commissioning slots alone cannot pass."
+      }
+    },
+    {
+      "id": "gate:manufacture.q4-blackwell-systems",
+      "description": "Direct evidence of quarter-total complete Blackwell system equivalents manufactured on the exact covered material and assembly basis.",
+      "stage": "manufacture",
+      "unit": "system",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "semiconductor_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Complete NVIDIA Blackwell system equivalents manufactured from finished accelerator packages on an explicitly material-cleared and non-overlapping production basis",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A reported or derived 2026-Q4 semiconductor claim must directly quantify complete Blackwell system equivalents or an exactly convertible finished-package total with product topology and material coverage proven."
+      }
+    },
+    {
+      "id": "gate:shipment.q4-selected-site-nvl72-systems",
+      "description": "Direct evidence of quarter-total component-cleared DGX GB200 NVL72 systems shipped to and received by the selected site.",
+      "stage": "shipment",
+      "unit": "system",
+      "accepted_range_bases": [
+        "bounded_interval",
+        "exact"
+      ],
+      "required_upstream": "datacenter_atlas",
+      "required_claim_type": "numerical_constraint",
+      "attribution_basis": "Distinct component-cleared DGX GB200 NVL72 systems shipped to and received by OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767, with the shipment denominator and destination attribution reconciled",
+      "time_basis": "quarter_total",
+      "evidence_gate": {
+        "required_for_numerical_result": true,
+        "accepted_postures": [
+          "derived",
+          "reported"
+        ],
+        "description": "A reported or derived Q4 destination-specific claim must directly count distinct NVL72 systems shipped to or received by the exact selected campus and reconcile the count to the covered complete-rack population."
+      }
+    }
+  ],
+  "categorical_gates": [
+    {
+      "id": "categorical:cross-stage.cross-source-dependence",
+      "stage": "cross_stage",
+      "current_source": "examples/gb200-to-abilene-odm-assembly-draw-linked-reticle-geometry-illustrative-2026q3.json#scenario.scope_notes",
+      "current_status": "synthetic",
+      "required_upstreams": [
+        "datacenter_atlas",
+        "semiconductor_atlas"
+      ],
+      "required_for_numerical_result": true,
+      "accepted_postures": [
+        "derived",
+        "reported"
+      ],
+      "time_basis": "2026-Q4 joined manufacture-to-shipment-to-energization cohort",
+      "attribution_basis": "The same serialized NVIDIA DGX GB200 NVL72 system population across global manufacture, shipment to, and accepted operation at OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767",
+      "description": "Shipment identifiers, empirical joint rows, or a reviewed conservative-bounds contract must establish how manufacture, shipment, and energization populations join; deterministic independent source permutations are not evidence of cross-source dependence."
+    },
+    {
+      "id": "categorical:energization.operational-deduction-non-overlap",
+      "stage": "energization",
+      "current_source": "examples/datacenter-openai-abilene-net-operational-illustrative-2026q3.json#deductions.non_overlap_rationale",
+      "current_status": "synthetic",
+      "required_upstreams": [
+        "datacenter_atlas"
+      ],
+      "required_for_numerical_result": true,
+      "accepted_postures": [
+        "derived",
+        "reported"
+      ],
+      "time_basis": "2026-Q4 concurrent site power accounting",
+      "attribution_basis": "Mutually exclusive gross-to-net power deductions for OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767",
+      "description": "Operator records must prove that current load, reservations, other-platform commitments, and rack-incompatible residual MW are mutually non-overlapping deductions from the same gross campus envelope."
+    },
+    {
+      "id": "categorical:manufacture.hbm-supplier-identity-non-overlap",
+      "stage": "manufacture",
+      "current_source": "examples/hbm-suppliers/blackwell-supplier-portfolio-illustrative-2026q3.json#suppliers",
+      "current_status": "synthetic",
+      "required_upstreams": [
+        "semiconductor_atlas"
+      ],
+      "required_for_numerical_result": true,
+      "accepted_postures": [
+        "derived",
+        "reported"
+      ],
+      "time_basis": "2026-Q4 supplier capacity-scope census",
+      "attribution_basis": "Qualified Blackwell HBM supplier identities and mutually disjoint supplier capacity-scope IDs used by the manufacturing total",
+      "description": "Every HBM row must resolve a real supplier, exact compatible product and process, Blackwell qualification, and a capacity-scope ID disjoint from every other selected supplier pool; named suppliers in the Q3 demonstration are not participation evidence."
+    },
+    {
+      "id": "categorical:manufacture.material-cleared-packages",
+      "stage": "manufacture",
+      "current_source": "examples/hbm-suppliers/blackwell-manufacturing-draw-material-cleared-reticle-geometry-link-illustrative-2026q3.json#package_coverage",
+      "current_status": "synthetic",
+      "required_upstreams": [
+        "semiconductor_atlas"
+      ],
+      "required_for_numerical_result": true,
+      "accepted_postures": [
+        "derived",
+        "reported"
+      ],
+      "time_basis": "2026-Q4 finished-package production routing cohort",
+      "attribution_basis": "Finished NVIDIA Blackwell package starts counted only after required silicon interposers and ABF substrates are issued to the same production cohort",
+      "description": "Production routing and material-issue records must prove that selected Blackwell package starts occur after required silicon interposers and ABF substrates are issued; otherwise those material constraints must remain separate."
+    },
+    {
+      "id": "categorical:shipment.component-cleared-racks",
+      "stage": "shipment",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#coverage",
+      "current_status": "synthetic",
+      "required_upstreams": [
+        "semiconductor_atlas"
+      ],
+      "required_for_numerical_result": true,
+      "accepted_postures": [
+        "derived",
+        "reported"
+      ],
+      "time_basis": "2026-Q4 complete-rack production cohort",
+      "attribution_basis": "Component-cleared NVIDIA DGX GB200 NVL72 racks whose serialized BOM, WIP, qualification, and factory-release records cover every required component pool",
+      "description": "Serialized BOM, WIP, qualification, and factory-release records must prove that every declared tray, NIC, DPU, switch, power-shelf, and rack-cooling resource is consumed before a complete rack is counted."
+    },
+    {
+      "id": "categorical:shipment.component-identity-non-overlap",
+      "stage": "shipment",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#components",
+      "current_status": "synthetic",
+      "required_upstreams": [
+        "semiconductor_atlas"
+      ],
+      "required_for_numerical_result": true,
+      "accepted_postures": [
+        "derived",
+        "reported"
+      ],
+      "time_basis": "2026-Q4 component capacity-scope census",
+      "attribution_basis": "Exact NVIDIA DGX GB200 NVL72 component identities, units, stages, capacity bases, compatibility, and mutually disjoint customer-addressable capacity scopes",
+      "description": "Each selected component claim must match exact identity, unit, server or rack stage, capacity basis, and a customer-addressable scope disjoint from all other component pools; NIC/retimer and DPU/switch abstractions require explicit compatibility."
+    },
+    {
+      "id": "categorical:shipment.odm-identity-non-overlap",
+      "stage": "shipment",
+      "current_source": "examples/system-assembly/gb200-nvl72-odm-assembly-illustrative-2026q3.json#odms",
+      "current_status": "synthetic",
+      "required_upstreams": [
+        "semiconductor_atlas"
+      ],
+      "required_for_numerical_result": true,
+      "accepted_postures": [
+        "derived",
+        "reported"
+      ],
+      "time_basis": "2026-Q4 ODM capacity-scope census",
+      "attribution_basis": "Resolved NVIDIA DGX GB200 NVL72 ODM entities with exact compute-tray and rack-integration output bases and mutually disjoint capacity-scope IDs",
+      "description": "Generic ODM A, B, and C placeholders must be resolved to real entities, and every compute-tray and rack-integration line must carry a proven non-overlapping capacity scope and exact output basis."
+    },
+    {
+      "id": "categorical:shipment.site-shipment-attribution",
+      "stage": "shipment",
+      "current_source": "examples/gb200-to-abilene-odm-assembly-draw-linked-reticle-geometry-illustrative-2026q3.json#links[id=linked-abilene-complete-rack-allocation]",
+      "current_status": "synthetic",
+      "required_upstreams": [
+        "datacenter_atlas",
+        "semiconductor_atlas"
+      ],
+      "required_for_numerical_result": true,
+      "accepted_postures": [
+        "derived",
+        "reported"
+      ],
+      "time_basis": "2026-Q4 quarter-total destination shipment cohort",
+      "attribution_basis": "The same component-cleared NVIDIA DGX GB200 NVL72 rack population in the semiconductor denominator and shipment or receiving records for OpenAI Stargate Abilene entity 2dd31763-2dd4-5cb5-927d-0d000dadf767",
+      "description": "Destination shipment or receiving records must use the same DGX GB200 NVL72 complete-rack population as the semiconductor denominator and identify the exact selected site; a site numerator with an unmatched global denominator cannot pass."
+    }
+  ],
+  "protected_unknowns": [
+    {
+      "dimension": "allocation",
+      "policy": "Keep supplier, customer, platform, shipment-destination, and site allocation unknown unless a compatible reported or derived claim passes every attribution, denominator, period, and evidence gate."
+    },
+    {
+      "dimension": "capacity",
+      "policy": "Keep wafer, package, component, assembly, logistics, installation, power, and commissioning capacity unknown unless an exact-scope reported or derived numerical constraint passes; scale controls and nameplate rates cannot be promoted."
+    },
+    {
+      "dimension": "demand",
+      "policy": "Keep Blackwell package and NVL72 rack demand unknown unless direct compatible order, allocation, cancellation, or accepted-demand evidence passes; synthetic caps must not silently limit or support production output."
+    },
+    {
+      "dimension": "economics",
+      "policy": "Keep price, revenue, margin, valuation, consensus, and opportunity-ranking economics unknown; this physical evidence product must not infer economics from supply quantities."
+    },
+    {
+      "dimension": "utilization",
+      "policy": "Keep factory, component, allocation, power, and site utilization unknown unless directly supported by compatible metered or cohort evidence; model-derived utilization and shadow capacity are not observations."
+    },
+    {
+      "dimension": "yield",
+      "policy": "Keep die, sort, binning, stack, package, tray, rack, logistics, installation, and commissioning yield unknown unless the exact cohort, numerator, denominator, stage boundaries, period, and evidence posture pass."
+    }
+  ]
+}

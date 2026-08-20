@@ -11,6 +11,7 @@ from typing import Sequence
 
 from .alert_release import write_revision_alert_release
 from .atlas_adapter import load_atlas_capacity, load_atlas_selection
+from .blackwell_pulse_release import write_blackwell_pulse_release
 from .chain_link_release import write_linked_chain_release
 from .chain_linker import load_linked_chain_case
 from .claim_cycle import run_claim_cycle
@@ -82,6 +83,10 @@ from .sec_reviewed_claims import (
 )
 from .system_assembly_loader import load_system_assembly_scenario
 from .system_assembly_release import write_system_assembly_release
+from .upstream_release import (
+    fetch_and_load_locked_release,
+    load_upstream_release_lock,
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -534,6 +539,23 @@ def build_parser() -> argparse.ArgumentParser:
     )
     import_datacenter.add_argument("--release-dir", required=True, type=Path)
     import_datacenter.add_argument("--selection", required=True, type=Path)
+
+    fetch_upstreams = subparsers.add_parser(
+        "fetch-upstream-releases",
+        help="fetch and verify immutable Atlas release assets into a content-addressed cache",
+    )
+    fetch_upstreams.add_argument("--lockfile", required=True, type=Path)
+    fetch_upstreams.add_argument("--cache-dir", required=True, type=Path)
+
+    build_pulse = subparsers.add_parser(
+        "build-blackwell-pulse",
+        help="build an offline, evidence-gated 2026-Q4 Blackwell weekly pulse",
+    )
+    build_pulse.add_argument("--config", required=True, type=Path)
+    build_pulse.add_argument("--lockfile", required=True, type=Path)
+    build_pulse.add_argument("--cache-dir", required=True, type=Path)
+    build_pulse.add_argument("--synthetic-audit", required=True, type=Path)
+    build_pulse.add_argument("--output-dir", required=True, type=Path)
     return parser
 
 
@@ -547,6 +569,45 @@ def _dump(value: object, *, stream: object | None = None) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
+        if args.command == "fetch-upstream-releases":
+            lock = load_upstream_release_lock(args.lockfile)
+            verified = [
+                fetch_and_load_locked_release(entry, args.cache_dir)
+                for entry in lock.upstreams
+            ]
+            _dump(
+                {
+                    "valid": True,
+                    "lock_sha256": lock.sha256,
+                    "verified_releases": [
+                        {
+                            "upstream_id": release.upstream_id,
+                            "repository": release.repository,
+                            "release_tag": release.release_tag,
+                            "asset_sha256": release.entry.asset.sha256,
+                            "manifest_sha256": release.manifest_sha256,
+                            "claims_sha256": release.claims_sha256,
+                            "manifest_as_of_date": release.manifest["as_of_date"],
+                            "manifest_recorded_at": release.manifest["recorded_at"],
+                            "comparison": release.manifest["comparison"],
+                            "content_address": f"sha256:{release.entry.asset.sha256}",
+                        }
+                        for release in verified
+                    ],
+                }
+            )
+            return 0
+        if args.command == "build-blackwell-pulse":
+            _dump(
+                write_blackwell_pulse_release(
+                    args.config,
+                    args.lockfile,
+                    args.cache_dir,
+                    args.synthetic_audit,
+                    args.output_dir,
+                )
+            )
+            return 0
         if args.command == "ingest-claims":
             _dump(ingest_claim_pack(args.database, args.pack))
             return 0

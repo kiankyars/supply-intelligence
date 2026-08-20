@@ -1,0 +1,6 @@
+{
+  "format": "ai-supply-upstream-release-lock.v1",
+  "product": "blackwell-constraint-pulse",
+  "target_quarter": "2026-Q4",
+  "upstreams": []
+}
